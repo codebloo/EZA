@@ -1075,6 +1075,339 @@
         "padding-block-end": 16
       }
     },
+    "eza_section_nGGndj": {
+      "type": "eza-section",
+      "blocks": {
+        "eza_group_wqWzTy": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
+          "settings": {
+            "custom_class": "home-ugc",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 24,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "eza_group_rLwaQM": {
+              "type": "eza-group",
+              "name": "EZ-A Group",
+              "settings": {
+                "custom_class": "",
+                "desktop_hidden": false,
+                "mobile_hidden": true,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_yhKqzn": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Real customers, unprompted. Make up your own mind.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1.25rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_YxCmwj": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h2>“I had to stop everything to make this video.”</h2>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_yhKqzn",
+                "text_YxCmwj"
+              ]
+            },
+            "eza_group_QWY4Tq": {
+              "type": "eza-group",
+              "name": "EZ-A Group",
+              "settings": {
+                "custom_class": "",
+                "desktop_hidden": false,
+                "mobile_hidden": false,
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "eza_group_maW6XA": {
+                  "type": "eza-group",
+                  "name": "UGC Carousel",
+                  "settings": {
+                    "custom_class": "ugc-carousel-block",
+                    "desktop_hidden": false,
+                    "mobile_hidden": false,
+                    "content_direction": "column",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "center",
+                    "vertical_alignment_flex_direction_column": "center",
+                    "gap": 12,
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "placeholder": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "eza_ugc_carousel_tai76G": {
+                      "type": "eza-ugc-carousel",
+                      "name": "EZA UGC Video Carousel",
+                      "settings": {
+                        "heading": "EZ-A in the wild",
+                        "desktop_video_width": 280,
+                        "mobile_video_width": 200,
+                        "desktop-gap": 24,
+                        "mobile-gap": 16
+                      },
+                      "blocks": {
+                        "eza_ugc_carousel_item_NiTqGc": {
+                          "type": "eza-ugc-carousel-item",
+                          "name": "Acetylcholine in the Brain",
+                          "settings": {
+                            "video": "shopify://files/videos/acetylcholine-production.mp4",
+                            "caption": "",
+                            "link": ""
+                          },
+                          "blocks": {}
+                        },
+                        "eza_ugc_carousel_item_WVPDdn": {
+                          "type": "eza-ugc-carousel-item",
+                          "name": "What afternoon slump?",
+                          "settings": {
+                            "video": "shopify://files/videos/jacey-eza.MP4",
+                            "caption": "",
+                            "link": "https://www.tiktok.com/t/ZP85SvRNw/"
+                          },
+                          "blocks": {}
+                        },
+                        "eza_ugc_carousel_item_9GtPx4": {
+                          "type": "eza-ugc-carousel-item",
+                          "name": "Subway EZ-A Deal",
+                          "settings": {
+                            "video": "shopify://files/videos/brooks-eza.MP4",
+                            "caption": "",
+                            "link": ""
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "eza_ugc_carousel_item_NiTqGc",
+                        "eza_ugc_carousel_item_WVPDdn",
+                        "eza_ugc_carousel_item_9GtPx4"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "eza_ugc_carousel_tai76G"
+                  ]
+                }
+              },
+              "block_order": [
+                "eza_group_maW6XA"
+              ]
+            }
+          },
+          "block_order": [
+            "eza_group_rLwaQM",
+            "eza_group_QWY4Tq"
+          ]
+        }
+      },
+      "block_order": [
+        "eza_group_wqWzTy"
+      ],
+      "name": "In the wild",
+      "settings": {
+        "custom_class": "",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 24,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 64,
+        "padding-block-end": 60
+      }
+    },
     "1762744600c1680ef3": {
       "type": "_blocks",
       "blocks": {
@@ -1121,6 +1454,7 @@
   "order": [
     "eza_section_VPBBTb",
     "main",
+    "eza_section_nGGndj",
     "1762744600c1680ef3"
   ]
 }
