@@ -1,0 +1,242 @@
+.testimonials-section{
+  padding: 44px 0 74px;
+}
+
+.testimonials-section--with-divider{
+  border-top:1px solid;
+  border-top-color:var(--colorBorder);
+}
+
+@media only screen and (min-width:590px){
+
+  .testimonials-section{
+    padding: 34px 0 64px;
+  }
+}
+
+.testimonials-section .page-width {
+    margin:0 auto;
+  max-width: 1205px;
+}
+
+.testimonials-section .section-header {
+  margin: 0 54px 47px 55px;
+  text-align:center;
+}
+
+.testimonials-section .section-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.20833333;
+}
+
+.quote-icon{
+  display:block;
+  margin:0 auto 20px;
+}
+
+
+.testimonials-slider {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Remove the old width-based rules and use flex-basis consistently */
+.testimonials-slide {
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 280px;
+  padding: 0; /* Remove old padding since we're using gap */
+}
+@media (max-width: 989px) {
+  .testimonials-slide {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 749px) {
+  .testimonials-slide {
+    flex: 0 0 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .testimonials-section .page-width {
+    padding: 0;
+  }
+}
+
+
+
+@media screen and (min-width: 769px) {
+  .testimonials-section .section-header {
+    margin: 0 0 62px;
+  }
+
+  .testimonials-section .section-header h2 {
+    font-size: 32px;
+    line-height: 1.21875;
+  }
+
+ 
+}
+
+.testimonials-slider__text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.1875;
+  padding: 0;
+}
+
+.testimonial-stars {
+  display: flex;
+  margin-bottom: 18px;
+  margin-left: 2px;
+}
+
+.testimonial-stars svg {
+  margin-right: 2px;
+}
+
+.testimonials-slider__text p {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+.testimonials-slider__text .rte-setting {
+  margin-bottom: 14px;
+}
+
+.testimonials-slider__text .rte-setting > *:first-child {
+  margin-top: 0;
+}
+
+.testimonials-slider__text .rte-setting > *:last-child {
+  margin-bottom: 0;
+}
+
+.testimonials-slider__text .rte-setting p {
+  margin-bottom: 1.1875em;
+}
+
+.testimonials-slider__text cite {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.testimonials-slider__text cite + p {
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
+
+[data-type_header_capitalize=true] .testimonials-slider__text cite{
+  text-transform:uppercase;
+}
+
+.testimonial-image {
+  width: 56px;
+  height:56px;
+  flex-shrink: 0;
+  background-color:var(--colorBody);
+  margin-right: 9px;
+}
+
+.testimonial-image .image-wrap {
+  height:100%;
+  width:100%;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.testimonial-image--round {
+  border-radius: 50%;
+  overflow:hidden;
+}
+
+.testimonial-meta{
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-meta cite:before{
+  content:"";
+}
+
+.testimonial-progressbar {
+  width: 100%;
+  height: 3px;
+  margin-top: 31px;
+  border-top: 1px solid #202020;
+  position: relative;
+}
+
+/* Progress bar - remove the width:0% override */
+.testimonial-progressbar__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* width is set inline via Liquid */
+  height: 2px;
+  background-color: #343434;
+  transition: left 0.2s ease-out;
+}
+.testimonial-viewmore {
+  display: flex;
+  justify-content: center;
+  margin-top: 47px;
+  text-align: center;
+}
+
+.testimonial-viewmore__link {
+  color: #5A31F4;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  transition: 0.15s ease-out;
+  display: inline-block;
+}
+
+.testimonial-viewmore__link:hover {
+  color: var(--color-links-hover);
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial-viewmore {
+    margin-top: 23px;
+    margin-right: 8px;
+  }
+}
+
+.testimonials-slider {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.testimonials-slide {
+  flex: 0 0 calc(33.333% - 16px); /* 3 visible */
+  min-width: 280px;
+}
+
+@media (max-width: 989px) {
+  .testimonials-slide {
+    flex: 0 0 calc(50% - 12px); /* 2 visible */
+  }
+}
+
+@media (max-width: 749px) {
+  .testimonials-slide {
+    flex: 0 0 100%; /* 1 visible  */
+  }
+}

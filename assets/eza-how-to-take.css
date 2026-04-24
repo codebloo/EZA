@@ -1,0 +1,78 @@
+
+    .how-tos{border-top:none;}
+    .how-tos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .how-tos-headline{
+      font-size:var(--font-h5--size);
+      font-weight:700;
+      position:relative;}
+    .how-tos-headline:after{
+        background-color:#000;
+        bottom:-5px;
+        content:'';
+        display:block;
+        height:3px;
+        left:0;
+        position: absolute;
+        
+        width:100%;
+    }
+
+    @media (min-width: 768px) {
+     .desktop-layout-true .how-tos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .how-to-item {
+    align-items:center;
+      display: flex;
+      flex-direction: row;
+      gap: 13px;
+      padding-bottom:20px;
+      position:relative;
+    }
+    .how-to-item::after{
+      background-color:#202020;
+      bottom:0;
+      content:'';
+      display:block;
+      height:1px;
+      position:absolute;
+      width:100%;
+    }
+
+    .how-to-number {
+        align-items: center;
+        background-color:#202020;
+         border-radius: 4px;
+        color:#FFF200;
+        display: flex;
+        font-size: 16px;
+      font-weight: 700;
+        justify-content: center;
+         line-height: 1;
+        padding: 8px; }
+
+
+    .how-to-name {
+     color: #000;
+    font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    }
+
+    .how-to-text {
+  color: #000;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+    }
+  

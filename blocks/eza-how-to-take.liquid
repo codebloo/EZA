@@ -1,0 +1,29 @@
+
+{% render 'eza-how-to-take', layout:block.settings.desktop_layout, headline: block.settings.headline %}
+
+{% schema %}
+{
+  "name": "EZ-A How to Take",
+  "tag": "eza-how-to-take",
+  "settings": [
+    {
+    "type": "header",
+    "content": "About this section",
+"info": "This section is populated by Metaobjects, edit them in Content > Metaobjects > How to Take"},
+{
+"type":"checkbox",
+"id": "desktop_layout",
+"label": "Horizontal layout on desktop"},
+{
+"type":"text",
+"id": "headline",
+"label": "HEadline"}
+  ],
+  "presets": [
+    {
+      "name": "EZ-A How to Take",
+      "category": "EZ-A"
+    }
+  ]
+}
+{% endschema %}

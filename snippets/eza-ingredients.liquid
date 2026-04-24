@@ -1,0 +1,41 @@
+{%- comment -%}
+  Renders all entries from the `key_ingredients` metaobject
+  Fields:
+    - number (single line text)
+    - number_color (single choice)
+    - name (single line text)
+    - text (multiline text)
+
+  Usage:
+    {% render 'eza-ingredients' %}
+{%- endcomment -%}
+{{ 'eza-ingredients.css' | asset_url | stylesheet_tag }}
+
+  <div class="key-ingredients-grid desktop-layout-{{ layout }}">
+    {% assign ingredients = metaobjects.key_ingredients.values | sort_natural: 'number' %}
+    {%- for ingredient in ingredients -%}
+      {%- assign color_value = ingredient.number_color | default: '' -%}
+      {%- assign color_class = color_value | handleize -%}
+
+      <div class="key-ingredient-item">
+        <div class="key-ingredient-item-top">
+        <div class="key-ingredient-number key-ingredient-number--{{ color_class }}">
+          {{ ingredient.number }}
+        </div>
+
+        {%- if ingredient.name != blank -%}
+          <h3 class="key-ingredient-name">
+            {{ ingredient.name }}
+          </h3>
+        {%- endif -%}
+</div>
+        {%- if ingredient.text != blank -%}
+          <div class="key-ingredient-text">
+            {{ ingredient.text }}
+          </div>
+        {%- endif -%}
+     
+      </div>
+    {%- endfor -%}
+  </div>
+

@@ -1,0 +1,187 @@
+{%- doc -%}
+  Renders a simple button-style variant picker, used to display the variant picker in the variants block.
+
+  @param {object} product_resource - The product object.
+  @param {object} [block] - The block object
+{%- enddoc -%}
+
+{% assign block_settings = block.settings %}
+
+{% unless product_resource.has_only_default_variant %}
+  {% liquid
+    assign button_background_brightness = section.settings.color_scheme.settings.foreground | color_brightness
+    if button_background_brightness < 105
+      assign strikethrough_color_mix = '#000'
+    else
+      assign strikethrough_color_mix = '#fff'
+    endif
+  %}
+  <variant-picker
+    class="eza-variant-picker variant-picker spacing-style variant-picker--{{ block_settings.alignment }}"
+    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product_resource.id }}"
+    data-block-id="{{ block.id }}"
+    data-product-url="{{ product_resource.url }}"
+    ref="mainVariantPicker"
+    {% if product.id == product_resource.id %}
+      data-template-product-match="true"
+    {% endif %}
+    {{ block.shopify_attributes }}
+    {% if request.visual_preview_mode %}
+      data-shopify-visual-preview
+    {% endif %}
+  >
+    <form class="variant-picker__form">
+      {%- for product_option in product_resource.options_with_values -%}
+        {%- assign fieldset_index = forloop.index0 -%}
+
+        <fieldset
+          class="variant-option variant-option--buttons"
+          data-fieldset-index="{{ fieldset_index }}"
+          ref="fieldsets[]"
+        >
+          <legend class="variant-option__legend visually-hidden">
+            {{ product_option.name | escape }}
+          </legend>
+
+          <div class="variant-option__values">
+            {%- for product_option_value in product_option.values -%}
+               <div class="eza-variant">
+              {%- assign variant_tag = product_option_value.variant.metafields.tag.name -%}
+  {% if variant_tag != blank %}
+ 
+                <span class="eza-variant-tag {{ variant_tag | handleize }}">{{ variant_tag | escape }}</span>
+                {% endif %}
+              <label
+                class="variant-option__button-label">
+                <span class="fake-radio"></span>
+                <input
+                  type="radio"
+                  name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
+                  value="{{ product_option_value | escape }}"
+                  aria-label="{{ product_option_value.name }}"
+                  {% if product_option_value.available == false %}
+                    aria-disabled="true"
+                  {% endif %}
+                  data-previous-checked="false"
+                  data-fieldset-index="{{ fieldset_index }}"
+                  data-input-index="{{ forloop.index0 }}"
+                  data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
+                  data-option-value-id="{{ product_option_value.id }}"
+                  data-option-available="{{ product_option_value.available }}"
+                  data-connected-product-url="{{ product_option_value.product_url }}"
+                  {% if product_option_value.variant.id %}
+                    data-variant-id="{{ product_option_value.variant.id }}"
+                  {% endif %}
+                  {% if product_option_value.selected %}
+                    data-current-checked="true"
+                    checked
+                  {% else %}
+                    data-current-checked="false"
+                  {% endif %}
+                >
+
+                <span class="variant-option__button-label__text">
+                  {{ product_option_value | escape }}
+                </span>
+
+                {% render 'strikethrough-variant', product_option: product_option_value %}
+              </label>
+            </div>
+            {%- endfor -%}
+          </div>
+        </fieldset>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product_resource.selected_or_first_available_variant | json }}
+      </script>
+    </form>
+  </variant-picker>
+{% endunless %}
+
+{% stylesheet %}
+  .variant-picker {
+    width: 100%;
+  }
+
+  .variant-picker__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    width: 100%;
+  }
+
+  .variant-picker[data-shopify-visual-preview] {
+    min-width: 300px;
+    padding-inline-start: max(4px, var(--padding-inline-start));
+  }
+
+  .variant-option {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .variant-option__legend {
+    margin: 0 0 var(--margin-xs);
+    font: inherit;
+  }
+
+  .variant-option__values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+  }
+
+  .variant-option__button-label {
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.3);
+    background-color: transparent;
+    color: rgb(var(--color-foreground-rgb));
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    gap:6px;
+    justify-content: center;
+      min-height: 2.5rem;
+      padding: var(--padding-sm) var(--padding-md);
+    position: relative;
+    }
+
+  .variant-option__button-label input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .variant-option__button-label__text {
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .variant-option__button-label:has(:checked) {
+    border-color: rgb(var(--color-foreground-rgb));
+    background-color: rgb(var(--color-foreground-rgb) / 0.06);
+  }
+
+  .variant-option__button-label:has([aria-disabled='true']),
+  .variant-option__button-label:has([data-option-available='false']) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .variant-picker--center .variant-option__values {
+    justify-content: center;
+  }
+
+  .variant-picker--right .variant-option__values {
+    justify-content: flex-end;
+  }
+{% endstylesheet %}

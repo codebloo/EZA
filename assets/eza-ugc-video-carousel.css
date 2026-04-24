@@ -1,0 +1,322 @@
+/* Video Carousel Styles
+ * Horizontal drag carousel for 9:16 vertical videos
+ * Overflows right edge, aligned left with page margins
+ */
+
+/* Section Container */
+.video-carousel-section {
+  padding: 3rem 0;
+  overflow: visible;
+}
+
+.video-carousel-container {
+  /* Uses page container for left alignment, but carousel overflows */
+  /*max-width: var(--page-width, 1200px);*/
+  margin: 0 auto;
+  padding-left: var(--page-margin, 1.5rem);
+  padding-right: 0; /* No right padding - allows overflow */
+}
+
+@media (min-width: 750px) {
+  .video-carousel-container {
+    padding-left: var(--page-margin, 3rem);
+  }
+}
+
+  .video-carousel__heading {display:none;}
+
+/* Heading */
+@media (max-width: 750px) {
+.video-carousel__heading {
+  display:block;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  letter-spacing: -0.02em;}
+}
+
+
+
+
+/* Carousel Viewport - Critical for overflow behavior */
+.video-carousel {
+  position: relative;
+}
+
+.video-carousel__viewport {
+  overflow: visible; /* Allow left overflow when dragging */
+  width: calc(100vw - var(--page-margin, 1.5rem));
+}
+
+@media (min-width: 750px) {
+  .video-carousel__viewport {
+    width: calc(100vw - var(--page-margin, 3rem));
+  }
+}
+.video-carousel-wrapper{
+  --mobile-margin: 24px;
+    padding-inline-start: var(--mobile-margin);
+    scroll-padding-inline-end: 0;
+    scroll-padding-inline-start: var(--mobile-margin);
+  width:100%;}
+.video-carousel__container {
+  display: flex;
+  gap: var(--mobile-carousel-gap, 16px);
+  cursor: grab;
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+
+  
+}
+@media (min-width: 750px) {
+.video-carousel__container {
+  gap: var(--desktop-carousel-gap, 24px);
+}
+}
+.video-carousel__container:active {
+  cursor: grabbing;
+}
+
+/* Individual Slide */
+.video-carousel__slide {
+  flex: 0 0 auto;
+  width: var(--video-width-mobile, 80vw);
+  min-width: 0;
+}
+/* Selects all elements that are the 2nd, 4th, 6th, etc. child of their parent */
+.video-carousel-item-block:nth-child(even) {
+  /* CSS declarations go here */
+  margin-top:24px;
+}
+
+
+@media (min-width: 750px) {
+  .video-carousel__slide {
+    width: var(--video-width-desktop, 280px);
+  }
+}
+
+/* Video Item Container */
+.video-carousel__item {
+  position: relative;
+  width: 100%;
+}
+
+.video-carousel__video-wrapper {
+ position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+/* Video Element */
+.video-carousel__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder when no video is set */
+.video-carousel__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.video-carousel__placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.video-carousel__placeholder span {
+  font-size: 0.875rem;
+}
+
+/* Play/Pause Button - Default state (not playing) */
+.video-carousel__play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Dark overlay when not playing */
+.video-carousel__play-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease;
+}
+
+/* Play Icon - Centered, large */
+.video-carousel__play-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 57px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-carousel__play-icon svg {
+  width: 57px;
+  height: 58px;
+  color: #fff;
+  margin-left: 4px; /* Visual centering for play triangle */
+}
+
+.video-carousel__play-btn:hover .video-carousel__play-icon {
+  transform: scale(1.08);
+}
+
+/* Pause Icon - Top right, small */
+.video-carousel__pause-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-carousel__pause-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+}
+
+.video-carousel__pause-icon:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide pause icon by default */
+.video-carousel__pause-icon {
+  display: none;
+}
+
+/* === PLAYING STATE === */
+
+/* Hide play icon when playing */
+.video-carousel__item.is-playing .video-carousel__play-icon {
+  display: none;
+}
+
+/* Show pause icon when playing */
+.video-carousel__item.is-playing .video-carousel__pause-icon {
+  display: flex;
+}
+
+/* Remove dark overlay when playing */
+.video-carousel__item.is-playing .video-carousel__play-btn::before {
+  opacity: 0;
+}
+
+/* Make button only cover the pause icon area when playing */
+.video-carousel__item.is-playing .video-carousel__play-btn {
+  inset: auto;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+}
+
+/* Caption Overlay */
+.video-carousel__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 1rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 750px) {
+  .video-carousel__play-icon{
+    width: 72px;
+    height: 72px;
+  }
+
+  .video-carousel__pause-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .video-carousel__play-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .video-carousel__pause-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .video-carousel__video-wrapper {
+    border-radius: 16px;
+  }
+  
+  .video-carousel__caption {
+    font-size: 0.9375rem;
+    padding: 4rem 1.25rem 1.25rem;
+  }
+}
+
+/* Dragging state - disable pointer events on videos */
+.video-carousel.is-dragging .video-carousel__play-btn {
+  pointer-events: none;
+}
+
+/* Accessibility - focus states */
+.video-carousel__play-btn:focus-visible .video-carousel__play-icon,
+.video-carousel__play-btn:focus-visible .video-carousel__pause-icon {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .video-carousel__play-icon,
+  .video-carousel__pause-icon,
+  .video-carousel__play-btn::before {
+    transition: none;
+  }
+}

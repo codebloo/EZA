@@ -1,0 +1,395 @@
+{%- style -%}
+  .testimonials-{{ section.id }} {
+    background-color: {{ section.settings.color_background }};
+    color: {{ section.settings.color_text }};
+  }
+}
+{%- endstyle -%}
+{{ 'eza-testimonials.css' |asset_url |stylesheet_tag }}
+<div
+  class="testimonials-section testimonials-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="testimonials"
+  data-aos>
+    <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="section-header">
+        <h2>{{ section.settings.title | escape }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="slideshow-wrapper">
+        <div class="testimonials-slider" id="Testimonials-{{ section.id }}" data-count="{{ section.blocks.size }}">
+          {%- for block in section.blocks -%}
+            <div
+              class="testimonials-slide testimonials-slide--{{ block.id }}"
+              data-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}>
+              <blockquote class="testimonials-slider__text">
+                {%- if block.settings.icon == 'quote' -%}
+                  <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766Zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766Z" fill-rule="evenodd"/></svg></span>
+                {%- elsif block.settings.icon contains 'stars' -%}
+                  {%- assign stars_length = block.settings.icon | split: '-' | first -%}
+                  <div class="testimonial-stars">
+                    {%- for i in (1..stars_length) -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17" width="18" height="17" class="icon-star">
+                        <path d="m3.4 16.8q-0.2-0.1-0.3-0.4 0-0.2 0.1-0.6l1.7-5-4.3-3.1q-0.3-0.2-0.4-0.4-0.1-0.2-0.1-0.4 0.1-0.3 0.3-0.4 0.2-0.1 0.6-0.1h5.3l1.6-5q0.1-0.4 0.3-0.5 0.2-0.2 0.4-0.2 0.2 0 0.4 0.2 0.2 0.1 0.3 0.5l1.6 5h5.3q0.4 0 0.6 0.1 0.2 0.1 0.3 0.4 0.1 0.2-0.1 0.4-0.1 0.2-0.4 0.4l-4.3 3.1 1.7 5q0.1 0.4 0.1 0.6-0.1 0.3-0.2 0.4-0.2 0.2-0.5 0.1-0.2 0-0.5-0.2l-4.3-3.1-4.3 3.1q-0.3 0.2-0.5 0.2-0.2 0.1-0.4-0.1zm67.6-10.8" fill="#7C7C7C"/>
+                      </svg>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.testimonial != blank -%}
+                  <div class="rte-setting">{{ block.settings.testimonial }}</div>
+                {%- endif -%}
+
+                {%- if block.settings.image != blank or block.settings.author != blank or block.settings.author_info != blank -%}
+                  <div class="testimonial-meta">
+                    {%- if block.settings.image != blank -%}
+                      <div
+                        class="testimonial-image{% if section.settings.round_images %} testimonial-image--round{% endif %}">
+                        <div class="image-wrap"
+                          {% if section.settings.round_images == false %}
+                            style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                          {% endif %}
+                        >  
+                          {%- liquid
+                            if section.settings.round_images
+                              assign sizeVariable = '56px'
+                            else
+                              assign sizeVariable = '122px'
+                            endif
+
+                            assign fallback = sizeVariable
+                          -%}
+                          {%- render 'image-element',
+                            img: block.settings.image,
+                            sizeVariable: sizeVariable,
+                            fallback: fallback,
+                            widths: '180, 360, 540, 720',
+                          -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    <div class="testimonial-author__details">
+                      {%- if block.settings.author != blank -%}
+                        <cite>{{ block.settings.author | escape }}</cite>
+                      {%- endif -%}
+                      {%- if block.settings.author_info != blank -%}
+                        <p>{{ block.settings.author_info | escape }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+              </blockquote>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.blocks.size > 1 -%}
+        {%- liquid 
+          assign progressbar__class = ''
+          if section.blocks.size == 3
+            assign progressbar__class = 'large-up--hide'
+          elsif section.blocks.size == 2
+            assign progressbar__class = 'medium-up--hide'
+          endif
+        -%}
+
+        <div class="testimonial-progressbar {{ progressbar__class }}">
+          <div class="testimonial-progressbar__bar" style="width: {{ 1 | times: 100.00 | divided_by: section.blocks.size }}%"> </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.viewmore_label != blank -%}
+        <div class="testimonial-viewmore">
+          <a href="{{ section.settings.viewmore_link }}" class="testimonial-viewmore__link">
+            {{ section.settings.viewmore_label }} <span class="small--hide" id="total-yotpo-reviews">(0)</span>
+          </a>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  const appKey = '{{section.settings.app_key}}';
+  const productId = '7762223628335'; // EZ-A (12 Count)
+
+  fetch(`https://api-cdn.yotpo.com/v3/storefront/store/${appKey}/product/${productId}/top_reviews?reviewType=product`)
+    .then(res => res.json())
+    .then(data => {
+      const totalReviews = data.bottomline?.totalReview || 0;
+      document.getElementById('total-yotpo-reviews').innerText = '(' + totalReviews + ')';
+    })
+    .catch(err => console.error('Error fetching reviews:', err));
+</script>
+{% schema %}
+{
+  "name": "EZ-A Testimonials",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Don't take our word for it"
+    },
+    {
+      "type": "checkbox",
+      "id": "round_images",
+      "label": "Round Images",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "viewmore_label",
+      "label": "View more button label",
+      "default": "Read All Reviews"
+    },
+    {
+      "type": "url",
+      "id": "viewmore_link",
+      "label": "View more button link"
+    },
+    {
+      "type": "text",
+      "id":"app_key",
+      "label": "Yotpo App Key",
+      "default": "oPb9MA1aPqEuD1yzGXzdeeVDnZxHOJaor4WMTDvM"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background Color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text Color",
+      "default": "#1c1d1d"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "5-stars",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "quote",
+              "label": "Quote"
+            },
+            {
+              "value": "5-stars",
+              "label": "5 Stars"
+            },
+            {
+              "value": "4-stars",
+              "label": "4 Stars"
+            },
+            {
+              "value": "3-stars",
+              "label": "3 Stars"
+            },
+            {
+              "value": "2-stars",
+              "label": "2 Stars"
+            },
+            {
+              "value": "1-star",
+              "label": "1 Star"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Testimonial",
+          "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Author name"
+        },
+        {
+          "type": "text",
+          "id": "author_info",
+          "label": "Author Info",
+          "default": "Los Angeles, CA"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EZ-A Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}
+<script>
+  class DragCarousel {
+  constructor(container, options = {}) {
+    this.container = container;
+    this.slides = [...container.children];
+    this.options = {
+      snapToSlide: true,
+      momentum: 0.92,
+      dragMultiplier: 1,
+      ...options
+    };
+    
+    this.isDragging = false;
+    this.startX = 0;
+    this.scrollLeft = 0;
+    this.velocity = 0;
+    this.rafId = null;
+    
+    this.init();
+  }
+
+  init() {
+    // Mouse events
+    this.container.addEventListener('mousedown', (e) => this.startDrag(e));
+    window.addEventListener('mousemove', (e) => this.drag(e));
+    window.addEventListener('mouseup', () => this.endDrag());
+    
+    // Touch events
+    this.container.addEventListener('touchstart', (e) => this.startDrag(e), { passive: true });
+    this.container.addEventListener('touchmove', (e) => this.drag(e), { passive: true });
+    this.container.addEventListener('touchend', () => this.endDrag());
+    
+    // Prevent drag on links/images
+    this.container.querySelectorAll('a, img').forEach(el => {
+      el.addEventListener('dragstart', (e) => e.preventDefault());
+    });
+    
+    // Style setup
+    this.container.style.cursor = 'grab';
+    this.container.style.overflow = 'hidden';
+  }
+
+  getX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+  }
+
+  startDrag(e) {
+    this.isDragging = true;
+    this.startX = this.getX(e);
+    this.scrollLeft = this.container.scrollLeft;
+    this.prevX = this.startX;
+    this.velocity = 0;
+    this.container.style.cursor = 'grabbing';
+    cancelAnimationFrame(this.rafId);
+  }
+
+  drag(e) {
+    if (!this.isDragging) return;
+    
+    const x = this.getX(e);
+    const delta = (x - this.startX) * this.options.dragMultiplier;
+    this.velocity = this.prevX - x;
+    this.prevX = x;
+    
+    this.container.scrollLeft = this.scrollLeft - delta;
+    this.onScroll?.();
+  }
+
+  endDrag() {
+    if (!this.isDragging) return;
+    this.isDragging = false;
+    this.container.style.cursor = 'grab';
+    
+    // Apply momentum
+    this.applyMomentum();
+  }
+
+  applyMomentum() {
+    if (Math.abs(this.velocity) > 0.5) {
+      this.container.scrollLeft += this.velocity;
+      this.velocity *= this.options.momentum;
+      this.onScroll?.();
+      this.rafId = requestAnimationFrame(() => this.applyMomentum());
+    } else if (this.options.snapToSlide) {
+      this.snapToNearest();
+    }
+  }
+
+  snapToNearest() {
+    const slideWidth = this.slides[0]?.offsetWidth || 0;
+    const gap = parseInt(getComputedStyle(this.container).gap) || 0;
+    const snapUnit = slideWidth + gap;
+    const target = Math.round(this.container.scrollLeft / snapUnit) * snapUnit;
+    
+    this.container.scrollTo({ left: target, behavior: 'smooth' });
+    setTimeout(() => this.onScroll?.(), 300);
+  }
+
+  // Progress: 0 to 1
+  get progress() {
+    const max = this.container.scrollWidth - this.container.clientWidth;
+    return max > 0 ? this.container.scrollLeft / max : 0;
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('#Testimonials-{{ section.id }}');
+  const progressBar = document.querySelector('.testimonial-progressbar__bar');
+  const slideCount = {{ section.blocks.size }};
+  
+  if (slider) {
+    const carousel = new DragCarousel(slider, {
+      snapToSlide: true,
+      momentum: 0.92
+    });
+    
+    carousel.onScroll = () => {
+      if (progressBar) {
+        // Bar is 1/slideCount wide, so max left position is (slideCount-1)/slideCount
+        const maxLeft = 100 - (100 / slideCount);
+        progressBar.style.left = `${maxLeft * carousel.progress}%`;
+      }
+    };
+  }
+});
+</script>

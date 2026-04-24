@@ -1,0 +1,25 @@
+
+{% render 'eza-ingredients': layout:block.settings.desktop_layout %}
+
+{% schema %}
+{
+  "name": "EZ-A Ingredients",
+  "tag": "eza-ingredients",
+  "settings": [
+    {
+    "type": "header",
+    "content": "About this section",
+"info": "This section is populated by Metaobjects, edit them in Content > Metaobjects > Key Ingredients"},
+{
+"type":"checkbox",
+"id": "desktop_layout",
+"label": "Horizontal layout on desktop"}
+  ],
+  "presets": [
+    {
+      "name": "EZ-A Ingredients",
+      "category": "EZ-A"
+    }
+  ]
+}
+{% endschema %}

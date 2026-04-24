@@ -1,0 +1,119 @@
+{% comment %}
+  Video Carousel Item Block Schema
+  Child block that contains individual video settings
+  This block is rendered inside the video-carousel parent block
+{% endcomment %}
+
+{% comment %}
+  Video Carousel Item Snippet
+  Renders a single video slide with play/pause overlay
+  
+  Usage:
+  {% render 'video-carousel-item', block: block, index: forloop.index %}
+  
+  Block settings expected:
+  - block.settings.video: Video file
+  - block.settings.poster: Optional poster image
+  - block.settings.caption: Optional caption text
+  - block.settings.link: Optional URL
+{% endcomment %}
+
+{% comment %}
+  Video Carousel Item Snippet
+  Renders a single video slide with play/pause overlay
+{% endcomment %}
+
+<div class="video-carousel__slide" data-carousel-slide {{ block.shopify_attributes }}>
+  <div class="video-carousel__item" data-video-item data-video-index="{{ index }}">
+    <div class="video-carousel__video-wrapper">
+      {% if block.settings.video != blank %}
+        {% if block.settings.poster != blank %}
+          {{ block.settings.video | video_tag: 
+            class: 'video-carousel__video',
+            loop: false,
+            playsinline: true,
+            preload: 'metadata',
+            image_size: '600x',
+            poster: block.settings.poster
+          }}
+        {% else %}
+          {{ block.settings.video | video_tag: 
+            class: 'video-carousel__video',
+            loop:false,
+            playsinline: true,
+            preload: 'metadata',
+            image_size: '600x'
+          }}
+        {% endif %}
+      {% else %}
+        <div class="video-carousel__placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Add video</span>
+        </div>
+      {% endif %}
+      
+      <button 
+        class="video-carousel__play-btn" 
+        data-play-btn
+        aria-label="Play video"
+        type="button"
+      >
+        <span class="video-carousel__play-icon" data-icon-play>
+         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.75 49.5C21.3438 49.5 18.1406 48.8516 15.1406 47.5547C12.1562 46.2734 9.53125 44.5 7.26562 42.2344C5 39.9688 3.21875 37.3438 1.92188 34.3594C0.640625 31.3594 0 28.1562 0 24.75C0 21.3281 0.640625 18.125 1.92188 15.1406C3.21875 12.1406 5 9.50781 7.26562 7.24219C9.53125 4.96094 12.1562 3.1875 15.1406 1.92188C18.1406 0.640625 21.3438 0 24.75 0C28.1719 0 31.375 0.640625 34.3594 1.92188C37.3594 3.1875 39.9922 4.96094 42.2578 7.24219C44.5234 9.50781 46.2969 12.1406 47.5781 15.1406C48.875 18.125 49.5234 21.3281 49.5234 24.75C49.5234 28.1562 48.875 31.3594 47.5781 34.3594C46.2969 37.3438 44.5234 39.9688 42.2578 42.2344C39.9922 44.5 37.3594 46.2734 34.3594 47.5547C31.375 48.8516 28.1719 49.5 24.75 49.5ZM24.75 43.3359C27.3281 43.3359 29.7344 42.8516 31.9688 41.8828C34.2188 40.9297 36.1953 39.6016 37.8984 37.8984C39.6016 36.1797 40.9375 34.2031 41.9062 31.9688C42.875 29.7188 43.3594 27.3125 43.3594 24.75C43.3594 22.1719 42.875 19.7578 41.9062 17.5078C40.9375 15.2578 39.6016 13.2891 37.8984 11.6016C36.1953 9.89844 34.2188 8.57031 31.9688 7.61719C29.7344 6.64844 27.3281 6.16406 24.75 6.16406C22.1875 6.16406 19.7812 6.64844 17.5312 7.61719C15.2969 8.57031 13.3203 9.89844 11.6016 11.6016C9.89844 13.2891 8.5625 15.2578 7.59375 17.5078C6.64062 19.7578 6.16406 22.1719 6.16406 24.75C6.16406 27.3125 6.64062 29.7188 7.59375 31.9688C8.5625 34.2031 9.89844 36.1797 11.6016 37.8984C13.3203 39.6016 15.2969 40.9297 17.5312 41.8828C19.7812 42.8516 22.1875 43.3359 24.75 43.3359ZM21.0938 33.9844C20.5781 34.2812 20.0547 34.4062 19.5234 34.3594C19.0078 34.2969 18.5781 34.0859 18.2344 33.7266C17.8906 33.3672 17.7188 32.8906 17.7188 32.2969V17.1797C17.7188 16.5859 17.8906 16.1094 18.2344 15.75C18.5781 15.3906 19.0156 15.1875 19.5469 15.1406C20.0781 15.0781 20.5938 15.2031 21.0938 15.5156L33.5391 22.8516C34.0234 23.1484 34.3438 23.5391 34.5 24.0234C34.6719 24.5078 34.6797 24.9922 34.5234 25.4766C34.3672 25.9609 34.0391 26.3516 33.5391 26.6484L21.0938 33.9844Z" fill="white"/>
+</svg>
+
+        </span>
+        <span class="video-carousel__pause-icon" data-icon-pause>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+        </span>
+      </button>
+      
+      {% if block.settings.caption != blank %}
+        <div class="video-carousel__caption">
+          {{ block.settings.caption }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "EZA UGC Video Item",
+  "tag": "div",
+  "class": "video-carousel-item-block",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster image (optional)",
+      "info": "Displayed before video plays. If not set, first frame is used."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption (optional)",
+      "info": "Overlay text on the video"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link (optional)",
+      "info": "URL to navigate to when tapped"
+    }
+  ],
+  "presets": [
+    {
+   "name": "EZA UGC Video Item"}
+  ]
+}
+{% endschema %}

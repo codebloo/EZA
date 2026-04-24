@@ -1,0 +1,1061 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "title": {
+          "type": "text",
+          "name": "t:names.title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "text",
+          "name": "t:names.content",
+          "settings": {
+            "text": "{{ closest.page.content }}",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 0
+      }
+    },
+    "hero_iQNg7U": {
+      "type": "hero",
+      "blocks": {
+        "text_7LwJhe": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>FAQs</h1>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_7LwJhe"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/ourstory-hero.webp",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-cf9d7b3b-324b-4d52-967a-c6349c9b374c",
+        "toggle_overlay": true,
+        "overlay_color": "#202020",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "eza_section_MmbGMJ": {
+      "type": "eza-section",
+      "blocks": {
+        "text_paTQAx": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>About EZ-A</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "eza_group_43Pwdr": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 0,
+            "width": "custom",
+            "custom_width": 50,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "eza_accordion_PRwmfc": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "pdp-faq",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "paragraph",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_4EKHQa": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "How much caffeine is in it?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_3JFXzX": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>EZ-A Hyper Strength contains 125 mg of caffeine per capsule.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_3JFXzX"
+                  ]
+                },
+                "accordion_row_fRYM6r": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Should I take it with food?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_hwfwmr": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>For optimal results, you'll wanna take EZ-A with a light snack like those leftover saltines from the break room. Some folks get that tingly niacin feeling on an empty stomach, which isn't dangerous, but when it sneaks up on you it might be surprising.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_hwfwmr"
+                  ]
+                },
+                "accordion_row_jmFtUP": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Why does my skin turn red?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_EgcYqH": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Got that sudden red glow? It's just a niacin (Vitamin B) flush. Totally normal, completely harmless, and fades away in minutes. While you wait, practice your just-thinking-really-damn-hard face for maximum office intimidation.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_EgcYqH"
+                  ]
+                },
+                "accordion_row_rBFhLM": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Is there any sugar in it?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_P3eGyU": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Hell no. Your brain deserves better than a cheap sugar rush followed by the inevitable crash right before that awkward conversation with HR about your \"work-life balance.\"</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_P3eGyU"
+                  ]
+                },
+                "accordion_row_ajDTbk": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "How quickly does it work?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_CHr9qb": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Faster than Usain Bolt running a 5K (like 10-20 minutes fast).</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_CHr9qb"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_4EKHQa",
+                "accordion_row_fRYM6r",
+                "accordion_row_jmFtUP",
+                "accordion_row_rBFhLM",
+                "accordion_row_ajDTbk"
+              ]
+            }
+          },
+          "block_order": [
+            "eza_accordion_PRwmfc"
+          ]
+        },
+        "text_YziDB4": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Common Questions</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "eza_group_wGTFEA": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 0,
+            "width": "custom",
+            "custom_width": 50,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "eza_accordion_eiDdaw": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "paragraph",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_mwrVYJ": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "How do I reach customer support?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_3HWtcR": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Hit us up at <a href=\"mailto:hi@ez-a.com\" title=\"mailto:hi@ez-a.com\">hi@ez-a.com </a>or fill out the form on our<a href=\"/pages/contact\" title=\"Contact\"> contact page</a></p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_3HWtcR"
+                  ]
+                },
+                "accordion_row_GHfHkb": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Does it really help with productivity?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_KwHDQy": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>You better believe it. Most people report a big increase in their day-to-day productivity with EZ-A.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_KwHDQy"
+                  ]
+                },
+                "accordion_row_8VAeq4": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Can I make an order from a different country?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_3HL3Lq": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Currently, we are only shipping orders within the United States.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_3HL3Lq"
+                  ]
+                },
+                "accordion_row_6ietdg": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Which payment options do you offer?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_rznJWE": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We currently accept all major credit and debit cards through Shop Pay, PayPal, Apple Pay, & Amazon Pay.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_rznJWE"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_mwrVYJ",
+                "accordion_row_GHfHkb",
+                "accordion_row_8VAeq4",
+                "accordion_row_6ietdg"
+              ]
+            }
+          },
+          "block_order": [
+            "eza_accordion_eiDdaw"
+          ]
+        },
+        "text_gtmt4j": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Affiliate Program</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "eza_group_Pd7jWC": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 0,
+            "width": "custom",
+            "custom_width": 50,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "eza_accordion_QNw7MT": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "paragraph",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_TcUiXw": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "How are sales commissioned?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Ww7R9U": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Hit us up at <a href=\"mailto:hi@ez-a.com\" title=\"mailto:hi@ez-a.com\">hi@ez-a.com </a>to find out the latest on how our dealers get paid.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Ww7R9U"
+                  ]
+                },
+                "accordion_row_CyUPPr": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Is there a cap on how much I can earn?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_gzWdhq": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Nope!</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_gzWdhq"
+                  ]
+                },
+                "accordion_row_aAwdNP": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "How are my sales tracked?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Ahmbk4": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Each dealer gets their own unique referral link. Any subsequent sales made from people using that link are attributed to the associated dealer account.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Ahmbk4"
+                  ]
+                },
+                "accordion_row_fHhVmX": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Can I use paid advertising?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Typf9m": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Yes, but you may not use Illicit Labs' trademarks as keywords for paid search ads. Hit us up at <a href=\"mailto:hi@ez-a.com\" title=\"mailto:hi@ez-a.com\">hi@ez-a.com </a>for more details.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Typf9m"
+                  ]
+                },
+                "accordion_row_8i8RcG": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Is there a fee to join?",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_MMAfwF": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>No, there's no fee to join the Illicit Labs dealer program.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_MMAfwF"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_TcUiXw",
+                "accordion_row_CyUPPr",
+                "accordion_row_aAwdNP",
+                "accordion_row_fHhVmX",
+                "accordion_row_8i8RcG"
+              ]
+            }
+          },
+          "block_order": [
+            "eza_accordion_QNw7MT"
+          ]
+        }
+      },
+      "block_order": [
+        "text_paTQAx",
+        "eza_group_43Pwdr",
+        "text_YziDB4",
+        "eza_group_wGTFEA",
+        "text_gtmt4j",
+        "eza_group_Pd7jWC"
+      ],
+      "name": "EZ-A Custom Section",
+      "settings": {
+        "custom_class": "",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_iQNg7U",
+    "eza_section_MmbGMJ"
+  ]
+}

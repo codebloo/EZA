@@ -1,0 +1,45 @@
+{%- comment -%}
+  Renders all entries from the `how_to_take` metaobject
+  Fields:
+    - number (single line text)
+    - number_color (single choice)
+    - name (single line text)
+    - text (multiline text)
+
+  Usage:
+    {% render 'eza-how-to-tale' %}
+{%- endcomment -%}
+
+{{ 'eza-how-to-take.css' | asset_url | stylesheet_tag }}
+
+  <div class="how-tos-grid desktop-layout-{{ layout }}">
+    {%  if headline != blank %}
+    <div class="how-tos-headline">{{ headline }}</div>
+    {% endif %}
+    {% assign ingredients = metaobjects.how_to_take.values | sort_natural: 'number' %}
+    {%- for ingredient in ingredients -%}
+      {%- assign color_value = ingredient.number_color | default: '' -%}
+      {%- assign color_class = color_value | handleize -%}
+
+      <article class="how-to-item">
+      
+        <div class="how-to-number how-to-number--{{ color_class }}">
+          {{ ingredient.number }}
+        </div>
+  <div class="how-to-item-right">
+        {%- if ingredient.name != blank -%}
+          <h3 class="how-to-name">
+            {{ ingredient.name }}
+          </h3>
+        {%- endif -%}
+
+        {%- if ingredient.text != blank -%}
+          <div class="how-to-text">
+            {{ ingredient.text }}
+          </div>
+        {%- endif -%}
+     </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
