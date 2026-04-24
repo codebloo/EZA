@@ -1488,7 +1488,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -1858,7 +1858,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "When will I get my order?",
+                    "heading": "How is this different from ADHD medication?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -1899,7 +1899,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "When will I get my order?",
+                    "heading": "Is it actually safe?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -1935,6 +1935,88 @@
                   "block_order": [
                     "text_enWWMh"
                   ]
+                },
+                "accordion_row_tbLRbt": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "What is your shipping and returns policy?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_4yy4rV": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_4yy4rV"
+                  ]
+                },
+                "accordion_row_wadXpQ": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Do you ship internationally?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_AN3j6Y": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_AN3j6Y"
+                  ]
                 }
               },
               "block_order": [
@@ -1947,7 +2029,9 @@
                 "accordion_row_jHNaa6",
                 "accordion_row_3m4Vbj",
                 "accordion_row_JhATUz",
-                "accordion_row_XrWFpD"
+                "accordion_row_XrWFpD",
+                "accordion_row_tbLRbt",
+                "accordion_row_wadXpQ"
               ]
             }
           },
