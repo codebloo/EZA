@@ -3115,32 +3115,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_UPy8Ht": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Still Thinking About it? Here’s Our FAQs</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_pVyRyE": {
               "type": "text",
               "name": "t:names.text",
@@ -3316,12 +3290,38 @@
                 "accordion_row_mi78aH",
                 "accordion_row_fBgTam"
               ]
+            },
+            "text_aEfNYM": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><strong>Warning: Niacin flush</strong></p><p>Some people experience a warm, flushed sensation and temporary skin redness shortly after taking EZ-A. This is a niacin flush, a well-documented response to Vitamin B3. It is harmless, non-allergenic, and typically fades within 20-30 minutes. Taking EZ-A with food minimizes it significantly for most people.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#f1f1f1",
+                "corner_radius": 0,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 16,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "text_UPy8Ht",
             "text_pVyRyE",
-            "eza_accordion_qXCxCW"
+            "eza_accordion_qXCxCW",
+            "text_aEfNYM"
           ]
         }
       },
