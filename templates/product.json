@@ -2924,6 +2924,53 @@
         "padding-block-end": 32
       }
     },
+    "eza_section_FdNEqH": {
+      "type": "eza-section",
+      "blocks": {
+        "eza_ingredients_LpqaRC": {
+          "type": "eza-ingredients",
+          "name": "EZ-A Ingredients",
+          "settings": {
+            "desktop_layout": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "eza_ingredients_LpqaRC"
+      ],
+      "name": "EZ-A Custom Section",
+      "settings": {
+        "custom_class": "",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "eza_section_yLqyay": {
       "type": "eza-section",
       "blocks": {
@@ -3716,6 +3763,7 @@
     "eza_section_kCF3a7",
     "eza_section_NMjAFf",
     "eza_section_cmtGXd",
+    "eza_section_FdNEqH",
     "eza_section_yLqyay",
     "1762744600c1680ef3"
   ]
