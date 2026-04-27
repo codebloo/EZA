@@ -3492,7 +3492,10 @@
         "text_dg9mMH",
         "eza_group_RDWnXj"
       ],
-      "name": "EZ-A Custom Section",
+      "custom_css": [
+        ".gallery-image{aspect-ratio: 1;}"
+      ],
+      "name": "Gallery",
       "settings": {
         "custom_class": "",
         "desktop_hidden": false,
