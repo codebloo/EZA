@@ -3001,9 +3001,80 @@
     "eza_section_yLqyay": {
       "type": "eza-section",
       "blocks": {
+        "eza_group_hdy8ch": {
+          "type": "eza-group",
+          "name": "how to take image",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_bBhLbU": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/FAQ_image.png",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_bBhLbU"
+          ]
+        },
         "eza_group_jtRgxj": {
           "type": "eza-group",
-          "name": "faqs",
+          "name": "how to",
           "settings": {
             "custom_class": "",
             "desktop_hidden": false,
@@ -3074,13 +3145,13 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Still not sure? Fair enough. Here are the questions people actually ask.</p>",
+                "text": "<p>First time? Here’s how to get the most out of EZ-A.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -3238,8 +3309,300 @@
                   "block_order": [
                     "text_RXex9r"
                   ]
+                }
+              },
+              "block_order": [
+                "accordion_row_jk68PK",
+                "accordion_row_mi78aH",
+                "accordion_row_fBgTam"
+              ]
+            }
+          },
+          "block_order": [
+            "text_UPy8Ht",
+            "text_pVyRyE",
+            "eza_accordion_qXCxCW"
+          ]
+        }
+      },
+      "block_order": [
+        "eza_group_hdy8ch",
+        "eza_group_jtRgxj"
+      ],
+      "name": "How to Take",
+      "settings": {
+        "custom_class": "",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 48,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "eza_section_7WQD4W": {
+      "type": "eza-section",
+      "blocks": {
+        "eza_group_4rpUfT": {
+          "type": "eza-group",
+          "name": "faqs",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_7G9WEN": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Still Thinking About it? Here’s Our FAQs</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_LRBCdp": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Still not sure? Fair enough. Here are the questions people actually ask.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "eza_accordion_7yU4PA": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_GWQNQi": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Will I actually feel these? I have been burned before.",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_ddTCrP": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_ddTCrP"
+                  ]
                 },
-                "accordion_row_mnjTBA": {
+                "accordion_row_MHJ8eC": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "When is the best time to take it?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_9TEMbq": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_9TEMbq"
+                  ]
+                },
+                "accordion_row_FPjGQq": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Can I take it on an empty stomach?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_QRtYb7": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_QRtYb7"
+                  ]
+                },
+                "accordion_row_q3E6Ue": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3250,7 +3613,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_GqYdMh": {
+                    "text_UPTtLz": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3277,10 +3640,10 @@
                     }
                   },
                   "block_order": [
-                    "text_GqYdMh"
+                    "text_UPTtLz"
                   ]
                 },
-                "accordion_row_MjLHrY": {
+                "accordion_row_YcR93n": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3291,7 +3654,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_aXdNPc": {
+                    "text_FtYzTz": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3318,10 +3681,10 @@
                     }
                   },
                   "block_order": [
-                    "text_aXdNPc"
+                    "text_FtYzTz"
                   ]
                 },
-                "accordion_row_feKBGx": {
+                "accordion_row_GnV3xX": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3332,7 +3695,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_tgmFVV": {
+                    "text_kPMGwN": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3359,10 +3722,10 @@
                     }
                   },
                   "block_order": [
-                    "text_tgmFVV"
+                    "text_kPMGwN"
                   ]
                 },
-                "accordion_row_jHNaa6": {
+                "accordion_row_tjYKNB": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3373,7 +3736,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_JekxDh": {
+                    "text_tmtw7n": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3400,10 +3763,10 @@
                     }
                   },
                   "block_order": [
-                    "text_JekxDh"
+                    "text_tmtw7n"
                   ]
                 },
-                "accordion_row_3m4Vbj": {
+                "accordion_row_fWXpPx": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3414,7 +3777,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_GUQNBP": {
+                    "text_eiVX6B": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3441,10 +3804,10 @@
                     }
                   },
                   "block_order": [
-                    "text_GUQNBP"
+                    "text_eiVX6B"
                   ]
                 },
-                "accordion_row_JhATUz": {
+                "accordion_row_tYdag8": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3455,7 +3818,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_TEUBjE": {
+                    "text_CNUXaJ": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3482,10 +3845,10 @@
                     }
                   },
                   "block_order": [
-                    "text_TEUBjE"
+                    "text_CNUXaJ"
                   ]
                 },
-                "accordion_row_XrWFpD": {
+                "accordion_row_y6JbNb": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3496,7 +3859,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_enWWMh": {
+                    "text_9TNXzr": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3523,10 +3886,10 @@
                     }
                   },
                   "block_order": [
-                    "text_enWWMh"
+                    "text_9TNXzr"
                   ]
                 },
-                "accordion_row_tbLRbt": {
+                "accordion_row_NcxRWa": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3537,7 +3900,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_4yy4rV": {
+                    "text_xRcfwD": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3564,10 +3927,10 @@
                     }
                   },
                   "block_order": [
-                    "text_4yy4rV"
+                    "text_xRcfwD"
                   ]
                 },
-                "accordion_row_wadXpQ": {
+                "accordion_row_8nP6f7": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
@@ -3578,7 +3941,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_AN3j6Y": {
+                    "text_8VGeBe": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -3605,33 +3968,33 @@
                     }
                   },
                   "block_order": [
-                    "text_AN3j6Y"
+                    "text_8VGeBe"
                   ]
                 }
               },
               "block_order": [
-                "accordion_row_jk68PK",
-                "accordion_row_mi78aH",
-                "accordion_row_fBgTam",
-                "accordion_row_mnjTBA",
-                "accordion_row_MjLHrY",
-                "accordion_row_feKBGx",
-                "accordion_row_jHNaa6",
-                "accordion_row_3m4Vbj",
-                "accordion_row_JhATUz",
-                "accordion_row_XrWFpD",
-                "accordion_row_tbLRbt",
-                "accordion_row_wadXpQ"
+                "accordion_row_GWQNQi",
+                "accordion_row_MHJ8eC",
+                "accordion_row_FPjGQq",
+                "accordion_row_q3E6Ue",
+                "accordion_row_YcR93n",
+                "accordion_row_GnV3xX",
+                "accordion_row_tjYKNB",
+                "accordion_row_fWXpPx",
+                "accordion_row_tYdag8",
+                "accordion_row_y6JbNb",
+                "accordion_row_NcxRWa",
+                "accordion_row_8nP6f7"
               ]
             }
           },
           "block_order": [
-            "text_UPy8Ht",
-            "text_pVyRyE",
-            "eza_accordion_qXCxCW"
+            "text_7G9WEN",
+            "text_LRBCdp",
+            "eza_accordion_7yU4PA"
           ]
         },
-        "eza_group_hdy8ch": {
+        "eza_group_Q4Vqmb": {
           "type": "eza-group",
           "name": "faq image",
           "settings": {
@@ -3674,7 +4037,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "image_bBhLbU": {
+            "image_mkxgLF": {
               "type": "image",
               "name": "t:names.image",
               "settings": {
@@ -3699,13 +4062,13 @@
             }
           },
           "block_order": [
-            "image_bBhLbU"
+            "image_mkxgLF"
           ]
         }
       },
       "block_order": [
-        "eza_group_jtRgxj",
-        "eza_group_hdy8ch"
+        "eza_group_4rpUfT",
+        "eza_group_Q4Vqmb"
       ],
       "name": "FAQS",
       "settings": {
@@ -3792,6 +4155,7 @@
     "eza_section_FdNEqH",
     "eza_section_cmtGXd",
     "eza_section_yLqyay",
+    "eza_section_7WQD4W",
     "1762744600c1680ef3"
   ]
 }
