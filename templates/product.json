@@ -1949,7 +1949,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
-                    "image_upload": "shopify://shop_images/Icon-bolt.png",
+                    "image_upload": "shopify://shop_images/icon-bulb.png",
                     "width": 80,
                     "link": "",
                     "open_in_new_tab": false
