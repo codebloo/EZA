@@ -3165,10 +3165,10 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Will I actually feel these? I have been burned before.",
+                    "heading": "Take it easy. Start with one capsule. Wait 30 minutes before you decide you need another. About 60% of people feel the full",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
+                    "image_upload": "shopify://shop_images/icon-step-1.svg",
                     "width": 20
                   },
                   "blocks": {
@@ -3209,7 +3209,7 @@
                     "heading": "When is the best time to take it?",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
+                    "image_upload": "shopify://shop_images/icon-step-2.svg",
                     "width": 20
                   },
                   "blocks": {
@@ -3250,7 +3250,7 @@
                     "heading": "Can I take it on an empty stomach?",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
+                    "image_upload": "shopify://shop_images/icon-step-3.svg",
                     "width": 20
                   },
                   "blocks": {
@@ -3313,7 +3313,7 @@
                 "padding-block-start": 16,
                 "padding-block-end": 16,
                 "padding-inline-start": 16,
-                "padding-inline-end": 0
+                "padding-inline-end": 16
               },
               "blocks": {}
             }
