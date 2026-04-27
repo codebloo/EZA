@@ -3244,7 +3244,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Take with food. One capsule (or two). Clock starts.</p>",
+                    "text": "<p>The shift. Warmth. Mental static settles. Most people know when it happens.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3345,7 +3345,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Take with food. One capsule (or two). Clock starts.</p>",
+                    "text": "<p>Locked in. Distractions still exist, but you’ve stopped caring about them as priorities become clear.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3446,7 +3446,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Take with food. One capsule (or two). Clock starts.</p>",
+                    "text": "<p>Still going. No spike. No drop. You look up and it has been three hours.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3547,7 +3547,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Take with food. One capsule (or two). Clock starts.</p>",
+                    "text": "<p>No crash. The energy fades out like a professional. No sudden wall, no mood drop.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
