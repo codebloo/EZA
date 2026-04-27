@@ -3218,7 +3218,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>T + 0 min</strong></p>",
+                    "text": "<p><strong>T + 20 min </strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3319,7 +3319,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>T + 0 min</strong></p>",
+                    "text": "<p><strong>T + 30 min </strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3420,7 +3420,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>T + 0 min</strong></p>",
+                    "text": "<p><strong>T + 2-4 Hours</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3521,7 +3521,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>T + 0 min</strong></p>",
+                    "text": "<p><strong>End of Day</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
