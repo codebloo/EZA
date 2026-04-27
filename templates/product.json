@@ -4076,7 +4076,7 @@
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/icon-step-1.svg",
-                    "width": 20
+                    "width": 36
                   },
                   "blocks": {
                     "text_WybARx": {
@@ -4117,7 +4117,7 @@
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/icon-step-2.svg",
-                    "width": 20
+                    "width": 36
                   },
                   "blocks": {
                     "text_NTz6bG": {
@@ -4158,7 +4158,7 @@
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/icon-step-3.svg",
-                    "width": 20
+                    "width": 36
                   },
                   "blocks": {
                     "text_RXex9r": {
