@@ -3493,7 +3493,8 @@
         "eza_group_RDWnXj"
       ],
       "custom_css": [
-        ".gallery-image {aspect-ratio: 1.28/1;}"
+        ".gallery-image {aspect-ratio: 1.28/1;}",
+        "@media query(min-width:768px){.gallery-image {aspect-ratio: 1;} }"
       ],
       "name": "Gallery",
       "settings": {
