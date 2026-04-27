@@ -3001,12 +3001,12 @@
     "eza_section_PkypqV": {
       "type": "eza-section",
       "blocks": {
-        "eza_group_8X8HKA": {
+        "eza_group_rM4f3V": {
           "type": "eza-group",
-          "name": "Image",
+          "name": "Image (mobile)",
           "settings": {
             "custom_class": "",
-            "desktop_hidden": false,
+            "desktop_hidden": true,
             "mobile_hidden": false,
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -3044,7 +3044,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "image_M7paRh": {
+            "image_6PgQwF": {
               "type": "image",
               "name": "t:names.image",
               "settings": {
@@ -3069,7 +3069,7 @@
             }
           },
           "block_order": [
-            "image_M7paRh"
+            "image_6PgQwF"
           ]
         },
         "eza_group_k3Y8JR": {
@@ -3172,11 +3172,83 @@
             "text_CM8zqa",
             "text_VkVe6d"
           ]
+        },
+        "eza_group_8X8HKA": {
+          "type": "eza-group",
+          "name": "Image (desktop)",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": true,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_M7paRh": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/IMG__Baggie_While_Swallowing.webp",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_M7paRh"
+          ]
         }
       },
       "block_order": [
-        "eza_group_8X8HKA",
-        "eza_group_k3Y8JR"
+        "eza_group_rM4f3V",
+        "eza_group_k3Y8JR",
+        "eza_group_8X8HKA"
       ],
       "name": "How Many",
       "settings": {
@@ -3194,7 +3266,7 @@
         "section_width": "page-width",
         "section_height": "small",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-70ae01a9-6dc7-4f33-8f5a-58359466982c",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
