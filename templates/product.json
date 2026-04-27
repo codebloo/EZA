@@ -3101,7 +3101,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "toggle_overlay": true,
                 "overlay_color": "#00000026",
                 "overlay_style": "gradient",
@@ -3203,7 +3203,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "toggle_overlay": true,
                 "overlay_color": "#00000026",
                 "overlay_style": "gradient",
@@ -3305,7 +3305,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "toggle_overlay": true,
                 "overlay_color": "#00000026",
                 "overlay_style": "gradient",
@@ -3407,7 +3407,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "toggle_overlay": true,
                 "overlay_color": "#00000026",
                 "overlay_style": "gradient",
@@ -3494,7 +3494,7 @@
       ],
       "custom_css": [
         ".gallery-image {aspect-ratio: 1.28/1;}",
-        "@media query(min-width:768px){.gallery-image {aspect-ratio: 1;} }"
+        "@media query(min-width:768px) {.gallery-image {aspect-ratio: 1; }}"
       ],
       "name": "Gallery",
       "settings": {
