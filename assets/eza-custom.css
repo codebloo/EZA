@@ -789,6 +789,7 @@ grid-row-gap: 0px;
 .gallery-image{
     aspect-ratio:1/28;
     background-size:cover;
+    padding:24px;
 }
 .gallery-image-title{
 color: var(--white);
@@ -807,5 +808,7 @@ line-height: normal;
 }
 
 @media (min-width: 768px) {
-.gallery-image{aspect-ratio:1;}
+.gallery-image{
+    aspect-ratio:1;
+    padding:28px 24px;}
 }
