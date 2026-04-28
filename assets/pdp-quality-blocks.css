@@ -46,6 +46,12 @@ line-height: 21px;}
 
 @media (min-width:768px){
     .pdp-quality-blocks{padding:48px 0;}
+    .all-quality-blocks{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;}
     .quality-block{border-radius:8px;}
     .quality-blocks-pretitle,
     .quality-blocks-title{text-align: center;}
