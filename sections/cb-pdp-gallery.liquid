@@ -1,6 +1,9 @@
 <div class="pdp-gallery">
     {%  assign count = 1 %}
-  {% content_for 'blocks' %}
+    {% for block in section.blocks %}
+         {% assign count = count | plus: 1 %}
+{% render '_gallery-image' %}
+{% endfor %}
 </div>
 
 {% schema %}
