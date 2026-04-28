@@ -2921,6 +2921,9 @@
         "eza_group_RDRkmA",
         "eza_group_tNhfYr"
       ],
+      "custom_css": [
+        "@media (min-width: 768px;){.baggie-desktop{padding:80px;} }"
+      ],
       "name": "Baggie Desktop",
       "settings": {
         "custom_class": "baggie-desktop",
