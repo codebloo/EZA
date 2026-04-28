@@ -14,7 +14,8 @@
     color: var(--black);
     font-size: 24px;
     font-weight: 700;
-    line-height: 1.1;}
+    line-height: 1.1;
+    margin-bottom:24px;}
 
 .all-quality-blocks{}
 
