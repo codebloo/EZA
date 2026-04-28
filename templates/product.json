@@ -3026,8 +3026,8 @@
           "name": "Gallery Image",
           "settings": {
             "image": "shopify://shop_images/gallery4.png",
-            "title": "",
-            "text": ""
+            "title": "Creative Work",
+            "text": "Stay in the flow state where you get to play with your muse."
           },
           "blocks": {}
         },
@@ -3036,8 +3036,8 @@
           "name": "Gallery Image",
           "settings": {
             "image": "shopify://shop_images/gallery3.png",
-            "title": "",
-            "text": ""
+            "title": "Back to Back Meetings",
+            "text": "Impress your team when you stay as sharp on the third call as the first."
           },
           "blocks": {}
         }
