@@ -792,6 +792,7 @@ line-height: normal;}
     justify-content: end;
     margin-bottom:4px;
     padding:24px;
+    position:relativel
 }
 .gallery-image-title{
 color: var(--white);
@@ -810,6 +811,13 @@ line-height: normal;
 }
 .gallery-image .gradient{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 43.83%, rgba(0, 0, 0, 0.90) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
+       bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+     position: absolute;
+     right: 0;
+    top: 0;
 }
 
 @media (min-width: 768px) {
