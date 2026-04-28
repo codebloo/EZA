@@ -7,35 +7,62 @@
     - text (multiline text)
 
   Usage:
-    {% render 'eza-ingredients' %}
+   {% render 'eza-ingredients': layout:block.settings.layout, mobile_accordion:block.settings.mobile_accordion %}
 {%- endcomment -%}
 {{ 'eza-ingredients.css' | asset_url | stylesheet_tag }}
 
-  <div class="key-ingredients-grid desktop-layout-{{ layout }}">
-    {% assign ingredients = metaobjects.key_ingredients.values | sort_natural: 'number' %}
-    {%- for ingredient in ingredients -%}
-      {%- assign color_value = ingredient.number_color | default: '' -%}
-      {%- assign color_class = color_value | handleize -%}
+<div class="key-ingredients-grid desktop-layout-{{ layout }}{% if mobile_accordion %} key-ingredients-grid--accordion{% endif %}">
+  {% assign ingredients = metaobjects.key_ingredients.values | sort_natural: 'number' %}
+  {%- for ingredient in ingredients -%}
+    {%- assign color_value = ingredient.number_color | default: '' -%}
+    {%- assign color_class = color_value | handleize -%}
 
+    {%- if mobile_accordion -%}
+      <accordion-custom class="key-ingredient-item key-ingredient-item--accordion">
+        <details class="details" data-testid="accordion-details">
+          <summary class="details__header">
+            <div class="key-ingredient-item-top">
+              <div class="key-ingredient-number key-ingredient-number--{{ color_class }}">
+                {{ ingredient.number }}
+              </div>
+              {%- if ingredient.name != blank -%}
+                <h3 class="key-ingredient-name">{{ ingredient.name }}</h3>
+              {%- endif -%}
+            </div>
+            <span class="svg-wrapper icon-caret icon-animated">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.83594 15.6719C6.7526 15.6719 5.73698 15.4688 4.78906 15.0625C3.84115 14.6562 3.00781 14.0938 2.28906 13.375C1.57552 12.6562 1.01563 11.8255 0.609375 10.8828C0.203125 9.9349 0 8.91927 0 7.83594C0 6.7526 0.203125 5.73958 0.609375 4.79688C1.01563 3.84896 1.57552 3.01562 2.28906 2.29687C3.00781 1.57292 3.84115 1.01042 4.78906 0.609375C5.73698 0.203125 6.7526 0 7.83594 0C8.91406 0 9.92708 0.203125 10.875 0.609375C11.8229 1.01042 12.6536 1.57292 13.3672 2.29687C14.0859 3.01562 14.6484 3.84896 15.0547 4.79687C15.4661 5.73958 15.6719 6.7526 15.6719 7.83594C15.6719 8.91927 15.4661 9.9349 15.0547 10.8828C14.6484 11.8255 14.0859 12.6562 13.3672 13.375C12.6536 14.0937 11.8229 14.6562 10.875 15.0625C9.92708 15.4688 8.91406 15.6719 7.83594 15.6719ZM7.83594 14.6641C8.77865 14.6641 9.66146 14.487 10.4844 14.1328C11.3125 13.7786 12.0391 13.2891 12.6641 12.6641C13.2891 12.0391 13.7786 11.3151 14.1328 10.4922C14.487 9.66406 14.6641 8.77865 14.6641 7.83594C14.6641 6.89323 14.487 6.00781 14.1328 5.17969C13.7786 4.35156 13.2891 3.6276 12.6641 3.00781C12.0391 2.38281 11.3125 1.89323 10.4844 1.53906C9.66146 1.1849 8.77865 1.00781 7.83594 1.00781C6.89323 1.00781 6.00781 1.1849 5.17969 1.53906C4.35677 1.89323 3.63281 2.38281 3.00781 3.00781C2.38281 3.6276 1.89323 4.35156 1.53906 5.17969C1.1849 6.00781 1.00781 6.89323 1.00781 7.83594C1.00781 8.77865 1.1849 9.66406 1.53906 10.4922C1.89323 11.3151 2.38281 12.0391 3.00781 12.6641C3.63281 13.2891 4.35677 13.7786 5.17969 14.1328C6.00781 14.487 6.89323 14.6641 7.83594 14.6641ZM8.42969 10.3828C8.30469 10.513 8.17448 10.6016 8.03906 10.6484C7.90365 10.6901 7.76823 10.6901 7.63281 10.6484C7.4974 10.6016 7.36719 10.513 7.24219 10.3828L4.00781 7C3.91406 6.90104 3.86719 6.79167 3.86719 6.67188C3.86719 6.54688 3.90885 6.4401 3.99219 6.35156C4.08073 6.25781 4.1901 6.21094 4.32031 6.21094C4.45052 6.20573 4.5599 6.25 4.64844 6.34375L7.83594 9.67187L11.0234 6.34375C11.112 6.25 11.2214 6.20573 11.3516 6.21094C11.4818 6.21094 11.5911 6.25781 11.6797 6.35156C11.7682 6.4349 11.8099 6.53906 11.8047 6.66406C11.8047 6.78906 11.7578 6.90104 11.6641 7L8.42969 10.3828Z" fill="#7C7C7C"/>
+              </svg>
+            </span>
+            <span class="svg-wrapper icon-plus">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="vertical" d="M2.75 7H11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+                <path class="horizontal" d="M7 2.75L7 11.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </summary>
+
+          {%- if ingredient.text != blank -%}
+            <div class="details-content">
+              <div class="key-ingredient-text">{{ ingredient.text }}</div>
+            </div>
+          {%- endif -%}
+        </details>
+      </accordion-custom>
+    {%- else -%}
       <div class="key-ingredient-item">
         <div class="key-ingredient-item-top">
-        <div class="key-ingredient-number key-ingredient-number--{{ color_class }}">
-          {{ ingredient.number }}
-        </div>
-
-        {%- if ingredient.name != blank -%}
-          <h3 class="key-ingredient-name">
-            {{ ingredient.name }}
-          </h3>
-        {%- endif -%}
+          <div class="key-ingredient-number key-ingredient-number--{{ color_class }}">
+            {{ ingredient.number }}
+          </div>
+          {%- if ingredient.name != blank -%}
+            <h3 class="key-ingredient-name">{{ ingredient.name }}</h3>
+          {%- endif -%}
         </div>
         {%- if ingredient.text != blank -%}
-          <div class="key-ingredient-text">
-            {{ ingredient.text }}
-          </div>
+          <div class="key-ingredient-text">{{ ingredient.text }}</div>
         {%- endif -%}
-     
       </div>
-    {%- endfor -%}
-  </div>
-
+    {%- endif -%}
+  {%- endfor -%}
+</div>
