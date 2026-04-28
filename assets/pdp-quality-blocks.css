@@ -16,7 +16,7 @@
     background-color:var(--white);
     margin-bottom:1px;
     padding:24px;}
-    
+
 .quality-block::first-child {border-radius:16px 16px 0 0;}
 .quality-block::last-child {border-radius:0 0 16px 16px;}
 
@@ -35,3 +35,7 @@ padding:8px 0;}
 color: var(--off-black);
 font-weight: 400;
 line-height: 21px;}
+
+@media (min-width:768px){
+    .quality-block{}
+}
