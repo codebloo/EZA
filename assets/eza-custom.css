@@ -901,7 +901,9 @@ padding: 16px 0;
 }
 
 @media (min-width: 768px) {
-.pdp-timeline{background-color: rgba(255, 242, 0, 0.50);}
+.pdp-timeline{
+    background-color: rgba(255, 242, 0, 0.50);
+    padding-top:28px;}
 .timeline-all-steps{
     background-color:var(--off-black);
     border-radius:16px 16px 0 0;
