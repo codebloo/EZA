@@ -811,15 +811,13 @@ line-height: 1.1;
 .gallery-image-text{font-weight: 400;}
 
 .gallery-image .gradient{
-    
-       bottom: 0;
+    bottom: 0;
     display: block;
     height: 100%;
     left: 0;
-     position: absolute;
-     right: 0;
-    top: 0;
-}
+    position: absolute;
+    right: 0;
+    top: 0;}
 
 @media (min-width: 768px) {
 .pdp-gallery{
@@ -836,7 +834,7 @@ line-height: 1.1;
     margin-bottom:0;
     padding:28px 24px;}
 
-    .pdp-gallery .all-images {
+.pdp-gallery .all-images {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(2, 1fr);
@@ -914,7 +912,6 @@ padding: 16px 0;
         max-width:100%;
         width:572px;
     }
-    .timeline-step{gap:28px;}
 .timeline-title{font-size:36px;}
 timeline-pill {padding-right: 2.5rem;}
 
