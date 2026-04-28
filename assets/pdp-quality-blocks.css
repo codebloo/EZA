@@ -5,7 +5,20 @@
 .quality-blocks-title{}
 
 .all-quality-blocks{}
+
 .quality-block{}
+
 .quality-icon{}
-.quality-title{}
-.quality-text{}
+.quality-title,
+.quality-text{
+    color: var(--off-black);
+    font-size: 16px;}
+    
+.quality-title{
+font-weight: 700;
+line-height: 1.1;}
+
+.quality-text{
+color: var(--off-black);
+font-weight: 400;
+line-height: 21px;}
