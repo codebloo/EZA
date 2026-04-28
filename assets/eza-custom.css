@@ -863,7 +863,7 @@ font-weight: 700;
 line-height: 1.1;
 text-align: center;
 }
-
+    .timeline-list{{border-top:3px solid var(--white);}
 
 .timeline-list > .shopify-block{
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
