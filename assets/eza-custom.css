@@ -786,7 +786,10 @@ grid-row-gap: 0px;
 .gallery-image-3 { grid-area: 2 / 2 / 3 / 3; }
 .gallery-image-4 { grid-area: 2 / 3 / 3 / 4; }
 
-.gallery-image{aspect-ratio:1/28;}
+.gallery-image{
+    aspect-ratio:1/28;
+    background-size:cover;
+}
 .gallery-image-title{
 color: var(--white);
 font-family: "Helvetica Neue";
