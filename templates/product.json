@@ -3550,7 +3550,7 @@
           "type": "eza-group",
           "name": "how to",
           "settings": {
-            "custom_class": "",
+            "custom_class": "how-tobox",
             "desktop_hidden": false,
             "mobile_hidden": false,
             "content_direction": "column",
