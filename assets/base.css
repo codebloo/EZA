@@ -793,7 +793,10 @@ h1,
 @media screen and (max-width: 750px) {
   h1,
 .h1.h1,
-.text-block.h1 > * {font-size: 24px;}
+.text-block.h1 > * {
+  font-size: 24px;
+  font-weight:700;}
+
 }
 
 h2,
@@ -837,6 +840,16 @@ h3,
   select.h3 {
     font-size: max(1rem, var(--font-h3--size));
   }
+}
+
+@media screen and (max-width: 750px) {
+h3,
+.h3,
+.h3.h3,
+.text-block.h3 > * {
+font-size: 24px;
+font-weight: 500;
+}
 }
 
 h4,
