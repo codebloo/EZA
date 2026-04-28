@@ -41,7 +41,7 @@
         max-width:100%;
         width:678px;
 }
-
+.desktop-layout-columns .key-ingredient-item{padding-bottom:0;}
   .desktop-layout-columns .key-ingredient-item details[open] {padding-bottom:24px;}    
       
     }
