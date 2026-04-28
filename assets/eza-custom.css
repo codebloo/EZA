@@ -899,7 +899,9 @@ line-height: 1.1;
     margin:0 auto;
     max-width:100%;
     width:572px;}
-.timeline-title{font-size:36px;}
+.timeline-title{
+    font-size:36px;
+    margin-bottom:32px;}
 timeline-pill {padding-right: 2.5rem;}
 
     
