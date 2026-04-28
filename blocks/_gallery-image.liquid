@@ -1,0 +1,37 @@
+  <div class="gallery-image gallery-image-{{ count }}">
+        <div class="gallery-image-title">{{ block.settings.title }}</div>
+         <div class="gallery-image-text">{{ block.settings.text }}</div>
+    </div>
+
+
+
+{% schema %}
+{
+  "name": "Gallery Image",
+  "tag": null,
+
+  "settings": [
+    
+   
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+     
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"},
+          {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"}
+ 
+  ],
+  "presets": [
+    {
+      "name": "Gallery Image",
+    }
+  ]
+}
+{% endschema %}
