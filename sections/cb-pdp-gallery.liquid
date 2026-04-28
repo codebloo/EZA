@@ -1,0 +1,28 @@
+<div class="pdp-gallery">
+{% for block in section.blocks %}
+    <div class="gallery-image gallery-image-{{ count }}">
+        <div class="gallery-image-title">{{ block.settings.title }}</div>
+         <div class="gallery-image-text">{{ block.settings.text }}</div>
+    </div>
+{% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "EZ-A PDP Gallery",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "_gallery-image"
+    },
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+    "presets": [
+    {
+      "name": "PDP Gallery",
+    }
+  ]
+}
+{% endschema %}
