@@ -1,8 +1,7 @@
 <section class="pdp-trust-blocks">
     {{ 'pdp-trust-blocks.css' | asset_url | stylesheet_tag }}
     <div class="section section--page-width">
-        <div class="trust-blocks-pretitle">{{ section.settings.pretitle }}</div>
-        <h2 class="trust-blocks-title">{{ section.settings.title }}</h2>
+
         <div class="all-trust-blocks"> 
             {% for block in section.blocks %}
                 <div class="trust-block">
@@ -20,16 +19,6 @@
 {
   "name": "EZ-A PDP Trust",
   "class": "section-wrapper",
-  "settings": [
-    {
-      "type": "text",
-      "id": "pretitle",
-      "label": "Pre-title"},
-        {
-      "type": "text",
-      "id": "title",
-      "label": "Title"}
-    ],
   "blocks": [
     {
       "type": "trust",
