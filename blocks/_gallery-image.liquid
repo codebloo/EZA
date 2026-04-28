@@ -1,6 +1,5 @@
-{%- capture index -%}{%- increment gallery_image_counter -%}{%- endcapture -%}
-{%- assign index = index | plus: 1 -%}
-<div class="gallery-image gallery-image-{{ index }}" style="background-image:url({{ block.settings.image | img_url:'master' }});">
+
+<div class="gallery-image" style="background-image:url({{ block.settings.image | img_url:'master' }});">
   <div class="gallery-image-title">{{ block.settings.title }}</div>
   <div class="gallery-image-text">{{ block.settings.text }}</div>
 </div>
