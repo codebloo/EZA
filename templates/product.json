@@ -1605,6 +1605,7 @@
           "type": "trust",
           "settings": {
             "image": "shopify://shop_images/Star_Rating.svg",
+            "width": 100,
             "title": "300+ 5-Star Reviews",
             "text": "Across Shopify  & TikTok Shop"
           }
@@ -1613,6 +1614,7 @@
           "type": "trust",
           "settings": {
             "image": "shopify://shop_images/icon-qa-atom.svg",
+            "width": 24,
             "title": "PhD-Formulated",
             "text": "by Brian Dixon, PhD - Molecular Biology"
           }
@@ -1621,6 +1623,7 @@
           "type": "trust",
           "settings": {
             "image": "shopify://shop_images/icon-qa-certified.svg",
+            "width": 24,
             "title": "GMP Certified",
             "text": "NSF-certified facility FDA-registered"
           }
@@ -1629,6 +1632,7 @@
           "type": "trust",
           "settings": {
             "image": "shopify://shop_images/icon-qa-beaker.svg",
+            "width": 22,
             "title": "3rd-Party Tested",
             "text": "Finished product, not just raw material"
           }
@@ -1637,6 +1641,7 @@
           "type": "trust",
           "settings": {
             "image": "shopify://shop_images/Shield_a024a762-8ad7-44d6-b3c2-35f0ec215bc5.svg",
+            "width": 22,
             "title": "30-Day MBG",
             "text": "Don’t feel it? First baggie’s on us."
           }
