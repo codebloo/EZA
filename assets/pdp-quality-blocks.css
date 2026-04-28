@@ -56,6 +56,9 @@ line-height: 21px;}
     .quality-blocks-pretitle,
     .quality-blocks-title{text-align: center;}
     .quality-blocks-pretitle{font-size: 16px;}
-    .quality-blocks-title{font-size: 36px;}
+    .quality-blocks-title{
+        font-size: 36px;
+        margin:0 auto 24px;
+        max-width:25ch;}
 
 }
