@@ -1604,36 +1604,41 @@
         "trust_czRY49": {
           "type": "trust",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/Star_Rating.svg",
+            "title": "300+ 5-Star Reviews",
+            "text": "Across Shopify  & TikTok Shop"
           }
         },
         "trust_nBQ6Yw": {
           "type": "trust",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-atom.svg",
+            "title": "PhD-Formulated",
+            "text": "by Brian Dixon, PhD - Molecular Biology"
           }
         },
         "trust_YfnWL8": {
           "type": "trust",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "title": "GMP Certified",
+            "text": "NSF-certified facility FDA-registered"
           }
         },
         "trust_gnkgRq": {
           "type": "trust",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-beaker.svg",
+            "title": "3rd-Party Tested",
+            "text": "Finished product, not just raw material"
           }
         },
         "trust_tH93XB": {
           "type": "trust",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "title": "30-Day MBG",
+            "text": "Don’t feel it? First baggie’s on us."
           }
         }
       },
@@ -1645,10 +1650,7 @@
         "trust_tH93XB"
       ],
       "name": "EZ-A PDP Trust",
-      "settings": {
-        "pretitle": "",
-        "title": ""
-      }
+      "settings": {}
     },
     "cb_pdp_quality_QcNFF9": {
       "type": "cb-pdp-quality",
