@@ -891,6 +891,9 @@ line-height: 21px;}
 .play-all-steps{
     border-radius:16px 16px 0 0;
     padding:56px 0;}
+    .play-step{
+        max-width:100%;
+        width:572px;;}
 .play-title{font-size:36px;}
     
 }
