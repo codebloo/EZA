@@ -45,6 +45,11 @@
 .desktop-layout-columns .key-ingredient-item{padding-bottom:0;}
   .desktop-layout-columns .key-ingredient-item details[open] {padding-bottom:24px;}    
       
+.desktop-layout-columns .key-ingredient-item:nth-last-child(-n+2):nth-child(odd),
+.desktop-layout-columns .key-ingredient-item:nth-last-child(-n+2):nth-child(odd) ~ .key-ingredient-item {
+  border-bottom: none;
+}
+
     }
 
     .key-ingredient-item-top {
