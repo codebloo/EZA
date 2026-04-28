@@ -863,7 +863,9 @@ text-align: center;
 }
 
 .play-step{
+    border-bottom:1px solid var(--white);
 padding: 16px 0;
+width:100%;
 }
 
 .play-step-time{
