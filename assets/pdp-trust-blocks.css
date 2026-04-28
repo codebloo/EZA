@@ -3,7 +3,12 @@
     padding:32px 0;
 }
 
-.all-trust-blocks{}
+   .all-trust-blocks{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;}
 
 .trust-block{
     background-color:var(--white);
@@ -30,13 +35,11 @@ font-weight: 400;
 line-height: 21px;}
 
 @media (min-width:768px){
-    .pdp-trust-blocks{padding:48px 0;}
+
     .all-trust-blocks{
         display:grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 4px;
-        grid-row-gap: 4px;}
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1;}
     .trust-block{border-radius:8px;}
    
        
