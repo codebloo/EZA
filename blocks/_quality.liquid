@@ -1,0 +1,32 @@
+
+<div class="quality-block">
+  <div class="quality-title"><span>{{ block.settings.title }}</span></div>
+  <div class="quality-text">{{ block.settings.text }}</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Quality Step",
+  "settings": [ 
+         {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Time"},
+          {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"}
+ 
+  ],
+  "presets": [
+    {
+      "name": "Quality Step",
+    }
+  ]
+}
+{% endschema %}
