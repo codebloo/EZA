@@ -2060,7 +2060,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Marcus R.</strong></p>",
+                    "text": "<p><strong>Marcus R.<br/></strong>Verified Buyer</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2174,7 +2174,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Jenna K.</strong></p>",
+                    "text": "<p><strong>Jenna K.<br/></strong>Verified Buyer</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2288,7 +2288,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Marcus R.</strong></p>",
+                    "text": "<p><strong>Marcus R.<br/></strong>Verified Buyer</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
