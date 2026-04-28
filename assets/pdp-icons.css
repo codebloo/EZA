@@ -1,0 +1,13 @@
+.pdp-icons{}
+
+.all-icons{
+
+}
+
+@media (min-width: 768px) {
+
+.all-icons{
+    margin:0 auto;
+    max-width:100%;
+    width:1078px;} 
+}
