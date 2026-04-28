@@ -3960,6 +3960,67 @@
         "padding-block-end": 48
       }
     },
+    "cb_pdp_playbyplay_38TmD3": {
+      "type": "cb-pdp-playbyplay",
+      "blocks": {
+        "play_step_VQAizA": {
+          "type": "_play-step",
+          "name": "Play Step",
+          "settings": {
+            "title": "T + 0 min",
+            "text": "Take with food. One capsule (or two). Clock starts."
+          },
+          "blocks": {}
+        },
+        "play_step_i7yVfh": {
+          "type": "_play-step",
+          "name": "Play Step",
+          "settings": {
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "play_step_KAX499": {
+          "type": "_play-step",
+          "name": "Play Step",
+          "settings": {
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "play_step_nhDPYM": {
+          "type": "_play-step",
+          "name": "Play Step",
+          "settings": {
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "play_step_gd7qRU": {
+          "type": "_play-step",
+          "name": "Play Step",
+          "settings": {
+            "title": "End of Day",
+            "text": "No crash. The energy fades out like a professional. No sudden wall, no mood drop."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "play_step_VQAizA",
+        "play_step_i7yVfh",
+        "play_step_KAX499",
+        "play_step_nhDPYM",
+        "play_step_gd7qRU"
+      ],
+      "name": "PDP Play by Play",
+      "settings": {
+        "title": "Here’s the play-by-play when you take EZ-A"
+      }
+    },
     "eza_section_yLqyay": {
       "type": "eza-section",
       "blocks": {
@@ -5119,6 +5180,7 @@
     "cb_pdp_gallery_RTA8bt",
     "eza_section_PkypqV",
     "eza_section_nVjcaq",
+    "cb_pdp_playbyplay_38TmD3",
     "eza_section_yLqyay",
     "eza_section_7WQD4W",
     "1762744600c1680ef3"
