@@ -787,6 +787,21 @@ grid-row-gap: 0px;
 .gallery-image-4 { grid-area: 2 / 3 / 3 / 4; }
 
 .gallery-image{aspect-ratio:1/28;}
+.gallery-image-title{
+color: var(--white);
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;}
+.gallery-image-text{
+color: var(--white);
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
 
 @media (min-width: 768px) {
 .gallery-image{aspect-ratio:1;}
