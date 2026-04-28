@@ -808,6 +808,9 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+.gallery-image .gradient{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 43.83%, rgba(0, 0, 0, 0.90) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
 
 @media (min-width: 768px) {
 .gallery-image{
