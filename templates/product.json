@@ -2922,7 +2922,7 @@
         "eza_group_tNhfYr"
       ],
       "custom_css": [
-        "@media (min-width: 768px;) {.baggie-desktop {padding: 80px 0; }}"
+        "@media (min-width: 768px;) {.baggie-desktop .custom-section-content {padding: 80px 0; }}"
       ],
       "name": "Baggie Desktop",
       "settings": {
