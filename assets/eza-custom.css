@@ -870,14 +870,13 @@ text-align: center;
   grid-template-columns: auto 1fr;
   column-gap: 2.5rem;
   background: #1a1a1a;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   padding: 0 1.5rem;
 }
 
 .timeline-step {
   margin: 0;
   padding: 1.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   color: #fff;
