@@ -3803,14 +3803,17 @@
         "eza_group_hdy8ch",
         "eza_group_jtRgxj"
       ],
+      "custom_css": [
+        ".howto .group-block-content{margin:0 auto; max-width: 100%; width: 1080px;}"
+      ],
       "name": "How to Take",
       "settings": {
-        "custom_class": "",
+        "custom_class": "howto",
         "desktop_hidden": false,
         "mobile_hidden": false,
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "center",
         "vertical_alignment": "flex-start",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
