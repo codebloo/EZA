@@ -1,4 +1,4 @@
-  <div class="gallery-image gallery-image-{{ count }}">
+  <div class="gallery-image gallery-image-{{ count }}" style="background-image:url({{ block.settings.image | asset_url }});">
         <div class="gallery-image-title">{{ block.settings.title }}</div>
          <div class="gallery-image-text">{{ block.settings.text }}</div>
 </div>
