@@ -29,6 +29,7 @@
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 24px;
         grid-row-gap:24px;
+        margin:0 auto;
         max-width:100%;
         width:678px;
 }
