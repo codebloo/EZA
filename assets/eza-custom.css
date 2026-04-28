@@ -860,9 +860,13 @@ grid-row-gap: 6px;
     align-items: center;
     background-color:var(--black);
     border-radius:32px;
-    color:var(--white);
+    color:var(--yellow);
     display: flex;
+    font-size: 16px;
+    font-weight: 700;
     gap: 8px;
     justify-content: center;
-padding: 8px 16px;
-}
+line-height: 1;
+padding: 8px 16px;}
+
+
