@@ -3001,13 +3001,13 @@
     "cb_pdp_gallery_RTA8bt": {
       "type": "cb-pdp-gallery",
       "blocks": {
-        "gallery_image_XDy7r6": {
+        "gallery_image_RjaqXh": {
           "type": "_gallery-image",
           "name": "Gallery Image",
           "settings": {
-            "image": "shopify://shop_images/gallery4.png",
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/gallery2.png",
+            "title": "Before a Big Exam",
+            "text": "One capsule, 20 minutes before you start. Get your head right so you can focus on the material."
           },
           "blocks": {}
         },
@@ -3021,6 +3021,16 @@
           },
           "blocks": {}
         },
+        "gallery_image_XDy7r6": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery4.png",
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
         "gallery_image_kdNhJN": {
           "type": "_gallery-image",
           "name": "Gallery Image",
@@ -3030,23 +3040,13 @@
             "text": ""
           },
           "blocks": {}
-        },
-        "gallery_image_RjaqXh": {
-          "type": "_gallery-image",
-          "name": "Gallery Image",
-          "settings": {
-            "image": "shopify://shop_images/gallery2.png",
-            "title": "",
-            "text": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "gallery_image_XDy7r6",
+        "gallery_image_RjaqXh",
         "gallery_image_AkaiLa",
-        "gallery_image_kdNhJN",
-        "gallery_image_RjaqXh"
+        "gallery_image_XDy7r6",
+        "gallery_image_kdNhJN"
       ],
       "name": "PDP Gallery",
       "settings": {}
