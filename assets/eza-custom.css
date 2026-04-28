@@ -865,7 +865,7 @@ text-align: center;
 }
 
 
-.timeline-list {
+.timeline-list > .shopify-block{
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 2.5rem;
