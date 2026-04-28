@@ -3493,8 +3493,8 @@
         "eza_group_RDWnXj"
       ],
       "custom_css": [
-        ".gallery-image-1,.gallery-image-2,.gallery-image-3,.gallery-image-4{aspect-ratio: 1.28/1;}",
-        "@media query(min-width:768px) {{aspect-ratio: 1; } .pdp-gallery .group-block-content {display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); grid-column-gap: 0px; grid-row-gap: 0px; } .gallery-image-1 {grid-area: 1 / 1 / 2 / 2; } .gallery-image-2 {grid-area: 1 / 2 / 2 / 3; } .gallery-image-3 {grid-area: 2 / 2 / 3 / 3; } .gallery-image-4 {grid-area: 2 / 3 / 3 / 4; }}"
+        ".gallery-image-1,.gallery-image-2,.gallery-image-3,.gallery-image-4 {aspect-ratio: 1.28/1;}",
+        "@media query(min-width:768px) {.gallery-image-1,.gallery-image-2,.gallery-image-3,.gallery-image-4 {aspect-ratio: 1;}.pdp-gallery .group-block-content {display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); grid-column-gap: 0px; grid-row-gap: 0px; } .gallery-image-1 {grid-area: 1 / 1 / 2 / 2;} .gallery-image-2 {grid-area: 1 / 2 / 2 / 3;} .gallery-image-3 {grid-area: 2 / 2 / 3 / 3 } .gallery-image-4 {grid-area: 2 / 3 / 3 / 4; }}"
       ],
       "name": "Gallery",
       "settings": {
