@@ -1,5 +1,5 @@
 .pdp-trust-blocks{
-    background: rgba(255, 242, 0, 0.50);
+    background:var(--white);
     padding:24px 0;
 }
 
