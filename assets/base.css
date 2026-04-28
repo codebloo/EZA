@@ -2281,6 +2281,8 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 }
 
 /* Custom Typography style */
+ p strong{font-weight:700;}
+ 
 .custom-typography,
 .custom-typography > * {
   font-family: var(--font-family);
