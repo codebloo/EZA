@@ -863,13 +863,11 @@ font-weight: 700;
 line-height: 1.1;
 text-align: center;}
 
-.timeline-list{border-top:3px solid var(--white);}
-.timeline-list {
+.timeline-list{border-top:3px solid var(--white);
   display: grid;
   grid-template-columns: auto 1fr;
-  background: #1a1a1a;
-  padding: 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0;
+  
 }
 
 /* Make wrappers invisible to grid */
