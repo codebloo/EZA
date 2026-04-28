@@ -488,6 +488,65 @@
         "padding-block-end": 0
       }
     },
+    "cb_pdp_trust_Lw7ALD": {
+      "type": "cb-pdp-trust",
+      "blocks": {
+        "trust_YL4yt8": {
+          "type": "trust",
+          "settings": {
+            "image": "shopify://shop_images/Star_Rating.svg",
+            "width": 100,
+            "title": "300+ 5-Star Reviews",
+            "text": "Across Shopify  & TikTok Shop"
+          }
+        },
+        "trust_VFb4ek": {
+          "type": "trust",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-atom.svg",
+            "width": 24,
+            "title": "PhD-Formulated",
+            "text": "by Brian Dixon, PhD - Molecular Biology"
+          }
+        },
+        "trust_yjMA4y": {
+          "type": "trust",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "width": 24,
+            "title": "GMP Certified",
+            "text": "NSF-certified facility FDA-registered"
+          }
+        },
+        "trust_WGbhr9": {
+          "type": "trust",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-beaker.svg",
+            "width": 22,
+            "title": "3rd-Party Tested",
+            "text": "Finished product, not just raw material"
+          }
+        },
+        "trust_ByBwek": {
+          "type": "trust",
+          "settings": {
+            "image": "shopify://shop_images/Shield_a024a762-8ad7-44d6-b3c2-35f0ec215bc5.svg",
+            "width": 22,
+            "title": "30-Day MBG",
+            "text": "Don’t feel it? First baggie’s on us."
+          }
+        }
+      },
+      "block_order": [
+        "trust_YL4yt8",
+        "trust_VFb4ek",
+        "trust_yjMA4y",
+        "trust_WGbhr9",
+        "trust_ByBwek"
+      ],
+      "name": "EZ-A PDP Trust",
+      "settings": {}
+    },
     "eza_section_WFCw7Q": {
       "type": "eza-section",
       "blocks": {
@@ -5631,6 +5690,7 @@
   "order": [
     "eza_section_bxi7bM",
     "eza_section_rm8Giw",
+    "cb_pdp_trust_Lw7ALD",
     "eza_section_WFCw7Q",
     "eza_section_qfDQiU",
     "eza_section_xWea9P",
