@@ -789,6 +789,9 @@ grid-row-gap: 0px;
 .gallery-image{
     aspect-ratio:1/28;
     background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content: end;
     padding:24px;
 }
 .gallery-image-title{
