@@ -861,6 +861,7 @@ font-weight: 700;
 line-height: 1.1;
 text-align: center;
 }
+.play-step-list{boce}
 
 .play-step{
     border-bottom:1px solid var(--white);
@@ -894,6 +895,7 @@ line-height: 21px;}
     border-radius:16px 16px 0 0;
     padding:56px 0;}
     .play-step{
+        gap:28px;
         max-width:100%;
         width:572px;;}
 .play-title{font-size:36px;}
