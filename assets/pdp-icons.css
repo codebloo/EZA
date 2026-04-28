@@ -53,7 +53,9 @@ text-align:center;
 
 @media (min-width:768px){
    
-    .all-icon-blocks{grid-template-columns: repeat(6, 1fr);}
+    .all-icon-blocks{
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;}
   
     .icon-blocks-title{
         font-size: 36px;
