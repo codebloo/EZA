@@ -1598,6 +1598,58 @@
         "padding-block-end": 65
       }
     },
+    "cb_pdp_trust_AedkFQ": {
+      "type": "cb-pdp-trust",
+      "blocks": {
+        "trust_czRY49": {
+          "type": "trust",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "trust_nBQ6Yw": {
+          "type": "trust",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "trust_YfnWL8": {
+          "type": "trust",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "trust_gnkgRq": {
+          "type": "trust",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "trust_tH93XB": {
+          "type": "trust",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "trust_czRY49",
+        "trust_nBQ6Yw",
+        "trust_YfnWL8",
+        "trust_gnkgRq",
+        "trust_tH93XB"
+      ],
+      "name": "EZ-A PDP Trust",
+      "settings": {
+        "pretitle": "",
+        "title": ""
+      }
+    },
     "cb_pdp_quality_QcNFF9": {
       "type": "cb-pdp-quality",
       "blocks": {
@@ -2311,7 +2363,7 @@
       ],
       "custom_css": [
         "h2 {font-size: 24px;}",
-        "@media (min-width: 768px) {h2 {font-size: 36px; max-width:33ch; }}"
+        "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}"
       ],
       "name": "Nootropics",
       "settings": {
@@ -3958,6 +4010,7 @@
     "main",
     "eza_section_nGGndj",
     "eza_section_kCF3a7",
+    "cb_pdp_trust_AedkFQ",
     "cb_pdp_quality_QcNFF9",
     "eza_section_NMjAFf",
     "eza_section_FdNEqH",
