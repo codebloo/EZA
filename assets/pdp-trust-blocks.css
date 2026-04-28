@@ -14,8 +14,8 @@
     background-color:var(--light-grey);
     padding:22px 24px 24px;}
 
-.trust-block:first-child {border-radius:16px 16px 0 0;}
-.trust-block:last-child {border-radius:0 0 16px 16px;}
+ .trust-block:first-child{border-radius:16px 0 0 16px;}
+     .trust-block:last-child{border-radius:0 16px 16px 0;}
 
 .trust-block img{
     margin:0 auto;
