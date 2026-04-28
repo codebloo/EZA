@@ -25,8 +25,8 @@
     margin-bottom:1px;
     padding:24px;}
 
-.quality-block::first-child {border-radius:16px 16px 0 0;}
-.quality-block::last-child {border-radius:0 0 16px 16px;}
+.all-quality-blocks .quality-block::first-child {border-radius:16px 16px 0 0;}
+.all-quality-blocks .quality-block::last-child {border-radius:0 0 16px 16px;}
 
 .quality-block img{width:24px;}
 .quality-title,
