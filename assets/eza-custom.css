@@ -852,7 +852,7 @@ grid-row-gap: 6px;
 
 /* PDP Play by Play */
 .pdp-timeline{background-color:var(--off-black);}
-.timeline-steps{background-color:var(--off-black);}
+.timeline-all-steps{background-color:var(--off-black);}
 
 .timeline-title{
 color: var(--yellow);
@@ -896,8 +896,8 @@ padding-right:9px;
 width:185px;}
 
 @media (min-width: 768px) {
-.pdp-play-by-play{background-color: rgba(255, 242, 0, 0.50);}
-.play-all-steps{
+.pdp-timeline{background-color: rgba(255, 242, 0, 0.50);}
+.timeline-all-steps{
     background-color:var(--off-black);
     border-radius:16px 16px 0 0;
     padding:56px 0;}
