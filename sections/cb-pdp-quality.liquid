@@ -6,6 +6,9 @@
         <div class="all-quality-blocks"> 
             {% for block in section.blocks %}
                 <div class="quality-block">
+                   {%- if block.settings.svg != blank -%}
+  {{ block.settings.svg | image_url: width: block.settings.svg.width | image_tag: alt: block.settings.svg.alt }}
+{%- endif -%}
                     <div class="quality-title"><span>{{ block.settings.title }}</span></div>
                     <div class="quality-text">{{ block.settings.text }}</div>
                 </div>
