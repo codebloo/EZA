@@ -3888,7 +3888,7 @@
               "type": "eza-group",
               "name": "EZ-A Group",
               "settings": {
-                "custom_class": "faq-hea",
+                "custom_class": "faq-head",
                 "desktop_hidden": false,
                 "mobile_hidden": false,
                 "content_direction": "column",
