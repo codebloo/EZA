@@ -778,7 +778,13 @@ line-height: normal;}
 }
 
 .all-images-title{
+color:var(--black);
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-weight: 700;
+line-height: 1.1;
     margin-bottom:24px;
+    text-align: center;
 }
 
 
