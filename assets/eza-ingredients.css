@@ -14,6 +14,11 @@
     .menu-drawer__menu .menu-drawer__list-item--flat{}
 
     @media (min-width: 768px) {
+
+  .key-ingredient-item--accordion .details__header { pointer-events: none; }
+  .key-ingredient-item--accordion .icon-caret,
+  .key-ingredient-item--accordion .icon-plus { display: none; }
+
       .desktop-layout-horizontal.key-ingredients-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
