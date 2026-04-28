@@ -1157,7 +1157,7 @@
           "type": "eza-group",
           "name": "Testimonials Group",
           "settings": {
-            "custom_class": "",
+            "custom_class": "testimonials-group",
             "desktop_hidden": false,
             "mobile_hidden": false,
             "content_direction": "row",
@@ -1565,6 +1565,9 @@
       "block_order": [
         "eza_group_wdBpCk",
         "button_kkWXnB"
+      ],
+      "custom_css": [
+        "@media (min-width:768px){testimonials-group{margin: 0 auto; max-width: 100%; width:967px; }}"
       ],
       "name": "Testimonials 1",
       "settings": {
