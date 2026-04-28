@@ -16,8 +16,8 @@
 
  .desktop-layout-columns .key-ingredient-item{
   border-bottom: 1px solid var(--off-black);
-  padding: 16px 0;}
- .desktop-layout-columns .key-ingredient-item summary{padding:0;}
+  padding: 16px 0 4px;}
+ .desktop-layout-columns .key-ingredient-item summary{padding:0 0 12px 0;}
 
    .desktop-layout-columns.key-ingredients-grid { grid-row-gap:0;}
 
