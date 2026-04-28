@@ -20,7 +20,13 @@ font-weight: 400;
     font-weight: 700;
     margin-bottom:8px;}
 
-.all-icon-blocks{}
+.all-icon-blocks{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 4px;
+grid-row-gap: 32px;
+}
 
 .icon-block{
     background-color:var(--white);
