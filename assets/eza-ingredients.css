@@ -18,6 +18,8 @@
   border-bottom: 1px solid var(--off-black);
   padding: 0 0 16px 0;}
 
+   .desktop-layout-columns.key-ingredients-grid { grid-row-gap:8px;}
+
     @media (min-width: 768px) {
 
   .key-ingredient-item--accordion .details__header { pointer-events: none; }
@@ -26,7 +28,6 @@
 
       .desktop-layout-horizontal.key-ingredients-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap:16px;
       }
 
         .desktop-layout-columns.key-ingredients-grid {
