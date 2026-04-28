@@ -1,0 +1,32 @@
+<section class="pdp-gallery">
+    <div class="section section--page-width">
+         <h2 class="all-images-title">{{ section.settings.title }}</h2>
+        <div class="all-images">
+ 
+  {% content_for 'blocks' %}
+  </div>
+</div>
+</section>
+{% schema %}
+{
+  "name": "EZ-A PDP PlayByPlay",
+  "class": "section-wrapper",
+  "settings": [{
+"type": "text",
+"id":"title",
+"label": "Title"}],
+  "blocks": [
+    {
+      "type": "_play-step"
+    },
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+    "presets": [
+    {
+      "name": "PDP Play by Play",
+    }
+  ]
+}
+{% endschema %}
