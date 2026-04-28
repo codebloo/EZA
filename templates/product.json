@@ -2649,10 +2649,10 @@
               "type": "eza-accordion",
               "name": "EZ Accordion",
               "settings": {
-                "custom_class": "",
+                "custom_class": "accordion-bold",
                 "icon": "caret",
                 "dividers": true,
-                "type_preset": "h6",
+                "type_preset": "paragraph",
                 "inherit_color_scheme": true,
                 "color_scheme": "",
                 "border": "none",
