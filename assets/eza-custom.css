@@ -794,21 +794,16 @@ line-height: normal;}
     padding:24px;
     position:relative;
 }
-.gallery-image-title{
-color: var(--white);
-font-family: "Helvetica Neue";
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;}
+.gallery-image-title,
 .gallery-image-text{
-color: var(--white);
+    color: var(--white);
 font-family: "Helvetica Neue";
 font-size: 16px;
-font-style: normal;
-font-weight: 400;
 line-height: 1.1;
 }
+.gallery-image-title{font-weight: 700;}
+.gallery-image-text{font-weight: 400;}
+
 .gallery-image .gradient{
     
        bottom: 0;
