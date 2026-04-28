@@ -2627,7 +2627,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "paragraph",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -2924,7 +2924,7 @@
       "custom_css": [
         "@media (min-width: 768px) {.baggie-desktop .custom-section-content {padding: 80px 0; }}",
         ".details__header {font-weight: 700;}",
-        ".h5 p{color: #7c7c7c;}"
+        ".h5 p {color: #7c7c7c;}"
       ],
       "name": "Baggie Desktop",
       "settings": {
