@@ -3976,8 +3976,8 @@
           "type": "_play-step",
           "name": "Play Step",
           "settings": {
-            "title": "",
-            "text": ""
+            "title": "T + 20 min",
+            "text": "The shift. Warmth. Mental static settles. Most people know when it happens."
           },
           "blocks": {}
         },
@@ -3985,8 +3985,8 @@
           "type": "_play-step",
           "name": "Play Step",
           "settings": {
-            "title": "",
-            "text": ""
+            "title": "T + 30 min",
+            "text": "Locked in. Distractions still exist, but you’ve stopped caring about them as priorities become clear."
           },
           "blocks": {}
         },
@@ -3994,8 +3994,8 @@
           "type": "_play-step",
           "name": "Play Step",
           "settings": {
-            "title": "",
-            "text": ""
+            "title": "T + 2-4 Hours",
+            "text": "Still going. No spike. No drop. You look up and it has been three hours."
           },
           "blocks": {}
         },
