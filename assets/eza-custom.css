@@ -887,7 +887,8 @@ color:var(--white);
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
-line-height: 21px;}
+line-height: 21px;
+padding-right:9px;}
 
 @media (min-width: 768px) {
 .pdp-play-by-play{background-color: rgba(255, 242, 0, 0.50);}
