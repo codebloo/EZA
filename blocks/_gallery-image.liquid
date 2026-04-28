@@ -1,4 +1,5 @@
-  <div class="gallery-image gallery-image-{{ count }}" style="background-image:url({{ block.settings.image | img_url:356 }});">
+  {% assign count = count | plus: 1 %}
+<div class="gallery-image gallery-image-{{ count }}" style="background-image:url({{ block.settings.image | img_url:356 }});">
         <div class="gallery-image-title">{{ block.settings.title }}</div>
          <div class="gallery-image-text">{{ block.settings.text }}</div>
 </div>
