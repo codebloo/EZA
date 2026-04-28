@@ -786,9 +786,11 @@ line-height: normal;}
 .gallery-image{
     aspect-ratio:1/1.28;
     background-size:cover;
+    border-radius:8px;
     display:flex;
     flex-direction:column;
     justify-content: end;
+    margin-bottom:4px;
     padding:24px;
 }
 .gallery-image-title{
@@ -810,6 +812,8 @@ line-height: normal;
 @media (min-width: 768px) {
 .gallery-image{
     aspect-ratio:1;
+    border-radius:16px;
+    margin-bottom:0;
     padding:28px 24px;}
 
     .pdp-gallery .all-images {
