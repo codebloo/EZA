@@ -1545,26 +1545,76 @@
             "eza_group_NgG4E6"
           ]
         },
-        "button_kkWXnB": {
-          "type": "button",
-          "name": "t:names.button",
+        "eza_group_JC7E37": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
           "settings": {
-            "arrow": true,
-            "label": "read all 400+ reviews",
-            "link": "#",
-            "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
             "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-9acb457b-cad2-4efc-8566-82eac9b9802d",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "eza_button_K8UpcA": {
+              "type": "eza-button",
+              "name": "EZ-A Button",
+              "settings": {
+                "arrow": true,
+                "arrow_color": "blue",
+                "show_gradient": false,
+                "label": "Read all the reviews",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "eza_button_K8UpcA"
+          ]
         }
       },
       "block_order": [
         "eza_group_wdBpCk",
-        "button_kkWXnB"
+        "eza_group_JC7E37"
       ],
       "custom_css": [
         "@media (min-width: 768px) {.testimonials-group .group-block-content {margin: 0 auto; max-width: 100%; width: 967px; }}"
