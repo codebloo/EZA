@@ -3804,7 +3804,8 @@
         "eza_group_jtRgxj"
       ],
       "custom_css": [
-        ".howto .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}"
+        ".howto .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
+        ".how-tobox .rte{border-radius: 0 0 16px 16px;}"
       ],
       "name": "How to Take",
       "settings": {
