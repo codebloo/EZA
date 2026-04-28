@@ -45,6 +45,7 @@
 @media (min-width: 768px) {
 .pdp-timeline{
     background-color: rgba(255, 242, 0, 0.50);
+    padding-bottom:0;
     padding-top:28px;}
 .timeline-all-steps{
     background-color:var(--off-black);
