@@ -773,6 +773,13 @@ font-weight: 500;
 line-height: normal;}
 
 /* PDP Staggered Gallery */
+.pdp-gallery{
+    padding:24px 0;
+}
+
+.all-images-title{
+    margin-bottom:24px;
+}
 .pdp-gallery .all-images {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
