@@ -849,21 +849,17 @@ line-height: 1.1;
 .pdp-timeline{background-color:var(--off-black);}
 .timeline-all-steps{background-color:var(--off-black);}
 
-
-
 .timeline-title{
-color: var(--yellow);
-font-size: 24px;
-font-weight: 700;
-line-height: 1.1;
-text-align: center;}
+    color: var(--yellow);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;}
 
 .timeline-list{border-top:3px solid var(--white);
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 0;
-  
-}
+  padding: 0;}
 
 /* Make wrappers invisible to grid */
 .timeline-list > .shopify-block,
