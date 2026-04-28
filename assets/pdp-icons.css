@@ -28,14 +28,12 @@ grid-column-gap: 4px;
 grid-row-gap: 32px;
 }
 
-.icon-block{
-    background-color:var(--white);
-    margin-bottom:1px;
-    padding:24px;}
+.icon-block{text-align:center;}
 
 
 .icon-block img{
-    margin-bottom:8px;
+    display:block;
+    margin:0 auto 8px;
     width:80px;}
 
    
