@@ -849,3 +849,20 @@ grid-row-gap: 6px;
 .all-images .shopify-block:nth-child(3) { grid-area: 2 / 2 / 3 / 3; }
 .all-images .shopify-block:nth-child(4){ grid-area: 2 / 3 / 3 / 4; }
 }
+
+/* PDP Play by Play */
+
+.play-step{
+
+}
+
+.play-step-time{
+    align-items: center;
+    background-color:var(--black);
+    border-radius:32px;
+    color:var(--white);
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+padding: 8px 16px;
+}
