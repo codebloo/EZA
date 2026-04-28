@@ -60,5 +60,10 @@ line-height: 21px;}
         font-size: 36px;
         margin:0 auto 24px;
         max-width:35ch;}
+       
+.all-quality-blocks{
+    margin:0 auto;
+    max-width:100%;
+    width:1078px;} 
 
 }
