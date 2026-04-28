@@ -781,12 +781,19 @@ h1,
   color: var(--color, var(--font-h1-color));
 }
 
+
 @media screen and (max-width: 1200px) {
   input.h1.h1,
   textarea.h1.h1,
   select.h1.h1 {
     font-size: max(1rem, var(--font-h1--size));
   }
+}
+
+@media screen and (max-width: 750px) {
+  h1,
+.h1.h1,
+.text-block.h1 > * {font-size: 24px;}
 }
 
 h2,
