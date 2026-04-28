@@ -22,7 +22,8 @@
 .trust-title,
 .trust-text{
     color: var(--off-black);
-    font-size: 16px;}
+    font-size: 12px;
+    text-align:center;}
 
 .trust-title{
 font-weight: 700;
@@ -43,7 +44,9 @@ line-height: 21px;}
     .trust-block:first-child{border-radius:16px 0 0 16px;}
      .trust-block:last-child{border-radius:0 16px 16px 0;}
    
-       
+      .trust-title,
+.trust-text{font-size: 16px;}
+ 
 .all-trust-blocks{
     margin:0 auto;
     max-width:100%;
