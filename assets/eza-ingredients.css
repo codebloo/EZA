@@ -33,7 +33,7 @@
       }
 
         .desktop-layout-columns.key-ingredients-grid {
-          border-top:1px solid var(--black);
+          border-bottom:1px solid var(--black);
           border-top:3px solid var(--black);
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
