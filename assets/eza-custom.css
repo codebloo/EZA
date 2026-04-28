@@ -863,9 +863,9 @@ font-weight: 700;
 line-height: 1.1;
 text-align: center;
 }
-.timeline-list{boce}
 
-.timeline-all-steps {
+
+.timeline-list {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 2.5rem;
