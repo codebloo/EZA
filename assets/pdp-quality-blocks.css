@@ -6,17 +6,21 @@
 
 .all-quality-blocks{}
 
-.quality-block{}
+.quality-block{
+    background-color:var(--white);
+    padding:24px;
+}
 
 .quality-icon{}
 .quality-title,
 .quality-text{
     color: var(--off-black);
     font-size: 16px;}
-    
+
 .quality-title{
 font-weight: 700;
-line-height: 1.1;}
+line-height: 1.1;
+margin-bottom:8px;}
 
 .quality-text{
 color: var(--off-black);
