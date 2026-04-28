@@ -4597,7 +4597,7 @@
       ],
       "custom_css": [
         ".faq .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
-        ".faq-head .h5 {color: #7C7C7C;}"
+        ".faq-head .h5 p {color: #7c7c7c;}"
       ],
       "name": "FAQS",
       "settings": {
