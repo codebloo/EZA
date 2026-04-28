@@ -2397,7 +2397,7 @@
         "eza_group_krrVj6"
       ],
       "custom_css": [
-        ".testimonial-group{margin:0 auto; max-width: 100%; width:1080px;}"
+        ".testimonial-group .group-block-content{margin: 0 auto; max-width: 100%; width: 1080px;}"
       ],
       "name": "Testimonials 2",
       "settings": {
