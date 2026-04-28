@@ -1627,8 +1627,17 @@
         "quality_C8VBPY": {
           "type": "quality",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-pill.svg",
+            "title": "Methylated B Vitamins",
+            "text": "The form your body can actually absorb and use. Most brands skip it because it costs more to source. Up to 60% of people can’t fully process the cheaper version. Do the math."
+          }
+        },
+        "quality_rJHXeg": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-heart.svg",
+            "title": "Love EZ-A or Your Money Back",
+            "text": "We’re so confident you’ll love EZ-A, your first baggie’s free if you don’t. And that offer has stood since we hung out our e-commerce shingle."
           }
         }
       },
@@ -1636,7 +1645,8 @@
         "quality_4hJHmW",
         "quality_hqYVxF",
         "quality_9Lbqnb",
-        "quality_C8VBPY"
+        "quality_C8VBPY",
+        "quality_rJHXeg"
       ],
       "name": "EZ-A PDP Quality",
       "settings": {
