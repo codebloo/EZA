@@ -26,6 +26,7 @@
 
       .desktop-layout-horizontal.key-ingredients-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap:16px;
       }
 
         .desktop-layout-columns.key-ingredients-grid {
