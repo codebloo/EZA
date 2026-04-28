@@ -41,7 +41,7 @@ font-weight: 400;
 line-height: 21px;}
 
 @media (min-width:768px){
-    .quality-block{}
+    .quality-block{border-radius:8px;}
     .quality-blocks-pretitle,
     .quality-blocks-title{text-align: center;}
     .quality-blocks-pretitle{font-size: 16px;}
