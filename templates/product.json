@@ -2275,7 +2275,7 @@
           "settings": {
             "text": "<h2>EZ-A’s Hyper Strength stack contains 10 science-backed super nootropics.</h2>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "narrow",
             "alignment": "left",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
