@@ -18,7 +18,8 @@
     {%- assign color_class = color_value | handleize -%}
 
     {%- if mobile_accordion -%}
-      <accordion-custom class="key-ingredient-item key-ingredient-item--accordion">
+     <accordion-custom
+  class="key-ingredient-item key-ingredient-item--accordion" data-disable-on-desktop="true" open-by-default-on-desktop>
         <details class="details" data-testid="accordion-details">
           <summary class="details__header">
             <div class="key-ingredient-item-top">
