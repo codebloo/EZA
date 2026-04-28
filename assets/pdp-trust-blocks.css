@@ -1,20 +1,7 @@
 .pdp-trust-blocks{
     background:var(--white);
-    padding:24px 0;
+    padding:32px 0;
 }
-
-.trust-blocks-pretitle{
-    color: var(--Color-Grayscale-600, #7C7C7C);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.1;}
-
-.trust-blocks-title{
-    color: var(--black);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom:24px;}
 
 .all-trust-blocks{}
 
@@ -51,17 +38,11 @@ line-height: 21px;}
         grid-column-gap: 4px;
         grid-row-gap: 4px;}
     .trust-block{border-radius:8px;}
-    .trust-blocks-pretitle,
-    .trust-blocks-title{text-align: center;}
-    .trust-blocks-pretitle{font-size: 16px;}
-    .trust-blocks-title{
-        font-size: 36px;
-        margin:0 auto 24px;
-        max-width:35ch;}
+   
        
 .all-trust-blocks{
     margin:0 auto;
     max-width:100%;
-    width:1078px;} 
+    width:1136px;} 
 
 }
