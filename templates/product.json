@@ -2739,7 +2739,7 @@
                 "image": "shopify://shop_images/IMG__Baggie_While_Swallowing.webp",
                 "link": "",
                 "image_ratio": "adapt",
-                "width": "fit-content",
+                "width": "custom",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -2767,7 +2767,7 @@
         "eza_group_8X8HKA"
       ],
       "custom_css": [
-        ".howmany.section--page-width{width:805px; margin:0 auto; max-width: 100%;}"
+        ".howmany.section--page-width {width: 805px; margin: 0 auto; max-width: 100%;}"
       ],
       "name": "How Many",
       "settings": {
