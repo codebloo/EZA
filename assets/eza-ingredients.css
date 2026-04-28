@@ -5,7 +5,7 @@
       gap: 24px;
     }
 
-   .desktop-layout-false.key-ingredients-grid {
+   .desktop-layout-vertical.key-ingredients-grid {
      padding-top:20px;
     }
  
@@ -14,9 +14,18 @@
     .menu-drawer__menu .menu-drawer__list-item--flat{}
 
     @media (min-width: 768px) {
-      .desktop-layout-true.key-ingredients-grid {
+      .desktop-layout-horizontal.key-ingredients-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
+
+        .desktop-layout-cokumns.key-ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 24px;
+        grid-row-gap: 0px;
+}
+      
+      
     }
 
     .key-ingredient-item-top {
