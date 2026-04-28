@@ -1,6 +1,8 @@
 
 
-.pdp-quality-blocks{}
+.pdp-quality-blocks{
+    padding:24px 0;
+}
 
 .quality-blocks-pretitle{
     color: var(--Color-Grayscale-600, #7C7C7C);
@@ -41,6 +43,7 @@ font-weight: 400;
 line-height: 21px;}
 
 @media (min-width:768px){
+    .pdp-quality-blocks{padding:48px 0;}
     .quality-block{border-radius:8px;}
     .quality-blocks-pretitle,
     .quality-blocks-title{text-align: center;}
