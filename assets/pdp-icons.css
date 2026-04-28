@@ -1,13 +1,68 @@
-.pdp-icon-blocks{}
 
-.all-icon-blocks{
-
+.pdp-icon-blocks{
+    background: var(--off-black);
+    padding:32px 0;
 }
 
-@media (min-width: 768px) {
+.icon-blocks-pretitle{
+    color: var(--Color-Grayscale-600, #7C7C7C);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;}
 
+.icon-blocks-title{
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom:24px;}
+
+.all-icon-blocks{}
+
+.icon-block{
+    background-color:var(--white);
+    margin-bottom:1px;
+    padding:24px;}
+
+.icon-block:first-child {border-radius:16px 16px 0 0;}
+.icon-block:last-child {border-radius:0 0 16px 16px;}
+
+.icon-block img{width:24px;}
+.icon-title,
+.icon-text{
+    color: var(--off-black);
+    font-size: 16px;}
+
+.icon-title{
+font-weight: 700;
+line-height: 1.1;
+padding:8px 0;}
+
+.icon-text{
+color: var(--off-black);
+font-weight: 400;
+line-height: 21px;}
+
+@media (min-width:768px){
+   
+    .all-icon-blocks{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;}
+    .icon-block{border-radius:8px;}
+    .icon-blocks-subtitle,
+    .icon-blocks-title{text-align: center;}
+    .icon-blocks-subtitle{font-size: 16px;}
+    .icon-blocks-title{
+        font-size: 36px;
+        margin:0 auto 24px;
+        max-width:35ch;}
+       
 .all-icon-blocks{
     margin:0 auto;
     max-width:100%;
     width:1078px;} 
+
 }
