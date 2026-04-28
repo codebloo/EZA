@@ -22,7 +22,7 @@
    .desktop-layout-columns.key-ingredients-grid { grid-row-gap:0;}
 .desktop-layout-columns .key-ingredient-item details[open] {padding-bottom:12px;}
 
-    @media (min-width: 768px) {
+@media (min-width: 768px) {
 
   .key-ingredient-item--accordion .details__header { pointer-events: none; }
   .key-ingredient-item--accordion .icon-caret,
@@ -33,6 +33,7 @@
       }
 
         .desktop-layout-columns.key-ingredients-grid {
+          border-top:1px solid var(--black);
           border-top:3px solid var(--black);
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
