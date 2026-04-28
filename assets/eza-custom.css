@@ -875,7 +875,6 @@ text-align: center;}
 /* Make wrappers invisible to grid */
 .timeline-list > .shopify-block,
 .timeline-list .timeline-step {
-    border-bottom:1px solid var(--white);
   display: contents;
 
 }
@@ -884,9 +883,10 @@ text-align: center;}
 .timeline-pill,
 .timeline-text {
   align-items: center;
+border-bottom:1px solid var(--white);
   color: var(--white);
    display: flex;
-     padding: 16px 0;
+padding: 16px 0;
  }
 
 .timeline-pill {padding-right: 2.5rem;}
