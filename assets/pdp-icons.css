@@ -39,6 +39,7 @@ grid-row-gap: 32px;
    
 
 .icon-title{
+    color:var(--white);
 font-size: 16px;
 font-weight: 700;
 line-height: 1.1;
