@@ -864,7 +864,10 @@ text-align: center;
 .play-step-list{boce}
 
 .play-step{
+    align-items:top;
     border-bottom:1px solid var(--white);
+    display:flex;
+gap:8px;
 padding: 16px 0;
 width:100%;
 }
