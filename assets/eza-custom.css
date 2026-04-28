@@ -784,7 +784,7 @@ line-height: normal;}
 
 
 .gallery-image{
-    aspect-ratio:327/256
+    aspect-ratio:327/256;
     background-size:cover;
     border-radius:8px;
     display:flex;
