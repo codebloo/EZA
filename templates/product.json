@@ -775,7 +775,8 @@
                       "type": "eza-ingredients",
                       "name": "EZ-A Ingredients",
                       "settings": {
-                        "desktop_layout": false
+                        "desktop_layout": false,
+                        "layout": "vertical"
                       },
                       "blocks": {}
                     }
@@ -2298,7 +2299,8 @@
           "type": "eza-ingredients",
           "name": "EZ-A Ingredients",
           "settings": {
-            "desktop_layout": false
+            "desktop_layout": false,
+            "layout": "columns"
           },
           "blocks": {}
         }
