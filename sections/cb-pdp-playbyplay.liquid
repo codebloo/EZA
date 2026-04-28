@@ -1,10 +1,7 @@
-<section class="pdp-gallery">
+<section class="pdp-play-by-play">
     <div class="section section--page-width">
-         <h2 class="all-images-title">{{ section.settings.title }}</h2>
-        <div class="all-images">
- 
-  {% content_for 'blocks' %}
-  </div>
+         <h2 class="play-title">{{ section.settings.title }}</h2>
+        <div class="all-steps">{% content_for 'blocks' %}</div>
 </div>
 </section>
 {% schema %}
