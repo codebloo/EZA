@@ -3593,10 +3593,10 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>First time? Here’s how to get the most out of EZ-A.</p>",
-                "width": "fit-content",
+                "text": "<p>First time? Here’s how to <br/>get the most out of EZ-A.</p>",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
                 "font_size": "1.5rem",
@@ -3805,7 +3805,7 @@
       ],
       "custom_css": [
         ".howto .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
-        ".how-tobox .rte{border-radius: 0 0 16px 16px;}"
+        ".how-tobox .rte {border-radius: 0 0 16px 16px;}"
       ],
       "name": "How to Take",
       "settings": {
