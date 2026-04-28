@@ -3770,7 +3770,7 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<p><strong>Warning: Niacin flush</strong></p><p>Some people experience a warm, flushed sensation and temporary skin redness shortly after taking EZ-A. This is a niacin flush, a well-documented response to Vitamin B3. It is harmless, non-allergenic, and typically fades within 20-30 minutes. Taking EZ-A with food minimizes it significantly for most people.</p>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
