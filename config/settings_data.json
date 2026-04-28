@@ -539,7 +539,7 @@
         "settings": {
           "background": "rgba(0,0,0,0)",
           "foreground_heading": "#202020",
-          "foreground": "#202020",
+          "foreground": "#0000ee",
           "primary": "#fff200",
           "primary_hover": "#202020",
           "border": "#202020",

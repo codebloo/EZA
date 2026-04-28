@@ -1834,8 +1834,8 @@
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-9acb457b-cad2-4efc-8566-82eac9b9802d",
                 "background_media": "none",
                 "video_position": "cover",
                 "background_image_position": "cover",
@@ -2397,7 +2397,7 @@
         "eza_group_krrVj6"
       ],
       "custom_css": [
-        ".testimonial-group .group-block-content{margin: 0 auto; max-width: 100%; width: 1080px;}"
+        ".testimonial-group .group-block-content {margin: 0 auto; max-width: 100%; width: 1080px;}"
       ],
       "name": "Testimonials 2",
       "settings": {
