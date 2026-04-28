@@ -853,7 +853,7 @@ grid-row-gap: 6px;
 /* PDP Play by Play */
 
 .play-step{
-
+padding: 16px 0;
 }
 
 .play-step-time{
