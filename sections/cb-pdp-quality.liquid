@@ -2,7 +2,14 @@
     <div class="section section--page-width">
         <div class="quality-blocks-title">{{ section.settings.pretitle }}</div>
         <h2 class="quality-blocks-title">{{ section.settings.title }}</h2>
-        <div class="all-quality-blocks"> {% content_for 'blocks' %}</div>
+        <div class="all-quality-blocks"> 
+            {% for block in section.blocks %}
+                <div class="quality-block">
+                    <div class="quality-title"><span>{{ block.settings.title }}</span></div>
+                    <div class="quality-text">{{ block.settings.text }}</div>
+                </div>
+            {% endfor %}
+            </div>
     </div>
 </section>
 {% schema %}
@@ -21,7 +28,22 @@
     ],
   "blocks": [
     {
-      "type": "_quality"
+      "type": "quality",
+      "name":"Quality Block",
+      "settings": [
+          {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"},
+          {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"}
+      ]
     },
   ],
   "disabled_on": {
