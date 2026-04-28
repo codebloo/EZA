@@ -869,4 +869,11 @@ grid-row-gap: 6px;
 line-height: 1;
 padding: 8px 16px;}
 
+.play-step-text{
+color:var(--white);
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px;}
+
 
