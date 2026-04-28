@@ -3011,6 +3011,16 @@
           },
           "blocks": {}
         },
+        "gallery_image_AkaiLa": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery1.png",
+            "title": "The Afternoon Slump",
+            "text": "Take EZ-A before lunch and wonder why you were today years old before you found the fix."
+          },
+          "blocks": {}
+        },
         "gallery_image_kdNhJN": {
           "type": "_gallery-image",
           "name": "Gallery Image",
@@ -3030,23 +3040,13 @@
             "text": ""
           },
           "blocks": {}
-        },
-        "gallery_image_AkaiLa": {
-          "type": "_gallery-image",
-          "name": "Gallery Image",
-          "settings": {
-            "image": "shopify://shop_images/gallery1.png",
-            "title": "The Afternoon Slump",
-            "text": "Take EZ-A before lunch and wonder why you were today years old before you found the fix."
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "gallery_image_XDy7r6",
+        "gallery_image_AkaiLa",
         "gallery_image_kdNhJN",
-        "gallery_image_RjaqXh",
-        "gallery_image_AkaiLa"
+        "gallery_image_RjaqXh"
       ],
       "name": "PDP Gallery",
       "settings": {}
