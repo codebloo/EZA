@@ -875,20 +875,18 @@ text-align: center;}
 /* Make wrappers invisible to grid */
 .timeline-list > .shopify-block,
 .timeline-list .timeline-step {
+    border-bottom:1px solid var(--white);
   display: contents;
+  padding: 16px 0;
 }
 
 /* Both cells get the same vertical rhythm and divider */
 .timeline-pill,
 .timeline-text {
-  padding: 1.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  display: flex;
   align-items: center;
-  color: #fff;
-  font-size: 1.125rem;
-  line-height: 1.45;
-}
+  color: var(--white);
+   display: flex;
+ }
 
 .timeline-pill {padding-right: 2.5rem;}
 
