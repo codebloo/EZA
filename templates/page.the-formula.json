@@ -686,7 +686,8 @@
           "type": "eza-ingredients",
           "name": "EZ-A Ingredients",
           "settings": {
-            "desktop_layout": true
+            "desktop_layout": true,
+            "layout": "horizontal"
           },
           "blocks": {}
         }
