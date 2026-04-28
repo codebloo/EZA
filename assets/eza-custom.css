@@ -851,6 +851,16 @@ grid-row-gap: 6px;
 }
 
 /* PDP Play by Play */
+.play-by-play{
+    background-color:;
+}
+.play-title{
+color: var(--yellow);
+font-size: 24px;
+font-weight: 700;
+line-height: 1.1;
+text-align: center;
+}
 
 .play-step{
 padding: 16px 0;
@@ -875,5 +885,10 @@ font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: 21px;}
+
+@media (min-width: 768px) {
+.play-title{font-size:36px;}
+    
+}
 
 
