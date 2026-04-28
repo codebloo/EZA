@@ -846,7 +846,9 @@ line-height: 1.1;
 }
 
 /* PDP Play by Play */
-.pdp-timeline{background-color:var(--off-black);}
+.pdp-timeline{
+    background-color:var(--off-black);
+    padding:48px 0 63px;}
 .timeline-all-steps{background-color:var(--off-black);}
 
 .timeline-title{
