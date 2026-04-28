@@ -1,4 +1,3 @@
-
 .pdp-icon-blocks{
     background: var(--off-black);
     padding:32px 0;
@@ -28,12 +27,17 @@ grid-column-gap: 4px;
 grid-row-gap: 32px;
 }
 
-.icon-block{text-align:center;}
+.icon-block{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    justify-content:center;
+    text-align:center;}
 
 
 .icon-block img{
     display:block;
-    margin:0 auto 8px;
+    margin:0 auto;
     width:80px;}
 
    
