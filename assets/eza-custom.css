@@ -854,6 +854,8 @@ grid-row-gap: 6px;
 .pdp-timeline{background-color:var(--off-black);}
 .timeline-all-steps{background-color:var(--off-black);}
 
+
+
 .timeline-title{
 color: var(--yellow);
 font-size: 24px;
@@ -862,6 +864,36 @@ line-height: 1.1;
 text-align: center;
 }
 .timeline-list{boce}
+
+.timeline-all-steps {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2.5rem;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0 1.5rem;
+}
+
+.timeline-step {
+  margin: 0;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.timeline-pill span {
+  display: inline-block;
+  background: #000;
+  color: #ffd400;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+}
 
 .timeline-step{
     align-items:top;
