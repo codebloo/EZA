@@ -2572,8 +2572,8 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<p>The Caffeine + L-Theanine pairing most brands skip</p>",
-                "width": "fit-content",
-                "max_width": "normal",
+                "width": "100%",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
