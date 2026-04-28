@@ -851,9 +851,9 @@ grid-row-gap: 6px;
 }
 
 /* PDP Play by Play */
-.play-by-play{
-    background-color:;
-}
+.play-by-play{background-color:var(--off-black);}
+.play-steps{background-color:var(--off-black);}
+
 .play-title{
 color: var(--yellow);
 font-size: 24px;
@@ -888,6 +888,7 @@ line-height: 21px;}
 
 @media (min-width: 768px) {
 .pdp-play-by-play{background-color: rgba(255, 242, 0, 0.50);}
+.play-all-steps{border-radius:16px 16px 0 0;}
 .play-title{font-size:36px;}
     
 }
