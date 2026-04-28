@@ -28,7 +28,7 @@
 .quality-block::first-child {border-radius:16px 16px 0 0;}
 .quality-block::last-child {border-radius:0 0 16px 16px;}
 
-.quality-icon{}
+.quality-block img{width:24px;}
 .quality-title,
 .quality-text{
     color: var(--off-black);
