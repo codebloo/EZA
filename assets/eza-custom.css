@@ -784,7 +784,7 @@ line-height: normal;}
 
 
 .gallery-image{
-    aspect-ratio:1/1.28;
+    aspect-ratio:327/256
     background-size:cover;
     border-radius:8px;
     display:flex;
@@ -792,7 +792,7 @@ line-height: normal;}
     justify-content: end;
     margin-bottom:4px;
     padding:24px;
-    position:relativel
+    position:relative;
 }
 .gallery-image-title{
 color: var(--white);
