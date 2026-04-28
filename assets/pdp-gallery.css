@@ -64,7 +64,10 @@ line-height: 1.1;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 6px;
-    grid-row-gap: 6px;}
+    grid-row-gap: 6px;
+  margin:0 auto;
+    max-width:100%;
+    width:1078px;} }
 
 .all-images .shopify-block:nth-child(1)   { grid-area: 1 / 1/ 2 / 2; }
 .all-images .shopify-block:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
