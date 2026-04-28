@@ -781,7 +781,7 @@ grid-column-gap: 4px;
 grid-row-gap: 4px;
 }
 
-.gallery-image-1 { grid-area: 1 / 2/ 2 / 2; }
+.gallery-image-1 { grid-area: 1 / 1/ 2 / 2; }
 .gallery-image-2 { grid-area: 1 / 2 / 2 / 3; }
 .gallery-image-3 { grid-area: 2 / 2 / 3 / 3; }
 .gallery-image-4 { grid-area: 2 / 3 / 3 / 4; }
