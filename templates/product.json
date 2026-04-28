@@ -2339,6 +2339,66 @@
         "padding-block-end": 32
       }
     },
+    "cb_pdp_icons_TfN4NL": {
+      "type": "cb-pdp-icons",
+      "blocks": {
+        "icon_WBVYAA": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-brain.png",
+            "title": ""
+          }
+        },
+        "icon_URXBDc": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/Icon-bolt.png",
+            "title": ""
+          }
+        },
+        "icon_3HjTY3": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-battery.png",
+            "title": ""
+          }
+        },
+        "icon_U38fqT": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-chart.png",
+            "title": ""
+          }
+        },
+        "icon_fcNNVj": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-bulb.png",
+            "title": ""
+          }
+        },
+        "icon_an3d97": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-stopwatch.png",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_WBVYAA",
+        "icon_URXBDc",
+        "icon_3HjTY3",
+        "icon_U38fqT",
+        "icon_fcNNVj",
+        "icon_an3d97"
+      ],
+      "name": "EZ-A PDP Icons",
+      "settings": {
+        "title": "6 things that happen In the first hour.",
+        "subtitle": "Get more done, no script required."
+      }
+    },
     "eza_section_cmtGXd": {
       "type": "eza-section",
       "blocks": {
@@ -4611,6 +4671,7 @@
     "cb_pdp_quality_QcNFF9",
     "eza_section_NMjAFf",
     "eza_section_FdNEqH",
+    "cb_pdp_icons_TfN4NL",
     "eza_section_cmtGXd",
     "cb_pdp_gallery_RTA8bt",
     "eza_section_PkypqV",
