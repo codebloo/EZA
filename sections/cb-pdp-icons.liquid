@@ -1,0 +1,60 @@
+<section class="pdp-icon-blocks">
+    {{ 'pdp-icons.css' | asset_url | stylesheet_tag }}
+    <div class="section section--page-width">
+        
+        <h2 class="icon-blocks-title">{{ section.settings.title }}</h2>
+        <h3 class="icon-blocks-pretitle">{{ section.settings.subtitle }}</h3>
+        <div class="all-icon-blocks"> 
+            {% for block in section.blocks %}
+                <div class="icon-block">
+                   {%- if block.settings.image != blank -%}
+  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: alt: block.settings.image.alt }}
+{%- endif -%}
+                    <div class="quality-title"><span>{{ block.settings.title }}</span></div>
+                    <div class="quality-text">{{ block.settings.text }}</div>
+                </div>
+            {% endfor %}
+            </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "EZ-A PDP Quality",
+  "class": "section-wrapper",
+  "settings": [
+ 
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"},
+         {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub-title"},
+    ],
+  "blocks": [
+    {
+      "type": "quality",
+      "name":"Quality Block",
+      "settings": [
+          {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"}
+      ]
+    },
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+    "presets": [
+    {
+      "name": "EZ-A PDP Icons",
+    }
+  ]
+}
+{% endschema %}
