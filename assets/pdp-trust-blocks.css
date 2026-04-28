@@ -40,7 +40,8 @@ line-height: 21px;}
         display:grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 1;}
-    .trust-block{border-radius:8px;}
+    .trust-block:first-child{border-radius:16px 0 0 16px;}
+     .trust-block:last-child{border-radius:0 16px 16px 0;}
    
        
 .all-trust-blocks{
