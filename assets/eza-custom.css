@@ -777,8 +777,8 @@ line-height: normal;}
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 4px;
-grid-row-gap: 4px;
+grid-column-gap: 6px;
+grid-row-gap: 6px;
 }
 
 .all-images .shopify-block:nth-child(1)   { grid-area: 1 / 1/ 2 / 2; }
