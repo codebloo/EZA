@@ -3888,7 +3888,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Still Thinking About it? Here’s Our FAQs</p>",
+                "text": "<p><strong>Still Thinking About it? Here’s Our FAQs</strong></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -3943,7 +3943,7 @@
                 "custom_class": "",
                 "icon": "caret",
                 "dividers": true,
-                "type_preset": "h6",
+                "type_preset": "h5",
                 "inherit_color_scheme": true,
                 "color_scheme": "",
                 "border": "none",
