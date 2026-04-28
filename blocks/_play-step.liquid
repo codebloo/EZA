@@ -1,5 +1,5 @@
 
-<div class="gallery-image" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 43.83%, rgba(0, 0, 0, 0.90) 100%), url({{ block.settings.image | img_url:'master' }}) lightgray 50% / cover no-repeat;">
+<div class="play-step">
  
   <div class="gallery-image-title">{{ block.settings.title }}</div>
   <div class="gallery-image-text">{{ block.settings.text }}</div>
@@ -9,17 +9,14 @@
 
 {% schema %}
 {
-  "name": "Gallery Image",
+  "name": "Play Step",
   "settings": [ 
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"},
+
      
     {
       "type": "text",
       "id": "title",
-      "label": "Title"},
+      "label": "Time"},
           {
       "type": "textarea",
       "id": "text",
@@ -28,7 +25,7 @@
   ],
   "presets": [
     {
-      "name": "Gallery Image",
+      "name": "Play Step",
     }
   ]
 }
