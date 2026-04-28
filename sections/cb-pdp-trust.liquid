@@ -1,0 +1,62 @@
+<section class="pdp-trust-blocks">
+    {{ 'pdp-trust-blocks.css' | asset_url | stylesheet_tag }}
+    <div class="section section--page-width">
+        <div class="trust-blocks-pretitle">{{ section.settings.pretitle }}</div>
+        <h2 class="trust-blocks-title">{{ section.settings.title }}</h2>
+        <div class="all-trust-blocks"> 
+            {% for block in section.blocks %}
+                <div class="trust-block">
+                   {%- if block.settings.image != blank -%}
+  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: alt: block.settings.image.alt }}
+{%- endif -%}
+                    <div class="trust-title"><span>{{ block.settings.title }}</span></div>
+                    <div class="trust-text">{{ block.settings.text }}</div>
+                </div>
+            {% endfor %}
+            </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "EZ-A PDP Trust",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pretitle",
+      "label": "Pre-title"},
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"}
+    ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name":"trust Block",
+      "settings": [
+          {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"},
+          {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"}
+      ]
+    },
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+    "presets": [
+    {
+      "name": "EZ-A PDP Trust",
+    }
+  ]
+}
+{% endschema %}
