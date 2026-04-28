@@ -106,7 +106,8 @@
      .header__row header-actions{margin-right:24px;}
 }
 
- h1, .h1{
+ h1, 
+ .h1{
 font-size: 24px;
 font-weight: 700;
 } 
