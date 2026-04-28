@@ -1,9 +1,11 @@
-<div class="pdp-gallery">
+<section class="pdp-gallery">
     <div class="page-width">
+        <div class="all-images">
    {% increment galleryimage %}
   {% content_for 'blocks' %}
+  </div>
 </div>
-</div>
+</section>
 {% schema %}
 {
   "name": "EZ-A PDP Gallery",
