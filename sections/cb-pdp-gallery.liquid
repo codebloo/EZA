@@ -1,10 +1,5 @@
 <div class="pdp-gallery">
-{% for block in section.blocks %}
-    <div class="gallery-image gallery-image-{{ count }}">
-        <div class="gallery-image-title">{{ block.settings.title }}</div>
-         <div class="gallery-image-text">{{ block.settings.text }}</div>
-    </div>
-{% endfor %}
+  {% content_for 'blocks' %}
 </div>
 
 {% schema %}
