@@ -1597,6 +1597,14 @@
         "padding-block-end": 65
       }
     },
+    "cb_pdp_quality_QcNFF9": {
+      "type": "cb-pdp-quality",
+      "name": "EZ-A PDP Quality",
+      "settings": {
+        "pretitle": "Quality Is More Than a Product Feature",
+        "title": "We compete with sketchy gas station pills, so quality is our obsession."
+      }
+    },
     "eza_section_NMjAFf": {
       "type": "eza-section",
       "blocks": {
@@ -4551,6 +4559,7 @@
     "main",
     "eza_section_nGGndj",
     "eza_section_kCF3a7",
+    "cb_pdp_quality_QcNFF9",
     "eza_section_NMjAFf",
     "eza_section_FdNEqH",
     "eza_section_cmtGXd",
