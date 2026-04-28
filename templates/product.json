@@ -2310,8 +2310,8 @@
         "eza_ingredients_LpqaRC"
       ],
       "custom_css": [
-        "h2{font-size:24px;}",
-        "@media (min-width:768px){h2{font-size:36px;}}"
+        "h2 {font-size: 24px;}",
+        "@media (min-width: 768px) {h2 {font-size: 36px; max-width:33ch; }}"
       ],
       "name": "Nootropics",
       "settings": {
