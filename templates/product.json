@@ -2894,7 +2894,7 @@
               "settings": {
                 "image": "shopify://shop_images/eza-baggie.png",
                 "link": "",
-                "image_ratio": "adapt",
+                "image_ratio": "square",
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -2922,7 +2922,7 @@
         "eza_group_tNhfYr"
       ],
       "custom_css": [
-        "@media (min-width: 768px;){.baggie-desktop{padding:80px;} }"
+        "@media (min-width: 768px;) {.baggie-desktop {padding: 80px; }}"
       ],
       "name": "Baggie Desktop",
       "settings": {
