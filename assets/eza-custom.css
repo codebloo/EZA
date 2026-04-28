@@ -886,8 +886,9 @@ border-bottom:1px solid var(--white);
    display: flex;
 padding: 16px 0;
  }
+
 .timeline-pill {
-  padding-right: 2.5rem;
+    padding-right: 0.9rem;
 }
 
 .timeline-pill span {
@@ -915,6 +916,7 @@ padding: 16px 0;
     }
     .timeline-step{gap:28px;}
 .timeline-title{font-size:36px;}
+timeline-pill {padding-right: 2.5rem;}
 
     
 }
