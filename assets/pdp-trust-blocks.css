@@ -18,7 +18,9 @@
 .trust-block:first-child {border-radius:16px 16px 0 0;}
 .trust-block:last-child {border-radius:0 0 16px 16px;}
 
-.trust-block img{width:24px;}
+.trust-block img{
+    margin:0 auto;
+    width:24px;}
 .trust-title,
 .trust-text{
     color: var(--off-black);
@@ -28,7 +30,7 @@
 .trust-title{
 font-weight: 700;
 line-height: 1.1;
-padding:8px 0;}
+padding:8px 0 0;}
 
 .trust-text{
 font-weight: 400;
