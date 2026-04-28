@@ -5,7 +5,7 @@
         <div class="all-trust-blocks"> 
             {% for block in section.blocks %}
                 <div class="trust-block">
-                    {% capture icon %}
+           
   {% render 'icon-or-image',
     icon: block_settings.icon,
     image_upload: block_settings.image,
@@ -13,8 +13,7 @@
     class_name: icon_block_class,
     attributes: block.shopify_attributes
   %}
-{% endcapture %}
-                
+
                     <div class="trust-title"><span>{{ block.settings.title }}</span></div>
                     <div class="trust-text">{{ block.settings.text }}</div>
                 </div>
