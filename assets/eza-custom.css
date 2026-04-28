@@ -867,10 +867,7 @@ text-align: center;}
 
 /* Make wrappers invisible to grid */
 .timeline-list > .shopify-block,
-.timeline-list .timeline-step {
-  display: contents;
-
-}
+.timeline-list .timeline-step {display: contents;}
 
 /* Both cells get the same vertical rhythm and divider */
 .timeline-pill,
