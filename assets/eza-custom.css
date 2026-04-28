@@ -893,13 +893,13 @@ text-align: center;}
 .timeline-pill {padding-right: 2.5rem;}
 
 .timeline-pill span {
-  display: inline-block;
-  background: #000;
-  color: #ffd400;
+  background: var(--black);
+  border-radius: 32px;
+  color: var(--yellow);
+   display: inline-block;
   font-weight: 700;
-  white-space: nowrap;
   padding: 0.75rem 1.75rem;
-  border-radius: 999px;
+   white-space: nowrap;
 }
 
 @media (min-width: 768px) {
