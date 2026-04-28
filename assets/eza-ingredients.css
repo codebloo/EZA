@@ -16,7 +16,7 @@
 
  .desktop-layout-columns .key-ingredient-item{
   border-bottom: 1px solid var(--off-black);
-  padding: 0 0 24px 0;}
+  padding: 0 0 16px 0;}
 
     @media (min-width: 768px) {
 
@@ -37,6 +37,7 @@
         max-width:100%;
         width:678px;
 }
+ .desktop-layout-columns .key-ingredient-item{padding: 0 0 24px 0;}
       
       
     }
