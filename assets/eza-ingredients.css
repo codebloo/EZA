@@ -20,6 +20,7 @@
  .desktop-layout-columns .key-ingredient-item summary{padding:0 0 12px 0;}
 
    .desktop-layout-columns.key-ingredients-grid { grid-row-gap:0;}
+.desktop-layout-columns .key-ingredient-item details[open] {padding-bottom:16px;}
 
     @media (min-width: 768px) {
 
