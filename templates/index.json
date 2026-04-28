@@ -547,6 +547,213 @@
       "name": "EZ-A PDP Trust",
       "settings": {}
     },
+    "section_8JFCJc": {
+      "type": "section",
+      "blocks": {
+        "video_VzCxFW": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video_autoplay": false,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_8cARki": {
+          "type": "group",
+          "name": "t:names.caption",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_K7zc4D": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Take a look behind the scenes of our latest product launch.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_qHjDdE": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "arrow": true,
+                "label": "Discover the collection",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_K7zc4D",
+            "button_qHjDdE"
+          ]
+        }
+      },
+      "block_order": [
+        "video_VzCxFW",
+        "group_8cARki"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "cb_pdp_icons_FrAYBc": {
+      "type": "cb-pdp-icons",
+      "blocks": {
+        "icon_7cNGDC": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/Icon-bolt.png",
+            "title": "Laser Focus*"
+          }
+        },
+        "icon_3Y8PHm": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-battery.png",
+            "title": "Clean Energy*"
+          }
+        },
+        "icon_rCXkpR": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-stopwatch.png",
+            "title": "Fast Reactions*"
+          }
+        },
+        "icon_bEqrVm": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-bulb.png",
+            "title": "Mental Clarity*"
+          }
+        },
+        "icon_nYjKqR": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-chart.png",
+            "title": "Elevated Vibes*"
+          }
+        },
+        "icon_8awjdP": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-brain.png",
+            "title": "Memory Recall*"
+          }
+        }
+      },
+      "block_order": [
+        "icon_7cNGDC",
+        "icon_3Y8PHm",
+        "icon_rCXkpR",
+        "icon_bEqrVm",
+        "icon_nYjKqR",
+        "icon_8awjdP"
+      ],
+      "name": "EZ-A PDP Icons",
+      "settings": {
+        "title": "6 things that happen In the first hour.",
+        "subtitle": "Get more done, no script required."
+      }
+    },
     "eza_section_WFCw7Q": {
       "type": "eza-section",
       "blocks": {
@@ -5691,6 +5898,8 @@
     "eza_section_bxi7bM",
     "eza_section_rm8Giw",
     "cb_pdp_trust_Lw7ALD",
+    "section_8JFCJc",
+    "cb_pdp_icons_FrAYBc",
     "eza_section_WFCw7Q",
     "eza_section_qfDQiU",
     "eza_section_xWea9P",
