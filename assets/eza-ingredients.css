@@ -13,6 +13,7 @@
     .menu-drawer__list-item--divider{border-block-end: 1px solid #343434;}
     .menu-drawer__list-item--divider {border-color: #343434;}
     .menu-drawer__menu .menu-drawer__list-item--flat{}
+ .desktop-layout-columns .key-ingredient-item{border-bottom: 1px solid var(--off-black);}
 
     @media (min-width: 768px) {
 
