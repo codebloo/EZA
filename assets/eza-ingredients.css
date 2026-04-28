@@ -19,7 +19,9 @@
   padding: 16px 0 4px;}
  .desktop-layout-columns .key-ingredient-item summary{padding:0 0 12px 0;}
 
-   .desktop-layout-columns.key-ingredients-grid { grid-row-gap:0;}
+   .desktop-layout-columns.key-ingredients-grid {
+              border-top:3px solid var(--black);
+    grid-row-gap:0;}
 .desktop-layout-columns .key-ingredient-item details[open] {padding-bottom:12px;}
 
 @media (min-width: 768px) {
@@ -34,7 +36,6 @@
 
         .desktop-layout-columns.key-ingredients-grid {
           border-bottom:1px solid var(--black);
-          border-top:3px solid var(--black);
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 24px;
