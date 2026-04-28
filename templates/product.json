@@ -2998,6 +2998,59 @@
         "padding-block-end": 32
       }
     },
+    "cb_pdp_gallery_RTA8bt": {
+      "type": "cb-pdp-gallery",
+      "blocks": {
+        "gallery_image_XDy7r6": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery4.png",
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "gallery_image_kdNhJN": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery3.png",
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "gallery_image_RjaqXh": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery2.png",
+            "title": "",
+            "text": ""
+          },
+          "blocks": {}
+        },
+        "gallery_image_AkaiLa": {
+          "type": "_gallery-image",
+          "name": "Gallery Image",
+          "settings": {
+            "image": "shopify://shop_images/gallery1.png",
+            "title": "The Afternoon Slump",
+            "text": "Take EZ-A before lunch and wonder why you were today years old before you found the fix."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "gallery_image_XDy7r6",
+        "gallery_image_kdNhJN",
+        "gallery_image_RjaqXh",
+        "gallery_image_AkaiLa"
+      ],
+      "name": "PDP Gallery",
+      "settings": {}
+    },
     "eza_section_AqWt3T": {
       "type": "eza-section",
       "blocks": {
@@ -3494,7 +3547,7 @@
       ],
       "custom_css": [
         ".gallery-image-1,.gallery-image-2,.gallery-image-3,.gallery-image-4 {aspect-ratio: 1.28/1;}",
-        "@media query(min-width:768px) {.gallery-image-1,.gallery-image-2,.gallery-image-3,.gallery-image-4 {aspect-ratio: 1;}.pdp-gallery .group-block-content {display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); grid-column-gap: 0px; grid-row-gap: 0px; } .gallery-image-1 {grid-area: 1 / 1 / 2 / 2;} .gallery-image-2 {grid-area: 1 / 2 / 2 / 3;} .gallery-image-3 {grid-area: 2 / 2 / 3 / 3 } .gallery-image-4 {grid-area: 2 / 3 / 3 / 4; }}"
+        "@media query(min-width:768px) {.gallery-image-1, .gallery-image-2, .gallery-image-3, .gallery-image-4 {aspect-ratio: 1; } .pdp-gallery .group-block-content {display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); grid-column-gap: 0px; grid-row-gap: 0px; } .gallery-image-1 {grid-area: 1 / 1 / 2 / 2; } .gallery-image-2 {grid-area: 1 / 2 / 2 / 3; } .gallery-image-3 {grid-area: 2 / 2 / 3 / 3; } .gallery-image-4 {grid-area: 2 / 3 / 3 / 4; }}"
       ],
       "name": "Gallery",
       "settings": {
@@ -5591,6 +5644,7 @@
     "eza_section_NMjAFf",
     "eza_section_FdNEqH",
     "eza_section_cmtGXd",
+    "cb_pdp_gallery_RTA8bt",
     "eza_section_AqWt3T",
     "eza_section_PkypqV",
     "eza_section_nVjcaq",
