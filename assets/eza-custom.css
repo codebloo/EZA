@@ -864,44 +864,43 @@ line-height: 1.1;
 text-align: center;}
 
 .timeline-list{border-top:3px solid var(--white);}
-
-.timeline-list > .shopify-block{
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    column-gap: 2.5rem;
+.timeline-list {
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 0 1.5rem;}
-
-.timeline-step {
-  margin: 0;
-  padding: 16px 0;
-
-
+  background: #1a1a1a;
+  padding: 0 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
 }
+
+/* Make wrappers invisible to grid */
+.timeline-list > .shopify-block,
+.timeline-list .timeline-step {
+  display: contents;
+}
+
+/* Both cells get the same vertical rhythm and divider */
+.timeline-pill,
+.timeline-text {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.timeline-pill {padding-right: 2.5rem;}
 
 .timeline-pill span {
-    background-color:var(--black);
-    border-radius:32px;
-  color:var(--yellow);
-    display: inline-block;
- 
-  font-size: 16px;
+  display: inline-block;
+  background: #000;
+  color: #ffd400;
   font-weight: 700;
-  line-height: 1;
-
-  padding: 8px 16px;
   white-space: nowrap;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
 }
-
-
-.timeline-text{
-color:var(--white);
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 21px;
-padding-right:9px;
-width:185px;}
 
 @media (min-width: 768px) {
 .pdp-timeline{background-color: rgba(255, 242, 0, 0.50);}
