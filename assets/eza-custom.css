@@ -887,6 +887,7 @@ font-weight: 400;
 line-height: 21px;}
 
 @media (min-width: 768px) {
+.pdp-play-by-play{background-color: rgba(255, 242, 0, 0.50);}
 .play-title{font-size:36px;}
     
 }
