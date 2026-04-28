@@ -2309,9 +2309,13 @@
         "text_aCaLYH",
         "eza_ingredients_LpqaRC"
       ],
+      "custom_css": [
+        "h2{font-size:24px;}",
+        "@media (min-width:768px){h2{font-size:36px;}}"
+      ],
       "name": "Nootropics",
       "settings": {
-        "custom_class": "",
+        "custom_class": "nootropics",
         "desktop_hidden": false,
         "mobile_hidden": false,
         "content_direction": "column",
