@@ -877,7 +877,7 @@ text-align: center;}
 .timeline-list .timeline-step {
     border-bottom:1px solid var(--white);
   display: contents;
-  padding: 16px 0;
+
 }
 
 /* Both cells get the same vertical rhythm and divider */
@@ -886,6 +886,7 @@ text-align: center;}
   align-items: center;
   color: var(--white);
    display: flex;
+     padding: 16px 0;
  }
 
 .timeline-pill {padding-right: 2.5rem;}
