@@ -64,7 +64,7 @@ line-height: 19px;
 max-width:50ch;
     }
 
-    .desktop-layout-columns .key-ingredient-item .key-ingredient-name{font-weight:700;}
+    .desktop-layout-columns .key-ingredient-item .key-ingredient-name{font-weight:700!important;}
     @media (min-width: 768px) {
 
   .key-ingredient-item--accordion .details__header { pointer-events: none; }
