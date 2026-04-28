@@ -1,7 +1,12 @@
 
 
 .pdp-quality-blocks{}
-.quality-blocks-pretitle{}
+.quality-blocks-pretitle{
+    color: var(--Color-Grayscale-600, #7C7C7C);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;}
+    
 .quality-blocks-title{}
 
 .all-quality-blocks{}
