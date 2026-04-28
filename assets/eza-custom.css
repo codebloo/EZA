@@ -888,7 +888,9 @@ line-height: 21px;}
 
 @media (min-width: 768px) {
 .pdp-play-by-play{background-color: rgba(255, 242, 0, 0.50);}
-.play-all-steps{border-radius:16px 16px 0 0;}
+.play-all-steps{
+    border-radius:16px 16px 0 0;
+    padding:56px 0;}
 .play-title{font-size:36px;}
     
 }
