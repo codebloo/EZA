@@ -1603,6 +1603,7 @@
         "quality_4hJHmW": {
           "type": "quality",
           "settings": {
+            "image": "shopify://shop_images/icon-qa-atom.svg",
             "title": "Our PhD Master Formulator",
             "text": "Brian Dixon, PhD has a doctorate in molecular biology and 25 years experience formulating supplements. No celebrity co-sign. Just the guy who actually knows what he’s doing."
           }
@@ -1610,6 +1611,7 @@
         "quality_hqYVxF": {
           "type": "quality",
           "settings": {
+            "image": "shopify://shop_images/icon-qa-beaker.svg",
             "title": "Every Lot is 3rd-party Tested",
             "text": "Potency, adulterants, heavy metals, all tested on the finished product. Not just the raw ingredients going in. Most brands stop at raw materials and call it a day... But we go the extra mile."
           }
@@ -1617,8 +1619,9 @@
         "quality_9Lbqnb": {
           "type": "quality",
           "settings": {
-            "title": "",
-            "text": ""
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "title": "GMP + NSF Certified Facility",
+            "text": "EZ-A is manufactured in a NSF-certified, FDA-registered, cGMP compliant facility. The supplement bar has been too low. That’s why we set a much higher one."
           }
         },
         "quality_C8VBPY": {
