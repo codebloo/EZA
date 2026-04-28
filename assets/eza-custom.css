@@ -789,6 +789,8 @@ line-height: 1.1;
 
 
 
+
+
 .gallery-image{
     aspect-ratio:327/256;
     background-size:cover;
@@ -822,6 +824,7 @@ line-height: 1.1;
 }
 
 @media (min-width: 768px) {
+    .all-images-title{font-size: 36px;}
 .gallery-image{
     aspect-ratio:1;
     border-radius:16px;
