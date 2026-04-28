@@ -1,12 +1,12 @@
 .pdp-icon-blocks{}
 
-.all-icons{
+.all-icon-blocks{
 
 }
 
 @media (min-width: 768px) {
 
-.all-icons{
+.all-icon-blocks{
     margin:0 auto;
     max-width:100%;
     width:1078px;} 
