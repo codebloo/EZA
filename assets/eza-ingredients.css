@@ -23,6 +23,8 @@
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 24px;
         grid-row-gap:24px;
+        max-width:100%;
+        width:678px;
 }
       
       
