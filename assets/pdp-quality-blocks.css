@@ -42,9 +42,9 @@ line-height: 21px;}
 
 @media (min-width:768px){
     .quality-block{}
-
-    .quality-blocks-title{
-    font-size: 36px;
-    text-align: center;}
+    .quality-blocks-pretitle,
+    .quality-blocks-title{text-align: center;}
+    .quality-blocks-pretitle{font-size: 16px;}
+    .quality-blocks-title{font-size: 36px;}
 
 }
