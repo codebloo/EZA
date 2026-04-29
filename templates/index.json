@@ -5694,7 +5694,7 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
                 "width": "fill",
@@ -5736,9 +5736,9 @@
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
-                    "width": "fit-content",
+                    "width": "custom",
                     "custom_width": 100,
-                    "width_mobile": "fit-content",
+                    "width_mobile": "custom",
                     "custom_width_mobile": 100
                   },
                   "blocks": {}
