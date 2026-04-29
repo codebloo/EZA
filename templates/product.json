@@ -3958,7 +3958,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Still not sure? Fair enough. Here are the questions people actually ask.</p>",
+                    "text": "<p>Still not sure? Fair enough. <br/>Here are the questions people actually ask.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
