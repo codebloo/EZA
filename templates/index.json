@@ -2317,11 +2317,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "recharge_subscriptions_subscription_widget_v2_iqwemi": {
+              "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+              "settings": {}
             }
           },
           "block_order": [
             "eza_group_VQCCcD",
-            "eza_variant_picker_TrQcdL"
+            "eza_variant_picker_TrQcdL",
+            "recharge_subscriptions_subscription_widget_v2_iqwemi"
           ]
         }
       },
