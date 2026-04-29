@@ -2133,7 +2133,7 @@
         ".clean-focus {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".pullquote .group-block-content {border-left: 7px solid var(--yellow); padding-left: 8px;}",
         ".button {justify-content: center; width: 327px;}",
-        ".clean-focus .custom-section-content {padding-bottom:24px; padding-top: 32px;}",
+        ".clean-focus .custom-section-content {padding-bottom: 24px; padding-top: 32px;}",
         "@media (min-width: 768px) {.clean-focus .custom-section-content {padding: 112px 0; }}"
       ],
       "name": "Clean Focus",
@@ -2799,6 +2799,141 @@
     "eza_section_EXgK33": {
       "type": "eza-section",
       "blocks": {
+        "eza_group_eazMdn": {
+          "type": "eza-group",
+          "name": "Text Group",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "eza_group_PkbrX3": {
+              "type": "eza-group",
+              "name": "Ratings",
+              "settings": {
+                "custom_class": "",
+                "desktop_hidden": false,
+                "mobile_hidden": false,
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "center",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-9acb457b-cad2-4efc-8566-82eac9b9802d",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "icon_YnkX7t": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/Star_Rating.svg",
+                    "width": 100,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                },
+                "text_Ltf6cr": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p><strong>4.7 · 500+ Verified Reviews </strong></p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "icon_YnkX7t",
+                "text_Ltf6cr"
+              ]
+            }
+          },
+          "block_order": [
+            "eza_group_PkbrX3"
+          ]
+        },
         "eza_group_XKATye": {
           "type": "eza-group",
           "name": "EZ-A Group",
@@ -2875,11 +3010,15 @@
         }
       },
       "block_order": [
+        "eza_group_eazMdn",
         "eza_group_XKATye"
       ],
-      "name": "EZ-A Custom Section",
+      "custom_css": [
+        "@media(min-width:768px){.people-love{padding-top:64px;}}"
+      ],
+      "name": "A lot of people love",
       "settings": {
-        "custom_class": "",
+        "custom_class": "people-love",
         "desktop_hidden": false,
         "mobile_hidden": false,
         "content_direction": "column",
@@ -2887,11 +3026,11 @@
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
+        "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
-        "section_width": "full-width",
-        "section_height": "small",
+        "section_width": "page-width",
+        "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
         "background_media": "none",
@@ -2905,7 +3044,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 32,
         "padding-block-end": 0
       }
     },
