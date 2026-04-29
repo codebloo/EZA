@@ -3959,8 +3959,8 @@
                   "name": "t:names.text",
                   "settings": {
                     "text": "<p>Still not sure? Fair enough. Here are the questions people actually ask.</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
+                    "width": "100%",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "h2",
                     "font": "var(--font-body--family)",
