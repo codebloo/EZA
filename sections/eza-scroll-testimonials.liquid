@@ -1,17 +1,26 @@
 {%- comment -%}
   ============================================================
-  Section: Testimonials
+  Section: EZ-A Scroll Testimonials
   ------------------------------------------------------------
-  - Desktop (≥750px): 3-up grid (configurable columns)
+  - Desktop (≥750px): N-up grid (configurable columns)
   - Mobile (<750px):  Drag-scroll carousel with scroll-snap
-                      and a progress bar indicator
-  - Block-based: merchants add/edit/reorder testimonials
-                 in the theme editor
+                      and a FULL-WIDTH progress bar
+  - Section width:    page-width or full-width (per setting)
+  - Block-based:      merchants add/edit/reorder testimonials
   ============================================================
 {%- endcomment -%}
 
+{%- liquid
+  assign section_width = section.settings.section_width | default: 'page-width'
+  if section_width == 'page-width'
+    assign inner_class = 'page-width'
+  else
+    assign inner_class = ''
+  endif
+-%}
+
 <section
-  class="section-testimonials testimonials color-{{ section.settings.color_scheme | default: 'background-1' }} section section--{{ section.settings.section_width }}"
+  class="section-testimonials testimonials color-{{ section.settings.color_scheme | default: 'background-1' }} section section--{{ section_width }}"
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}
@@ -25,13 +34,15 @@
     --pb: {{ section.settings.padding_bottom }}px;
   "
 >
-  <div class="testimonials__inner">
-    {%- if section.settings.heading != blank -%}
+  {%- if section.settings.heading != blank -%}
+    <div class="testimonials__inner {{ inner_class }}">
       <h2 class="testimonials__heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
+    </div>
+  {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
-      <div class="testimonials__track section section--page-width" role="list">
+  {%- if section.blocks.size > 0 -%}
+    <div class="testimonials__inner testimonials__inner--track {{ inner_class }}">
+      <div class="testimonials__track" role="list">
         {%- for block in section.blocks -%}
           {%- if block.type == 'testimonial' -%}
             <article
@@ -74,14 +85,20 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
+    </div>
 
-      {%- comment -%} Mobile-only progress bar {%- endcomment -%}
-      <div class="testimonials__progress" aria-hidden="true">
-        <div class="testimonials__progress-bar"></div>
-      </div>
-    {%- endif -%}
+    {%- comment -%}
+      Progress bar lives OUTSIDE any inner wrapper so it always
+      spans the section's full width (= viewport width on mobile,
+      where it's actually visible).
+    {%- endcomment -%}
+    <div class="testimonials__progress" aria-hidden="true">
+      <div class="testimonials__progress-bar"></div>
+    </div>
+  {%- endif -%}
 
-    {%- if section.settings.link_text != blank -%}
+  {%- if section.settings.link_text != blank -%}
+    <div class="testimonials__inner {{ inner_class }}">
       <div class="testimonials__cta">
         <a
           href="{{ section.settings.link_url | default: '#' }}"
@@ -93,8 +110,8 @@
           </svg>
         </a>
       </div>
-    {%- endif -%}
-  </div>
+    </div>
+  {%- endif -%}
 </section>
 
 <style>
@@ -103,12 +120,9 @@
     padding-bottom: var(--pb, 60px);
   }
 
-  .testimonials__inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+  /* Inner wrappers stay unstyled at the block level — width and
+     horizontal padding come from the theme's .page-width class
+     when applied. Full-width mode = no .page-width, no constraint. */
 
   .testimonials__heading {
     text-align: center;
@@ -165,14 +179,13 @@
     opacity: 0.65;
   }
 
-  /* ---------- Progress bar (mobile only) ---------- */
+  /* ---------- Progress bar (mobile only, full section width) ---------- */
   .testimonials__progress {
     display: none;
     position: relative;
     height: 2px;
     background: rgba(0, 0, 0, 0.08);
     margin: 1.25rem 0 0;
-    border-radius: 2px;
     overflow: hidden;
   }
 
@@ -182,7 +195,6 @@
     left: 0;
     height: 100%;
     background: currentColor;
-    border-radius: 2px;
     transition: transform 0.05s linear, width 0.05s linear;
   }
 
@@ -215,15 +227,12 @@
      Mobile: drag-scroll carousel with scroll-snap
      ============================================================ */
   @media (max-width: 749px) {
-    .testimonials__inner {
+    /* Track wrapper drops its constraints so cards can bleed
+       to the viewport edges. Track itself supplies the gutter. */
+    .testimonials__inner--track {
       padding-left: 0;
       padding-right: 0;
-    }
-
-    .testimonials__heading,
-    .testimonials__cta {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      max-width: none;
     }
 
     .testimonials__track {
@@ -286,7 +295,6 @@
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
 
-    // Initial paint (and re-run after fonts/images settle)
     update();
     if (document.readyState === 'complete') {
       requestAnimationFrame(update);
@@ -301,7 +309,7 @@
   "name": "EZ-A Scroll Testimonials",
   "class": "section-wrapper",
   "settings": [
-     {
+    {
       "type": "select",
       "id": "section_width",
       "label": "t:settings.width",
