@@ -2789,6 +2789,56 @@
         "title": "We compete with sketchy gas station pills, so quality is our obsession."
       }
     },
+    "eza_scroll_testimonials_UbGK3E": {
+      "type": "eza-scroll-testimonials",
+      "blocks": {
+        "testimonial_fQDBLj": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "I go from daydreaming to actually getting work done. It's not magic. It just works.",
+            "name": "Marcus R.",
+            "subtitle": "Verified Buyer"
+          }
+        },
+        "testimonial_QjK8YN": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Smooth, consistent energy and mental clarity. No jitters, no crash—easy 10+ hours.",
+            "name": "Jenna K.",
+            "subtitle": "Verified Buyer"
+          }
+        },
+        "testimonial_q9reBE": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "I went from daydreaming at my desk to locked in for four hours. Finished more in one afternoon than I had all week.",
+            "name": "Marcus R.",
+            "subtitle": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fQDBLj",
+        "testimonial_QjK8YN",
+        "testimonial_q9reBE"
+      ],
+      "name": "EZ-A Scroll Testimonials",
+      "settings": {
+        "heading": "A Lot of People Love EZ-A",
+        "columns_desktop": 3,
+        "card_bg": "#EFEFEF",
+        "text_color": "#1A1A1A",
+        "star_color": "#F5C518",
+        "color_scheme": "",
+        "link_text": "Read all the reviews",
+        "link_url": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "eza_section_YT3AUC": {
       "type": "eza-section",
       "blocks": {
@@ -4947,6 +4997,7 @@
     "eza_section_zt78Qe",
     "eza_section_z3txXL",
     "cb_pdp_quality_iqkqbm",
+    "eza_scroll_testimonials_UbGK3E",
     "eza_section_YT3AUC",
     "eza_section_36cLtt",
     "eza_testimonials_6bFr6f"
