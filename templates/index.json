@@ -5744,7 +5744,7 @@
                   "settings": {
                     "text": "<p><strong>EZ-A Is the Nootropic the Industry Was Too Scared to Make</strong></p>",
                     "width": "fit-content",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "h5",
                     "font": "var(--font-body--family)",
