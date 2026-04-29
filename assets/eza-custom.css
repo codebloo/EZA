@@ -518,7 +518,9 @@ border: 1px solid #D3D3D3;
     height: 44px;
 padding: 0 8px;
 }
-.eza-variant{position:relative;}
+.eza-variant{
+    position:relative;
+width:calc((100% / 3) - 4px);}
 
 .eza-variant-tag {
 align-items:center;
