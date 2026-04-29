@@ -50,6 +50,7 @@
               role="listitem"
               {{ block.shopify_attributes }}
             >
+              <div class="testimonials_head">
               {%- assign rating = block.settings.rating | default: 5 -%}
               <div
                 class="testimonials__stars"
@@ -72,7 +73,7 @@
               {%- if block.settings.quote != blank -%}
                 <p class="testimonials__quote">{{ block.settings.quote }}</p>
               {%- endif -%}
-
+</div>
               <div class="testimonials__attribution">
                 {%- if block.settings.name != blank -%}
                   <p class="testimonials__name">{{ block.settings.name }}</p>
