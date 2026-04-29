@@ -2357,7 +2357,7 @@
         }
       },
       "custom_css": [
-        ".section--page-width{margin:0 auto; max-width: 100%; width:1080px;}"
+        ".section--page-width {margin: 0 auto; max-width: 100%; width: 1080px;}"
       ],
       "name": "EZ-A Featured Product",
       "settings": {
@@ -4739,9 +4739,9 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "center",
+                "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "gap": 26,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -4765,7 +4765,7 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 100,
+                "padding-block-end": 26,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
