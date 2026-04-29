@@ -11,7 +11,10 @@
 {%- endcomment -%}
 
 <section
-  class="testimonials color-{{ section.settings.color_scheme | default: 'background-1' }}"
+  class="testimonials color-{{ section.settings.color_scheme | default: 'background-1' }} section section--{{ section.settings.section_width }}"
+  {% if request.visual_preview_mode %}
+    data-shopify-visual-preview
+  {% endif %}
   data-testimonials="{{ section.id }}"
   style="
     --card-bg: {{ section.settings.card_bg }};
@@ -299,6 +302,22 @@
   "tag": "section",
   "class": "section section-testimonials",
   "settings": [
+     {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
     {
       "type": "text",
       "id": "heading",
