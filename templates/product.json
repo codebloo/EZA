@@ -2490,7 +2490,7 @@
         ".pills .group-block-content {flex-wrap: wrap !important;}",
         ".clean-focus {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".pullquote .group-block-content {border-left: 7px solid var(--yellow); padding-left: 8px;}",
-        ".button{justify-content: center; width:327px;}"
+        ".button {justify-content: center; width: 327px;}"
       ],
       "name": "Clean Focus",
       "settings": {
@@ -3383,470 +3383,10 @@
             "eza_group_qAr9AY",
             "text_HKnMdj"
           ]
-        },
-        "eza_group_eJbemn": {
-          "type": "eza-group",
-          "name": "Testimonials Group",
-          "settings": {
-            "custom_class": "testimonial-group",
-            "desktop_hidden": false,
-            "mobile_hidden": false,
-            "content_direction": "row",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "eza_group_CebmP8": {
-              "type": "eza-group",
-              "name": "Testimonial Quote",
-              "settings": {
-                "custom_class": "",
-                "desktop_hidden": false,
-                "mobile_hidden": false,
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fill",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 24,
-                "padding-block-end": 24,
-                "padding-inline-start": 24,
-                "padding-inline-end": 24
-              },
-              "blocks": {
-                "icon_xF4Gxw": {
-                  "type": "icon",
-                  "name": "t:names.icon",
-                  "settings": {
-                    "icon": "star",
-                    "image_upload": "shopify://shop_images/Star_Rating.svg",
-                    "width": 100,
-                    "link": "",
-                    "open_in_new_tab": false
-                  },
-                  "blocks": {}
-                },
-                "text_ANDNUX": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><em>“I go from daydreaming to actually getting work done. It's not magic. It just works.”</em></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_erC6a8": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><strong>Marcus R.<br/></strong>Verified Buyer</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "icon_xF4Gxw",
-                "text_ANDNUX",
-                "text_erC6a8"
-              ]
-            },
-            "eza_group_iDTLdx": {
-              "type": "eza-group",
-              "name": "Testimonial Quote",
-              "settings": {
-                "custom_class": "",
-                "desktop_hidden": false,
-                "mobile_hidden": false,
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fill",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 24,
-                "padding-block-end": 24,
-                "padding-inline-start": 24,
-                "padding-inline-end": 24
-              },
-              "blocks": {
-                "icon_qJbHzD": {
-                  "type": "icon",
-                  "name": "t:names.icon",
-                  "settings": {
-                    "icon": "star",
-                    "image_upload": "shopify://shop_images/Star_Rating.svg",
-                    "width": 100,
-                    "link": "",
-                    "open_in_new_tab": false
-                  },
-                  "blocks": {}
-                },
-                "text_PD37KX": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><em>“Smooth, consistent energy and mental clarity. No jitters, no crash—easy 10+ hours.”</em></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_9qWNHb": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><strong>Jenna K.<br/></strong>Verified Buyer</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "icon_qJbHzD",
-                "text_PD37KX",
-                "text_9qWNHb"
-              ]
-            },
-            "eza_group_H8TD8R": {
-              "type": "eza-group",
-              "name": "Testimonial Quote",
-              "settings": {
-                "custom_class": "",
-                "desktop_hidden": false,
-                "mobile_hidden": false,
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fill",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 24,
-                "padding-block-end": 24,
-                "padding-inline-start": 24,
-                "padding-inline-end": 24
-              },
-              "blocks": {
-                "icon_ckVLt6": {
-                  "type": "icon",
-                  "name": "t:names.icon",
-                  "settings": {
-                    "icon": "star",
-                    "image_upload": "shopify://shop_images/Star_Rating.svg",
-                    "width": 100,
-                    "link": "",
-                    "open_in_new_tab": false
-                  },
-                  "blocks": {}
-                },
-                "text_6Rk3pA": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><em>“I went from daydreaming at my desk to locked in for four hours. Finished more in one afternoon than I had all week.”</em></p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_zzngtk": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p><strong>Marcus R.<br/></strong>Verified Buyer</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "icon_ckVLt6",
-                "text_6Rk3pA",
-                "text_zzngtk"
-              ]
-            }
-          },
-          "block_order": [
-            "eza_group_CebmP8",
-            "eza_group_iDTLdx",
-            "eza_group_H8TD8R"
-          ]
-        },
-        "eza_group_krrVj6": {
-          "type": "eza-group",
-          "name": "EZ-A Group",
-          "settings": {
-            "custom_class": "",
-            "desktop_hidden": false,
-            "mobile_hidden": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 0,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-9acb457b-cad2-4efc-8566-82eac9b9802d",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "eza_button_mCMieL": {
-              "type": "eza-button",
-              "name": "EZ-A Button",
-              "settings": {
-                "arrow": true,
-                "arrow_color": "blue",
-                "show_gradient": false,
-                "label": "Read all the reviews",
-                "link": "#yotpo-reviews-main-widget",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "eza_button_mCMieL"
-          ]
         }
       },
       "block_order": [
-        "eza_group_e6faLh",
-        "eza_group_eJbemn",
-        "eza_group_krrVj6"
+        "eza_group_e6faLh"
       ],
       "custom_css": [
         ".testimonial-group .group-block-content {margin: 0 auto; max-width: 100%; width: 1080px;}"
@@ -3880,7 +3420,58 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 32,
-        "padding-block-end": 65
+        "padding-block-end": 0
+      }
+    },
+    "eza_scroll_testimonials_yMqqMJ": {
+      "type": "eza-scroll-testimonials",
+      "blocks": {
+        "testimonial_7pWW7w": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "I go from daydreaming to actually getting work done. It's not magic. It just works.",
+            "name": "Marcus R.",
+            "subtitle": "Verified Buyer"
+          }
+        },
+        "testimonial_fEPYGC": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Smooth, consistent energy and mental clarity. No jitters, no crash—easy 10+ hours.",
+            "name": "Jenna K.",
+            "subtitle": "Verified Buyer"
+          }
+        },
+        "testimonial_CJkhJd": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "I went from daydreaming at my desk to locked in for four hours. Finished more in one afternoon than I had all week.",
+            "name": "Marcus R.",
+            "subtitle": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_7pWW7w",
+        "testimonial_fEPYGC",
+        "testimonial_CJkhJd"
+      ],
+      "name": "EZ-A Scroll Testimonials",
+      "settings": {
+        "section_width": "full-width",
+        "heading": "",
+        "columns_desktop": 3,
+        "card_bg": "#f1f1f1",
+        "text_color": "#000000",
+        "star_color": "#ffd100",
+        "color_scheme": "",
+        "link_text": "Read all the reviews",
+        "link_url": "",
+        "padding_top": 24,
+        "padding_bottom": 0
       }
     },
     "cb_pdp_gallery_RTA8bt": {
@@ -5502,6 +5093,7 @@
     "eza_section_tqNQqN",
     "cb_pdp_quality_QcNFF9",
     "eza_section_NMjAFf",
+    "eza_scroll_testimonials_yMqqMJ",
     "cb_pdp_gallery_RTA8bt",
     "eza_section_PkypqV",
     "cb_pdp_playbyplay_38TmD3",
