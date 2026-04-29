@@ -2225,7 +2225,22 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "eza_variant_picker_TrQcdL": {
+              "type": "eza-variant-picker",
+              "name": "EZ-A Variant Picker",
+              "settings": {
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "eza_variant_picker_TrQcdL"
+          ]
         }
       },
       "name": "EZ-A Featured Product",
