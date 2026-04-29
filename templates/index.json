@@ -5724,7 +5724,48 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "eza_button_7NKqeG": {
+                  "type": "eza-button",
+                  "name": "EZ-A Button",
+                  "settings": {
+                    "arrow": true,
+                    "arrow_color": "yellow",
+                    "show_gradient": true,
+                    "label": "SHOP NOW – $33",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                },
+                "eza_button_X3mghK": {
+                  "type": "eza-button",
+                  "name": "EZ-A Button",
+                  "settings": {
+                    "arrow": false,
+                    "arrow_color": "white",
+                    "show_gradient": true,
+                    "label": "GET A FREE 4CT W/ PURCHASE",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button-secondary",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "eza_button_7NKqeG",
+                "eza_button_X3mghK"
+              ]
             }
           },
           "block_order": [
@@ -5765,7 +5806,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 32,
-        "padding-block-end": 0
+        "padding-block-end": 32
       }
     }
   },
