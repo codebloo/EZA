@@ -513,7 +513,8 @@ border: 1px solid #D3D3D3;
 
 /* Variant Styles */
 .eza-variant-picker {padding-top:34px;}
-.eza-variant-picker .variant-option__values{column-gap:6px;}
+.eza-variant-picker .variant-option__values{column-gap:6px;
+width:100%;}
 .eza-variant-picker .variant-option__button-label{
     height: 44px;
 padding: 0 8px;
