@@ -35,13 +35,13 @@
   "
 >
   {%- if section.settings.heading != blank -%}
-    <div class="testimonials__inner {{ inner_class }}">
+    <div class="testimonials__inner page-width {{ inner_class }}">
       <h2 class="testimonials__heading">{{ section.settings.heading }}</h2>
     </div>
   {%- endif -%}
 
   {%- if section.blocks.size > 0 -%}
-    <div class="testimonials__inner testimonials__inner--track {{ inner_class }}">
+    <div class="testimonials__inner testimonials__inner--track {{ inner_class }} page-width">
       <div class="testimonials__track" role="list">
         {%- for block in section.blocks -%}
           {%- if block.type == 'testimonial' -%}
