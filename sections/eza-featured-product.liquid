@@ -39,7 +39,7 @@
 %}
 
 <script type="application/ld+json">
-  {{ closest.product | structured_data }}
+  {{ section.settings.product | structured_data }}
 </script>
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -285,7 +285,7 @@
 
 {% schema %}
 {
-  "name": "t:names.product_information",
+  "name": "EZ-A Featured Product",
   "blocks": [
     {
       "type": "@app"
@@ -386,6 +386,6 @@
     }
   ],
   "presets": [{
-  "name": "Featured Product"}]
+  "name": "EZ-A Featured Product"}]
 }
 {% endschema %}
