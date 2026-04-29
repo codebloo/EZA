@@ -2294,17 +2294,10 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "yotpo_product_reviews_star_rating_TfVWVy": {
-                  "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-                  "settings": {
-                    "product": "ez-a"
-                  }
                 }
               },
               "block_order": [
-                "text_phMQ8Y",
-                "yotpo_product_reviews_star_rating_TfVWVy"
+                "text_phMQ8Y"
               ]
             },
             "eza_variant_picker_TrQcdL": {
@@ -2317,10 +2310,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "recharge_subscriptions_subscription_widget_v2_iqwemi": {
-              "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
-              "settings": {}
             },
             "buy_buttons_fTDtUr": {
               "type": "buy-buttons",
@@ -2363,11 +2352,13 @@
           "block_order": [
             "eza_group_VQCCcD",
             "eza_variant_picker_TrQcdL",
-            "recharge_subscriptions_subscription_widget_v2_iqwemi",
             "buy_buttons_fTDtUr"
           ]
         }
       },
+      "custom_css": [
+        ".section--page-width{margin:0 auto; max-width: 100%; width:1080px;}"
+      ],
       "name": "EZ-A Featured Product",
       "settings": {
         "product": "ez-a",
