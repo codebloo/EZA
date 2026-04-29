@@ -2226,6 +2226,87 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "eza_group_VQCCcD": {
+              "type": "eza-group",
+              "name": "Header",
+              "settings": {
+                "custom_class": "",
+                "desktop_hidden": false,
+                "mobile_hidden": true,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 0,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 27,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_phMQ8Y": {
+                  "type": "text",
+                  "name": "Product title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-primary--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "yotpo_product_reviews_star_rating_TfVWVy": {
+                  "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+                  "settings": {
+                    "product": "{{closest.product}}"
+                  }
+                }
+              },
+              "block_order": [
+                "text_phMQ8Y",
+                "yotpo_product_reviews_star_rating_TfVWVy"
+              ]
+            },
             "eza_variant_picker_TrQcdL": {
               "type": "eza-variant-picker",
               "name": "EZ-A Variant Picker",
@@ -2239,6 +2320,7 @@
             }
           },
           "block_order": [
+            "eza_group_VQCCcD",
             "eza_variant_picker_TrQcdL"
           ]
         }
