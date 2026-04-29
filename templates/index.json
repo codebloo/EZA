@@ -2168,8 +2168,8 @@
         "padding-block-end": 0
       }
     },
-    "product_information_kcbAUY": {
-      "type": "product-information",
+    "eza_featured_product_UU9VPB": {
+      "type": "eza-featured-product",
       "blocks": {
         "media-gallery": {
           "type": "_product-media-gallery",
@@ -2228,7 +2228,7 @@
           "blocks": {}
         }
       },
-      "name": "Featured Product",
+      "name": "EZ-A Featured Product",
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
@@ -5819,7 +5819,7 @@
     "cb_pdp_icons_FrAYBc",
     "eza_section_k4n7Lr",
     "eza_section_4xiG4f",
-    "product_information_kcbAUY",
+    "eza_featured_product_UU9VPB",
     "eza_section_zt78Qe",
     "eza_section_z3txXL",
     "cb_pdp_quality_iqkqbm",
