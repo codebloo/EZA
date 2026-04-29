@@ -2946,9 +2946,9 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 0,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -3014,7 +3014,7 @@
         "eza_group_XKATye"
       ],
       "custom_css": [
-        "@media(min-width:768px){.people-love{padding-top:64px;}}"
+        "@media (min-width: 768px) {.people-love {padding-top: 64px; }}"
       ],
       "name": "A lot of people love",
       "settings": {
@@ -3087,7 +3087,7 @@
       "name": "EZ-A Scroll Testimonials",
       "settings": {
         "section_width": "full-width",
-        "heading": "A Lot of People Love EZ-A",
+        "heading": "",
         "columns_desktop": 3,
         "card_bg": "#efefef",
         "text_color": "#1a1a1a",
@@ -5192,56 +5192,6 @@
         "padding-block-start": 32,
         "padding-block-end": 32
       }
-    },
-    "eza_testimonials_6bFr6f": {
-      "type": "eza-testimonials",
-      "blocks": {
-        "testimonial_rAMCqm": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>“I was skeptical at first, but after EZ-A hit for the first time I was like OMG! Where have you been all my life? I really wish I had this when I was still in college, I feel like I could have been at the top of my class.”</p>",
-            "image": "shopify://shop_images/testimonial-author-1.png",
-            "author": "Nathalie B.",
-            "author_info": "Event planner"
-          }
-        },
-        "testimonial_T7AweB": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>“At the risk of sounding like a fanboy, EZ-A has become an important part to my success. I have some in my bag because I never know when I might need an extra edge. It really does make me react faster.”</p>",
-            "image": "shopify://shop_images/testimonial-author-2.png",
-            "author": "Luke W.",
-            "author_info": "Student & Gamer"
-          }
-        },
-        "testimonial_DtUeyk": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>“I have to stay up all night from time to time (sometimes it’s even for fun), and EZ-A makes it all possible. In the clutch, I hope I always have some in my pocket—my gf needs to stop stealing my stash.”</p>",
-            "image": "shopify://shop_images/testimonial-author-3.png",
-            "author": "Elliot S.",
-            "author_info": "Entrepreneur & coder"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_rAMCqm",
-        "testimonial_T7AweB",
-        "testimonial_DtUeyk"
-      ],
-      "name": "t:sections.testimonials.presets.customer_testimonials.name",
-      "settings": {
-        "title": "People love EZ-A",
-        "round_images": true,
-        "viewmore_label": "Read All Reviews",
-        "viewmore_link": "shopify://pages/reviews",
-        "app_key": "oPb9MA1aPqEuD1yzGXzdeeVDnZxHOJaor4WMTDvM",
-        "color_background": "#f9f9f9",
-        "color_text": "#1c1d1d"
-      }
     }
   },
   "order": [
@@ -5260,7 +5210,6 @@
     "eza_section_EXgK33",
     "eza_scroll_testimonials_UbGK3E",
     "eza_section_YT3AUC",
-    "eza_section_36cLtt",
-    "eza_testimonials_6bFr6f"
+    "eza_section_36cLtt"
   ]
 }
