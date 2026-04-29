@@ -31,7 +31,7 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="testimonials__track" role="list">
+      <div class="testimonials__track section section--page-width" role="list">
         {%- for block in section.blocks -%}
           {%- if block.type == 'testimonial' -%}
             <article
