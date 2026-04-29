@@ -1225,63 +1225,6 @@
         "padding-block-end": 60
       }
     },
-    "cb_pdp_quality_iqkqbm": {
-      "type": "cb-pdp-quality",
-      "blocks": {
-        "quality_jw8MLg": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-atom.svg",
-            "title": "Our PhD Master Formulator",
-            "text": "Brian Dixon, PhD has a doctorate in molecular biology and 25 years experience formulating supplements. No celebrity co-sign. Just the guy who actually knows what he’s doing."
-          }
-        },
-        "quality_yRbnMj": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-beaker.svg",
-            "title": "Every Lot is 3rd-party Tested",
-            "text": "Potency, adulterants, heavy metals, all tested on the finished product. Not just the raw ingredients going in. Most brands stop at raw materials and call it a day... But we go the extra mile."
-          }
-        },
-        "quality_nKAmgx": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-certified.svg",
-            "title": "GMP + NSF Certified Facility",
-            "text": "EZ-A is manufactured in a NSF-certified, FDA-registered, cGMP compliant facility. The supplement bar has been too low. That’s why we set a much higher one."
-          }
-        },
-        "quality_h4QHVV": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-pill.svg",
-            "title": "Methylated B Vitamins",
-            "text": "The form your body can actually absorb and use. Most brands skip it because it costs more to source. Up to 60% of people can’t fully process the cheaper version. Do the math."
-          }
-        },
-        "quality_JwJ48t": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-heart.svg",
-            "title": "Love EZ-A or Your Money Back",
-            "text": "We’re so confident you’ll love EZ-A, your first baggie’s free if you don’t. And that offer has stood since we hung out our e-commerce shingle."
-          }
-        }
-      },
-      "block_order": [
-        "quality_jw8MLg",
-        "quality_yRbnMj",
-        "quality_nKAmgx",
-        "quality_h4QHVV",
-        "quality_JwJ48t"
-      ],
-      "name": "EZ-A PDP Quality",
-      "settings": {
-        "pretitle": "Quality Is More Than a Product Feature",
-        "title": "We compete with sketchy gas station pills, so quality is our obsession."
-      }
-    },
     "eza_section_h7VLjY": {
       "type": "eza-section",
       "blocks": {
@@ -1781,6 +1724,63 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 65
+      }
+    },
+    "cb_pdp_quality_iqkqbm": {
+      "type": "cb-pdp-quality",
+      "blocks": {
+        "quality_jw8MLg": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-atom.svg",
+            "title": "Our PhD Master Formulator",
+            "text": "Brian Dixon, PhD has a doctorate in molecular biology and 25 years experience formulating supplements. No celebrity co-sign. Just the guy who actually knows what he’s doing."
+          }
+        },
+        "quality_yRbnMj": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-beaker.svg",
+            "title": "Every Lot is 3rd-party Tested",
+            "text": "Potency, adulterants, heavy metals, all tested on the finished product. Not just the raw ingredients going in. Most brands stop at raw materials and call it a day... But we go the extra mile."
+          }
+        },
+        "quality_nKAmgx": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "title": "GMP + NSF Certified Facility",
+            "text": "EZ-A is manufactured in a NSF-certified, FDA-registered, cGMP compliant facility. The supplement bar has been too low. That’s why we set a much higher one."
+          }
+        },
+        "quality_h4QHVV": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-pill.svg",
+            "title": "Methylated B Vitamins",
+            "text": "The form your body can actually absorb and use. Most brands skip it because it costs more to source. Up to 60% of people can’t fully process the cheaper version. Do the math."
+          }
+        },
+        "quality_JwJ48t": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-heart.svg",
+            "title": "Love EZ-A or Your Money Back",
+            "text": "We’re so confident you’ll love EZ-A, your first baggie’s free if you don’t. And that offer has stood since we hung out our e-commerce shingle."
+          }
+        }
+      },
+      "block_order": [
+        "quality_jw8MLg",
+        "quality_yRbnMj",
+        "quality_nKAmgx",
+        "quality_h4QHVV",
+        "quality_JwJ48t"
+      ],
+      "name": "EZ-A PDP Quality",
+      "settings": {
+        "pretitle": "Quality Is More Than a Product Feature",
+        "title": "We compete with sketchy gas station pills, so quality is our obsession."
       }
     },
     "cb_pdp_icons_FrAYBc": {
@@ -4245,9 +4245,9 @@
     "cb_pdp_trust_Lw7ALD",
     "section_8JFCJc",
     "eza_section_j9xXYp",
-    "cb_pdp_quality_iqkqbm",
     "eza_section_h7VLjY",
     "cb_pdp_icons_FrAYBc",
+    "cb_pdp_quality_iqkqbm",
     "eza_section_YT3AUC",
     "eza_section_36cLtt",
     "eza_testimonials_6bFr6f"
