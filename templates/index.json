@@ -5872,7 +5872,7 @@
                   "settings": {
                     "arrow": true,
                     "arrow_color": "black",
-                    "show_gradient": true,
+                    "show_gradient": false,
                     "label": "SHOP NOW – $33",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
