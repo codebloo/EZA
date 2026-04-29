@@ -5919,8 +5919,9 @@
         "eza_group_kweWFf"
       ],
       "custom_css": [
-        ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); justify-content: center; }",
-        "@media (min-width: 750px) {.cta-wrapper {padding: 48px 24px 56px; }}"
+        ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); justify-content: center;}",
+        "@media (min-width: 750px) {.cta-wrapper {padding: 48px 24px 56px; }}",
+        "@media(max-width:650px){eza-button{width:100%;}}"
       ],
       "name": "Final CTA",
       "settings": {
