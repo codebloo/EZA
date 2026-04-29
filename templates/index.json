@@ -3014,7 +3014,8 @@
         "eza_group_XKATye"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {.people-love {padding-top: 64px; }}"
+        "@media (min-width: 768px) {.people-love {padding-top: 64px; }}",
+        ".text-block{display:block;}"
       ],
       "name": "A lot of people love",
       "settings": {
