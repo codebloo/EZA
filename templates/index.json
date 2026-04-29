@@ -3762,7 +3762,7 @@
       ],
       "name": "t:sections.testimonials.presets.customer_testimonials.name",
       "settings": {
-        "title": "Raving EZ-A reviews",
+        "title": "People love EZ-A",
         "round_images": true,
         "viewmore_label": "Read All Reviews",
         "viewmore_link": "shopify://pages/reviews",
