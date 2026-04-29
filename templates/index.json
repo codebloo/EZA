@@ -1328,7 +1328,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 0,
+            "padding-block-start": 32,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -2058,7 +2058,7 @@
           "settings": {
             "custom_class": "",
             "desktop_hidden": false,
-            "mobile_hidden": false,
+            "mobile_hidden": true,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -2132,7 +2132,8 @@
         ".pills .group-block-content {flex-wrap: wrap !important;}",
         ".clean-focus {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".pullquote .group-block-content {border-left: 7px solid var(--yellow); padding-left: 8px;}",
-        ".button {justify-content: center; width: 327px;}"
+        ".button {justify-content: center; width: 327px;}",
+        ".clean-focus .custom-section-content{padding-top:24px;}"
       ],
       "name": "Clean Focus",
       "settings": {
