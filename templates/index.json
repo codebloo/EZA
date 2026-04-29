@@ -3916,7 +3916,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 100,
-            "padding-block-end": 64,
+            "padding-block-end": 100,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -4057,8 +4057,8 @@
                 "placeholder": "",
                 "padding-block-start": 32,
                 "padding-block-end": 0,
-                "padding-inline-start": 40,
-                "padding-inline-end": 40
+                "padding-inline-start": 100,
+                "padding-inline-end": 100
               },
               "blocks": {
                 "divider_QrxL6h": {
