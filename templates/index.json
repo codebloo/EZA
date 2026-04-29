@@ -2230,6 +2230,7 @@
       },
       "name": "EZ-A Featured Product",
       "settings": {
+        "product": "ez-a",
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
         "equal_columns": false,
