@@ -3391,7 +3391,7 @@
       "custom_css": [
         ".testimonial-group .group-block-content {margin: 0 auto; max-width: 100%; width: 1080px;}"
       ],
-      "name": "Testimonials 2",
+      "name": "Testimonials 2 Header",
       "settings": {
         "custom_class": "",
         "desktop_hidden": false,
