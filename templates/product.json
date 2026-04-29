@@ -1786,7 +1786,7 @@
         },
         "eza_group_iBEThX": {
           "type": "eza-group",
-          "name": "EZ-A Group",
+          "name": "ContentGroup",
           "settings": {
             "custom_class": "",
             "desktop_hidden": false,
@@ -1829,7 +1829,7 @@
           "blocks": {
             "eza_group_mikNhM": {
               "type": "eza-group",
-              "name": "EZ-A Group",
+              "name": "Text",
               "settings": {
                 "custom_class": "",
                 "desktop_hidden": false,
@@ -1957,7 +1957,7 @@
             },
             "eza_group_LJpXzQ": {
               "type": "eza-group",
-              "name": "EZ-A Group",
+              "name": "Pills",
               "settings": {
                 "custom_class": "pills",
                 "desktop_hidden": false,
