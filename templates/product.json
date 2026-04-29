@@ -1952,7 +1952,7 @@
                   "type": "eza-group",
                   "name": "EZ-A Group",
                   "settings": {
-                    "custom_class": "",
+                    "custom_class": "pills",
                     "desktop_hidden": false,
                     "mobile_hidden": false,
                     "content_direction": "row",
@@ -2384,7 +2384,10 @@
         "eza_group_m4WLPB",
         "eza_group_iBEThX"
       ],
-      "name": "EZ-A Custom Section",
+      "custom_css": [
+        ".pills .group-block-content{flex-wrap: wrap!important;}"
+      ],
+      "name": "Clean Focus",
       "settings": {
         "custom_class": "",
         "desktop_hidden": false,
