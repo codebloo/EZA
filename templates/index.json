@@ -3479,21 +3479,23 @@
                         "background_color": "#00000026",
                         "corner_radius": 0,
                         "padding-block-start": 0,
-                        "padding-block-end": 0,
+                        "padding-block-end": 32,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0
                       },
                       "blocks": {}
                     },
-                    "button_8t9KPr": {
-                      "type": "button",
-                      "name": "t:names.button",
+                    "eza_button_Q4Xkdw": {
+                      "type": "eza-button",
+                      "name": "EZ-A Button",
                       "settings": {
-                        "arrow": false,
-                        "label": "Learn More ›",
-                        "link": "shopify://pages/returns-refunds",
+                        "arrow": true,
+                        "arrow_color": "yellow",
+                        "show_gradient": true,
+                        "label": "Try it risk-free",
+                        "link": "shopify://products/ez-a",
                         "open_in_new_tab": false,
-                        "style_class": "link",
+                        "style_class": "button",
                         "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fit-content",
@@ -3505,7 +3507,7 @@
                   "block_order": [
                     "text_XFmUjC",
                     "text_ht4Ugw",
-                    "button_8t9KPr"
+                    "eza_button_Q4Xkdw"
                   ]
                 }
               },
