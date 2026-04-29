@@ -155,7 +155,7 @@
                   "name": "EZ-A Button",
                   "settings": {
                     "arrow": true,
-                    "arrow_color": "yellow",
+                    "arrow_color": "black",
                     "show_gradient": false,
                     "label": "Shop now",
                     "link": "shopify://products/ez-a",
