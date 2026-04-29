@@ -6797,8 +6797,8 @@
                     "custom_width_mobile": 100,
                     "height": "fit",
                     "custom_height": 100,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
+                    "inherit_color_scheme": false,
+                    "color_scheme": "scheme-c68fed01-802b-48b8-988d-b3ddeb4708fa",
                     "background_media": "none",
                     "video_position": "cover",
                     "background_image_position": "cover",
@@ -6825,11 +6825,11 @@
                       "settings": {
                         "arrow": true,
                         "arrow_color": "yellow",
-                        "show_gradient": true,
+                        "show_gradient": false,
                         "label": "SUBSCRIBE & SAVE 15%",
                         "link": "shopify://products/ez-a",
                         "open_in_new_tab": false,
-                        "style_class": "button",
+                        "style_class": "button-secondary",
                         "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fit-content",
@@ -6948,7 +6948,7 @@
         "eza_group_dBjQwm"
       ],
       "custom_css": [
-        ".icon-group{font-weight:500;}"
+        ".icon-group {font-weight: 500;}"
       ],
       "name": "Mobile: Subscription has its benefits",
       "settings": {
