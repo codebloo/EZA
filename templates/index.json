@@ -3956,7 +3956,7 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 100,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -4055,7 +4055,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 100,
+                "padding-block-start": 32,
                 "padding-block-end": 0,
                 "padding-inline-start": 40,
                 "padding-inline-end": 40
@@ -4657,7 +4657,7 @@
         "eza_group_f3yDek"
       ],
       "custom_css": [
-        ".icon-group{font-weight:500;}"
+        ".icon-group {font-weight: 500;}"
       ],
       "name": "Desktop: Subscription has its benefits",
       "settings": {
