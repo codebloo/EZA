@@ -2385,11 +2385,12 @@
         "eza_group_iBEThX"
       ],
       "custom_css": [
-        ".pills .group-block-content {flex-wrap: wrap !important;}"
+        ".pills .group-block-content {flex-wrap: wrap !important;}",
+        ".clean-focus{margin:0 auto; max-width: 100%; width:1080px;}"
       ],
       "name": "Clean Focus",
       "settings": {
-        "custom_class": "",
+        "custom_class": "clean-focus",
         "desktop_hidden": false,
         "mobile_hidden": false,
         "content_direction": "row",
