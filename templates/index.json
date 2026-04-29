@@ -6826,7 +6826,7 @@
                         "arrow": true,
                         "arrow_color": "yellow",
                         "show_gradient": true,
-                        "label": "Shop now",
+                        "label": "SUBSCRIBE & SAVE 15%",
                         "link": "shopify://products/ez-a",
                         "open_in_new_tab": false,
                         "style_class": "button",
@@ -6841,7 +6841,7 @@
                       "type": "eza-group",
                       "name": "EZ-A Group",
                       "settings": {
-                        "custom_class": "",
+                        "custom_class": "icon-group",
                         "desktop_hidden": false,
                         "mobile_hidden": false,
                         "content_direction": "row",
@@ -6900,9 +6900,9 @@
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "left",
-                            "type_preset": "h6",
+                            "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "1rem",
+                            "font_size": "0.875rem",
                             "line_height": "normal",
                             "letter_spacing": "normal",
                             "case": "none",
@@ -6946,6 +6946,9 @@
       },
       "block_order": [
         "eza_group_dBjQwm"
+      ],
+      "custom_css": [
+        ".icon-group{font-weight:500;}"
       ],
       "name": "Mobile: Subscription has its benefits",
       "settings": {
