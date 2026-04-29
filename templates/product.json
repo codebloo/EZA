@@ -4645,7 +4645,6 @@
       "block_order": [
         "yotpo_product_reviews_reviews_BtCKUc"
       ],
-      "disabled": true,
       "name": "Yotpo",
       "settings": {
         "content_direction": "column",
