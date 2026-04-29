@@ -1907,31 +1907,12 @@
                 "text_dWEeBA",
                 "text_wtgWcB"
               ]
-            },
-            "eza_button_qyekNP": {
-              "type": "eza-button",
-              "name": "EZ-A Button",
-              "settings": {
-                "arrow": true,
-                "arrow_color": "yellow",
-                "show_gradient": true,
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "eza_group_TFqhnC",
             "eza_group_rEFwiN",
-            "eza_group_q3YRDr",
-            "eza_button_qyekNP"
+            "eza_group_q3YRDr"
           ]
         },
         "eza_group_TXz8UT": {
