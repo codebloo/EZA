@@ -3281,10 +3281,10 @@
             "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
-            "padding-block-start": 0,
+            "padding-block-start": 64,
             "padding-block-end": 0,
-            "padding-inline-start": 24,
-            "padding-inline-end": 24
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "eza_group_KaYxYB": {
@@ -3301,7 +3301,7 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 16,
+                "gap": 48,
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -3324,8 +3324,8 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 24,
-                "padding-block-end": 24,
+                "padding-block-start": 48,
+                "padding-block-end": 48,
                 "padding-inline-start": 24,
                 "padding-inline-end": 24
               },
@@ -3379,7 +3379,7 @@
                       "settings": {
                         "icon": "price_tag",
                         "image_upload": "shopify://shop_images/54d18977332e670dfa5c29913c2c3f18.svg",
-                        "width": 52,
+                        "width": 144,
                         "link": "",
                         "open_in_new_tab": false
                       },
