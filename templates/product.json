@@ -1744,6 +1744,701 @@
         "padding-block-end": 0
       }
     },
+    "eza_section_FdNEqH": {
+      "type": "eza-section",
+      "blocks": {
+        "text_aCaLYH": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>EZ-A’s Hyper Strength stack contains 10 science-backed super nootropics.</h2>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "eza_ingredients_LpqaRC": {
+          "type": "eza-ingredients",
+          "name": "EZ-A Ingredients",
+          "settings": {
+            "mobile_accordion": true,
+            "layout": "columns"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_aCaLYH",
+        "eza_ingredients_LpqaRC"
+      ],
+      "custom_css": [
+        "h2 {font-size: 24px;}",
+        "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}"
+      ],
+      "name": "Nootropics",
+      "settings": {
+        "custom_class": "nootropics",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "cb_pdp_icons_TfN4NL": {
+      "type": "cb-pdp-icons",
+      "blocks": {
+        "icon_URXBDc": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/Icon-bolt.png",
+            "title": "Laser Focus*"
+          }
+        },
+        "icon_3HjTY3": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-battery.png",
+            "title": "Clean Energy*"
+          }
+        },
+        "icon_an3d97": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-stopwatch.png",
+            "title": "Fast Reactions*"
+          }
+        },
+        "icon_fcNNVj": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-bulb.png",
+            "title": "Mental Clarity*"
+          }
+        },
+        "icon_U38fqT": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-chart.png",
+            "title": "Elevated Vibes*"
+          }
+        },
+        "icon_WBVYAA": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify://shop_images/icon-brain.png",
+            "title": "Memory Recall*"
+          }
+        }
+      },
+      "block_order": [
+        "icon_URXBDc",
+        "icon_3HjTY3",
+        "icon_an3d97",
+        "icon_fcNNVj",
+        "icon_U38fqT",
+        "icon_WBVYAA"
+      ],
+      "name": "EZ-A PDP Icons",
+      "settings": {
+        "title": "6 things that happen In the first hour.",
+        "subtitle": "Get more done, no script required."
+      }
+    },
+    "eza_section_iDwXYQ": {
+      "type": "eza-section",
+      "blocks": {
+        "image_JGWmmm": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/eza-baggie.png",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_JGWmmm"
+      ],
+      "name": "Eza Baggie Mobile",
+      "settings": {
+        "custom_class": "baggie",
+        "desktop_hidden": true,
+        "mobile_hidden": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 16
+      }
+    },
+    "eza_section_tqNQqN": {
+      "type": "eza-section",
+      "blocks": {
+        "eza_group_RDRkmA": {
+          "type": "eza-group",
+          "name": "Text",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_6C7k4m": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>The Caffeine + L-Theanine pairing most brands skip</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_iApefp": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h2>A smooth energy curve means no crash waiting for you at 2pm.</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h1",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_dcpVcU": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>One capsule. Taken with food. All-day output without the spike, the drop, or the second coffee you didn’t actually want.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "eza_accordion_6XRLNk": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "accordion-bold",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "paragraph",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_6kVmM3": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Why no jitters?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_eUPjYx": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_eUPjYx"
+                  ]
+                },
+                "accordion_row_DWzgrG": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Why no crash?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_h8wyJY": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_h8wyJY"
+                  ]
+                },
+                "accordion_row_tyjnTG": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "What’s doing the cognitive work?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_E9Tw4Y": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_E9Tw4Y"
+                  ]
+                },
+                "accordion_row_KA3Ccc": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "What are “methylated” B Vitamins?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_zpBr9t": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_zpBr9t"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_6kVmM3",
+                "accordion_row_DWzgrG",
+                "accordion_row_tyjnTG",
+                "accordion_row_KA3Ccc"
+              ]
+            }
+          },
+          "block_order": [
+            "text_6C7k4m",
+            "text_iApefp",
+            "text_dcpVcU",
+            "eza_accordion_6XRLNk"
+          ]
+        },
+        "eza_group_tNhfYr": {
+          "type": "eza-group",
+          "name": "EZ-A Group",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": true,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_Crw9B4": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/eza-baggie.png",
+                "link": "",
+                "image_ratio": "square",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_Crw9B4"
+          ]
+        }
+      },
+      "block_order": [
+        "eza_group_RDRkmA",
+        "eza_group_tNhfYr"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.baggie-desktop .custom-section-content {padding: 80px 0; margin: 0 auto; max-width: 100%; width: 1022px; }}",
+        ".details__header {font-weight: 700;}",
+        ".h5 p {color: #7c7c7c;}"
+      ],
+      "name": "Baggie Desktop",
+      "settings": {
+        "custom_class": "baggie-desktop",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 48,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "cb_pdp_quality_QcNFF9": {
+      "type": "cb-pdp-quality",
+      "blocks": {
+        "quality_4hJHmW": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-atom.svg",
+            "title": "Our PhD Master Formulator",
+            "text": "Brian Dixon, PhD has a doctorate in molecular biology and 25 years experience formulating supplements. No celebrity co-sign. Just the guy who actually knows what he’s doing."
+          }
+        },
+        "quality_hqYVxF": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-beaker.svg",
+            "title": "Every Lot is 3rd-party Tested",
+            "text": "Potency, adulterants, heavy metals, all tested on the finished product. Not just the raw ingredients going in. Most brands stop at raw materials and call it a day... But we go the extra mile."
+          }
+        },
+        "quality_9Lbqnb": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-certified.svg",
+            "title": "GMP + NSF Certified Facility",
+            "text": "EZ-A is manufactured in a NSF-certified, FDA-registered, cGMP compliant facility. The supplement bar has been too low. That’s why we set a much higher one."
+          }
+        },
+        "quality_C8VBPY": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-pill.svg",
+            "title": "Methylated B Vitamins",
+            "text": "The form your body can actually absorb and use. Most brands skip it because it costs more to source. Up to 60% of people can’t fully process the cheaper version. Do the math."
+          }
+        },
+        "quality_rJHXeg": {
+          "type": "quality",
+          "settings": {
+            "image": "shopify://shop_images/icon-qa-heart.svg",
+            "title": "Love EZ-A or Your Money Back",
+            "text": "We’re so confident you’ll love EZ-A, your first baggie’s free if you don’t. And that offer has stood since we hung out our e-commerce shingle."
+          }
+        }
+      },
+      "block_order": [
+        "quality_4hJHmW",
+        "quality_hqYVxF",
+        "quality_9Lbqnb",
+        "quality_C8VBPY",
+        "quality_rJHXeg"
+      ],
+      "name": "EZ-A PDP Quality",
+      "settings": {
+        "pretitle": "Quality Is More Than a Product Feature",
+        "title": "We compete with sketchy gas station pills, so quality is our obsession."
+      }
+    },
     "eza_section_NMjAFf": {
       "type": "eza-section",
       "blocks": {
@@ -2406,701 +3101,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 32,
         "padding-block-end": 65
-      }
-    },
-    "eza_section_FdNEqH": {
-      "type": "eza-section",
-      "blocks": {
-        "text_aCaLYH": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h2>EZ-A’s Hyper Strength stack contains 10 science-backed super nootropics.</h2>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "eza_ingredients_LpqaRC": {
-          "type": "eza-ingredients",
-          "name": "EZ-A Ingredients",
-          "settings": {
-            "mobile_accordion": true,
-            "layout": "columns"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_aCaLYH",
-        "eza_ingredients_LpqaRC"
-      ],
-      "custom_css": [
-        "h2 {font-size: 24px;}",
-        "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}"
-      ],
-      "name": "Nootropics",
-      "settings": {
-        "custom_class": "nootropics",
-        "desktop_hidden": false,
-        "mobile_hidden": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 32
-      }
-    },
-    "cb_pdp_icons_TfN4NL": {
-      "type": "cb-pdp-icons",
-      "blocks": {
-        "icon_URXBDc": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/Icon-bolt.png",
-            "title": "Laser Focus*"
-          }
-        },
-        "icon_3HjTY3": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/icon-battery.png",
-            "title": "Clean Energy*"
-          }
-        },
-        "icon_an3d97": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/icon-stopwatch.png",
-            "title": "Fast Reactions*"
-          }
-        },
-        "icon_fcNNVj": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/icon-bulb.png",
-            "title": "Mental Clarity*"
-          }
-        },
-        "icon_U38fqT": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/icon-chart.png",
-            "title": "Elevated Vibes*"
-          }
-        },
-        "icon_WBVYAA": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/icon-brain.png",
-            "title": "Memory Recall*"
-          }
-        }
-      },
-      "block_order": [
-        "icon_URXBDc",
-        "icon_3HjTY3",
-        "icon_an3d97",
-        "icon_fcNNVj",
-        "icon_U38fqT",
-        "icon_WBVYAA"
-      ],
-      "name": "EZ-A PDP Icons",
-      "settings": {
-        "title": "6 things that happen In the first hour.",
-        "subtitle": "Get more done, no script required."
-      }
-    },
-    "eza_section_iDwXYQ": {
-      "type": "eza-section",
-      "blocks": {
-        "image_JGWmmm": {
-          "type": "image",
-          "name": "t:names.image",
-          "settings": {
-            "image": "shopify://shop_images/eza-baggie.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "image_JGWmmm"
-      ],
-      "name": "Eza Baggie Mobile",
-      "settings": {
-        "custom_class": "baggie",
-        "desktop_hidden": true,
-        "mobile_hidden": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 16
-      }
-    },
-    "cb_pdp_quality_QcNFF9": {
-      "type": "cb-pdp-quality",
-      "blocks": {
-        "quality_4hJHmW": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-atom.svg",
-            "title": "Our PhD Master Formulator",
-            "text": "Brian Dixon, PhD has a doctorate in molecular biology and 25 years experience formulating supplements. No celebrity co-sign. Just the guy who actually knows what he’s doing."
-          }
-        },
-        "quality_hqYVxF": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-beaker.svg",
-            "title": "Every Lot is 3rd-party Tested",
-            "text": "Potency, adulterants, heavy metals, all tested on the finished product. Not just the raw ingredients going in. Most brands stop at raw materials and call it a day... But we go the extra mile."
-          }
-        },
-        "quality_9Lbqnb": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-certified.svg",
-            "title": "GMP + NSF Certified Facility",
-            "text": "EZ-A is manufactured in a NSF-certified, FDA-registered, cGMP compliant facility. The supplement bar has been too low. That’s why we set a much higher one."
-          }
-        },
-        "quality_C8VBPY": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-pill.svg",
-            "title": "Methylated B Vitamins",
-            "text": "The form your body can actually absorb and use. Most brands skip it because it costs more to source. Up to 60% of people can’t fully process the cheaper version. Do the math."
-          }
-        },
-        "quality_rJHXeg": {
-          "type": "quality",
-          "settings": {
-            "image": "shopify://shop_images/icon-qa-heart.svg",
-            "title": "Love EZ-A or Your Money Back",
-            "text": "We’re so confident you’ll love EZ-A, your first baggie’s free if you don’t. And that offer has stood since we hung out our e-commerce shingle."
-          }
-        }
-      },
-      "block_order": [
-        "quality_4hJHmW",
-        "quality_hqYVxF",
-        "quality_9Lbqnb",
-        "quality_C8VBPY",
-        "quality_rJHXeg"
-      ],
-      "name": "EZ-A PDP Quality",
-      "settings": {
-        "pretitle": "Quality Is More Than a Product Feature",
-        "title": "We compete with sketchy gas station pills, so quality is our obsession."
-      }
-    },
-    "eza_section_tqNQqN": {
-      "type": "eza-section",
-      "blocks": {
-        "eza_group_RDRkmA": {
-          "type": "eza-group",
-          "name": "Text",
-          "settings": {
-            "custom_class": "",
-            "desktop_hidden": false,
-            "mobile_hidden": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_6C7k4m": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>The Caffeine + L-Theanine pairing most brands skip</p>",
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_iApefp": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h2>A smooth energy curve means no crash waiting for you at 2pm.</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h1",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_dcpVcU": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>One capsule. Taken with food. All-day output without the spike, the drop, or the second coffee you didn’t actually want.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "paragraph",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "eza_accordion_6XRLNk": {
-              "type": "eza-accordion",
-              "name": "EZ Accordion",
-              "settings": {
-                "custom_class": "accordion-bold",
-                "icon": "caret",
-                "dividers": true,
-                "type_preset": "paragraph",
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "accordion_row_6kVmM3": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Why no jitters?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_eUPjYx": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_eUPjYx"
-                  ]
-                },
-                "accordion_row_DWzgrG": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Why no crash?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_h8wyJY": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_h8wyJY"
-                  ]
-                },
-                "accordion_row_tyjnTG": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "What’s doing the cognitive work?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_E9Tw4Y": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_E9Tw4Y"
-                  ]
-                },
-                "accordion_row_KA3Ccc": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "What are “methylated” B Vitamins?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_zpBr9t": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_zpBr9t"
-                  ]
-                }
-              },
-              "block_order": [
-                "accordion_row_6kVmM3",
-                "accordion_row_DWzgrG",
-                "accordion_row_tyjnTG",
-                "accordion_row_KA3Ccc"
-              ]
-            }
-          },
-          "block_order": [
-            "text_6C7k4m",
-            "text_iApefp",
-            "text_dcpVcU",
-            "eza_accordion_6XRLNk"
-          ]
-        },
-        "eza_group_tNhfYr": {
-          "type": "eza-group",
-          "name": "EZ-A Group",
-          "settings": {
-            "custom_class": "",
-            "desktop_hidden": false,
-            "mobile_hidden": true,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image_Crw9B4": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/eza-baggie.png",
-                "link": "",
-                "image_ratio": "square",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "image_Crw9B4"
-          ]
-        }
-      },
-      "block_order": [
-        "eza_group_RDRkmA",
-        "eza_group_tNhfYr"
-      ],
-      "custom_css": [
-        "@media (min-width: 768px) {.baggie-desktop .custom-section-content {padding: 80px 0; margin: 0 auto; max-width: 100%; width: 1022px; }}",
-        ".details__header {font-weight: 700;}",
-        ".h5 p {color: #7c7c7c;}"
-      ],
-      "name": "Baggie Desktop",
-      "settings": {
-        "custom_class": "baggie-desktop",
-        "desktop_hidden": false,
-        "mobile_hidden": false,
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "flex-start",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 48,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     },
     "cb_pdp_gallery_RTA8bt": {
@@ -4716,12 +4716,12 @@
     "eza_section_kCF3a7",
     "cb_pdp_trust_AedkFQ",
     "eza_section_E44Qq6",
-    "eza_section_NMjAFf",
     "eza_section_FdNEqH",
     "cb_pdp_icons_TfN4NL",
     "eza_section_iDwXYQ",
     "eza_section_tqNQqN",
     "cb_pdp_quality_QcNFF9",
+    "eza_section_NMjAFf",
     "cb_pdp_gallery_RTA8bt",
     "eza_section_PkypqV",
     "cb_pdp_playbyplay_38TmD3",
