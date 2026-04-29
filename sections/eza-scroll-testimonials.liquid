@@ -11,7 +11,7 @@
 {%- endcomment -%}
 
 <section
-  class="testimonials color-{{ section.settings.color_scheme | default: 'background-1' }} section section--{{ section.settings.section_width }}"
+  class="section-testimonials testimonials color-{{ section.settings.color_scheme | default: 'background-1' }} section section--{{ section.settings.section_width }}"
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
   {% endif %}
@@ -299,8 +299,7 @@
 {% schema %}
 {
   "name": "EZ-A Scroll Testimonials",
-  "tag": "section",
-  "class": "section section-testimonials",
+  "class": "section-wrapper",
   "settings": [
      {
       "type": "select",
