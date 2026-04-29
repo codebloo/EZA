@@ -3015,7 +3015,7 @@
       ],
       "custom_css": [
         "@media (min-width: 768px) {.people-love {padding-top: 64px; }}",
-        ".text-block{display:block;}"
+        ".text-block {display: block;}"
       ],
       "name": "A lot of people love",
       "settings": {
@@ -3097,7 +3097,7 @@
         "link_text": "Read all the reviews",
         "link_url": "",
         "padding_top": 24,
-        "padding_bottom": 60
+        "padding_bottom": 0
       }
     },
     "eza_section_fdEAC9": {
