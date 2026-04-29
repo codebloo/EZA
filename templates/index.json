@@ -25,7 +25,7 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-end",
             "gap": 12,
             "width": "fill",
             "custom_width": 100,
@@ -107,29 +107,96 @@
               },
               "blocks": {}
             },
-            "eza_button_mdqGQA": {
-              "type": "eza-button",
-              "name": "EZ-A Button",
+            "eza_group_HGXTiF": {
+              "type": "eza-group",
+              "name": "Buttons",
               "settings": {
-                "arrow": true,
-                "arrow_color": "yellow",
-                "show_gradient": false,
-                "label": "Shop now",
-                "link": "shopify://products/ez-a",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
+                "custom_class": "",
+                "desktop_hidden": false,
+                "mobile_hidden": false,
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "eza_button_CUrcGy": {
+                  "type": "eza-button",
+                  "name": "EZ-A Button",
+                  "settings": {
+                    "arrow": true,
+                    "arrow_color": "yellow",
+                    "show_gradient": false,
+                    "label": "Shop now",
+                    "link": "shopify://products/ez-a",
+                    "open_in_new_tab": false,
+                    "style_class": "button-secondary",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                },
+                "eza_button_aRnR7R": {
+                  "type": "eza-button",
+                  "name": "EZ-A Button",
+                  "settings": {
+                    "arrow": false,
+                    "arrow_color": "yellow",
+                    "show_gradient": true,
+                    "label": "SEE WHAT’S IN IT",
+                    "link": "shopify://pages/the-formula",
+                    "open_in_new_tab": false,
+                    "style_class": "button-secondary",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 50
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "eza_button_CUrcGy",
+                "eza_button_aRnR7R"
+              ]
             }
           },
           "block_order": [
             "text_yRKnx9",
             "text_84WBMq",
-            "eza_button_mdqGQA"
+            "eza_group_HGXTiF"
           ]
         },
         "group_WYzqNP": {
