@@ -1,14 +1,17 @@
 <section class="eza-founder">
     <div class="section section--page-width">
 
-        <div class="founder-name"></div>
+        <div class="founder-name">
+            <span class="founder-name">{{ section.settings.founder_name }}</span>
+            <span class="founder-title">{{ section.settings.founder_title }}</span>
+        </div>
 
         <div class="founder-content">
-            <div class="eyebrow">{{ section.settings.eyebrow }}</div>
-            <div class="title">{{ section.settings.title }}</div>
-            <div class="text">{{ section.settings.text }}</div>
-            <div class="attribution">{{ section.settings.attribution }}</div>
-            <a href="{{ section.settings.link }}" class="button">{{ section.settings.button }}</a>
+            <div class="content-eyebrow">{{ section.settings.eyebrow }}</div>
+            <div class="content-title">{{ section.settings.title }}</div>
+            <div class="content-text">{{ section.settings.text }}</div>
+            <div class="content-attribution">{{ section.settings.attribution }}</div>
+            <a href="{{ section.settings.link }}" class="button content-button">{{ section.settings.button }}</a>
         </div>
 
     </div>
