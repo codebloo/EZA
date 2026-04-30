@@ -5413,14 +5413,14 @@
       "type": "eza-founder",
       "name": "EZ-A Founder",
       "settings": {
-        "founder_name": "The EZ-A Origin Story",
-        "founder_title": "",
+        "founder_name": "Ryan Goodwin",
+        "founder_title": "Founder, Biohacker & Avid EZ-A Junkie",
         "eyebrow": "The EZ-A Origin Story",
         "title": "This one started with a toxic stat, not a spider bite.",
-        "text": "“1-in-4 college students misuse ADHD meds to get ahead. I read that one night deep in a doom-scroll sesh and thought: I’m calling bullshit. Who’s admitting felony behavior to a stranger with a clipboard?\n\nI mean, I just had to keep pulling the sweater. Eventually the whole thing would have to unravel. Right?”",
-        "attribution": "",
-        "button": "",
-        "link": ""
+        "text": "<p>“1-in-4 college students misuse ADHD meds to get ahead. I read that one night deep in a doom-scroll sesh and thought: I’m calling bullshit. Who’s admitting felony behavior to a stranger with a clipboard?<br/><br/>I mean, I just had to keep pulling the sweater. Eventually the whole thing would have to unravel. Right?”</p>",
+        "attribution": "— Ryan Goodwin/ Founder",
+        "button": "read more of the story",
+        "link": "shopify://pages/our-story"
       }
     },
     "eza_section_YT3AUC": {
