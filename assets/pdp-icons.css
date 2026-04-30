@@ -27,7 +27,7 @@ grid-column-gap: 4px;
 grid-row-gap: 32px;
 }
 
-.icon-block{
+.all-icon-blocks .icon-block{
     display:flex;
     flex-direction:column;
     gap:8px;
@@ -35,14 +35,14 @@ grid-row-gap: 32px;
     text-align:center;}
 
 
-.icon-block img{
+.all-icon-blocks .icon-block img{
     display:block;
     margin:0 auto 12px;
     width:80px;}
 
    
 
-.icon-title{
+.all-icon-blocks .icon-title{
     color:var(--white);
 font-size: 16px;
 font-weight: 700;
