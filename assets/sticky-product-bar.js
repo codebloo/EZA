@@ -2,19 +2,10 @@
 //
 // Mobile sticky condensed product header for EZ-A (Horizon theme).
 //
-// Behavior:
-//   1. Renders inside <main-product>, auto-repositions itself to be the
-//      first child of .product-information so position:sticky has the full
-//      section to grip against.
-//   2. Sticks below the site header using --sticky-bar-top, which is set
-//      from data-header-offset (default 70px) or measured live from the
-//      element matching data-header-selector if no offset is provided.
-//   3. Toggles 'is-stuck' class via a sentinel + IntersectionObserver
-//      (drives condense + drop shadow).
-//   4. Toggles 'show-cta' class via a second IntersectionObserver on the
-//      inline ATC button — Shop Now fades in only after ATC is scrolled
-//      past viewport top.
-//   5. Shop Now click scrolls the page to the top.
+// Stuck behavior uses position:fixed on the inner bar (with a spacer
+// in the wrapper to preserve layout) instead of position:sticky, so
+// the bar stays pinned indefinitely once stuck — it doesn't unstick
+// at the bottom of .product-information.
 
 class StickyProductBar extends HTMLElement {
   static MOBILE_QUERY = '(max-width: 749px)';
@@ -26,6 +17,7 @@ class StickyProductBar extends HTMLElement {
     this.handleShopNowClick = this.handleShopNowClick.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
     this.handleHeaderResize = this.handleHeaderResize.bind(this);
+    this.handleInnerResize = this.handleInnerResize.bind(this);
     this.headerOffset = 0;
   }
 
@@ -46,18 +38,24 @@ class StickyProductBar extends HTMLElement {
   }
 
   init() {
-    this.teardown(); // safe to call repeatedly
+    this.teardown();
 
-    // ---- Reposition into .product-information if we're not already first ----
-    // Liquid may render this snippet anywhere within the section; sticky
-    // positioning needs us to be the first child so we have full height to grip.
+    // Reposition into .product-information so we render at the top of the
+    // section regardless of where Liquid put us.
     const productInfo = this.closest('.product-information');
     if (productInfo && productInfo.firstElementChild !== this) {
       productInfo.insertBefore(this, productInfo.firstElementChild);
     }
 
     this.sentinel = this.querySelector('.sticky-product-bar__sentinel');
+    this.inner = this.querySelector('.sticky-product-bar__inner');
     this.shopNowBtn = this.querySelector('[data-shop-now]');
+
+    // ---- Track inner's natural height (used as wrapper's min-height when stuck) ----
+    if (this.inner && 'ResizeObserver' in window) {
+      this.innerResizeObserver = new ResizeObserver(this.handleInnerResize);
+      this.innerResizeObserver.observe(this.inner);
+    }
 
     // ---- Header offset ----
     const headerSelector = this.dataset.headerSelector || '#header-component';
@@ -68,8 +66,6 @@ class StickyProductBar extends HTMLElement {
         this.headerResizeObserver = new ResizeObserver(this.handleHeaderResize);
         this.headerResizeObserver.observe(this.headerEl);
       }
-      // Watch sticky state changes (Horizon toggles data-sticky-state on scroll
-      // direction). If it ever unsticks/re-sticks, we want to re-measure.
       this.headerStateObserver = new MutationObserver(this.handleHeaderResize);
       this.headerStateObserver.observe(this.headerEl, {
         attributes: true,
@@ -84,12 +80,10 @@ class StickyProductBar extends HTMLElement {
       "[ref='addToCartButton'], button[name='add'], .product-form__submit";
     this.inlineAtc = document.querySelector(atcSelector);
 
-    // ---- Observer 1: stuck state (rebuilt on header offset changes) ----
+    // ---- Observer 1: stuck state ----
     this.attachStuckObserver();
 
-    // ---- Observer 2: inline ATC visibility ----
-    // Only show CTA when ATC is ABOVE viewport (scrolled past). When ATC is
-    // below viewport (not yet reached), keep CTA hidden.
+    // ---- Observer 2: ATC visibility ----
     if (this.inlineAtc) {
       this.atcObserver = new IntersectionObserver(
         ([entry]) => {
@@ -126,8 +120,6 @@ class StickyProductBar extends HTMLElement {
       },
       {
         threshold: 0,
-        // Push the observer's top edge down by the header height so "stuck"
-        // fires exactly when the bar slides under the header.
         rootMargin: `-${this.headerOffset}px 0px 0px 0px`,
       }
     );
@@ -138,8 +130,19 @@ class StickyProductBar extends HTMLElement {
     this.updateHeaderOffset();
   }
 
+  handleInnerResize() {
+    // Only capture natural height when NOT stuck — otherwise we'd record
+    // the condensed-state height as the spacer size and content below
+    // would shift up when the bar pinned.
+    if (!this.classList.contains(StickyProductBar.STUCK_CLASS) && this.inner) {
+      const h = this.inner.offsetHeight;
+      if (h > 0) {
+        this.style.setProperty('--bar-natural-height', `${h}px`);
+      }
+    }
+  }
+
   updateHeaderOffset() {
-    // Manual override via data-header-offset="70" wins over auto-measurement.
     let offset = parseInt(this.dataset.headerOffset, 10);
     if (Number.isNaN(offset)) {
       offset = this.headerEl
@@ -150,7 +153,7 @@ class StickyProductBar extends HTMLElement {
 
     this.headerOffset = offset;
     this.style.setProperty('--sticky-bar-top', `${offset}px`);
-    this.attachStuckObserver(); // rebuild with new rootMargin
+    this.attachStuckObserver();
   }
 
   teardown() {
@@ -158,6 +161,7 @@ class StickyProductBar extends HTMLElement {
     this.atcObserver?.disconnect();
     this.headerResizeObserver?.disconnect();
     this.headerStateObserver?.disconnect();
+    this.innerResizeObserver?.disconnect();
     this.shopNowBtn?.removeEventListener('click', this.handleShopNowClick);
     this.classList.remove(
       StickyProductBar.STUCK_CLASS,
