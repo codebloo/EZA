@@ -1,6 +1,11 @@
 /* assets/sticky-product-bar.css */
 
-.sticky-product-bar {
+
+
+/* ---------- Mobile only ---------- */
+@media (max-width: 749px) {
+
+  .sticky-product-bar {
   display: block;
   position: relative; /* fallback when not in mobile media query */
   background: var(--color-background, #fff);
@@ -15,8 +20,6 @@
   pointer-events: none;
 }
 
-/* ---------- Mobile only ---------- */
-@media (max-width: 749px) {
   .sticky-product-bar {
     position: sticky;
      top: var(--sticky-bar-top, 0px); 
