@@ -1,0 +1,170 @@
+{% comment %}
+  Block: Description (show more)
+  -------------------------------
+  Pulls the parent product description, truncates it to a configurable
+  character limit, and renders an inline "Show More" toggle that expands
+  to the full (HTML) description. Toggling back collapses it.
+
+  - Truncated view: plain text (HTML stripped) so we never break a tag mid-cut
+  - Expanded view:  full description with merchant HTML preserved
+  - If description is shorter than the limit, the toggle is omitted
+{% endcomment %}
+
+{%- liquid
+  assign product = closest.product
+  assign description = product.description
+  assign char_limit = block.settings.char_limit
+  assign description_plain = description | strip_html | strip_newlines | strip
+  assign description_size = description_plain.size
+-%}
+
+{%- if description != blank -%}
+  <show-more-description
+    class="show-more-description"
+    {{ block.shopify_attributes }}
+    style="--smd-text: {{ block.settings.text_color }}; --smd-link: {{ block.settings.link_color }};"
+  >
+    {%- if description_size > char_limit -%}
+      <p class="show-more-description__text" data-truncated>
+        {{- description_plain | truncate: char_limit, '… ' -}}<button
+          type="button"
+          class="show-more-description__toggle"
+          data-toggle-more
+          aria-expanded="false"
+        >{{ block.settings.more_label | escape }}<span aria-hidden="true"> ›</span></button>
+      </p>
+      <div class="show-more-description__text" data-full hidden>
+        {{ description }}
+        <button
+          type="button"
+          class="show-more-description__toggle"
+          data-toggle-less
+          aria-expanded="true"
+        >{{ block.settings.less_label | escape }}</button>
+      </div>
+    {%- else -%}
+      <div class="show-more-description__text">
+        {{ description }}
+      </div>
+    {%- endif -%}
+  </show-more-description>
+
+  {% style %}
+    .show-more-description {
+      display: block;
+      color: var(--smd-text);
+      font-size: var(--smd-size);
+      line-height: 1.5;
+    }
+    .show-more-description__text {
+      margin: 0;
+    }
+    .show-more-description [hidden] {
+      display: none;
+    }
+    .show-more-description__toggle {
+      background: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      font-weight: 600;
+      color: var(--smd-link);
+      cursor: pointer;
+    }
+    .show-more-description__toggle:hover {
+      text-decoration: underline;
+    }
+    .show-more-description__toggle:focus-visible {
+      outline: 2px solid var(--smd-link);
+      outline-offset: 2px;
+    }
+  {% endstyle %}
+
+  <script>
+    if (!customElements.get('show-more-description')) {
+      customElements.define(
+        'show-more-description',
+        class extends HTMLElement {
+          connectedCallback() {
+            this.addEventListener('click', (event) => {
+              const moreBtn = event.target.closest('[data-toggle-more]');
+              const lessBtn = event.target.closest('[data-toggle-less]');
+              if (!moreBtn && !lessBtn) return;
+
+              const truncated = this.querySelector('[data-truncated]');
+              const full = this.querySelector('[data-full]');
+              if (!truncated || !full) return;
+
+              if (moreBtn) {
+                truncated.hidden = true;
+                full.hidden = false;
+                full.querySelector('[data-toggle-less]')?.focus();
+              } else {
+                full.hidden = true;
+                truncated.hidden = false;
+                truncated.querySelector('[data-toggle-more]')?.focus();
+              }
+            });
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Description (show more)",
+  "tag": null,
+  "settings": [
+    {
+      "type": "range",
+      "id": "char_limit",
+      "label": "Character limit",
+      "info": "Description collapses to this length until the customer clicks 'Show more'.",
+      "min": 50,
+      "max": 500,
+      "step": 10,
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Labels"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Expand label",
+      "default": "Show More"
+    },
+    {
+      "type": "text",
+      "id": "less_label",
+      "label": "Collapse label",
+      "default": "Show Less"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Toggle colour",
+      "default": "#1554F6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Description (show more)"
+    }
+  ]
+}
+{% endschema %}
