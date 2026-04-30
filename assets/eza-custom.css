@@ -840,3 +840,7 @@ line-height: normal;}
     padding-bottom: 32px;
   }
 }
+
+/* PDP ACcordion Buy Box */
+.accordion .details__header{padding-top:32px;}
+.accordion--dividers accordion-custom: .details{border-width:3px;}
