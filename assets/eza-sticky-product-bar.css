@@ -83,9 +83,10 @@
 
   .sticky-product-bar__cta {
     flex: 0 0 auto;
-    background: var(--color-primary, #000);
-    color: var(--color-primary-foreground, #fff);
-    border: 0;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius:4px;
     padding: 0.875rem 1.25rem;
     font: inherit;
     font-weight: 700;
@@ -93,7 +94,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 0;
     opacity: 0;
     transform: translateX(0.5rem);
     pointer-events: none;
