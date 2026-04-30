@@ -960,160 +960,10 @@
                 "eza_group_wL9HCY"
               ]
             },
-            "eza_group_xtH98T": {
-              "type": "eza-group",
-              "name": "Description",
+            "accordion_FE3WNP": {
+              "type": "accordion",
+              "name": "t:names.accordion",
               "settings": {
-                "custom_class": "",
-                "desktop_hidden": false,
-                "mobile_hidden": false,
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 5,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-1",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 20,
-                "padding-block-end": 20,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_hNHHnA": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<h2><strong>DESCRIPTION</strong></h2>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h5",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "divider_Dymkrj": {
-                  "type": "_divider",
-                  "name": "t:names.divider",
-                  "settings": {
-                    "thickness": 3,
-                    "corner_radius": "square",
-                    "width_percent": 100,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_WVVbCV": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "{{ closest.product.description }}",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "tight",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_hNHHnA",
-                "divider_Dymkrj",
-                "text_WVVbCV"
-              ]
-            },
-            "eza_how_to_take_EP9bYF": {
-              "type": "eza-how-to-take",
-              "name": "EZ-A How to Take",
-              "settings": {
-                "desktop_layout": false,
-                "headline": "HOW TO TAKE"
-              },
-              "blocks": {}
-            },
-            "text_HqEmJW": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p><strong>Caution</strong>: Not to be used by pregnant or nursing women. Keep out of the reach of children. Over-consuming EZ-A may cause nervousness, irritability, anxiety, difficulty sleeping, rapid heart beat, or flushing and tingling of the skin. Consult your physician prior to using this product if you are taking medication, or have a medical condition. Discontinue use two weeks prior to surgery.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.875rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "eza_accordion_PftDMm": {
-              "type": "eza-accordion",
-              "name": "EZ Accordion",
-              "settings": {
-                "custom_class": "supplement-facts",
                 "icon": "caret",
                 "dividers": true,
                 "type_preset": "h5",
@@ -1123,14 +973,106 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
-                "padding-block-start": 20,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_pNNmDm": {
+                "accordion_row_9UrPXp": {
                   "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "PRODUCT DETAILS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_QddzRr": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.description }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_QddzRr"
+                  ]
+                },
+                "accordion_row_i9V7FX": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "HOW TO TAKE",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "eza_how_to_take_AG7RJW": {
+                      "type": "eza-how-to-take",
+                      "name": "EZ-A How to Take",
+                      "settings": {
+                        "desktop_layout": false,
+                        "headline": ""
+                      },
+                      "blocks": {}
+                    },
+                    "text_bGTPTD": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p><strong>Caution</strong>: Not to be used by pregnant or nursing women. Keep out of the reach of children. Over-consuming EZ-A may cause nervousness, irritability, anxiety, difficulty sleeping, rapid heart beat, or flushing and tingling of the skin. Consult your physician prior to using this product if you are taking medication, or have a medical condition. Discontinue use two weeks prior to surgery.</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "eza_how_to_take_AG7RJW",
+                    "text_bGTPTD"
+                  ]
+                },
+                "accordion_row_KwNAfQ": {
+                  "type": "_accordion-row",
+                  "disabled": true,
                   "settings": {
                     "heading": "EZ-A SUPPLEMENT FACTS",
                     "open_by_default": false,
@@ -1148,35 +1090,51 @@
                   "block_order": [
                     "eza_supplement_facts_3qCqaG"
                   ]
-                }
-              },
-              "block_order": [
-                "accordion_row_pNNmDm"
-              ]
-            },
-            "eza_accordion_6MQXjz": {
-              "type": "eza-accordion",
-              "name": "EZ Accordion",
-              "settings": {
-                "custom_class": "ingredients",
-                "icon": "caret",
-                "dividers": true,
-                "type_preset": "h5",
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 20,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "accordion_row_reqnww": {
+                },
+                "accordion_row_8cpq3K": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "SHIPPING & RETURNS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_39KUzU": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_39KUzU"
+                  ]
+                },
+                "accordion_row_DqGCkQ": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "disabled": true,
                   "settings": {
                     "heading": "KEY INGREDIENTS",
                     "open_by_default": false,
@@ -1200,7 +1158,11 @@
                 }
               },
               "block_order": [
-                "accordion_row_reqnww"
+                "accordion_row_9UrPXp",
+                "accordion_row_i9V7FX",
+                "accordion_row_KwNAfQ",
+                "accordion_row_8cpq3K",
+                "accordion_row_DqGCkQ"
               ]
             }
           },
@@ -1212,11 +1174,7 @@
             "recharge_subscriptions_subscription_widget_v2_tt9agE",
             "buy_buttons_eYQEYi",
             "eza_group_4ttqcC",
-            "eza_group_xtH98T",
-            "eza_how_to_take_EP9bYF",
-            "text_HqEmJW",
-            "eza_accordion_PftDMm",
-            "eza_accordion_6MQXjz"
+            "accordion_FE3WNP"
           ]
         }
       },
