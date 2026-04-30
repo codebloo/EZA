@@ -276,17 +276,17 @@
         {%- endif -%}
 
         {%- if heading != blank -%}
-          <h2 class="eza-video-hero__heading">{{ heading }}</h2>
+          <h2 class="eza-video-hero__heading cta-desktop">{{ heading }}</h2>
         {%- endif -%}
 
         {%- if cta_text != blank -%}
-          <span class="eza-video-hero__cta cta-desktop">{{ cta_text }}</span>
+          <span class="eza-video-hero__cta">{{ cta_text }}</span>
         {%- endif -%}
       </div>
     </div>
 
-     {%- if cta_text != blank -%}
-          <span class="eza-video-hero__cta cta-mobile">{{ cta_text }}</span>
+      {%- if heading != blank -%}
+          <h2 class="eza-video-hero__heading cta-mobile">{{ heading }}</h2>
         {%- endif -%}
   </button>
 
