@@ -1806,6 +1806,23 @@
       "name": "EZ-A PDP Trust",
       "settings": {}
     },
+    "eza_video_RC6jdR": {
+      "type": "eza-video",
+      "name": "EZ-A Video hero",
+      "settings": {
+        "image": "shopify://shop_images/IMG_Video_Cover.png",
+        "mobile_image": "shopify://shop_images/IMG_Video_Cover.png",
+        "overlay_opacity": 25,
+        "min_height_desktop": 560,
+        "min_height_mobile": 420,
+        "show_play_button": true,
+        "heading": "Warning: Contains actual science, one extra annoyed fairy, and zero bullsh*t.",
+        "cta_text": "Watch the Video Now",
+        "text_color": "#FFFFFF",
+        "cta_color": "#F2C94C",
+        "video_url": "http://youtube.com/watch?v=lxv0T4bXP3I"
+      }
+    },
     "section_8JFCJc": {
       "type": "section",
       "blocks": {
@@ -8369,6 +8386,7 @@
     "eza_section_bxi7bM",
     "eza_section_6BLbM8",
     "cb_pdp_trust_Lw7ALD",
+    "eza_video_RC6jdR",
     "section_8JFCJc",
     "eza_section_j9xXYp",
     "eza_section_h7VLjY",
