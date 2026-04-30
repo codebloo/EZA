@@ -83,28 +83,28 @@
     width: 100%;}
 
   .accordion-item__row:focus-visible {
-    outline: 2px solid var(--ai-chevron);
-    outline-offset: 4px;
     border-radius: 4px;
-  }
-  .accordion-item__icon {
-    display: inline-flex;
+    outline: 2px solid var(--ai-chevron);
+    outline-offset: 4px;}
+
+  .accordion-item__icon { 
     align-items: center;
-    justify-content: center;
+    display: inline-flex;
     flex-shrink: 0;
-  }
+    justify-content: center;}
+    
   .accordion-item__icon img {
     display: block;
-    width: var(--ai-icon-size);
     height: var(--ai-icon-size);
     object-fit: contain;
-  }
+    width: var(--ai-icon-size);}
+
   .accordion-item__icon--empty {
     width: 0;
   }
   .accordion-item__body-wrap {
+     color: var(--ai-text);
     display: block;
-    color: var(--ai-text);
     line-height: 1.4;
     overflow: hidden;
     transition: max-height 350ms ease;
@@ -119,10 +119,11 @@
     font-weight: 700;
   }
   .accordion-item__chevron {
+     color: var(--ai-chevron);
     display: inline-flex;
-    color: var(--ai-chevron);
-    transition: transform 250ms ease;
     margin-top: 0.15em;
+    transition: transform 250ms ease;
+   
   }
   .accordion-item__row[aria-expanded="true"] .accordion-item__chevron {
     transform: rotate(180deg);
