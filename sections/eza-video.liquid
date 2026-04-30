@@ -1,0 +1,460 @@
+{%- liquid
+  assign image = section.settings.image
+  assign mobile_image = section.settings.mobile_image
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+  assign min_height_desktop = section.settings.min_height_desktop
+  assign min_height_mobile = section.settings.min_height_mobile
+  assign heading = section.settings.heading
+  assign cta_text = section.settings.cta_text
+  assign video_url = section.settings.video_url
+  assign show_play_button = section.settings.show_play_button
+
+  assign aria_label = 'Play video'
+  if heading != blank
+    assign aria_label = 'Play video: ' | append: heading
+  endif
+-%}
+
+<style>
+  #eza-video-hero-{{ section.id }} {
+    --eza-overlay-opacity: {{ overlay_opacity }};
+    --eza-min-height-desktop: {{ min_height_desktop }}px;
+    --eza-min-height-mobile: {{ min_height_mobile }}px;
+    --eza-text-color: {{ section.settings.text_color }};
+    --eza-cta-color: {{ section.settings.cta_color }};
+    position: relative;
+  }
+
+  .eza-video-hero__trigger {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    color: var(--eza-text-color);
+    font: inherit;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .eza-video-hero__media-wrap {
+    position: relative;
+    width: 100%;
+    min-height: var(--eza-min-height-mobile);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 750px) {
+    .eza-video-hero__media-wrap {
+      min-height: var(--eza-min-height-desktop);
+    }
+  }
+
+  .eza-video-hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .eza-video-hero__image--mobile { display: block; }
+  .eza-video-hero__image--desktop { display: none; }
+
+  @media (min-width: 750px) {
+    .eza-video-hero__image--mobile { display: none; }
+    .eza-video-hero__image--desktop { display: block; }
+  }
+
+  .eza-video-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, var(--eza-overlay-opacity));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .eza-video-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .eza-video-hero__play {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 200ms ease, background-color 200ms ease;
+  }
+
+  .eza-video-hero__trigger:hover .eza-video-hero__play,
+  .eza-video-hero__trigger:focus-visible .eza-video-hero__play {
+    transform: scale(1.08);
+    background: #fff;
+  }
+
+  .eza-video-hero__play svg {
+    width: 22px;
+    height: 22px;
+    fill: #111;
+    margin-left: 3px; /* visual centring of triangle */
+  }
+
+  .eza-video-hero__heading {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.25;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .eza-video-hero__cta {
+    color: var(--eza-cta-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 1.125rem;
+  }
+
+  .eza-video-hero__trigger:focus-visible {
+    outline: 3px solid var(--eza-cta-color);
+    outline-offset: -3px;
+  }
+
+  /* Modal */
+  .eza-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .eza-video-modal[data-open="true"] { opacity: 1; }
+
+  .eza-video-modal__inner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .eza-video-modal__inner iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .eza-video-modal__close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 150ms ease;
+  }
+
+  .eza-video-modal__close:hover,
+  .eza-video-modal__close:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .eza-video-modal__close svg { width: 18px; height: 18px; }
+
+  body.eza-modal-open { overflow: hidden; }
+</style>
+
+<section
+  id="eza-video-hero-{{ section.id }}"
+  class="eza-video-hero"
+  data-section-id="{{ section.id }}"
+>
+  <button
+    type="button"
+    class="eza-video-hero__trigger"
+    data-video-url="{{ video_url | escape }}"
+    aria-label="{{ aria_label | escape }}"
+  >
+    <div class="eza-video-hero__media-wrap">
+      {%- if image != blank -%}
+        {%- if mobile_image != blank -%}
+          {{ mobile_image | image_url: width: 1200 | image_tag:
+            class: 'eza-video-hero__image eza-video-hero__image--mobile',
+            widths: '375, 550, 750, 1100, 1500',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: image.alt | default: heading
+          }}
+          {{ image | image_url: width: 2400 | image_tag:
+            class: 'eza-video-hero__image eza-video-hero__image--desktop',
+            widths: '750, 1100, 1500, 1800, 2200, 2400',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: image.alt | default: heading
+          }}
+        {%- else -%}
+          {{ image | image_url: width: 2400 | image_tag:
+            class: 'eza-video-hero__image',
+            widths: '375, 550, 750, 1100, 1500, 1800, 2200, 2400',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: image.alt | default: heading
+          }}
+        {%- endif -%}
+      {%- endif -%}
+
+      <div class="eza-video-hero__overlay"></div>
+
+      <div class="eza-video-hero__content">
+        {%- if show_play_button -%}
+          <span class="eza-video-hero__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+        {%- endif -%}
+
+        {%- if heading != blank -%}
+          <h2 class="eza-video-hero__heading">{{ heading }}</h2>
+        {%- endif -%}
+
+        {%- if cta_text != blank -%}
+          <span class="eza-video-hero__cta">{{ cta_text }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </button>
+</section>
+
+<script>
+  (function () {
+    var section = document.getElementById('eza-video-hero-{{ section.id }}');
+    if (!section) return;
+
+    var trigger = section.querySelector('.eza-video-hero__trigger');
+    if (!trigger) return;
+
+    function getYouTubeId(url) {
+      if (!url) return null;
+      var patterns = [
+        /(?:youtube\.com\/watch\?(?:.*&)?v=)([\w-]{11})/,
+        /(?:youtu\.be\/)([\w-]{11})/,
+        /(?:youtube\.com\/embed\/)([\w-]{11})/,
+        /(?:youtube\.com\/shorts\/)([\w-]{11})/,
+        /(?:youtube\.com\/v\/)([\w-]{11})/
+      ];
+      for (var i = 0; i < patterns.length; i++) {
+        var m = url.match(patterns[i]);
+        if (m && m[1]) return m[1];
+      }
+      // Fallback: assume the value itself is an 11-char ID
+      if (/^[\w-]{11}$/.test(url.trim())) return url.trim();
+      return null;
+    }
+
+    var lastFocused = null;
+    var modal = null;
+
+    function openModal() {
+      var url = trigger.getAttribute('data-video-url');
+      var videoId = getYouTubeId(url);
+      if (!videoId) {
+        console.warn('[eza-video-hero] Could not parse YouTube URL:', url);
+        return;
+      }
+
+      lastFocused = document.activeElement;
+
+      modal = document.createElement('div');
+      modal.className = 'eza-video-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-label', trigger.getAttribute('aria-label') || 'Video player');
+      modal.innerHTML = [
+        '<div class="eza-video-modal__inner">',
+          '<button type="button" class="eza-video-modal__close" aria-label="Close video">',
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
+              '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>',
+            '</svg>',
+          '</button>',
+          '<iframe',
+            ' src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&playsinline=1"',
+            ' title="YouTube video"',
+            ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"',
+            ' allowfullscreen></iframe>',
+        '</div>'
+      ].join('');
+
+      document.body.appendChild(modal);
+      document.body.classList.add('eza-modal-open');
+
+      requestAnimationFrame(function () {
+        modal.setAttribute('data-open', 'true');
+      });
+
+      var closeBtn = modal.querySelector('.eza-video-modal__close');
+      closeBtn.focus();
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', onKeydown);
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      document.removeEventListener('keydown', onKeydown);
+      document.body.classList.remove('eza-modal-open');
+      if (modal.parentNode) modal.parentNode.removeChild(modal);
+      modal = null;
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape' || e.keyCode === 27) closeModal();
+    }
+
+    trigger.addEventListener('click', openModal);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "EZ-A  Video hero",
+  "tag": "section",
+  "class": "section-video-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Hero image (mobile)",
+      "info": "Optional. Falls back to desktop image if empty."
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "min_height_desktop",
+      "label": "Minimum height (desktop)",
+      "min": 300,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "label": "Minimum height (mobile)",
+      "min": 200,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "default": 420
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_play_button",
+      "label": "Show play button icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Warning: Contains actual science, one extra annoyed fairy, and zero bullsh*t."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Watch the Video Now"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Heading colour",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "CTA colour",
+      "default": "#F2C94C"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "YouTube URL",
+      "info": "Paste a full YouTube URL — supports watch, youtu.be, embed, and shorts formats."
+    }
+  ],
+  "presets": [
+    {
+      "name": "EZ-A Video hero"
+    }
+  ]
+}
+{% endschema %}
