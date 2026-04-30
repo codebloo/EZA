@@ -788,3 +788,23 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;}
 
+/* Little Pills */
+
+.pills .group-block-content {
+  flex-wrap: wrap !important;
+
+}
+.pills .group-block-content p{font-size:13px;}
+.clean-focus {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1080px;
+}
+.pullquote .group-block-content {
+  border-left: 7px solid var(--yellow);
+  padding-left: 8px;
+}
+.button {
+  justify-content: center;
+  width: 327px;
+}
