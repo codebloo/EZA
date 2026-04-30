@@ -9,12 +9,13 @@ class StickyProductBar extends HTMLElement {
     super();
     this.handleShopNowClick = this.handleShopNowClick.bind(this);
     this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.handleHeaderResize = this.handleHeaderResize.bind(this);
+    this.headerOffset = 0;
   }
 
   connectedCallback() {
     this.mediaQuery = window.matchMedia(StickyProductBar.MOBILE_QUERY);
     this.mediaQuery.addEventListener('change', this.handleMediaChange);
-
     if (this.mediaQuery.matches) this.init();
   }
 
@@ -29,84 +30,31 @@ class StickyProductBar extends HTMLElement {
   }
 
   init() {
-    this.teardown(); // safe to call repeatedly
+    this.teardown();
 
     this.sentinel = this.querySelector('.sticky-product-bar__sentinel');
     this.shopNowBtn = this.querySelector('[data-shop-now]');
 
+    // ---- Header offset ----
+    const headerSelector =
+      this.dataset.headerSelector ||
+      'header[role="banner"], header.header, .header-component, #header';
+    this.headerEl = document.querySelector(headerSelector);
+
+    if (this.headerEl && 'ResizeObserver' in window) {
+      this.headerResizeObserver = new ResizeObserver(this.handleHeaderResize);
+      this.headerResizeObserver.observe(this.headerEl);
+    }
+    this.updateHeaderOffset();
+
+    // ---- Inline ATC reference ----
     const atcSelector =
       this.dataset.atcSelector ||
       "[ref='addToCartButton'], button[name='add'], .product-form__submit";
     this.inlineAtc = document.querySelector(atcSelector);
 
-    // Observer 1: stuck state
-    if (this.sentinel) {
-      this.stuckObserver = new IntersectionObserver(
-        ([entry]) => {
-          this.classList.toggle(
-            StickyProductBar.STUCK_CLASS,
-            !entry.isIntersecting
-          );
-        },
-        { threshold: 0 }
-      );
-      this.stuckObserver.observe(this.sentinel);
-    }
+    // ---- Observer 1: stuck state (built in attachStuckObserver) ----
+    this.attachStuckObserver();
 
-    // Observer 2: inline ATC visibility — only show CTA when ATC is ABOVE
-    // viewport (already scrolled past). When ATC is below viewport (not yet
-    // reached), keep CTA hidden.
-    if (this.inlineAtc) {
-      this.atcObserver = new IntersectionObserver(
-        ([entry]) => {
-          const scrolledPast =
-            !entry.isIntersecting && entry.boundingClientRect.top < 0;
-          this.toggleCta(scrolledPast);
-        },
-        { threshold: 0 }
-      );
-      this.atcObserver.observe(this.inlineAtc);
-    } else {
-      // No ATC found — hide CTA permanently rather than show it everywhere.
-      this.toggleCta(false);
-      console.warn(
-        '[sticky-product-bar] No inline add-to-cart button found. ' +
-          'Update data-atc-selector on the element.'
-      );
-    }
-
-    if (this.shopNowBtn) {
-      this.shopNowBtn.addEventListener('click', this.handleShopNowClick);
-    }
-  }
-
-  teardown() {
-    this.stuckObserver?.disconnect();
-    this.atcObserver?.disconnect();
-    this.shopNowBtn?.removeEventListener('click', this.handleShopNowClick);
-    this.classList.remove(StickyProductBar.STUCK_CLASS, StickyProductBar.CTA_CLASS);
-    this.toggleCta(false);
-  }
-
-  toggleCta(show) {
-    this.classList.toggle(StickyProductBar.CTA_CLASS, show);
-    if (this.shopNowBtn) {
-      this.shopNowBtn.setAttribute('aria-hidden', String(!show));
-      if (show) this.shopNowBtn.removeAttribute('tabindex');
-      else this.shopNowBtn.setAttribute('tabindex', '-1');
-    }
-  }
-
-  handleShopNowClick(e) {
-    e.preventDefault();
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({
-      top: 0,
-      behavior: reduceMotion ? 'auto' : 'smooth',
-    });
-  }
-}
-
-if (!customElements.get('sticky-product-bar')) {
-  customElements.define('sticky-product-bar', StickyProductBar);
-}
+    // ---- Observer 2: inline ATC ----
+    if (this.inl
