@@ -2,6 +2,7 @@
     <div class="section section--page-width">
 
         <div class="founder">
+
             <span class="founder-name">{{ section.settings.founder_name }}</span>
             <span class="founder-title">{{ section.settings.founder_title }}</span>
         </div>
@@ -22,7 +23,13 @@
     background:  rgba(255, 242, 0, 0.50);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 20.19%, rgba(0, 0, 0, 0.80) 100%);}
 
-.founder{}
+.founder{
+    align-items:bottom;
+    background-image:url('{{ section.settings.image | img_url: master }}');
+    background-size:;
+    display:flex;
+    justify-content:end;
+}
 .founder-name{}
 .founder-title{}
 
