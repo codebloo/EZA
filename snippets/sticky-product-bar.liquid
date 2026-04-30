@@ -1,11 +1,13 @@
 {%- comment -%}
   snippets/sticky-product-bar.liquid
 
-  Mobile sticky condensed product header for Horizon PDP.
-  Drop in your review-provider markup where noted.
+  Mobile sticky condensed product header for EZ-A (Horizon theme).
 
-  Usage (in main-product.liquid or a block):
+  Usage (in main-product.liquid):
     {% render 'sticky-product-bar', product: product %}
+
+  The snippet auto-repositions to be the first child of .product-information
+  via JS, so it can render anywhere inside the section and still work.
 {%- endcomment -%}
 
 {{ 'eza-sticky-product-bar.css' | asset_url | stylesheet_tag }}
@@ -13,6 +15,8 @@
 
 <sticky-product-bar
   class="sticky-product-bar"
+  data-header-offset="70"
+  data-header-selector="#header-component"
   data-atc-selector="[ref='addToCartButton'], product-form-component button[name='add'], .product-form__submit"
 >
   {%- comment -%} Sentinel sits 1px above the sticky boundary — observed for stuck state {%- endcomment -%}
@@ -21,27 +25,22 @@
   <div class="sticky-product-bar__inner">
     <div class="sticky-product-bar__content">
       {%- comment -%}
-        Replace this block with your review-provider markup
-        (Okendo, Yotpo, Judge.me, etc.) — keep the wrapping <a> for the
-        click-through to the reviews anchor and the same class names so
-        the condensed scaling still applies.
+        TODO: Replace with the actual Yotpo star-rating widget block
+        (currently rendered inline as instance 842520) so the rating/count
+        stays in sync with the inline widget. The placeholder below uses
+        product metafields as a fallback.
       {%- endcomment -%}
-      <a href="#reviews" class="sticky-product-bar__reviews">
+      <a href="#yotpo-reviews-main-widget" class="sticky-product-bar__reviews">
         <span class="sticky-product-bar__stars" aria-hidden="true">★★★★★</span>
         <span class="sticky-product-bar__rating">
           {{- product.metafields.reviews.rating.value | default: '4.7' }} Stars
         </span>
         <span class="sticky-product-bar__separator" aria-hidden="true">·</span>
         <span class="sticky-product-bar__count">
-          {{- product.metafields.reviews.rating_count | default: '120' }} Reviews
+          {{- product.metafields.reviews.rating_count | default: '70' }} Reviews
         </span>
       </a>
 
-      {%- comment -%}
-        Use h1 here only if you remove/hide the title in the main product
-        info block on mobile. Otherwise keep this as a styled <p> or <span>
-        to avoid duplicate H1s.
-      {%- endcomment -%}
       <p class="sticky-product-bar__title">{{ product.title }}</p>
     </div>
 
