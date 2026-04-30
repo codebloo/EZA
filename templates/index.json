@@ -4603,7 +4603,7 @@
                     "icon": "shopify://shop_images/icon-step-2.svg",
                     "heading": "Take it with food, this part matters.",
                     "body": "<p>Your stomach with thank you later. Your stomach with thank you later. </p>",
-                    "preview_lines": 2,
+                    "preview_lines": 1,
                     "default_open": false,
                     "icon_size": 36,
                     "heading_color": "#111111",
