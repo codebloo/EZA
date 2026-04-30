@@ -2672,7 +2672,7 @@
                 "arrow_color": "blue",
                 "show_gradient": false,
                 "label": "Read all the reviews",
-                "link": "shopify://collections/all",
+                "link": "https://ez-a.com/products/ez-a#yotpo-reviews-main-widget",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
@@ -4772,7 +4772,7 @@
         "star_color": "#ffd100",
         "color_scheme": "",
         "link_text": "Read all the reviews",
-        "link_url": "",
+        "link_url": "https://ez-a.com/products/ez-a#yotpo-reviews-main-widget",
         "padding_top": 24,
         "padding_bottom": 0
       }
