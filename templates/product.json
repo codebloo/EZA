@@ -12,6 +12,15 @@
     "eza_section_VPBBTb": {
       "type": "eza-section",
       "blocks": {
+        "eza_sticky_product_bar_48yfi6": {
+          "type": "eza-sticky-product-bar",
+          "name": "EZ-A Sticky ATC",
+          "settings": {
+            "label": "Shop now",
+            "link": ""
+          },
+          "blocks": {}
+        },
         "eza_group_ekKRqq": {
           "type": "eza-group",
           "name": "Header Mobile",
@@ -95,6 +104,7 @@
         }
       },
       "block_order": [
+        "eza_sticky_product_bar_48yfi6",
         "eza_group_ekKRqq"
       ],
       "name": "EZ-A Custom Section",
