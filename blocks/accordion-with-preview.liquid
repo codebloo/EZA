@@ -1,124 +1,61 @@
 {% comment %}
-  Block: Accordion item (inline reveal)
-  -------------------------------------
-  Stackable accordion row that keeps body content inline with the
-  heading. The body is split into a "head" (always visible) and a
-  "tail" (revealed on expand) so the text reads as one continuous
-  paragraph rather than popping to a separate content area.
+  Block: Accordion item (line-clamp version)
+  ------------------------------------------
+  Heading and body render as a single inline text flow inside one
+  wrapper. The browser handles visual truncation via -webkit-line-clamp
+  (multi-line equivalent of text-overflow: ellipsis), so there's no
+  manual head/tail split and no mid-word breaks.
 
-  Animation uses the grid-template-rows 0fr → 1fr trick, which
-  smoothly transitions to natural content height — no JS measuring,
-  no max-height guessing.
-
-  The head/tail boundary snaps to a word break so the truncation
-  point reads cleanly in both states (no "ADJUSTI" / "NG" cuts).
+  Animation: max-height transition gives the slide. JS coordinates
+  the line-clamp/height swap so both expand AND collapse stay smooth
+  (without coordination, the line-clamp re-application snaps content
+  height down before max-height can transition on collapse).
 {% endcomment %}
 
 {%- liquid
-  assign char_limit = block.settings.char_limit
   assign body = block.settings.body
   assign body_plain = body | strip_html | strip_newlines | strip
-  assign body_size = body_plain.size
-  assign is_expandable = false
-  assign head = ''
-  assign tail = ''
-
-  if body_size > char_limit
-    comment
-      Build the head word-by-word so the head/tail boundary lands at
-      a clean word break. Stop adding words once the next one would
-      push us past char_limit.
-    endcomment
-    assign words = body_plain | split: ' '
-    for word in words
-      if head == ''
-        assign tentative = word
-      else
-        assign tentative = head | append: ' ' | append: word
-      endif
-      if tentative.size > char_limit
-        break
-      endif
-      assign head = tentative
-    endfor
-
-    if head == ''
-      comment 
-      First word alone is longer than char_limit — fall back to it. 
-      endcomment
-      assign head = words.first
-    endif
-
-    assign tail = body_plain | remove_first: head
-    if tail.size > 0
-      assign is_expandable = true
-    endif
-  endif
-
   assign sizes_attr = block.settings.icon_size | append: 'px'
+  assign initially_open = block.settings.default_open
 -%}
 
 <accordion-item
   class="accordion-item"
   {{ block.shopify_attributes }}
-  style="--ai-heading: {{ block.settings.heading_color }}; --ai-text: {{ block.settings.text_color }}; --ai-chevron: {{ block.settings.chevron_color }}; --ai-divider: {{ block.settings.divider_color }}; --ai-icon-size: {{ block.settings.icon_size }}px;"
+  style="--ai-heading: {{ block.settings.heading_color }}; --ai-text: {{ block.settings.text_color }}; --ai-chevron: {{ block.settings.chevron_color }}; --ai-divider: {{ block.settings.divider_color }}; --ai-icon-size: {{ block.settings.icon_size }}px; --ai-preview-lines: {{ block.settings.preview_lines }};"
 >
-  {%- if is_expandable -%}
-    <button
-      type="button"
-      class="accordion-item__row"
-      aria-expanded="{% if block.settings.default_open %}true{% else %}false{% endif %}"
-    >
-      {%- if block.settings.icon != blank -%}
-        <span class="accordion-item__icon">
-          {{ block.settings.icon | image_url: width: 240 | image_tag:
-            loading: 'lazy',
-            widths: '60, 120, 180, 240',
-            sizes: sizes_attr,
-            alt: block.settings.icon.alt | default: block.settings.heading | escape
-          }}
-        </span>
-      {%- else -%}
-        <span class="accordion-item__icon accordion-item__icon--empty" aria-hidden="true"></span>
-      {%- endif -%}
-
-      <span class="accordion-item__text">
-        {%- if block.settings.heading != blank -%}
-          <strong class="accordion-item__heading">{{ block.settings.heading }}</strong>
-        {%- endif -%}
-        <span class="accordion-item__head">{{ head }}</span><span class="accordion-item__ellipsis" aria-hidden="true">…</span><span class="accordion-item__tail-wrap"><span class="accordion-item__tail">{{ tail }}</span></span>
+  <button
+    type="button"
+    class="accordion-item__row"
+    aria-expanded="{% if initially_open %}true{% else %}false{% endif %}"
+  >
+    {%- if block.settings.icon != blank -%}
+      <span class="accordion-item__icon">
+        {{ block.settings.icon | image_url: width: 240 | image_tag:
+          loading: 'lazy',
+          widths: '60, 120, 180, 240',
+          sizes: sizes_attr,
+          alt: block.settings.icon.alt | default: block.settings.heading | escape
+        }}
       </span>
+    {%- else -%}
+      <span class="accordion-item__icon accordion-item__icon--empty" aria-hidden="true"></span>
+    {%- endif -%}
 
-      <span class="accordion-item__chevron" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.25">
-          <circle cx="12" cy="12" r="11" />
-          <path d="M8 11l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </span>
-    </button>
-  {%- else -%}
-    <div class="accordion-item__row accordion-item__row--static">
-      {%- if block.settings.icon != blank -%}
-        <span class="accordion-item__icon">
-          {{ block.settings.icon | image_url: width: 240 | image_tag:
-            loading: 'lazy',
-            widths: '60, 120, 180, 240',
-            sizes: sizes_attr,
-            alt: block.settings.icon.alt | default: block.settings.heading | escape
-          }}
-        </span>
-      {%- else -%}
-        <span class="accordion-item__icon accordion-item__icon--empty" aria-hidden="true"></span>
-      {%- endif -%}
+    <span class="accordion-item__body-wrap{% unless initially_open %} is-clamped{% endunless %}">
+      {%- if block.settings.heading != blank -%}
+        <strong class="accordion-item__heading">{{ block.settings.heading }}</strong>
+      {%- endif %}
+      <span class="accordion-item__body">{{ body_plain }}</span>
+    </span>
 
-      <span class="accordion-item__text">
-        {%- if block.settings.heading != blank -%}
-          <strong class="accordion-item__heading">{{ block.settings.heading }}</strong>
-        {%- endif -%}
-        <span class="accordion-item__head">{{ body_plain }}</span>
-      </span>
-    </div>
-  {%- endif -%}
+    <span class="accordion-item__chevron" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.25">
+        <circle cx="12" cy="12" r="11" />
+        <path d="M8 11l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </span>
+  </button>
 </accordion-item>
 
 {% style %}
@@ -143,9 +80,6 @@
     color: inherit;
     cursor: pointer;
   }
-  .accordion-item__row--static {
-    cursor: default;
-  }
   .accordion-item__row:focus-visible {
     outline: 2px solid var(--ai-chevron);
     outline-offset: 4px;
@@ -166,35 +100,24 @@
   .accordion-item__icon--empty {
     width: 0;
   }
-  .accordion-item__text {
+  /* Single inline text wrapper holding heading + body. The browser handles
+     wrapping and ellipsis. Adding .is-clamped applies the line-clamp;
+     removing it lets the content flow to natural height. */
+  .accordion-item__body-wrap {
+    display: block;
     color: var(--ai-text);
     line-height: 1.4;
+    overflow: hidden;
+    transition: max-height 350ms ease;
+  }
+  .accordion-item__body-wrap.is-clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--ai-preview-lines, 2);
+    -webkit-box-orient: vertical;
   }
   .accordion-item__heading {
     color: var(--ai-heading);
     font-weight: 700;
-  }
-  /* Space between heading and head text without relying on markup whitespace */
-  .accordion-item__heading + .accordion-item__head::before {
-    content: ' ';
-    white-space: pre;
-  }
-  /* Tail reveal: 0fr → 1fr smoothly grows to natural content height.
-     The inner element clips overflow so text doesn't escape mid-transition. */
-  .accordion-item__tail-wrap {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 350ms ease-out;
-  }
-  .accordion-item__tail {
-    overflow: hidden;
-    min-height: 0;
-  }
-  .accordion-item__row[aria-expanded="true"] .accordion-item__ellipsis {
-    display: none;
-  }
-  .accordion-item__row[aria-expanded="true"] .accordion-item__tail-wrap {
-    grid-template-rows: 1fr;
   }
   .accordion-item__chevron {
     display: inline-flex;
@@ -206,7 +129,7 @@
     transform: rotate(180deg);
   }
   @media (prefers-reduced-motion: reduce) {
-    .accordion-item__tail-wrap,
+    .accordion-item__body-wrap,
     .accordion-item__chevron {
       transition: none;
     }
@@ -219,21 +142,69 @@
       'accordion-item',
       class extends HTMLElement {
         connectedCallback() {
-          /*
-            Event delegation on the host element. Attaching directly to
-            the inner button breaks for the 2nd+ instance: when the
-            custom element is already defined, connectedCallback fires
-            during parsing before child nodes exist, so querySelector
-            returns null. Listening on `this` works because the host
-            element exists at connect time, and we resolve the trigger
-            at click time when the children are guaranteed to be in DOM.
-          */
-          this.addEventListener('click', (event) => {
-            const trigger = event.target.closest('.accordion-item__row[aria-expanded]');
-            if (!trigger || !this.contains(trigger)) return;
-            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-            trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          /* Event delegation on host so the listener attaches at connect
+             time even though child nodes may not yet be parsed for the
+             2nd+ instance (custom-element constructor timing quirk). */
+          this.addEventListener('click', this._onClick.bind(this));
+        }
+
+        _onClick(event) {
+          const trigger = event.target.closest('.accordion-item__row[aria-expanded]');
+          if (!trigger || !this.contains(trigger)) return;
+          const wrap = this.querySelector('.accordion-item__body-wrap');
+          if (!wrap) return;
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+          if (isOpen) this._collapse(wrap, trigger);
+          else this._expand(wrap, trigger);
+        }
+
+        _expand(wrap, trigger) {
+          /* Measure clamped height, then unclamp and measure natural.
+             Anchor max-height at the clamped value, then transition up
+             to natural. Content stays unclamped throughout the animation
+             so the wrapper has the correct natural height to grow into. */
+          const startHeight = wrap.offsetHeight;
+          wrap.classList.remove('is-clamped');
+          const endHeight = wrap.scrollHeight;
+
+          wrap.style.maxHeight = startHeight + 'px';
+          void wrap.offsetHeight; // force reflow so the next change transitions
+          wrap.style.maxHeight = endHeight + 'px';
+          trigger.setAttribute('aria-expanded', 'true');
+
+          this._afterTransition(wrap, () => {
+            wrap.style.maxHeight = '';
           });
+        }
+
+        _collapse(wrap, trigger) {
+          /* Measure natural, briefly apply clamp to read the target
+             collapsed height, then unclamp again before animating. The
+             clamp is re-applied only after the transition finishes,
+             which is what avoids the snap-collapse. */
+          const startHeight = wrap.scrollHeight;
+          wrap.classList.add('is-clamped');
+          const endHeight = wrap.scrollHeight;
+          wrap.classList.remove('is-clamped');
+
+          wrap.style.maxHeight = startHeight + 'px';
+          void wrap.offsetHeight;
+          wrap.style.maxHeight = endHeight + 'px';
+          trigger.setAttribute('aria-expanded', 'false');
+
+          this._afterTransition(wrap, () => {
+            wrap.classList.add('is-clamped');
+            wrap.style.maxHeight = '';
+          });
+        }
+
+        _afterTransition(wrap, fn) {
+          const onEnd = (event) => {
+            if (event.target !== wrap || event.propertyName !== 'max-height') return;
+            wrap.removeEventListener('transitionend', onEnd);
+            fn();
+          };
+          wrap.addEventListener('transitionend', onEnd);
         }
       }
     );
@@ -254,7 +225,7 @@
       "type": "text",
       "id": "heading",
       "label": "Bold heading",
-      "info": "Shown in bold next to the icon. End with a period if you want it to flow into the preview text.",
+      "info": "Shown in bold next to the icon. The body continues inline from here.",
       "default": "Take it easy. Start with one capsule."
     },
     {
@@ -269,13 +240,13 @@
     },
     {
       "type": "range",
-      "id": "char_limit",
-      "label": "Preview character limit",
-      "info": "Approximate length of the preview text shown next to the heading. Snaps to the nearest word boundary so cuts read cleanly.",
-      "min": 20,
-      "max": 200,
-      "step": 5,
-      "default": 30
+      "id": "preview_lines",
+      "label": "Preview lines",
+      "info": "How many lines of text show before the row is expanded. The browser handles word-boundary truncation and ellipsis automatically.",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 2
     },
     {
       "type": "checkbox",
