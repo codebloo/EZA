@@ -1,6 +1,6 @@
 /* assets/sticky-product-bar.css */
 
-
+  .sticky-product-bar {display:none;}
 
 /* ---------- Mobile only ---------- */
 @media (max-width: 749px) {
