@@ -19,7 +19,7 @@
 @media (max-width: 749px) {
   .sticky-product-bar {
     position: sticky;
-    top: 0;
+     top: var(--sticky-bar-top, 0px); 
     z-index: 5; /* below header drawer (Horizon header is typically 10+) */
     transition: box-shadow 250ms ease;
   }
