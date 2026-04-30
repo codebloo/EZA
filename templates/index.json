@@ -1818,7 +1818,7 @@
         "show_play_button": true,
         "heading": "Warning: Contains actual science, one extra annoyed fairy, and zero bullsh*t.",
         "cta_text": "Watch the Video Now",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "cta_color": "#fced05",
         "video_url": "http://youtube.com/watch?v=lxv0T4bXP3I"
       }
@@ -2167,7 +2167,7 @@
         "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
