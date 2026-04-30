@@ -777,7 +777,7 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-end",
+            "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 12,
             "width": "fill",
             "custom_width": 100,
@@ -803,8 +803,8 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 24,
-            "padding-inline-end": 24
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "text_BjUqRM": {
@@ -1508,8 +1508,8 @@
               "settings": {
                 "image": "shopify://shop_images/IMG_Hero.png",
                 "link": "",
-                "image_ratio": "adapt",
-                "width": "fill",
+                "image_ratio": "portrait",
+                "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -1536,7 +1536,6 @@
         "eza_group_TNibzh"
       ],
       "custom_css": [
-        ".mobile-home-hero .inner-group {height: 717px;}",
         ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); color: #000; justify-content: center;}"
       ],
       "name": "Desktop hero",
@@ -1551,7 +1550,7 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 12,
+        "gap": 20,
         "section_width": "full-width",
         "section_height": "custom",
         "section_height_custom": 64,
@@ -1569,7 +1568,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
-        "padding-block-end": 24
+        "padding-block-end": 0
       }
     },
     "cb_pdp_trust_Lw7ALD": {
