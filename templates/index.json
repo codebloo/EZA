@@ -160,7 +160,7 @@
                     "label": "Shop now",
                     "link": "shopify://products/ez-a",
                     "open_in_new_tab": false,
-                    "style_class": "button-secondary",
+                    "style_class": "button",
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "fit-content",
@@ -303,7 +303,7 @@
       ],
       "custom_css": [
         ".mobile-home-hero .mobile-column {height: 490px;}",
-        ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); justify-content: center;}"
+        ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); color:#000; justify-content: center;}"
       ],
       "name": "Mobile hero",
       "settings": {
