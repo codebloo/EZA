@@ -60,3 +60,51 @@ padding: 12px 24px;
 width: 327px;
 }
 </style>
+
+{% schema %}
+{
+  "name": "EZ-A Founder",
+  "class": "section-wrapper",
+  "settings": [
+ 
+        {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"},
+      {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"},
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"},
+     
+          {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"},
+         {
+      "type": "text",
+      "id": "attribution",
+      "label": "Attribution"},
+        {
+      "type": "text",
+      "id": "button",
+      "label": "Button text"},
+        {
+      "type": "url",
+      "id": "link",
+      "label": "Link"}
+
+  ],
+  "disabled_on": {
+    "groups": ["header"]
+  },
+    "presets": [
+    {
+      "name": "EZ-A Founder",
+    }
+  ]
+}
+{% endschema %}
