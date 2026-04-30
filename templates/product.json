@@ -24,6 +24,7 @@
         "eza_group_ekKRqq": {
           "type": "eza-group",
           "name": "Header Mobile",
+          "disabled": true,
           "settings": {
             "custom_class": "",
             "desktop_hidden": true,
