@@ -87,16 +87,15 @@
     color: var(--white);
     border: none;
     border-radius:4px;
-    padding: 0.875rem 1.25rem;
-    font: inherit;
-    font-weight: 700;
-    font-size: 0.8125rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
     cursor: pointer;
+    font-family: inherit;
+     font-size: 12px;
+    font-weight: 700;
     opacity: 0;
-    transform: translateX(0.5rem);
+     padding: 8px 12px;
     pointer-events: none;
+    text-transform: uppercase;
+    transform: translateX(0.5rem);
     transition: opacity 200ms ease, transform 200ms ease;
   }
 
