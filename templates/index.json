@@ -5409,6 +5409,20 @@
         "padding-block-end": 32
       }
     },
+    "eza_founder_bWtBHh": {
+      "type": "eza-founder",
+      "name": "EZ-A Founder",
+      "settings": {
+        "founder_name": "The EZ-A Origin Story",
+        "founder_title": "",
+        "eyebrow": "The EZ-A Origin Story",
+        "title": "This one started with a toxic stat, not a spider bite.",
+        "text": "“1-in-4 college students misuse ADHD meds to get ahead. I read that one night deep in a doom-scroll sesh and thought: I’m calling bullshit. Who’s admitting felony behavior to a stranger with a clipboard?\n\nI mean, I just had to keep pulling the sweater. Eventually the whole thing would have to unravel. Right?”",
+        "attribution": "",
+        "button": "",
+        "link": ""
+      }
+    },
     "eza_section_YT3AUC": {
       "type": "eza-section",
       "blocks": {
@@ -8020,6 +8034,7 @@
     "eza_scroll_testimonials_UbGK3E",
     "eza_section_cRNFXP",
     "eza_section_fdEAC9",
+    "eza_founder_bWtBHh",
     "eza_section_YT3AUC",
     "eza_section_UP4NRP",
     "eza_section_36cLtt",
