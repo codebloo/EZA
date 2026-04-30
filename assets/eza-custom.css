@@ -256,6 +256,13 @@ a.has-gradient{
     letter-spacing: 0.65px;
     text-transform: uppercase; }
 
+   button, a.button{
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.65px;
+    text-transform: uppercase;
+   } 
+
 /* Footer */
 
 footer{
