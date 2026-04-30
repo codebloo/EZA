@@ -52,6 +52,7 @@
   }
 
   @media (min-width: 750px) {
+    .eza-video-hero{padding:64px 0;}
     .eza-video-hero__media-wrap {
          margin: 0 auto;
         max-width: 100%;
@@ -69,7 +70,9 @@
     z-index: 0;
   }
 
-  .eza-video-hero__image--mobile { display: block; }
+  .eza-video-hero__image--mobile { 
+     border-radius:16px;
+    display: block; }
   .eza-video-hero__image--desktop { display: none; }
 
     .eza-video-hero__play svg {
@@ -79,7 +82,9 @@
 
   @media (min-width: 750px) {
     .eza-video-hero__image--mobile { display: none; }
-    .eza-video-hero__image--desktop { display: block; }
+    .eza-video-hero__image--desktop { 
+        border-radius:16px;
+        display: block; }
 
   .eza-video-hero__play svg {
        height: 64px;
