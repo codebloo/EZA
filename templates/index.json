@@ -1056,7 +1056,7 @@
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": false,
-                "color_scheme": "scheme-c68fed01-802b-48b8-988d-b3ddeb4708fa",
+                "color_scheme": "scheme-6",
                 "background_media": "none",
                 "video_position": "cover",
                 "background_image_position": "cover",
@@ -1101,7 +1101,7 @@
                   "settings": {
                     "arrow": false,
                     "arrow_color": "yellow",
-                    "show_gradient": true,
+                    "show_gradient": false,
                     "label": "SEE WHAT’S IN IT",
                     "link": "shopify://pages/the-formula",
                     "open_in_new_tab": false,
