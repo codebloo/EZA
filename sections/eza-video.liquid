@@ -52,7 +52,7 @@
   }
 
   @media (min-width: 750px) {
-#eza-video-hero-{{ section.id }} {padding:0 0 64px 0;}
+#eza-video-hero-{{ section.id }} {padding:32px 0 64px 0;}
     .eza-video-hero__media-wrap {
          margin: 0 auto;
         max-width: 100%;
@@ -275,11 +275,16 @@
         {%- endif -%}
 
         {%- if cta_text != blank -%}
-          <span class="eza-video-hero__cta">{{ cta_text }}</span>
+          <span class="eza-video-hero__cta cta-desktop">{{ cta_text }}</span>
         {%- endif -%}
       </div>
     </div>
+
+     {%- if cta_text != blank -%}
+          <span class="eza-video-hero__cta cta-mobile">{{ cta_text }}</span>
+        {%- endif -%}
   </button>
+
 </section>
 
 <script>
