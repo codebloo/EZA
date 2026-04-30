@@ -1813,10 +1813,11 @@
           "type": "video",
           "name": "t:names.video",
           "settings": {
-            "source": "uploaded",
-            "video_url": "",
+            "source": "url",
+            "video_url": "http://youtube.com/watch?v=lxv0T4bXP3I",
             "video_autoplay": false,
             "video_loop": true,
+            "cover_image": "shopify://shop_images/IMG_Video_Cover.png",
             "alt": "",
             "custom_width": 100,
             "custom_width_mobile": 100,
@@ -5426,7 +5427,7 @@
         "eza_group_KDMCVE"
       ],
       "custom_css": [
-        "a.link {font-size:14px; font-weight: 500;}"
+        "a.link {font-size: 14px; font-weight: 500;}"
       ],
       "name": "Money Back Mobile",
       "settings": {
