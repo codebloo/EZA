@@ -5413,6 +5413,7 @@
       "type": "eza-founder",
       "name": "EZ-A Founder",
       "settings": {
+        "image": "shopify://shop_images/IMG__MrG.png",
         "founder_name": "Ryan Goodwin",
         "founder_title": "Founder, Biohacker & Avid EZ-A Junkie",
         "eyebrow": "The EZ-A Origin Story",
