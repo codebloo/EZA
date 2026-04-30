@@ -2904,7 +2904,7 @@
         "eza_group_iBEThX"
       ],
       "custom_css": [
-        ".pills .group-block-content {flex-wrap: wrap !important;}",
+        ".pills .group-block-content {flex-wrap: wrap !important; font-size:13px;}",
         ".clean-focus {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".pullquote .group-block-content {border-left: 7px solid var(--yellow); padding-left: 8px;}",
         ".button {justify-content: center; width: 327px;}"
