@@ -79,12 +79,16 @@
        height: 57px;
       width: 57px;
   }
+  .cta-mobile { display: block; }
+.cta-desktop { display: none; }
 
   @media (min-width: 750px) {
-    .eza-video-hero__image--mobile { display: none; }
+    .eza-video-hero__image--mobile,
+    .cta-mobile { display: none; }
     .eza-video-hero__image--desktop { 
         border-radius:16px;
         display: block; }
+        .cta-desktop { display: block; }
 
   .eza-video-hero__play svg {
        height: 64px;
@@ -206,6 +210,7 @@
   .eza-video-modal__close svg { width: 18px; height: 18px; }
 
   body.eza-modal-open { overflow: hidden; }
+ 
 </style>
 
 <section
