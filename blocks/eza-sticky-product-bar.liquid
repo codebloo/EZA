@@ -1,0 +1,29 @@
+
+{% render 'sticky-product-bar', link: block.settings.link %}
+
+{% schema %}
+{
+  "name": "EZ-A Sticky ATC",
+  "tag": "eza-sticky-atc",
+  "settings": [
+   
+      {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "t:text_defaults.button_label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "EZ-A Sticky ATC",
+      "category": "EZ-A"
+    }
+  ]
+}
+{% endschema %}
