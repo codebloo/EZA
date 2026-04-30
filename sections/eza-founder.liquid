@@ -4,6 +4,7 @@
 <div class="founder-wrap">
         <div class="founder">
             {{ section.settings.image_mob | image_url: width: 1000 | image_tag: class: 'mobile-founder-image' }}
+             {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'desktop-founder-image' }}
             <div class="founder-values">
             <span class="founder-name">{{ section.settings.founder_name }}</span>
             <span class="founder-title">{{ section.settings.founder_title }}</span>
@@ -94,6 +95,7 @@ width: 327px;
 }
 
 .mobile-founder-image{width:100%;}
+.desktop-founder-image{display:none;}
 
 @media (min-width:750px){
 .eza-founder{background:  rgba(255, 242, 0, 0.50);}
