@@ -3505,7 +3505,7 @@
         "@media (min-width: 768px) {.baggie-desktop .custom-section-content {padding: 80px 0; margin: 0 auto; max-width: 100%; width: 1022px; }}",
         ".details__header {font-weight: 700;}",
         ".h5 p {color: #7c7c7c;}",
-        "@media (max-width: 768px) {.baggie-desktop{padding-bottom:32px;}}"
+        "@media (max-width: 768px) {.baggie-desktop {padding-bottom: 32px; }}"
       ],
       "name": "Baggie Desktop",
       "settings": {
@@ -4417,134 +4417,62 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_jk68PK": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
+                "accordion_with_preview_nhmAR9": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
                   "settings": {
-                    "heading": "Take it easy. Start with one capsule. Wait 30 minutes before you decide you need another. About 60% of people feel the full",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/icon-step-1.svg",
-                    "width": 36
+                    "icon": "shopify://shop_images/icon-step-1.svg",
+                    "heading": "Take it easy. Start with one capsule.",
+                    "body": "<p>Wait 30 minutes before adjusting. Stack effects build subtly until they don't.</p>",
+                    "char_limit": 30,
+                    "default_open": false,
+                    "icon_size": 60,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9CA3AF",
+                    "divider_color": "#111111"
                   },
-                  "blocks": {
-                    "text_WybARx": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_WybARx"
-                  ]
+                  "blocks": {}
                 },
-                "accordion_row_mi78aH": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
+                "accordion_with_preview_XeJBn9": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
                   "settings": {
-                    "heading": "When is the best time to take it?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/icon-step-2.svg",
-                    "width": 36
+                    "icon": "shopify://shop_images/icon-step-2.svg",
+                    "heading": "Take it easy. Start with one capsule.",
+                    "body": "<p>Wait 30 minutes before adjusting. Stack effects build subtly until they don't.</p>",
+                    "char_limit": 30,
+                    "default_open": false,
+                    "icon_size": 60,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9CA3AF",
+                    "divider_color": "#111111"
                   },
-                  "blocks": {
-                    "text_NTz6bG": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_NTz6bG"
-                  ]
+                  "blocks": {}
                 },
-                "accordion_row_fBgTam": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
+                "accordion_with_preview_hM7P64": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
                   "settings": {
-                    "heading": "Can I take it on an empty stomach?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/icon-step-3.svg",
-                    "width": 36
+                    "icon": "shopify://shop_images/icon-step-3.svg",
+                    "heading": "Take it easy. Start with one capsule.",
+                    "body": "<p>Wait 30 minutes before adjusting. Stack effects build subtly until they don't.</p>",
+                    "char_limit": 30,
+                    "default_open": false,
+                    "icon_size": 60,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9CA3AF",
+                    "divider_color": "#111111"
                   },
-                  "blocks": {
-                    "text_RXex9r": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_RXex9r"
-                  ]
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "accordion_row_jk68PK",
-                "accordion_row_mi78aH",
-                "accordion_row_fBgTam"
+                "accordion_with_preview_nhmAR9",
+                "accordion_with_preview_XeJBn9",
+                "accordion_with_preview_hM7P64"
               ]
             },
             "text_aEfNYM": {
