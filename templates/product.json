@@ -268,6 +268,18 @@
                 "yotpo_product_reviews_star_rating_Pgpzw8"
               ]
             },
+            "eza_description_showmore_NbL6CN": {
+              "type": "eza-description-showmore",
+              "name": "Description (show more)",
+              "settings": {
+                "char_limit": 150,
+                "more_label": "Show More",
+                "less_label": "Show Less",
+                "text_color": "#111111",
+                "link_color": "#1554F6"
+              },
+              "blocks": {}
+            },
             "eza_variant_picker_PQdjDR": {
               "type": "eza-variant-picker",
               "name": "EZ-A Variant Picker",
@@ -793,6 +805,7 @@
           },
           "block_order": [
             "eza_group_CrytA6",
+            "eza_description_showmore_NbL6CN",
             "eza_variant_picker_PQdjDR",
             "recharge_subscriptions_subscription_widget_v2_tt9agE",
             "buy_buttons_eYQEYi",
