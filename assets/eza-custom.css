@@ -256,7 +256,8 @@ a.has-gradient{
     letter-spacing: 0.65px;
     text-transform: uppercase; }
 
-   button, a.button{
+   button, a.button,
+   .button-secondary{
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.65px;
