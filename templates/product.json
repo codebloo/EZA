@@ -65,7 +65,7 @@
               "type": "text",
               "name": "Product title",
               "settings": {
-                "text": "<h1>{{ closest.product.title }}</h1>",
+                "text": "<h1>EZ-A 12-Count Hyper Strength™ Baggie</h1>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
