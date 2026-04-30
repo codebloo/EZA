@@ -4,15 +4,14 @@
   Stackable accordion row that keeps body content inline with the
   heading. The body is split into a "head" (always visible) and a
   "tail" (revealed on expand) so the text reads as one continuous
-  flow rather than popping to a separate content area.
+  paragraph rather than popping to a separate content area.
 
   Animation uses the grid-template-rows 0fr → 1fr trick, which
-  smoothly transitions to natural content height — no JS measuring
-  required, no max-height guessing.
+  smoothly transitions to natural content height — no JS measuring,
+  no max-height guessing.
 
-  Collapsed:  [icon]  **Heading.** head text…              [chevron ▾]
-  Expanded:   [icon]  **Heading.** head text               [chevron ▴]
-                       …rest of the body slides into view
+  The head/tail boundary snaps to a word break so the truncation
+  point reads cleanly in both states (no "ADJUSTI" / "NG" cuts).
 {% endcomment %}
 
 {%- liquid
@@ -21,12 +20,41 @@
   assign body_plain = body | strip_html | strip_newlines | strip
   assign body_size = body_plain.size
   assign is_expandable = false
+  assign head = ''
+  assign tail = ''
+
   if body_size > char_limit
-    assign is_expandable = true
-    assign head = body_plain | slice: 0, char_limit
-    assign tail_length = body_size | minus: char_limit
-    assign tail = body_plain | slice: char_limit, tail_length
+    comment
+      Build the head word-by-word so the head/tail boundary lands at
+      a clean word break. Stop adding words once the next one would
+      push us past char_limit.
+    endcomment
+    assign words = body_plain | split: ' '
+    for word in words
+      if head == ''
+        assign tentative = word
+      else
+        assign tentative = head | append: ' ' | append: word
+      endif
+      if tentative.size > char_limit
+        break
+      endif
+      assign head = tentative
+    endfor
+
+    if head == ''
+      comment 
+      First word alone is longer than char_limit — fall back to it. 
+      endcomment
+      assign head = words.first
+    endif
+
+    assign tail = body_plain | remove_first: head
+    if tail.size > 0
+      assign is_expandable = true
+    endif
   endif
+
   assign sizes_attr = block.settings.icon_size | append: 'px'
 -%}
 
@@ -114,7 +142,6 @@
     font: inherit;
     color: inherit;
     cursor: pointer;
-    text-transform:unset;
   }
   .accordion-item__row--static {
     cursor: default;
@@ -147,15 +174,13 @@
     color: var(--ai-heading);
     font-weight: 700;
   }
-  /* Space between heading and head text without relying on whitespace in markup */
+  /* Space between heading and head text without relying on markup whitespace */
   .accordion-item__heading + .accordion-item__head::before {
     content: ' ';
     white-space: pre;
   }
-  /* Tail reveal: animate from 0 to natural height without JS measurement.
-     The wrapper is a single-row grid; transitioning the row size from
-     0fr to 1fr smoothly grows it to fit the inner content. The inner
-     element clips overflow so text doesn't escape during the transition. */
+  /* Tail reveal: 0fr → 1fr smoothly grows to natural content height.
+     The inner element clips overflow so text doesn't escape mid-transition. */
   .accordion-item__tail-wrap {
     display: grid;
     grid-template-rows: 0fr;
@@ -170,7 +195,6 @@
   }
   .accordion-item__row[aria-expanded="true"] .accordion-item__tail-wrap {
     grid-template-rows: 1fr;
-    display:inline;
   }
   .accordion-item__chevron {
     display: inline-flex;
@@ -195,9 +219,18 @@
       'accordion-item',
       class extends HTMLElement {
         connectedCallback() {
-          const trigger = this.querySelector('.accordion-item__row[aria-expanded]');
-          if (!trigger) return;
-          trigger.addEventListener('click', () => {
+          /*
+            Event delegation on the host element. Attaching directly to
+            the inner button breaks for the 2nd+ instance: when the
+            custom element is already defined, connectedCallback fires
+            during parsing before child nodes exist, so querySelector
+            returns null. Listening on `this` works because the host
+            element exists at connect time, and we resolve the trigger
+            at click time when the children are guaranteed to be in DOM.
+          */
+          this.addEventListener('click', (event) => {
+            const trigger = event.target.closest('.accordion-item__row[aria-expanded]');
+            if (!trigger || !this.contains(trigger)) return;
             const isOpen = trigger.getAttribute('aria-expanded') === 'true';
             trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
           });
@@ -238,7 +271,7 @@
       "type": "range",
       "id": "char_limit",
       "label": "Preview character limit",
-      "info": "How much body text shows next to the heading when collapsed. The remainder slides in on expand.",
+      "info": "Approximate length of the preview text shown next to the heading. Snaps to the nearest word boundary so cuts read cleanly.",
       "min": 20,
       "max": 200,
       "step": 5,
