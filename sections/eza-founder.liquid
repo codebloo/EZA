@@ -13,7 +13,9 @@
             <div class="content-title">{{ section.settings.title }}</div>
             <div class="content-text">{{ section.settings.text }}</div>
             <div class="content-attribution">{{ section.settings.attribution }}</div>
-            <a href="{{ section.settings.link }}" class="button content-button">{{ section.settings.button }}</a>
+            <a href="{{ section.settings.link }}" class="button content-button">{{ section.settings.button }}
+                {% render 'eza-button-arrow', arrow_color: yellow %}
+            </a>
         </div>
 </div>
     </div>
