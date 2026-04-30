@@ -5339,27 +5339,75 @@
                       },
                       "blocks": {}
                     },
-                    "button_GtmCCP": {
-                      "type": "button",
-                      "name": "t:names.button",
+                    "eza_group_mWUPt6": {
+                      "type": "eza-group",
+                      "name": "EZ-A Group",
                       "settings": {
-                        "arrow": false,
-                        "label": "Learn More ›",
-                        "link": "shopify://pages/returns-refunds",
-                        "open_in_new_tab": false,
-                        "style_class": "link",
-                        "width": "fit-content",
+                        "custom_class": "",
+                        "desktop_hidden": false,
+                        "mobile_hidden": false,
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
                         "custom_width": 100,
-                        "width_mobile": "fit-content",
-                        "custom_width_mobile": 100
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": false,
+                        "color_scheme": "scheme-e9890e76-432c-47d8-b34a-63b9e2da3125",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
                       },
-                      "blocks": {}
+                      "blocks": {
+                        "button_Y87KcQ": {
+                          "type": "button",
+                          "name": "t:names.button",
+                          "settings": {
+                            "arrow": false,
+                            "label": "Learn More ›",
+                            "link": "shopify://pages/returns-refunds",
+                            "open_in_new_tab": false,
+                            "style_class": "link",
+                            "width": "fit-content",
+                            "custom_width": 100,
+                            "width_mobile": "fit-content",
+                            "custom_width_mobile": 100
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "button_Y87KcQ"
+                      ]
                     }
                   },
                   "block_order": [
                     "text_gAKnwA",
                     "text_H9DHiz",
-                    "button_GtmCCP"
+                    "eza_group_mWUPt6"
                   ]
                 }
               },
