@@ -1,0 +1,267 @@
+{% comment %}
+  Block: Accordion item
+  ---------------------
+  One expandable row: icon image + bold heading + collapsible body.
+  Stack as many of these as needed inside a section that accepts blocks.
+
+  Collapsed:  [icon]  **Heading.** body preview…    [chevron ▾]
+  Expanded:   [icon]  **Heading.**                  [chevron ▴]
+                       full body content rendered here
+
+  If the body is shorter than the preview character limit, the row
+  renders static (full body inline, no chevron, no toggle).
+{% endcomment %}
+
+{%- liquid
+  assign char_limit = block.settings.char_limit
+  assign body = block.settings.body
+  assign body_plain = body | strip_html | strip_newlines | strip
+  assign body_size = body_plain.size
+  assign is_expandable = false
+  if body_size > char_limit
+    assign is_expandable = true
+  endif
+  assign sizes_attr = block.settings.icon_size | append: 'px'
+-%}
+
+<div
+  class="accordion-item"
+  {{ block.shopify_attributes }}
+  style="--ai-heading: {{ block.settings.heading_color }}; --ai-text: {{ block.settings.text_color }}; --ai-chevron: {{ block.settings.chevron_color }}; --ai-divider: {{ block.settings.divider_color }}; --ai-icon-size: {{ block.settings.icon_size }}px;"
+>
+  {%- if is_expandable -%}
+    <details class="accordion-item__shell" {% if block.settings.default_open %}open{% endif %}>
+      <summary class="accordion-item__row">
+        {%- if block.settings.icon != blank -%}
+          <span class="accordion-item__icon">
+            {{ block.settings.icon | image_url: width: 240 | image_tag:
+              loading: 'lazy',
+              widths: '60, 120, 180, 240',
+              sizes: sizes_attr,
+              alt: block.settings.icon.alt | default: block.settings.heading | escape
+            }}
+          </span>
+        {%- else -%}
+          <span class="accordion-item__icon accordion-item__icon--empty" aria-hidden="true"></span>
+        {%- endif -%}
+
+        <span class="accordion-item__text">
+          {%- if block.settings.heading != blank -%}
+            <strong class="accordion-item__heading">{{ block.settings.heading }}</strong>
+          {%- endif -%}
+          <span class="accordion-item__preview">
+            {{- body_plain | truncate: char_limit, '…' -}}
+          </span>
+        </span>
+
+        <span class="accordion-item__chevron" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.25">
+            <circle cx="12" cy="12" r="11" />
+            <path d="M8 11l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </summary>
+
+      <div class="accordion-item__body rte">
+        {{ body }}
+      </div>
+    </details>
+  {%- else -%}
+    <div class="accordion-item__shell accordion-item__shell--static">
+      <div class="accordion-item__row">
+        {%- if block.settings.icon != blank -%}
+          <span class="accordion-item__icon">
+            {{ block.settings.icon | image_url: width: 240 | image_tag:
+              loading: 'lazy',
+              widths: '60, 120, 180, 240',
+              sizes: sizes_attr,
+              alt: block.settings.icon.alt | default: block.settings.heading | escape
+            }}
+          </span>
+        {%- else -%}
+          <span class="accordion-item__icon accordion-item__icon--empty" aria-hidden="true"></span>
+        {%- endif -%}
+
+        <span class="accordion-item__text">
+          {%- if block.settings.heading != blank -%}
+            <strong class="accordion-item__heading">{{ block.settings.heading }}</strong>
+          {%- endif -%}
+          <span class="accordion-item__preview">{{ body_plain }}</span>
+        </span>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% style %}
+  .accordion-item {
+    display: block;
+    border-top: 1px solid var(--ai-divider);
+  }
+  .accordion-item:last-of-type {
+    border-bottom: 1px solid var(--ai-divider);
+  }
+  .accordion-item__shell {
+    padding: 1.25rem 0;
+  }
+  .accordion-item__row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+  }
+  .accordion-item__shell--static .accordion-item__row {
+    cursor: default;
+  }
+  .accordion-item__row::-webkit-details-marker {
+    display: none;
+  }
+  .accordion-item__row::marker {
+    content: '';
+  }
+  .accordion-item__row:focus-visible {
+    outline: 2px solid var(--ai-chevron);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .accordion-item__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .accordion-item__icon img {
+    display: block;
+    width: var(--ai-icon-size);
+    height: var(--ai-icon-size);
+    object-fit: contain;
+  }
+  .accordion-item__icon--empty {
+    width: 0;
+  }
+  .accordion-item__text {
+    color: var(--ai-text);
+    line-height: 1.4;
+  }
+  .accordion-item__heading {
+    color: var(--ai-heading);
+    font-weight: 700;
+  }
+  .accordion-item__preview {
+    margin-left: 0.4em;
+  }
+  .accordion-item__shell[open] .accordion-item__preview {
+    display: none;
+  }
+  .accordion-item__chevron {
+    display: inline-flex;
+    color: var(--ai-chevron);
+    transition: transform 200ms ease;
+  }
+  .accordion-item__shell[open] .accordion-item__chevron {
+    transform: rotate(180deg);
+  }
+  .accordion-item__body {
+    color: var(--ai-text);
+    line-height: 1.5;
+    padding: 0.75rem 0 0.25rem calc(var(--ai-icon-size) + 1rem);
+  }
+  .accordion-item__body > *:first-child {
+    margin-top: 0;
+  }
+  .accordion-item__body > *:last-child {
+    margin-bottom: 0;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Accordion with preview",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Bold heading",
+      "info": "Shown in bold next to the icon. End with a period if you want it to flow into the preview text.",
+      "default": "Take it easy. Start with one capsule."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Content",
+      "default": "<p>Wait 30 minutes before adjusting. Stack effects build subtly until they don't.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Behaviour"
+    },
+    {
+      "type": "range",
+      "id": "char_limit",
+      "label": "Preview character limit",
+      "info": "How much body text shows next to the heading when collapsed.",
+      "min": 20,
+      "max": 200,
+      "step": 5,
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 32,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text colour",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "chevron_color",
+      "label": "Chevron colour",
+      "default": "#9CA3AF"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider colour",
+      "default": "#111111"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion with preview"
+    }
+  ]
+}
+{% endschema %}
