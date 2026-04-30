@@ -1,15 +1,15 @@
 {% comment %}
-  Block: Accordion item (line-clamp version)
-  ------------------------------------------
-  Heading and body render as a single inline text flow inside one
-  wrapper. The browser handles visual truncation via -webkit-line-clamp
-  (multi-line equivalent of text-overflow: ellipsis), so there's no
-  manual head/tail split and no mid-word breaks.
+  Block: Accordion item (line-clamp, document-delegated)
+  ------------------------------------------------------
+  Heading and body render as one inline text flow inside a single
+  wrapper. The browser handles wrapping and ellipsis via line-clamp,
+  so there's no manual head/tail split and no mid-word breaks.
 
-  Animation: max-height transition gives the slide. JS coordinates
-  the line-clamp/height swap so both expand AND collapse stay smooth
-  (without coordination, the line-clamp re-application snaps content
-  height down before max-height can transition on collapse).
+  Click handling uses a single document-level delegated listener
+  (init-guarded so duplicate <script> tags from multiple block
+  instances don't double-bind). Animation uses offsetHeight for
+  measurement — more reliable than scrollHeight under -webkit-box +
+  line-clamp, which behaves inconsistently across browsers.
 {% endcomment %}
 
 {%- liquid
@@ -19,8 +19,9 @@
   assign initially_open = block.settings.default_open
 -%}
 
-<accordion-item
+<div
   class="accordion-item"
+  data-accordion-item
   {{ block.shopify_attributes }}
   style="--ai-heading: {{ block.settings.heading_color }}; --ai-text: {{ block.settings.text_color }}; --ai-chevron: {{ block.settings.chevron_color }}; --ai-divider: {{ block.settings.divider_color }}; --ai-icon-size: {{ block.settings.icon_size }}px; --ai-preview-lines: {{ block.settings.preview_lines }};"
 >
@@ -56,7 +57,7 @@
       </svg>
     </span>
   </button>
-</accordion-item>
+</div>
 
 {% style %}
   .accordion-item {
@@ -100,9 +101,6 @@
   .accordion-item__icon--empty {
     width: 0;
   }
-  /* Single inline text wrapper holding heading + body. The browser handles
-     wrapping and ellipsis. Adding .is-clamped applies the line-clamp;
-     removing it lets the content flow to natural height. */
   .accordion-item__body-wrap {
     display: block;
     color: var(--ai-text);
@@ -137,78 +135,74 @@
 {% endstyle %}
 
 <script>
-  if (!customElements.get('accordion-item')) {
-    customElements.define(
-      'accordion-item',
-      class extends HTMLElement {
-        connectedCallback() {
-          /* Event delegation on host so the listener attaches at connect
-             time even though child nodes may not yet be parsed for the
-             2nd+ instance (custom-element constructor timing quirk). */
-          this.addEventListener('click', this._onClick.bind(this));
-        }
+  (function () {
+    if (window.__accordionItemInit) return;
+    window.__accordionItemInit = true;
 
-        _onClick(event) {
-          const trigger = event.target.closest('.accordion-item__row[aria-expanded]');
-          if (!trigger || !this.contains(trigger)) return;
-          const wrap = this.querySelector('.accordion-item__body-wrap');
-          if (!wrap) return;
-          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-          if (isOpen) this._collapse(wrap, trigger);
-          else this._expand(wrap, trigger);
-        }
+    document.addEventListener('click', function (event) {
+      var trigger = event.target.closest('.accordion-item__row[aria-expanded]');
+      if (!trigger) return;
+      var host = trigger.closest('[data-accordion-item]');
+      if (!host) return;
+      var wrap = host.querySelector('.accordion-item__body-wrap');
+      if (!wrap) return;
 
-        _expand(wrap, trigger) {
-          /* Measure clamped height, then unclamp and measure natural.
-             Anchor max-height at the clamped value, then transition up
-             to natural. Content stays unclamped throughout the animation
-             so the wrapper has the correct natural height to grow into. */
-          const startHeight = wrap.offsetHeight;
-          wrap.classList.remove('is-clamped');
-          const endHeight = wrap.scrollHeight;
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (isOpen) collapse(wrap, trigger);
+      else expand(wrap, trigger);
+    });
 
-          wrap.style.maxHeight = startHeight + 'px';
-          void wrap.offsetHeight; // force reflow so the next change transitions
-          wrap.style.maxHeight = endHeight + 'px';
-          trigger.setAttribute('aria-expanded', 'true');
+    function expand(wrap, trigger) {
+      // Currently clamped. Read clamped height, then unclamp and read natural.
+      var startHeight = wrap.offsetHeight;
+      wrap.classList.remove('is-clamped');
+      var endHeight = wrap.offsetHeight;
 
-          this._afterTransition(wrap, () => {
-            wrap.style.maxHeight = '';
-          });
-        }
+      wrap.style.maxHeight = startHeight + 'px';
+      void wrap.offsetHeight; // force reflow so the next change transitions
+      wrap.style.maxHeight = endHeight + 'px';
+      trigger.setAttribute('aria-expanded', 'true');
 
-        _collapse(wrap, trigger) {
-          /* Measure natural, briefly apply clamp to read the target
-             collapsed height, then unclamp again before animating. The
-             clamp is re-applied only after the transition finishes,
-             which is what avoids the snap-collapse. */
-          const startHeight = wrap.scrollHeight;
-          wrap.classList.add('is-clamped');
-          const endHeight = wrap.scrollHeight;
-          wrap.classList.remove('is-clamped');
+      afterTransition(wrap, function () {
+        wrap.style.maxHeight = '';
+      });
+    }
 
-          wrap.style.maxHeight = startHeight + 'px';
-          void wrap.offsetHeight;
-          wrap.style.maxHeight = endHeight + 'px';
-          trigger.setAttribute('aria-expanded', 'false');
+    function collapse(wrap, trigger) {
+      // Currently unclamped. Read natural, briefly apply clamp to read target,
+      // then unclamp again so content stays fluid during the transition.
+      var startHeight = wrap.offsetHeight;
+      wrap.classList.add('is-clamped');
+      var endHeight = wrap.offsetHeight;
+      wrap.classList.remove('is-clamped');
 
-          this._afterTransition(wrap, () => {
-            wrap.classList.add('is-clamped');
-            wrap.style.maxHeight = '';
-          });
-        }
+      wrap.style.maxHeight = startHeight + 'px';
+      void wrap.offsetHeight;
+      wrap.style.maxHeight = endHeight + 'px';
+      trigger.setAttribute('aria-expanded', 'false');
 
-        _afterTransition(wrap, fn) {
-          const onEnd = (event) => {
-            if (event.target !== wrap || event.propertyName !== 'max-height') return;
-            wrap.removeEventListener('transitionend', onEnd);
-            fn();
-          };
-          wrap.addEventListener('transitionend', onEnd);
-        }
+      afterTransition(wrap, function () {
+        wrap.classList.add('is-clamped');
+        wrap.style.maxHeight = '';
+      });
+    }
+
+    function afterTransition(wrap, fn) {
+      // Clean up any pending transitionend so rapid clicks don't fire stale callbacks
+      if (wrap._accordionEnd) {
+        wrap.removeEventListener('transitionend', wrap._accordionEnd);
+        wrap._accordionEnd = null;
       }
-    );
-  }
+      function onEnd(event) {
+        if (event.target !== wrap || event.propertyName !== 'max-height') return;
+        wrap.removeEventListener('transitionend', onEnd);
+        wrap._accordionEnd = null;
+        fn();
+      }
+      wrap.addEventListener('transitionend', onEnd);
+      wrap._accordionEnd = onEnd;
+    }
+  })();
 </script>
 
 {% schema %}
