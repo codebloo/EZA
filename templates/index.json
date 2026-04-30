@@ -5425,6 +5425,9 @@
       "block_order": [
         "eza_group_KDMCVE"
       ],
+      "custom_css": [
+        "a.link {font-weight: 500;}"
+      ],
       "name": "Money Back Mobile",
       "settings": {
         "custom_class": "",
