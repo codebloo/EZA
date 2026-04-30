@@ -4416,6 +4416,301 @@
         "padding-block-end": 0
       }
     },
+    "eza_section_4cYjfd": {
+      "type": "eza-section",
+      "blocks": {
+        "eza_group_dcBhMk": {
+          "type": "eza-group",
+          "name": "how to take image",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_yjTzJ3": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/howtotake-image.webp",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_yjTzJ3"
+          ]
+        },
+        "eza_group_NyLH7n": {
+          "type": "eza-group",
+          "name": "how to",
+          "settings": {
+            "custom_class": "how-tobox",
+            "desktop_hidden": false,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_cPWggX": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>First time? Here’s how to <br/>get the most out of EZ-A.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.5rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 24,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "eza_accordion_p4dncT": {
+              "type": "eza-accordion",
+              "name": "EZ Accordion",
+              "settings": {
+                "custom_class": "",
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_with_preview_H3mheC": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
+                  "settings": {
+                    "icon": "shopify://shop_images/icon-step-1.svg",
+                    "heading": "Take it easy. Start with one capsule.",
+                    "body": "<p>Wait 30 minutes before adjusting. Stack effects build subtly until they don't.</p>",
+                    "preview_lines": 2,
+                    "default_open": false,
+                    "icon_size": 36,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9ca3af",
+                    "divider_color": "#111111"
+                  },
+                  "blocks": {}
+                },
+                "accordion_with_preview_xFPtz9": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
+                  "settings": {
+                    "icon": "shopify://shop_images/icon-step-2.svg",
+                    "heading": "Take it with food, this part matters.",
+                    "body": "<p>Your stomach with thank you later. Your stomach with thank you later. </p>",
+                    "preview_lines": 2,
+                    "default_open": false,
+                    "icon_size": 36,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9ca3af",
+                    "divider_color": "#111111"
+                  },
+                  "blocks": {}
+                },
+                "accordion_with_preview_MCAzjt": {
+                  "type": "accordion-with-preview",
+                  "name": "Accordion with preview",
+                  "settings": {
+                    "icon": "shopify://shop_images/icon-step-3.svg",
+                    "heading": "Know your total caffeine intake.",
+                    "body": "<p> EZ-A has 125 mg of caffeine/capsule.  EZ-A has 125 mg of caffeine/capsule.</p>",
+                    "preview_lines": 2,
+                    "default_open": false,
+                    "icon_size": 36,
+                    "heading_color": "#111111",
+                    "text_color": "#444444",
+                    "chevron_color": "#9ca3af",
+                    "divider_color": "#111111"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "accordion_with_preview_H3mheC",
+                "accordion_with_preview_xFPtz9",
+                "accordion_with_preview_MCAzjt"
+              ]
+            },
+            "text_8Ec9nj": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><strong>Warning: Niacin flush</strong></p><p>Some people experience a warm, flushed sensation and temporary skin redness shortly after taking EZ-A. This is a niacin flush, a well-documented response to Vitamin B3. It is harmless, non-allergenic, and typically fades within 20-30 minutes. Taking EZ-A with food minimizes it significantly for most people.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#f1f1f1",
+                "corner_radius": 0,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_cPWggX",
+            "eza_accordion_p4dncT",
+            "text_8Ec9nj"
+          ]
+        }
+      },
+      "block_order": [
+        "eza_group_dcBhMk",
+        "eza_group_NyLH7n"
+      ],
+      "custom_css": [
+        ".howto .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
+        ".how-tobox .rte {border-radius: 0 0 16px 16px;}"
+      ],
+      "name": "How to Take",
+      "settings": {
+        "custom_class": "howto",
+        "desktop_hidden": false,
+        "mobile_hidden": false,
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 48,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
     "cb_pdp_quality_iqkqbm": {
       "type": "cb-pdp-quality",
       "blocks": {
@@ -8083,6 +8378,7 @@
     "eza_featured_product_UU9VPB",
     "eza_section_zt78Qe",
     "eza_section_z3txXL",
+    "eza_section_4cYjfd",
     "cb_pdp_quality_iqkqbm",
     "eza_section_EXgK33",
     "eza_scroll_testimonials_UbGK3E",
