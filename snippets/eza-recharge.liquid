@@ -305,58 +305,78 @@
           });
         }
 
-        async handleSubmit(e) {
-          e.preventDefault();
+      async handleSubmit(e) {
+  e.preventDefault();
 
-          const variantId = this.variantIdInput.value;
-          if (!variantId) {
-            console.warn('[sub-selector] no variant ID on submit');
-            return;
-          }
+  const variantId = this.variantIdInput.value;
+  if (!variantId) {
+    console.warn('[sub-selector] no variant ID on submit');
+    return;
+  }
 
-          const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
-          const sellingPlan = checkedPurchase?.value;
+  const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
+  const sellingPlan = checkedPurchase?.value;
 
-          const formData = new FormData();
-          formData.append('id', variantId);
-          formData.append('quantity', '1');
-          if (sellingPlan) formData.append('selling_plan', sellingPlan);
+  const formData = new FormData();
+  formData.append('id', variantId);
+  formData.append('quantity', '1');
+  if (sellingPlan) formData.append('selling_plan', sellingPlan);
 
-          console.log('[sub-selector] submitting', { variantId, sellingPlan });
+  // Ask Shopify to render Horizon's cart sections in the response so
+  // component-cart-items can update the DOM without crashing
+  formData.append('sections', 'cart-drawer,cart-icon,cart-items');
+  formData.append('sections_url', window.location.pathname);
 
-          const buttons = this.querySelectorAll('[data-atc]');
-          buttons.forEach(b => b.disabled = true);
+  console.log('[sub-selector] submitting', { variantId, sellingPlan });
 
-          try {
-            const root = window.Shopify?.routes?.root || '/';
-            const res = await fetch(`${root}cart/add.js`, {
-              method: 'POST',
-              body: formData,
-              headers: { 'Accept': 'application/javascript' }
-            });
-            const data = await res.json();
+  const buttons = this.querySelectorAll('[data-atc]');
+  buttons.forEach(b => b.disabled = true);
 
-            if (!res.ok) {
-              console.warn('[sub-selector] ATC failed', data);
-              alert(data.description || data.message || 'Could not add to cart');
-              return;
-            }
+  try {
+    const root = window.Shopify?.routes?.root || '/';
+    const res = await fetch(`${root}cart/add.js`, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/javascript' }
+    });
+    const data = await res.json();
 
-            console.log('[sub-selector] ATC success', data);
+    if (!res.ok) {
+      console.warn('[sub-selector] ATC failed', data);
+      alert(data.description || data.message || 'Could not add to cart');
+      return;
+    }
 
-            document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: data }));
-            document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
-            document.dispatchEvent(new CustomEvent('cart:added', { bubbles: true, detail: data }));
+    console.log('[sub-selector] ATC success', data);
 
-            const drawer = document.querySelector('cart-drawer, [data-cart-drawer]');
-            if (drawer && typeof drawer.open === 'function') drawer.open();
-          } catch (err) {
-            console.error('[sub-selector] Submit error', err);
-            alert('Could not add to cart. Please try again.');
-          } finally {
-            buttons.forEach(b => b.disabled = false);
-          }
+    // Wrap dispatch in try/catch so a Horizon component error doesn't break us
+    try {
+      document.dispatchEvent(new CustomEvent('cart:update', {
+        bubbles: true,
+        detail: {
+          source: 'subscription-selector',
+          data: { ...data, sections: data.sections || {} },
+          resource: { ...data, sections: data.sections || {} }
         }
+      }));
+    } catch (err) {
+      console.warn('[sub-selector] cart:update listener errored', err);
+    }
+
+    // Open the cart drawer — Horizon's drawer typically refetches on open
+    const drawer = document.querySelector('cart-drawer-component, cart-drawer, [data-cart-drawer]');
+    if (drawer) {
+      if (typeof drawer.open === 'function') drawer.open();
+      else if (typeof drawer.show === 'function') drawer.show();
+      else drawer.setAttribute('open', '');
+    }
+  } catch (err) {
+    console.error('[sub-selector] Submit error', err);
+    alert('Could not add to cart. Please try again.');
+  } finally {
+    buttons.forEach(b => b.disabled = false);
+  }
+}
 
         escape(str) {
           const d = document.createElement('div');
