@@ -7672,7 +7672,7 @@
                 "custom_class": "",
                 "icon": "caret",
                 "dividers": true,
-                "type_preset": "h5",
+                "type_preset": "",
                 "inherit_color_scheme": true,
                 "color_scheme": "",
                 "border": "none",
