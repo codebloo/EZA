@@ -61,7 +61,7 @@
         <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
       </label>
       <div class="vpv-sub-selector__expanded">
-        <button type="button" class="vpv-sub-selector__atc" data-atc>
+        <button type="button" class="vpv-sub-selector__atc has-gradient button" data-atc>
           Add to Cart - <span data-onetime-price>{{ initial_variant.price | money }}</span>
         </button>
       </div>
@@ -108,7 +108,7 @@
             </option>
           {%- endfor -%}
         </select>
-        <button type="button" class="vpv-sub-selector__atc" data-atc>
+        <button type="button" class="vpv-sub-selector__atc has-gradient button" data-atc>
           Add to Cart - <span data-sub-price>{{ initial_allocation.price | money }}</span>
         </button>
       </div>
