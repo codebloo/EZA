@@ -1,20 +1,24 @@
 {% comment %}
   snippets/subscription-selector.liquid
 
-  Self-contained subscription selector with its own form, variant picker,
-  and ATC. Does not depend on a parent form or theme variant JS.
+  Reads variant changes from the section's <variant-picker> element.
+  No <form> — submits via fetch to avoid nested-form issues.
 
-  Usage:
-    {% render 'subscription-selector',
-       product: section.settings.product,
-       block:   block %}
+  Usage in section block loop:
+    {% case block.type %}
+      {% when 'variants' %}
+        {% render 'variant-picker', product_resource: section.settings.product, block: block %}
+      {% when 'subscription_selector' %}
+        {% render 'subscription-selector',
+           product:    section.settings.product,
+           section_id: section.id,
+           block:      block %}
+    {% endcase %}
 {% endcomment %}
 
-{%- if product == blank -%}{%- else -%}
+{%- if product != blank and product.selling_plan_groups.size > 0 -%}
   {%- assign initial_variant = product.selected_or_first_available_variant -%}
   {%- assign initial_allocation = initial_variant.selling_plan_allocations | first -%}
-  {%- assign has_plans = false -%}
-  {%- if product.selling_plan_groups.size > 0 -%}{%- assign has_plans = true -%}{%- endif -%}
   {%- assign initial_savings = 0 -%}
   {%- if initial_allocation and initial_variant.price > 0 -%}
     {%- assign initial_savings = initial_variant.price | minus: initial_allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
@@ -22,7 +26,8 @@
 
   <subscription-selector
     class="vpv-sub-selector"
-    data-product-handle="{{ product.handle }}"
+    data-section-id="{{ section_id }}"
+    data-product-id="{{ product.id }}"
     {% if block %}{{ block.shopify_attributes }}{% endif %}
   >
     <script type="application/json" data-variant-data>
@@ -31,7 +36,6 @@
         "{{ variant.id }}": {
           "id": {{ variant.id }},
           "available": {{ variant.available }},
-          "title": {{ variant.title | json }},
           "price_formatted": {{ variant.price | money | json }},
           "options": {{ variant.options | json }},
           "plans": [
@@ -49,129 +53,79 @@
     }
     </script>
 
-    <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" data-sub-form>
-      <input type="hidden" name="form_type" value="product">
-      <input type="hidden" name="utf8" value="✓">
-      <input type="hidden" name="id" value="{{ initial_variant.id }}" data-variant-id>
-      <input type="hidden" name="quantity" value="1">
+    <input type="hidden" data-variant-id value="{{ initial_variant.id }}">
 
-      {%- comment -%} Variant pickers — only render if product has multiple variants {%- endcomment -%}
-      {%- if product.variants.size > 1 -%}
-        <div class="vpv-sub-selector__variants">
-          {%- for option in product.options_with_values -%}
-            <fieldset class="vpv-sub-selector__option-group" data-option-index="{{ forloop.index0 }}">
-              <legend class="vpv-sub-selector__option-legend">{{ option.name }}</legend>
-              <div class="vpv-sub-selector__option-values">
-                {%- for value in option.values -%}
-                      <div class="eza-variant">
-                  {%- assign input_id = 'vpv-opt-' | append: section.id | append: '-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 -%}
-                
-              {%- assign variant_tag = value.variant.metafields.tag.name -%}
-  {% if variant_tag != blank %}
- 
-                <span class="eza-variant-tag {{ variant_tag | handleize }}">{{ variant_tag | escape }}</span>
-                {% endif %}
-
-                  <input
-                    type="radio"
-                    id="{{ input_id }}"
-                    name="options[{{ option.name | escape }}]"
-                    value="{{ value | escape }}"
-                    data-option-input
-                    {% if option.selected_value == value %}checked{% endif %}
-                  >
-                  <label for="{{ input_id }}" class="vpv-sub-selector__option-pill">
-                    {{ value }}
-                  </label>
-                   </div>
-                {%- endfor -%}
-             
-            </div>
-            </fieldset>
-          {%- endfor -%}
-        </div>
-      {%- endif -%}
-
-      {%- if has_plans -%}
-        {%- comment -%} One-time {%- endcomment -%}
-        <div class="vpv-sub-selector__option">
-          <label class="vpv-sub-selector__row">
-            <input type="radio" name="selling_plan" value="" checked data-purchase-type>
-            <span class="vpv-sub-selector__info">
-              <span class="vpv-sub-selector__title">One-time Purchase</span>
-              <span class="vpv-sub-selector__price" data-onetime-price>{{ initial_variant.price | money }}</span>
-            </span>
-            <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
-          </label>
-          <div class="vpv-sub-selector__expanded">
-            <button type="submit" class="vpv-sub-selector__atc" data-atc>
-              Add to Cart — <span data-onetime-price>{{ initial_variant.price | money }}</span>
-            </button>
-          </div>
-        </div>
-
-        {%- comment -%} Subscribe & Save {%- endcomment -%}
-        <div class="vpv-sub-selector__option">
-          <label class="vpv-sub-selector__row">
-            <input
-              type="radio"
-              name="selling_plan"
-              value="{{ initial_allocation.selling_plan.id }}"
-              data-purchase-type
-              data-sub-radio
-            >
-            <span class="vpv-sub-selector__info">
-              <span class="vpv-sub-selector__title">
-                Subscribe &amp; Save
-                <span class="vpv-sub-selector__badge" data-savings-badge {% if initial_savings == 0 %}hidden{% endif %}>
-                  Save {{ initial_savings }}%
-                </span>
-              </span>
-              <span class="vpv-sub-selector__price">
-                <strong data-sub-price>{{ initial_allocation.price | money }}</strong>
-                <s data-strikethrough-price>{{ initial_variant.price | money }}</s>
-              </span>
-            </span>
-            <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
-          </label>
-          <div class="vpv-sub-selector__expanded">
-            <p class="vpv-sub-selector__benefits">
-              Free Shipping · Cancel Anytime · <span data-savings-text>{{ initial_savings }}% off</span> Every Order
-            </p>
-            <select class="vpv-sub-selector__frequency" data-frequency-select aria-label="Delivery frequency">
-              {%- for allocation in initial_variant.selling_plan_allocations -%}
-                {%- assign plan_savings = 0 -%}
-                {%- if initial_variant.price > 0 -%}
-                  {%- assign plan_savings = initial_variant.price | minus: allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
-                {%- endif -%}
-                <option
-                  value="{{ allocation.selling_plan.id }}"
-                  data-price="{{ allocation.price | money }}"
-                  data-savings="{{ plan_savings }}"
-                >
-                  {{ allocation.selling_plan.name }}
-                </option>
-              {%- endfor -%}
-            </select>
-            <button type="submit" class="vpv-sub-selector__atc" data-atc>
-              Add to Cart — <span data-sub-price>{{ initial_allocation.price | money }}</span>
-            </button>
-          </div>
-        </div>
-      {%- else -%}
-        {%- comment -%} No selling plans — render simple ATC {%- endcomment -%}
-        <button type="submit" class="vpv-sub-selector__atc vpv-sub-selector__atc--solo" data-atc>
+    {%- comment -%} One-time {%- endcomment -%}
+    <div class="vpv-sub-selector__option">
+      <label class="vpv-sub-selector__row">
+        <input type="radio" name="vpv-purchase-{{ section_id }}" value="" checked data-purchase-type>
+        <span class="vpv-sub-selector__info">
+          <span class="vpv-sub-selector__title">One-time Purchase</span>
+          <span class="vpv-sub-selector__price" data-onetime-price>{{ initial_variant.price | money }}</span>
+        </span>
+        <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
+      </label>
+      <div class="vpv-sub-selector__expanded">
+        <button type="button" class="vpv-sub-selector__atc" data-atc>
           Add to Cart — <span data-onetime-price>{{ initial_variant.price | money }}</span>
         </button>
-      {%- endif -%}
-    </form>
+      </div>
+    </div>
+
+    {%- comment -%} Subscribe & Save {%- endcomment -%}
+    <div class="vpv-sub-selector__option">
+      <label class="vpv-sub-selector__row">
+        <input
+          type="radio"
+          name="vpv-purchase-{{ section_id }}"
+          value="{{ initial_allocation.selling_plan.id }}"
+          data-purchase-type
+          data-sub-radio
+        >
+        <span class="vpv-sub-selector__info">
+          <span class="vpv-sub-selector__title">
+            Subscribe &amp; Save
+            <span class="vpv-sub-selector__badge" data-savings-badge {% if initial_savings == 0 %}hidden{% endif %}>
+              Save {{ initial_savings }}%
+            </span>
+          </span>
+          <span class="vpv-sub-selector__price">
+            <strong data-sub-price>{{ initial_allocation.price | money }}</strong>
+            <s data-strikethrough-price>{{ initial_variant.price | money }}</s>
+          </span>
+        </span>
+        <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
+      </label>
+      <div class="vpv-sub-selector__expanded">
+        <p class="vpv-sub-selector__benefits">
+          Free Shipping · Cancel Anytime · <span data-savings-text>{{ initial_savings }}% off</span> Every Order
+        </p>
+        <select class="vpv-sub-selector__frequency" data-frequency-select aria-label="Delivery frequency">
+          {%- for allocation in initial_variant.selling_plan_allocations -%}
+            {%- assign plan_savings = 0 -%}
+            {%- if initial_variant.price > 0 -%}
+              {%- assign plan_savings = initial_variant.price | minus: allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
+            {%- endif -%}
+            <option value="{{ allocation.selling_plan.id }}"
+                    data-price="{{ allocation.price | money }}"
+                    data-savings="{{ plan_savings }}">
+              {{ allocation.selling_plan.name }}
+            </option>
+          {%- endfor -%}
+        </select>
+        <button type="button" class="vpv-sub-selector__atc" data-atc>
+          Add to Cart — <span data-sub-price>{{ initial_allocation.price | money }}</span>
+        </button>
+      </div>
+    </div>
   </subscription-selector>
 
   <script>
     if (!customElements.get('subscription-selector')) {
       customElements.define('subscription-selector', class extends HTMLElement {
         connectedCallback() {
-          this.form = this.querySelector('[data-sub-form]');
+          this.sectionId = this.dataset.sectionId;
+          this.productId = this.dataset.productId;
           this.variantIdInput = this.querySelector('[data-variant-id]');
           this.frequencySelect = this.querySelector('[data-frequency-select]');
           this.subRadio = this.querySelector('[data-sub-radio]');
@@ -179,36 +133,62 @@
           try {
             this.variantData = JSON.parse(this.querySelector('[data-variant-data]').textContent);
           } catch (e) {
-            console.warn('[subscription-selector] Bad JSON', e);
+            console.warn('[sub-selector] Bad variant JSON', e);
             return;
           }
 
-          // Build variant lookup by option combination
+          // Build option-combo lookup, e.g. "Red|Small" -> variant
           this.variantsByOptions = {};
           Object.values(this.variantData).forEach(v => {
             this.variantsByOptions[v.options.join('|')] = v;
           });
 
-          // Wire variant option pickers
-          this.querySelectorAll('[data-option-input]').forEach(input => {
-            input.addEventListener('change', () => this.handleOptionChange());
+          this.findAndBindVariantPicker();
+
+          this.frequencySelect?.addEventListener('change', () => this.syncFromFrequency());
+          this.querySelectorAll('[data-atc]').forEach(btn => {
+            btn.addEventListener('click', (e) => this.handleSubmit(e));
+          });
+        }
+
+        findAndBindVariantPicker() {
+          // Match by section + product (multiple pickers can exist on a page)
+          this.variantPicker = document.querySelector(
+            `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`
+          );
+
+          if (!this.variantPicker) {
+            // Variant picker may render later — retry once after DOM settles
+            requestAnimationFrame(() => {
+              this.variantPicker = document.querySelector(
+                `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`
+              );
+              if (this.variantPicker) this.bindVariantPicker();
+            });
+            return;
+          }
+
+          this.bindVariantPicker();
+        }
+
+        bindVariantPicker() {
+          this.variantPicker.addEventListener('change', (e) => {
+            if (e.target.matches('input[type="radio"]')) {
+              this.handleVariantChange();
+            }
           });
 
-          // Wire frequency select
-          this.frequencySelect?.addEventListener('change', () => this.syncFromFrequency());
-
-          // Wire form submit (AJAX cart add)
-          this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+          // Sync once on load in case picker has non-default selection
+          this.handleVariantChange();
         }
 
-        getSelectedOptions() {
-          const inputs = this.querySelectorAll('[data-option-input]:checked');
-          return Array.from(inputs).map(i => i.value);
-        }
+        handleVariantChange() {
+          if (!this.variantPicker) return;
 
-        handleOptionChange() {
-          const options = this.getSelectedOptions();
-          const variant = this.variantsByOptions[options.join('|')];
+          const checked = this.variantPicker.querySelectorAll('input[type="radio"]:checked');
+          const values = Array.from(checked).map(i => i.value);
+          const variant = this.variantsByOptions[values.join('|')];
+
           if (!variant) return;
 
           this.variantIdInput.value = variant.id;
@@ -216,30 +196,23 @@
         }
 
         renderForVariant(variant) {
-          // Update one-time prices
           this.querySelectorAll('[data-onetime-price], [data-strikethrough-price]').forEach(el => {
             el.textContent = variant.price_formatted;
           });
 
-          // Rebuild frequency options for this variant
           if (this.frequencySelect && variant.plans.length > 0) {
-            const currentValue = this.frequencySelect.value;
+            const previous = this.frequencySelect.value;
             this.frequencySelect.innerHTML = variant.plans.map(p => `
               <option value="${p.id}" data-price="${p.price_formatted}" data-savings="${p.savings_percent}">${this.escape(p.name)}</option>
             `).join('');
-            // Try to preserve selection if same plan exists for new variant
-            if (Array.from(this.frequencySelect.options).some(o => o.value === currentValue)) {
-              this.frequencySelect.value = currentValue;
+            if (Array.from(this.frequencySelect.options).some(o => o.value === previous)) {
+              this.frequencySelect.value = previous;
             }
             this.syncFromFrequency();
           }
 
-          // Disable ATC if unavailable
           this.querySelectorAll('[data-atc]').forEach(btn => {
             btn.disabled = !variant.available;
-            if (!variant.available) {
-              btn.textContent = 'Sold out';
-            }
           });
         }
 
@@ -266,17 +239,23 @@
         async handleSubmit(e) {
           e.preventDefault();
 
-          const formData = new FormData(this.form);
-          // Strip empty selling_plan so it doesn't get sent as ""
-          if (!formData.get('selling_plan')) {
-            formData.delete('selling_plan');
-          }
+          const variantId = this.variantIdInput.value;
+          if (!variantId) return;
+
+          const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
+          const sellingPlan = checkedPurchase?.value;
+
+          const formData = new FormData();
+          formData.append('id', variantId);
+          formData.append('quantity', '1');
+          if (sellingPlan) formData.append('selling_plan', sellingPlan);
 
           const buttons = this.querySelectorAll('[data-atc]');
           buttons.forEach(b => b.disabled = true);
 
           try {
-            const res = await fetch(this.form.action, {
+            const root = window.Shopify?.routes?.root || '/';
+            const res = await fetch(`${root}cart/add.js`, {
               method: 'POST',
               body: formData,
               headers: { 'Accept': 'application/javascript' }
@@ -284,23 +263,20 @@
             const data = await res.json();
 
             if (!res.ok) {
-              console.warn('[subscription-selector] Add to cart failed', data);
+              console.warn('[sub-selector] ATC failed', data);
               alert(data.description || data.message || 'Could not add to cart');
               return;
             }
 
-            // Notify theme that cart changed (covers most cart drawer implementations)
+            // Notify theme — Horizon and Dawn-style themes both listen for these
+            document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: data }));
             document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
-            document.dispatchEvent(new CustomEvent('cart:updated', { bubbles: true }));
             document.dispatchEvent(new CustomEvent('cart:added', { bubbles: true, detail: data }));
 
-            // Try to open cart drawer if theme exposes one
             const drawer = document.querySelector('cart-drawer, [data-cart-drawer]');
-            if (drawer && typeof drawer.open === 'function') {
-              drawer.open();
-            }
+            if (drawer && typeof drawer.open === 'function') drawer.open();
           } catch (err) {
-            console.error('[subscription-selector] Submit error', err);
+            console.error('[sub-selector] Submit error', err);
             alert('Could not add to cart. Please try again.');
           } finally {
             buttons.forEach(b => b.disabled = false);
