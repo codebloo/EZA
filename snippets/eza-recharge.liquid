@@ -306,3 +306,218 @@
     }
   </script>
 {%- endif -%}
+
+<style>
+    .vpv-sub-selector {
+  display: block;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.vpv-sub-selector__option + .vpv-sub-selector__option {
+  border-top: 1px solid #e5e5e5;
+}
+
+.vpv-sub-selector__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.vpv-sub-selector__row input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vpv-sub-selector__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.vpv-sub-selector__title {
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vpv-sub-selector__price {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.vpv-sub-selector__price s {
+  color: #999;
+  font-weight: 400;
+  font-size: 0.95em;
+}
+
+.vpv-sub-selector__badge {
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.vpv-sub-selector__radio-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px dashed #c8c8c8;
+  border-radius: 50%;
+  position: relative;
+  transition: border 0.15s ease;
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__radio-icon {
+  border: 2px solid #5a3fff; /* swap for brand colour */
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__radio-icon::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #5a3fff;
+  border-radius: 50%;
+}
+
+.vpv-sub-selector__expanded {
+  display: none;
+  padding: 0.25rem 1.25rem 1.25rem;
+  text-align: center;
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__expanded {
+  display: block;
+}
+
+.vpv-sub-selector__benefits {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0 0 0.875rem;
+}
+
+.vpv-sub-selector__frequency {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M6 8L0 2l1.5-1.5L6 5l4.5-4.5L12 2z'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  margin-bottom: 0.875rem;
+  cursor: pointer;
+}
+
+.vpv-sub-selector__frequency:has(option:only-child) {
+  display: none;
+}
+
+.vpv-sub-selector__atc {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vpv-sub-selector__atc:hover {
+  background: #333;
+}
+
+.vpv-sub-selector__atc:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.vpv-sub-selector__variants {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.vpv-sub-selector__option-group {
+  border: none;
+  padding: 0;
+  margin: 0 0 0.875rem;
+}
+
+.vpv-sub-selector__option-group:last-child {
+  margin-bottom: 0;
+}
+
+.vpv-sub-selector__option-legend {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+}
+
+.vpv-sub-selector__option-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vpv-sub-selector__option-values input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vpv-sub-selector__option-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  background: #fff;
+}
+
+.vpv-sub-selector__option-pill:hover {
+  border-color: #999;
+}
+
+.vpv-sub-selector__option-values input:checked + .vpv-sub-selector__option-pill {
+  border-color: #1a1a1a;
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.vpv-sub-selector__atc--solo {
+  margin: 1rem;
+  width: calc(100% - 2rem);
+}
+</style>
