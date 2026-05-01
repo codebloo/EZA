@@ -3846,7 +3846,7 @@
         "star_color": "#ffd100",
         "color_scheme": "",
         "link_text": "Read all the reviews",
-        "link_url": "",
+        "link_url": "#yotpo-reviews-main-widget",
         "padding_top": 24,
         "padding_bottom": 0
       }
