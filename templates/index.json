@@ -2087,7 +2087,7 @@
                       "type": "eza-ugc-carousel",
                       "name": "EZA UGC Video Carousel",
                       "settings": {
-                        "heading": "EZ-A in the wild",
+                        "heading": "",
                         "desktop_video_width": 280,
                         "mobile_video_width": 200,
                         "desktop-gap": 24,
