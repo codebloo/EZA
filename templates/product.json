@@ -4660,6 +4660,77 @@
     "eza_section_7WQD4W": {
       "type": "eza-section",
       "blocks": {
+        "eza_group_Q4Vqmb": {
+          "type": "eza-group",
+          "name": "faq image mob",
+          "settings": {
+            "custom_class": "",
+            "desktop_hidden": true,
+            "mobile_hidden": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_mkxgLF": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/faq-image-mob.png",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_mkxgLF"
+          ]
+        },
         "eza_group_4rpUfT": {
           "type": "eza-group",
           "name": "faqs",
@@ -5338,13 +5409,13 @@
             "eza_accordion_7yU4PA"
           ]
         },
-        "eza_group_Q4Vqmb": {
+        "eza_group_EwMEWV": {
           "type": "eza-group",
-          "name": "faq image",
+          "name": "faq image desk",
           "settings": {
             "custom_class": "",
             "desktop_hidden": false,
-            "mobile_hidden": false,
+            "mobile_hidden": true,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -5381,7 +5452,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "image_mkxgLF": {
+            "image_ekYNJW": {
               "type": "image",
               "name": "t:names.image",
               "settings": {
@@ -5406,13 +5477,14 @@
             }
           },
           "block_order": [
-            "image_mkxgLF"
+            "image_ekYNJW"
           ]
         }
       },
       "block_order": [
+        "eza_group_Q4Vqmb",
         "eza_group_4rpUfT",
-        "eza_group_Q4Vqmb"
+        "eza_group_EwMEWV"
       ],
       "custom_css": [
         ".faq .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
