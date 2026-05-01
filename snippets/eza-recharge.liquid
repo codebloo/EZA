@@ -93,7 +93,7 @@
       </label>
       <div class="vpv-sub-selector__expanded">
         <p class="vpv-sub-selector__benefits">
-          Free Shipping · Cancel Anytime · <span data-savings-text>{{ initial_savings }}% off</span> Every Order
+         {{block.settings.subscription_benefits}} <span data-savings-text>{{ initial_savings }}% off</span> Every Order
         </p>
         <select class="vpv-sub-selector__frequency" data-frequency-select aria-label="Delivery frequency">
           {%- for allocation in initial_variant.selling_plan_allocations -%}
