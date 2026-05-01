@@ -63,13 +63,15 @@
               <legend class="vpv-sub-selector__option-legend">{{ option.name }}</legend>
               <div class="vpv-sub-selector__option-values">
                 {%- for value in option.values -%}
+                      <div class="eza-variant">
                   {%- assign input_id = 'vpv-opt-' | append: section.id | append: '-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 -%}
-                  <div class="eza-variant">
+                
               {%- assign variant_tag = value.variant.metafields.tag.name -%}
   {% if variant_tag != blank %}
  
                 <span class="eza-variant-tag {{ variant_tag | handleize }}">{{ variant_tag | escape }}</span>
                 {% endif %}
+
                   <input
                     type="radio"
                     id="{{ input_id }}"
@@ -81,8 +83,9 @@
                   <label for="{{ input_id }}" class="vpv-sub-selector__option-pill">
                     {{ value }}
                   </label>
+                   </div>
                 {%- endfor -%}
-              </div>
+             
             </div>
             </fieldset>
           {%- endfor -%}
