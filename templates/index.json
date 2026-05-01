@@ -3749,7 +3749,11 @@
             "eza_recharge_TU4a3X": {
               "type": "eza-recharge",
               "name": "EZAReCharge Widget",
-              "settings": {},
+              "settings": {
+                "one_time_title": "One-time Purchase",
+                "subscrition_title": "Subscribe &amp; Save",
+                "subscrition_benefdits": "Free Shipping · Cancel Anytime ·"
+              },
               "blocks": {}
             }
           },
@@ -3768,7 +3772,7 @@
         "product": "ez-a",
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": false,
         "gap": 16,
         "color_scheme": "",
