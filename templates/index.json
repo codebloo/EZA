@@ -6363,7 +6363,7 @@
                         "arrow_color": "yellow",
                         "show_gradient": false,
                         "label": "Subscribe & Save 15%",
-                        "link": "shopify://collections/all",
+                        "link": "shopify://products/ez-a",
                         "open_in_new_tab": false,
                         "style_class": "button-secondary",
                         "width": "fit-content",
