@@ -4467,7 +4467,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>First time? Here’s how to <br/>get the most out of EZ-A.</p>",
+                "text": "<p><strong>First time? Here’s how to <br/>get the most out of EZ-A.</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
