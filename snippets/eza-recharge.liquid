@@ -155,64 +155,79 @@
           this.observer?.disconnect();
         }
 
-        bindToVariantPicker() {
-          const tryBind = (attempt = 1) => {
-            this.variantPicker = document.querySelector(
-              `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`
-            );
+     bindToVariantPicker() {
+  const tryBind = (attempt = 1) => {
+    // Find the nearest shopify-section ancestor — both variant-picker
+    // and subscription-selector should live inside it
+    const sectionAncestor = this.closest('[id^="shopify-section"]');
+    const scope = sectionAncestor || document;
 
-            if (!this.variantPicker) {
-              console.warn('[sub-selector] variant-picker not found yet', {
-                attempt,
-                selector: `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`,
-                allPickers: Array.from(document.querySelectorAll('variant-picker')).map(p => ({
-                  sectionId: p.dataset.sectionId,
-                  productId: p.dataset.productId
-                }))
-              });
-              return false;
-            }
+    // Match by product ID only, scoped to the same section
+    this.variantPicker = scope.querySelector(
+      `variant-picker[data-product-id="${this.productId}"]`
+    );
 
-            console.log('[sub-selector] variant-picker bound', this.variantPicker);
+    // Fallback: any variant-picker for this product anywhere on the page
+    if (!this.variantPicker) {
+      this.variantPicker = document.querySelector(
+        `variant-picker[data-product-id="${this.productId}"]`
+      );
+    }
 
-            // 1. Capture-phase change listener — bypasses any stopPropagation
-            this.variantPicker.addEventListener('change', (e) => {
-              if (e.target.matches('input[type="radio"]')) {
-                console.log('[sub-selector] change event captured', e.target.value);
-                requestAnimationFrame(() => this.handleVariantChange('change'));
-              }
-            }, true);
+    if (!this.variantPicker) {
+      console.warn('[sub-selector] variant-picker not found', {
+        attempt,
+        productId: this.productId,
+        sectionAncestor: sectionAncestor?.id,
+        allPickers: Array.from(document.querySelectorAll('variant-picker')).map(p => ({
+          sectionId: p.dataset.sectionId,
+          productId: p.dataset.productId
+        }))
+      });
+      return false;
+    }
 
-            // 2. Click fallback for themes that intercept change entirely
-            this.variantPicker.addEventListener('click', (e) => {
-              if (e.target.matches('input[type="radio"]')) {
-                requestAnimationFrame(() => this.handleVariantChange('click'));
-              }
-            }, true);
+    console.log('[sub-selector] variant-picker bound', {
+      pickerSectionId: this.variantPicker.dataset.sectionId,
+      sectionAncestor: sectionAncestor?.id
+    });
 
-            // 3. MutationObserver on data-current-checked / checked attributes
-            this.observer = new MutationObserver(() => this.handleVariantChange('mutation'));
-            this.variantPicker.querySelectorAll('input[type="radio"]').forEach(input => {
-              this.observer.observe(input, {
-                attributes: true,
-                attributeFilter: ['data-current-checked', 'checked']
-              });
-            });
+    // 1. Capture-phase change listener
+    this.variantPicker.addEventListener('change', (e) => {
+      if (e.target.matches('input[type="radio"]')) {
+        console.log('[sub-selector] change captured', e.target.value);
+        requestAnimationFrame(() => this.handleVariantChange('change'));
+      }
+    }, true);
 
-            this.handleVariantChange('initial');
-            return true;
-          };
+    // 2. Click fallback
+    this.variantPicker.addEventListener('click', (e) => {
+      if (e.target.matches('input[type="radio"]')) {
+        requestAnimationFrame(() => this.handleVariantChange('click'));
+      }
+    }, true);
 
-          if (!tryBind(1)) {
-            // Retry after one frame in case picker hasn't upgraded yet
-            requestAnimationFrame(() => {
-              if (!tryBind(2)) {
-                // One more retry after a longer delay for late-loading sections
-                setTimeout(() => tryBind(3), 500);
-              }
-            });
-          }
-        }
+    // 3. MutationObserver fallback
+    this.observer = new MutationObserver(() => this.handleVariantChange('mutation'));
+    this.variantPicker.querySelectorAll('input[type="radio"]').forEach(input => {
+      this.observer.observe(input, {
+        attributes: true,
+        attributeFilter: ['data-current-checked', 'checked']
+      });
+    });
+
+    this.handleVariantChange('initial');
+    return true;
+  };
+
+  if (!tryBind(1)) {
+    requestAnimationFrame(() => {
+      if (!tryBind(2)) {
+        setTimeout(() => tryBind(3), 500);
+      }
+    });
+  }
+}
 
         handleVariantChange(source = 'unknown') {
           if (!this.variantPicker) return;
