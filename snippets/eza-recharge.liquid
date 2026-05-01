@@ -65,7 +65,7 @@
                 {%- for value in option.values -%}
                   {%- assign input_id = 'vpv-opt-' | append: section.id | append: '-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 -%}
                   <div class="eza-variant">
-              {%- assign variant_tag = product_option_value.variant.metafields.tag.name -%}
+              {%- assign variant_tag = value.variant.metafields.tag.name -%}
   {% if variant_tag != blank %}
  
                 <span class="eza-variant-tag {{ variant_tag | handleize }}">{{ variant_tag | escape }}</span>
