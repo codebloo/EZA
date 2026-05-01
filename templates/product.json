@@ -1180,7 +1180,7 @@
       },
       "custom_css": [
         ".pills .group-block-content {flex-wrap: wrap !important;}",
-        ".product-information {margin: 0 auto; max-width: 100%; width: 1082px;}",
+        ".product-information__grid {margin: 0 auto; max-width: 100%;}",
         "@media (min-width: 750px) {.product-information__media {max-width: 50%; width: 606px; } .product-details {width: 444px; }}"
       ],
       "settings": {
