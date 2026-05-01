@@ -8135,7 +8135,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>30-Day Money-Back Guarantee Free Shipping on $50+</strong></p>",
+                    "text": "<p><strong>30-Day Money-Back <br/>Guarantee Free Shipping on $50+</strong></p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
