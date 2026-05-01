@@ -3,6 +3,12 @@
 
   Listens to a sibling <variant-picker> element (matched by section_id +
   product_id) for variant changes. Submits via fetch — no <form> element.
+
+  Usage:
+    {% render 'subscription-selector',
+       product:    section.settings.product,
+       section_id: section.id,
+       block:      block %}
 {% endcomment %}
 
 {%- if product != blank and product.selling_plan_groups.size > 0 -%}
@@ -44,6 +50,7 @@
 
     <input type="hidden" data-variant-id value="{{ initial_variant.id }}">
 
+    {%- comment -%} One-time {%- endcomment -%}
     <div class="vpv-sub-selector__option">
       <label class="vpv-sub-selector__row">
         <input type="radio" name="vpv-purchase-{{ section_id }}" value="" checked data-purchase-type>
@@ -60,6 +67,7 @@
       </div>
     </div>
 
+    {%- comment -%} Subscribe & Save {%- endcomment -%}
     <div class="vpv-sub-selector__option">
       <label class="vpv-sub-selector__row">
         <input
@@ -129,6 +137,12 @@
             this.variantsByOptions[v.options.join('|')] = v;
           });
 
+          console.log('[sub-selector] connected', {
+            sectionId: this.sectionId,
+            productId: this.productId,
+            variantCount: Object.keys(this.variantData).length
+          });
+
           this.bindToVariantPicker();
 
           this.frequencySelect?.addEventListener('change', () => this.syncFromFrequency());
@@ -137,40 +151,99 @@
           });
         }
 
+        disconnectedCallback() {
+          this.observer?.disconnect();
+        }
+
         bindToVariantPicker() {
-          const tryBind = () => {
+          const tryBind = (attempt = 1) => {
             this.variantPicker = document.querySelector(
               `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`
             );
-            if (!this.variantPicker) return false;
 
-            // Listen for any radio change inside the picker
+            if (!this.variantPicker) {
+              console.warn('[sub-selector] variant-picker not found yet', {
+                attempt,
+                selector: `variant-picker[data-section-id="${this.sectionId}"][data-product-id="${this.productId}"]`,
+                allPickers: Array.from(document.querySelectorAll('variant-picker')).map(p => ({
+                  sectionId: p.dataset.sectionId,
+                  productId: p.dataset.productId
+                }))
+              });
+              return false;
+            }
+
+            console.log('[sub-selector] variant-picker bound', this.variantPicker);
+
+            // 1. Capture-phase change listener — bypasses any stopPropagation
             this.variantPicker.addEventListener('change', (e) => {
               if (e.target.matches('input[type="radio"]')) {
-                this.handleVariantChange();
+                console.log('[sub-selector] change event captured', e.target.value);
+                requestAnimationFrame(() => this.handleVariantChange('change'));
               }
+            }, true);
+
+            // 2. Click fallback for themes that intercept change entirely
+            this.variantPicker.addEventListener('click', (e) => {
+              if (e.target.matches('input[type="radio"]')) {
+                requestAnimationFrame(() => this.handleVariantChange('click'));
+              }
+            }, true);
+
+            // 3. MutationObserver on data-current-checked / checked attributes
+            this.observer = new MutationObserver(() => this.handleVariantChange('mutation'));
+            this.variantPicker.querySelectorAll('input[type="radio"]').forEach(input => {
+              this.observer.observe(input, {
+                attributes: true,
+                attributeFilter: ['data-current-checked', 'checked']
+              });
             });
 
-            // Initial sync
-            this.handleVariantChange();
+            this.handleVariantChange('initial');
             return true;
           };
 
-          if (!tryBind()) {
-            // Picker may render after this element — retry on next frame
-            requestAnimationFrame(() => tryBind());
+          if (!tryBind(1)) {
+            // Retry after one frame in case picker hasn't upgraded yet
+            requestAnimationFrame(() => {
+              if (!tryBind(2)) {
+                // One more retry after a longer delay for late-loading sections
+                setTimeout(() => tryBind(3), 500);
+              }
+            });
           }
         }
 
-        handleVariantChange() {
+        handleVariantChange(source = 'unknown') {
           if (!this.variantPicker) return;
 
           const checked = this.variantPicker.querySelectorAll('input[type="radio"]:checked');
-          if (checked.length === 0) return;
+          if (checked.length === 0) {
+            console.log('[sub-selector] no checked radios in variant-picker');
+            return;
+          }
 
-          const values = Array.from(checked).map(i => i.value);
-          const variant = this.variantsByOptions[values.join('|')];
-          if (!variant) return;
+          let variant;
+          // Prefer data-variant-id on the most recently changed radio
+          const lastChecked = checked[checked.length - 1];
+          if (lastChecked.dataset.variantId && this.variantData[lastChecked.dataset.variantId]) {
+            variant = this.variantData[lastChecked.dataset.variantId];
+          } else {
+            // Fall back to option-value lookup
+            const values = Array.from(checked).map(i => i.value);
+            variant = this.variantsByOptions[values.join('|')];
+          }
+
+          if (!variant) {
+            console.warn('[sub-selector] could not resolve variant', {
+              source,
+              checkedValues: Array.from(checked).map(i => ({ value: i.value, dataVariantId: i.dataset.variantId })),
+              availableLookupKeys: Object.keys(this.variantsByOptions)
+            });
+            return;
+          }
+
+          console.log('[sub-selector] variant resolved', { source, variantId: variant.id });
 
           this.variantIdInput.value = variant.id;
           this.renderForVariant(variant);
@@ -221,7 +294,10 @@
           e.preventDefault();
 
           const variantId = this.variantIdInput.value;
-          if (!variantId) return;
+          if (!variantId) {
+            console.warn('[sub-selector] no variant ID on submit');
+            return;
+          }
 
           const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
           const sellingPlan = checkedPurchase?.value;
@@ -230,6 +306,8 @@
           formData.append('id', variantId);
           formData.append('quantity', '1');
           if (sellingPlan) formData.append('selling_plan', sellingPlan);
+
+          console.log('[sub-selector] submitting', { variantId, sellingPlan });
 
           const buttons = this.querySelectorAll('[data-atc]');
           buttons.forEach(b => b.disabled = true);
@@ -249,7 +327,8 @@
               return;
             }
 
-            // Horizon listens for cart:update — keep the others as belt-and-braces
+            console.log('[sub-selector] ATC success', data);
+
             document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: data }));
             document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
             document.dispatchEvent(new CustomEvent('cart:added', { bubbles: true, detail: data }));
