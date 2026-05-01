@@ -1179,7 +1179,8 @@
         }
       },
       "custom_css": [
-        ".pills .group-block-content {flex-wrap: wrap !important;}"
+        ".pills .group-block-content {flex-wrap: wrap !important;}",
+        ".product-information {margin:0 auto; max-width: 100%; width:1080px;}"
       ],
       "settings": {
         "content_width": "content-center-aligned",
