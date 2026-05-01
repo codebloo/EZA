@@ -7955,7 +7955,7 @@
       "custom_css": [
         ".faq .custom-section-content {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".faq-head .h5 p {color: #7c7c7c;}",
-        ".accordion{border-top:2px solid #000;}"
+        ".accordion {border-top: 2px solid #000;}"
       ],
       "name": "FAQS",
       "settings": {
@@ -8214,7 +8214,7 @@
                     "arrow_color": "black",
                     "show_gradient": false,
                     "label": "SHOP NOW – $33",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://products/ez-a",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "custom",
