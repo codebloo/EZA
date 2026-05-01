@@ -1180,12 +1180,12 @@
       },
       "custom_css": [
         ".pills .group-block-content {flex-wrap: wrap !important;}",
-        ".product-information {margin:0 auto; max-width: 100%; width:1080px;}"
+        ".product-information {margin: 0 auto; max-width: 100%; width: 1080px;}"
       ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": false,
         "gap": 32,
         "color_scheme": "scheme-1",
