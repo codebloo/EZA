@@ -1,31 +1,181 @@
-{{ 'eza-subscription-selector.js' | asset_url | script_tag }}
+{% comment %}
+  snippets/subscription-selector.liquid
 
-{% assign featured = section.settings.product %}
-{% assign sp_group = featured.selling_plan_groups | first %}
+  One-time / subscription selector that updates when the variant changes.
+  Renders nothing if the product has no selling plan groups.
 
-<form action="/cart/add" method="post">
-  <input type="hidden" name="id" value="{{ featured.selected_or_first_available_variant.id }}">
+  Usage:
+    {% render 'subscription-selector',
+       product: section.settings.product,
+       block:   block %}
+{% endcomment %}
 
-  {% if sp_group %}
-    <label>
-      <input type="radio" name="selling_plan" value="" checked>
-      One-time — {{ featured.price | money }}
-    </label>
+{%- if product.selling_plan_groups.size > 0 -%}
+  {%- assign initial_variant = product.selected_or_first_available_variant -%}
 
-    {% for plan in sp_group.selling_plans %}
-      <label>
-        <input type="radio" name="selling_plan" value="{{ plan.id }}">
-        {{ plan.name }}
-        {% assign adj = plan.price_adjustments | first %}
-        {% if adj.value_type == 'percentage' %}
-          (Save {{ adj.value }}%)
-        {% endif %}
+  <subscription-selector
+    class="vpv-sub-selector"
+    data-product-id="{{ product.id }}"
+    {% if block %}{{ block.shopify_attributes }}{% endif %}
+  >
+    {%- comment -%} Per-variant pricing data for client-side updates {%- endcomment -%}
+    <script type="application/json" data-variant-data>
+    {
+      {%- for variant in product.variants -%}
+        "{{ variant.id }}": {
+          "price": {{ variant.price }},
+          "price_formatted": {{ variant.price | money | json }},
+          "available": {{ variant.available }},
+          "plans": [
+            {%- for allocation in variant.selling_plan_allocations -%}
+              {
+                "id": {{ allocation.selling_plan.id }},
+                "name": {{ allocation.selling_plan.name | json }},
+                "price_formatted": {{ allocation.price | money | json }},
+                "savings_percent": {%- if variant.price > 0 -%}{{ variant.price | minus: allocation.price | times: 100.0 | divided_by: variant.price | round: 0 }}{%- else -%}0{%- endif -%}
+              }{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+          ]
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    }
+    </script>
+
+    <div class="vpv-sub-selector__options" data-options-container>
+      <label class="vpv-sub-selector__option">
+        <input type="radio" name="selling_plan" value="" checked>
+        <span class="vpv-sub-selector__label">One-time purchase</span>
+        <span class="vpv-sub-selector__price">{{ initial_variant.price | money }}</span>
       </label>
-    {% endfor %}
-  {% endif %}
 
-  <button type="submit">Add to cart</button>
-</form>
+      {%- for allocation in initial_variant.selling_plan_allocations -%}
+        {%- assign savings = initial_variant.price | minus: allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
+        <label class="vpv-sub-selector__option">
+          <input type="radio" name="selling_plan" value="{{ allocation.selling_plan.id }}">
+          <span class="vpv-sub-selector__label">{{ allocation.selling_plan.name }}</span>
+          <span class="vpv-sub-selector__price">{{ allocation.price | money }}</span>
+          {%- if savings > 0 -%}
+            <span class="vpv-sub-selector__savings">Save {{ savings }}%</span>
+          {%- endif -%}
+        </label>
+      {%- endfor -%}
+    </div>
+  </subscription-selector>
+
+  <script>
+    if (!customElements.get('subscription-selector')) {
+      customElements.define('subscription-selector', class extends HTMLElement {
+        connectedCallback() {
+          this.form = this.closest('form[action*="/cart/add"]');
+          this.container = this.querySelector('[data-options-container]');
+          const dataEl = this.querySelector('[data-variant-data]');
+
+          try {
+            this.variantData = JSON.parse(dataEl.textContent);
+          } catch (e) {
+            console.warn('[subscription-selector] Bad variant data JSON', e);
+            return;
+          }
+
+          if (!this.form) {
+            console.warn('[subscription-selector] Not inside a /cart/add form. The selector must be a DOM descendant of the buy form.');
+            return;
+          }
+
+          // 1. Form-level change events (covers <select name="id"> and radios)
+          this.form.addEventListener('change', (e) => {
+            if (e.target.name === 'id') this.renderForVariant(e.target.value);
+          });
+
+          // 2. Custom variant:change event (Dawn/Horizon/theme app extensions)
+          document.addEventListener('variant:change', (e) => {
+            const v = e.detail?.variant;
+            if (v?.id) this.renderForVariant(v.id);
+          });
+
+          // 3. MutationObserver fallback for themes that mutate [name="id"]
+          //    programmatically without dispatching a change event
+          const idInput = this.form.querySelector('input[name="id"]');
+          if (idInput) {
+            this.observer = new MutationObserver(() => this.renderForVariant(idInput.value));
+            this.observer.observe(idInput, { attributes: true, attributeFilter: ['value'] });
+          }
+
+          // Ensure selling_plan survives themes that do custom form serialization
+          this.form.addEventListener('submit', this.syncHiddenInput.bind(this));
+        }
+
+        disconnectedCallback() {
+          this.observer?.disconnect();
+        }
+
+        renderForVariant(variantId) {
+          const data = this.variantData[variantId];
+          if (!data) {
+            this.container.innerHTML = '';
+            return;
+          }
+
+          const parts = [this.renderOption({
+            value: '',
+            label: 'One-time purchase',
+            price: data.price_formatted,
+            checked: true
+          })];
+
+          data.plans.forEach((plan) => {
+            parts.push(this.renderOption({
+              value: plan.id,
+              label: plan.name,
+              price: plan.price_formatted,
+              savings: plan.savings_percent
+            }));
+          });
+
+          this.container.innerHTML = parts.join('');
+          // Clear any stale hidden input from prior variant
+          this.syncHiddenInput();
+        }
+
+        renderOption({ value, label, price, savings, checked }) {
+          return `
+            <label class="vpv-sub-selector__option">
+              <input type="radio" name="selling_plan" value="${value}"${checked ? ' checked' : ''}>
+              <span class="vpv-sub-selector__label">${this.escape(label)}</span>
+              <span class="vpv-sub-selector__price">${price}</span>
+              ${savings > 0 ? `<span class="vpv-sub-selector__savings">Save ${savings}%</span>` : ''}
+            </label>
+          `;
+        }
+
+        syncHiddenInput() {
+          const selected = this.querySelector('input[name="selling_plan"]:checked');
+          let hidden = this.form.querySelector('input[type="hidden"][name="selling_plan"][data-from-sub-selector]');
+
+          if (!selected || !selected.value) {
+            hidden?.remove();
+            return;
+          }
+
+          if (!hidden) {
+            hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = 'selling_plan';
+            hidden.dataset.fromSubSelector = 'true';
+            this.form.appendChild(hidden);
+          }
+          hidden.value = selected.value;
+        }
+
+        escape(str) {
+          const d = document.createElement('div');
+          d.textContent = str;
+          return d.innerHTML;
+        }
+      });
+    }
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
