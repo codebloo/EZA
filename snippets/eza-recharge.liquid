@@ -1,31 +1,24 @@
 {% comment %}
   snippets/subscription-selector.liquid
-
-  One-time / subscription selector that updates when the variant changes.
-  Renders nothing if the product has no selling plan groups.
-
-  Usage:
-    {% render 'subscription-selector',
-       product: section.settings.product,
-       block:   block %}
+  
+  One-time / Subscribe & Save selector with inline ATC button.
+  ATC lives inside the active option's expanded panel.
 {% endcomment %}
 
 {%- if product.selling_plan_groups.size > 0 -%}
   {%- assign initial_variant = product.selected_or_first_available_variant -%}
+  {%- assign initial_allocation = initial_variant.selling_plan_allocations | first -%}
+  {%- assign initial_savings = 0 -%}
+  {%- if initial_allocation and initial_variant.price > 0 -%}
+    {%- assign initial_savings = initial_variant.price | minus: initial_allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
+  {%- endif -%}
 
-  <subscription-selector
-    class="vpv-sub-selector"
-    data-product-id="{{ product.id }}"
-    {% if block %}{{ block.shopify_attributes }}{% endif %}
-  >
-    {%- comment -%} Per-variant pricing data for client-side updates {%- endcomment -%}
+  <subscription-selector class="vpv-sub-selector" {% if block %}{{ block.shopify_attributes }}{% endif %}>
     <script type="application/json" data-variant-data>
     {
       {%- for variant in product.variants -%}
         "{{ variant.id }}": {
-          "price": {{ variant.price }},
           "price_formatted": {{ variant.price | money | json }},
-          "available": {{ variant.available }},
           "plans": [
             {%- for allocation in variant.selling_plan_allocations -%}
               {
@@ -41,24 +34,60 @@
     }
     </script>
 
-    <div class="vpv-sub-selector__options" data-options-container>
-      <label class="vpv-sub-selector__option">
+    {%- comment -%} One-time {%- endcomment -%}
+    <div class="vpv-sub-selector__option">
+      <label class="vpv-sub-selector__row">
         <input type="radio" name="selling_plan" value="" checked>
-        <span class="vpv-sub-selector__label">One-time purchase</span>
-        <span class="vpv-sub-selector__price">{{ initial_variant.price | money }}</span>
+        <span class="vpv-sub-selector__info">
+          <span class="vpv-sub-selector__title">One-time Purchase</span>
+          <span class="vpv-sub-selector__price" data-onetime-price>{{ initial_variant.price | money }}</span>
+        </span>
+        <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
       </label>
+      <div class="vpv-sub-selector__expanded">
+        <button type="submit" class="vpv-sub-selector__atc">
+          Add to Cart — <span data-onetime-price>{{ initial_variant.price | money }}</span>
+        </button>
+      </div>
+    </div>
 
-      {%- for allocation in initial_variant.selling_plan_allocations -%}
-        {%- assign savings = initial_variant.price | minus: allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
-        <label class="vpv-sub-selector__option">
-          <input type="radio" name="selling_plan" value="{{ allocation.selling_plan.id }}">
-          <span class="vpv-sub-selector__label">{{ allocation.selling_plan.name }}</span>
-          <span class="vpv-sub-selector__price">{{ allocation.price | money }}</span>
-          {%- if savings > 0 -%}
-            <span class="vpv-sub-selector__savings">Save {{ savings }}%</span>
-          {%- endif -%}
-        </label>
-      {%- endfor -%}
+    {%- comment -%} Subscribe & Save {%- endcomment -%}
+    <div class="vpv-sub-selector__option">
+      <label class="vpv-sub-selector__row">
+        <input type="radio" name="selling_plan" value="{{ initial_allocation.selling_plan.id }}" data-sub-radio>
+        <span class="vpv-sub-selector__info">
+          <span class="vpv-sub-selector__title">
+            Subscribe &amp; Save
+            <span class="vpv-sub-selector__badge" data-savings-badge>Save {{ initial_savings }}%</span>
+          </span>
+          <span class="vpv-sub-selector__price">
+            <strong data-sub-price>{{ initial_allocation.price | money }}</strong>
+            <s data-strikethrough-price>{{ initial_variant.price | money }}</s>
+          </span>
+        </span>
+        <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
+      </label>
+      <div class="vpv-sub-selector__expanded">
+        <p class="vpv-sub-selector__benefits">
+          Free Shipping · Cancel Anytime · <span data-savings-text>{{ initial_savings }}% off</span> Every Order
+        </p>
+        <select class="vpv-sub-selector__frequency" data-frequency-select aria-label="Delivery frequency">
+          {%- for allocation in initial_variant.selling_plan_allocations -%}
+            {%- assign plan_savings = 0 -%}
+            {%- if initial_variant.price > 0 -%}
+              {%- assign plan_savings = initial_variant.price | minus: allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
+            {%- endif -%}
+            <option value="{{ allocation.selling_plan.id }}"
+                    data-price="{{ allocation.price | money }}"
+                    data-savings="{{ plan_savings }}">
+              {{ allocation.selling_plan.name }}
+            </option>
+          {%- endfor -%}
+        </select>
+        <button type="submit" class="vpv-sub-selector__atc">
+          Add to Cart — <span data-sub-price>{{ initial_allocation.price | money }}</span>
+        </button>
+      </div>
     </div>
   </subscription-selector>
 
@@ -67,104 +96,76 @@
       customElements.define('subscription-selector', class extends HTMLElement {
         connectedCallback() {
           this.form = this.closest('form[action*="/cart/add"]');
-          this.container = this.querySelector('[data-options-container]');
-          const dataEl = this.querySelector('[data-variant-data]');
+          this.subRadio = this.querySelector('[data-sub-radio]');
+          this.frequencySelect = this.querySelector('[data-frequency-select]');
 
           try {
-            this.variantData = JSON.parse(dataEl.textContent);
+            this.variantData = JSON.parse(this.querySelector('[data-variant-data]').textContent);
           } catch (e) {
-            console.warn('[subscription-selector] Bad variant data JSON', e);
+            console.warn('[subscription-selector] Bad JSON', e);
             return;
           }
 
           if (!this.form) {
-            console.warn('[subscription-selector] Not inside a /cart/add form. The selector must be a DOM descendant of the buy form.');
+            console.warn('[subscription-selector] Not inside a /cart/add form');
             return;
           }
 
-          // 1. Form-level change events (covers <select name="id"> and radios)
+          this.frequencySelect?.addEventListener('change', () => this.syncFromFrequency());
+
+          // Variant change detection
           this.form.addEventListener('change', (e) => {
             if (e.target.name === 'id') this.renderForVariant(e.target.value);
           });
-
-          // 2. Custom variant:change event (Dawn/Horizon/theme app extensions)
           document.addEventListener('variant:change', (e) => {
             const v = e.detail?.variant;
             if (v?.id) this.renderForVariant(v.id);
           });
-
-          // 3. MutationObserver fallback for themes that mutate [name="id"]
-          //    programmatically without dispatching a change event
-          const idInput = this.form.querySelector('input[name="id"]');
+          const idInput = this.form.querySelector('[name="id"]');
           if (idInput) {
             this.observer = new MutationObserver(() => this.renderForVariant(idInput.value));
             this.observer.observe(idInput, { attributes: true, attributeFilter: ['value'] });
           }
-
-          // Ensure selling_plan survives themes that do custom form serialization
-          this.form.addEventListener('submit', this.syncHiddenInput.bind(this));
         }
 
         disconnectedCallback() {
           this.observer?.disconnect();
         }
 
-        renderForVariant(variantId) {
-          const data = this.variantData[variantId];
-          if (!data) {
-            this.container.innerHTML = '';
-            return;
-          }
+        syncFromFrequency() {
+          const opt = this.frequencySelect.selectedOptions[0];
+          if (!opt || !this.subRadio) return;
 
-          const parts = [this.renderOption({
-            value: '',
-            label: 'One-time purchase',
-            price: data.price_formatted,
-            checked: true
-          })];
+          this.subRadio.value = opt.value;
 
-          data.plans.forEach((plan) => {
-            parts.push(this.renderOption({
-              value: plan.id,
-              label: plan.name,
-              price: plan.price_formatted,
-              savings: plan.savings_percent
-            }));
+          this.querySelectorAll('[data-sub-price]').forEach(el => {
+            el.textContent = opt.dataset.price;
           });
 
-          this.container.innerHTML = parts.join('');
-          // Clear any stale hidden input from prior variant
-          this.syncHiddenInput();
+          const savings = parseInt(opt.dataset.savings, 10) || 0;
+          this.querySelectorAll('[data-savings-badge]').forEach(el => {
+            el.textContent = `Save ${savings}%`;
+            el.style.display = savings > 0 ? '' : 'none';
+          });
+          this.querySelectorAll('[data-savings-text]').forEach(el => {
+            el.textContent = `${savings}% off`;
+          });
         }
 
-        renderOption({ value, label, price, savings, checked }) {
-          return `
-            <label class="vpv-sub-selector__option">
-              <input type="radio" name="selling_plan" value="${value}"${checked ? ' checked' : ''}>
-              <span class="vpv-sub-selector__label">${this.escape(label)}</span>
-              <span class="vpv-sub-selector__price">${price}</span>
-              ${savings > 0 ? `<span class="vpv-sub-selector__savings">Save ${savings}%</span>` : ''}
-            </label>
-          `;
-        }
+        renderForVariant(variantId) {
+          const data = this.variantData[variantId];
+          if (!data) return;
 
-        syncHiddenInput() {
-          const selected = this.querySelector('input[name="selling_plan"]:checked');
-          let hidden = this.form.querySelector('input[type="hidden"][name="selling_plan"][data-from-sub-selector]');
+          this.querySelectorAll('[data-onetime-price], [data-strikethrough-price]').forEach(el => {
+            el.textContent = data.price_formatted;
+          });
 
-          if (!selected || !selected.value) {
-            hidden?.remove();
-            return;
+          if (this.frequencySelect && data.plans.length > 0) {
+            this.frequencySelect.innerHTML = data.plans.map(p => `
+              <option value="${p.id}" data-price="${p.price_formatted}" data-savings="${p.savings_percent}">${this.escape(p.name)}</option>
+            `).join('');
+            this.syncFromFrequency();
           }
-
-          if (!hidden) {
-            hidden = document.createElement('input');
-            hidden.type = 'hidden';
-            hidden.name = 'selling_plan';
-            hidden.dataset.fromSubSelector = 'true';
-            this.form.appendChild(hidden);
-          }
-          hidden.value = selected.value;
         }
 
         escape(str) {
@@ -177,3 +178,154 @@
   </script>
 {%- endif -%}
 
+<style>
+    .vpv-sub-selector {
+  display: block;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.vpv-sub-selector__option + .vpv-sub-selector__option {
+  border-top: 1px solid #e5e5e5;
+}
+
+.vpv-sub-selector__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.vpv-sub-selector__row input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vpv-sub-selector__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.vpv-sub-selector__title {
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vpv-sub-selector__price {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.vpv-sub-selector__price s {
+  color: #999;
+  font-weight: 400;
+  font-size: 0.95em;
+}
+
+.vpv-sub-selector__badge {
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.vpv-sub-selector__radio-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px dashed #c8c8c8;
+  border-radius: 50%;
+  position: relative;
+  transition: border 0.15s ease;
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__radio-icon {
+  border: 2px solid #5a3fff; /* swap for brand colour */
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__radio-icon::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #5a3fff;
+  border-radius: 50%;
+}
+
+.vpv-sub-selector__expanded {
+  display: none;
+  padding: 0.25rem 1.25rem 1.25rem;
+  text-align: center;
+}
+
+.vpv-sub-selector__option:has(input:checked) .vpv-sub-selector__expanded {
+  display: block;
+}
+
+.vpv-sub-selector__benefits {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0 0 0.875rem;
+}
+
+.vpv-sub-selector__frequency {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M6 8L0 2l1.5-1.5L6 5l4.5-4.5L12 2z'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  margin-bottom: 0.875rem;
+  cursor: pointer;
+}
+
+.vpv-sub-selector__frequency:has(option:only-child) {
+  display: none;
+}
+
+.vpv-sub-selector__atc {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vpv-sub-selector__atc:hover {
+  background: #333;
+}
+
+.vpv-sub-selector__atc:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+</style>
