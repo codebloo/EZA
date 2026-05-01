@@ -1,0 +1,26 @@
+{% assign featured = section.settings.product %}
+{% assign sp_group = featured.selling_plan_groups | first %}
+
+<form action="/cart/add" method="post">
+  <input type="hidden" name="id" value="{{ featured.selected_or_first_available_variant.id }}">
+
+  {% if sp_group %}
+    <label>
+      <input type="radio" name="selling_plan" value="" checked>
+      One-time — {{ featured.price | money }}
+    </label>
+
+    {% for plan in sp_group.selling_plans %}
+      <label>
+        <input type="radio" name="selling_plan" value="{{ plan.id }}">
+        {{ plan.name }}
+        {% assign adj = plan.price_adjustments | first %}
+        {% if adj.value_type == 'percentage' %}
+          (Save {{ adj.value }}%)
+        {% endif %}
+      </label>
+    {% endfor %}
+  {% endif %}
+
+  <button type="submit">Add to cart</button>
+</form>
