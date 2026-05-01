@@ -55,7 +55,7 @@
       <label class="vpv-sub-selector__row">
         <input type="radio" name="vpv-purchase-{{ section_id }}" value="" checked data-purchase-type>
         <span class="vpv-sub-selector__info">
-          <span class="vpv-sub-selector__title">One-time Purchase</span>
+          <span class="vpv-sub-selector__title">{{block.settings.one_time_title}} One-time Purchase</span>
           <span class="vpv-sub-selector__price" data-onetime-price>{{ initial_variant.price | money }}</span>
         </span>
         <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
@@ -78,7 +78,7 @@
           data-sub-radio
         >
         <span class="vpv-sub-selector__info">
-          <span class="vpv-sub-selector__title">
+          <span class="vpv-sub-selector__title">{{ block.settings.subscrition_title }}
             Subscribe &amp; Save
             <span class="vpv-sub-selector__badge" data-savings-badge {% if initial_savings == 0 %}hidden{% endif %}>
               Save {{ initial_savings }}%
