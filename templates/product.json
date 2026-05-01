@@ -3630,7 +3630,7 @@
         ".details__header {font-weight: 700;}",
         ".h5 p {color: #7c7c7c;}",
         "@media (max-width: 768px) {.baggie-desktop {padding-bottom: 32px; }}",
-        ".accordion-bold{border-top:2px solid #000;}"
+        ".accordion-bold {border-top: 2px solid #000; padding-bottom:30px;}"
       ],
       "name": "Baggie Desktop",
       "settings": {
