@@ -3568,7 +3568,7 @@
         ".clean-focus {margin: 0 auto; max-width: 100%; width: 1080px;}",
         ".pullquote .group-block-content {border-left: 7px solid var(--yellow); padding-left: 8px;}",
         ".button {justify-content: center; width: 327px;}",
-        ".clean-focus .custom-section-content {padding-bottom: 24px; padding-top: 32px;}",
+        ".clean-focus .custom-section-content {padding-bottom: 48px; padding-top: 32px;}",
         "@media (min-width: 768px) {.clean-focus .custom-section-content {padding: 112px 0; }}"
       ],
       "name": "Clean Focus",
