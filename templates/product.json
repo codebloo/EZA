@@ -3068,7 +3068,8 @@
       ],
       "custom_css": [
         "h2 {font-size: 24px;}",
-        "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}"
+        "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}",
+        ".section-content-wrapper{padding-bottom:32px;}"
       ],
       "name": "Nootropics",
       "settings": {
