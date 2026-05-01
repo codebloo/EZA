@@ -2829,31 +2829,12 @@
                 "text_L9FeVG",
                 "text_QpNeir"
               ]
-            },
-            "eza_button_fnYaM6": {
-              "type": "eza-button",
-              "name": "EZ-A Button",
-              "settings": {
-                "arrow": true,
-                "arrow_color": "yellow",
-                "show_gradient": true,
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "eza_group_mikNhM",
             "eza_group_LJpXzQ",
-            "eza_group_HRYdTF",
-            "eza_button_fnYaM6"
+            "eza_group_HRYdTF"
           ]
         }
       },
@@ -3630,7 +3611,7 @@
         ".details__header {font-weight: 700;}",
         ".h5 p {color: #7c7c7c;}",
         "@media (max-width: 768px) {.baggie-desktop {padding-bottom: 32px; }}",
-        ".accordion-bold {border-top: 2px solid #000; padding-bottom:30px;}"
+        ".accordion-bold {border-top: 2px solid #000; padding-bottom: 30px;}"
       ],
       "name": "Baggie Desktop",
       "settings": {
