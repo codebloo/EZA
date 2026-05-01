@@ -1968,7 +1968,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Not our words... An EZ-A customer. They had <br/>enough energy to make a review on the spot.</p>",
+                    "text": "<p>Not our words... An EZ-A customer. They had enough energy to make a review on the spot.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2926,8 +2926,8 @@
                   "name": "t:names.heading",
                   "settings": {
                     "text": "<h2><strong>Other nootropics require faith. EZ-A requires about 20 minutes.</strong></h2>",
-                    "width": "fit-content",
-                    "max_width": "normal",
+                    "width": "100%",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "h1",
                     "font": "var(--font-body--family)",
