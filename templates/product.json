@@ -3069,7 +3069,7 @@
       "custom_css": [
         "h2 {font-size: 24px;}",
         "@media (min-width: 768px) {h2 {font-size: 36px; max-width: 33ch; }}",
-        ".section-content-wrapper{padding-bottom:32px;}"
+        ".section-content-wrapper {padding-bottom: 32px;}"
       ],
       "name": "Nootropics",
       "settings": {
@@ -3629,7 +3629,8 @@
         "@media (min-width: 768px) {.baggie-desktop .custom-section-content {padding: 80px 0; margin: 0 auto; max-width: 100%; width: 1022px; }}",
         ".details__header {font-weight: 700;}",
         ".h5 p {color: #7c7c7c;}",
-        "@media (max-width: 768px) {.baggie-desktop {padding-bottom: 32px; }}"
+        "@media (max-width: 768px) {.baggie-desktop {padding-bottom: 32px; }}",
+        ".accordion-bold{border-top:2px solid #000;}"
       ],
       "name": "Baggie Desktop",
       "settings": {
