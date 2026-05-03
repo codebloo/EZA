@@ -853,5 +853,7 @@ slideshow-arrows{mix-blend-mode:unset;}
   border-radius:100%;
   display:flex;
   justify-content:center;
+  margin:0 16px;
   padding:0;
 }
+.slideshow-control--style-arrows_large .svg-wrapper{width:24px;}
