@@ -3804,8 +3804,7 @@
         }
       },
       "custom_css": [
-        ".section--page-width {margin: 0 auto 32px; max-width: 100%; width: 1080px;}",
-        ".product-form-buttons {display: none;}"
+        ".section--page-width {margin: 0 auto 32px; max-width: 100%; width: 1080px;}"
       ],
       "name": "EZ-A Featured Product",
       "settings": {
@@ -3817,7 +3816,7 @@
         "gap": 16,
         "color_scheme": "",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 32
       }
     },
     "eza_section_zt78Qe": {
