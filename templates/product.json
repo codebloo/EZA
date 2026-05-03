@@ -694,7 +694,18 @@
             },
             "recharge_subscriptions_subscription_widget_v2_tt9agE": {
               "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+              "disabled": true,
               "settings": {}
+            },
+            "eza_recharge_dkx3Ld": {
+              "type": "eza-recharge",
+              "name": "EZAReCharge Widget",
+              "settings": {
+                "one_time_title": "One-time Purchase",
+                "subscrition_title": "Subscribe & Save",
+                "subscrition_benefdits": "Free Shipping · Cancel Anytime ·"
+              },
+              "blocks": {}
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
@@ -1172,6 +1183,7 @@
             "eza_group_GDthVV",
             "eza_variant_picker_PQdjDR",
             "recharge_subscriptions_subscription_widget_v2_tt9agE",
+            "eza_recharge_dkx3Ld",
             "buy_buttons_eYQEYi",
             "eza_group_4ttqcC",
             "accordion_FE3WNP"
