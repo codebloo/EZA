@@ -849,7 +849,7 @@ line-height: normal;}
 slideshow-arrows{mix-blend-mode:unset;}
 slideshow-arrows .slideshow-control--style-arrows_large{
   align-items:center;
-  background-color:#00000030;
+  background-color:#00000030!important;
   border-radius:100%;
   display:flex;
   justify-content:center;
