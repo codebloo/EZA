@@ -2,15 +2,19 @@
 //
 // Mobile sticky condensed product header for EZ-A (Horizon theme).
 //
-// Stuck behavior uses position:fixed on the inner bar (with a spacer
-// in the wrapper to preserve layout) instead of position:sticky, so
-// the bar stays pinned indefinitely once stuck — it doesn't unstick
-// at the bottom of .product-information.
+// Stuck behavior uses position:fixed on the inner bar with a spacer in
+// the wrapper to preserve layout. The spacer is measured eagerly on
+// init so the bar stays pinned for the entire scroll, not just until
+// the section bottoms out.
 
 class StickyProductBar extends HTMLElement {
   static MOBILE_QUERY = '(max-width: 749px)';
   static STUCK_CLASS = 'is-stuck';
   static CTA_CLASS = 'show-cta';
+
+  static DEFAULT_TRIGGER_SELECTOR =
+    "subscription-selector, .vpv-sub-selector, " +
+    "[ref='addToCartButton'], button[name='add'], .product-form__submit";
 
   constructor() {
     super();
@@ -19,6 +23,7 @@ class StickyProductBar extends HTMLElement {
     this.handleHeaderResize = this.handleHeaderResize.bind(this);
     this.handleInnerResize = this.handleInnerResize.bind(this);
     this.headerOffset = 0;
+    this.naturalHeight = 0;
   }
 
   connectedCallback() {
@@ -40,8 +45,8 @@ class StickyProductBar extends HTMLElement {
   init() {
     this.teardown();
 
-    // Reposition into .product-information so we render at the top of the
-    // section regardless of where Liquid put us.
+    // Reposition into .product-information so we render at the top of
+    // the section regardless of where Liquid put us.
     const productInfo = this.closest('.product-information');
     if (productInfo && productInfo.firstElementChild !== this) {
       productInfo.insertBefore(this, productInfo.firstElementChild);
@@ -51,7 +56,14 @@ class StickyProductBar extends HTMLElement {
     this.inner = this.querySelector('.sticky-product-bar__inner');
     this.shopNowBtn = this.querySelector('[data-shop-now]');
 
-    // ---- Track inner's natural height (used as wrapper's min-height when stuck) ----
+    // ---- Capture natural height EAGERLY ----
+    // This must happen before any sticky logic runs, otherwise the
+    // wrapper has no min-height when stuck and collapses, causing the
+    // sentinel to re-enter view and the bar to unstick.
+    this.captureNaturalHeight();
+
+    // Re-capture on resize, but only when not stuck (otherwise we'd
+    // overwrite the natural height with the condensed-state height).
     if (this.inner && 'ResizeObserver' in window) {
       this.innerResizeObserver = new ResizeObserver(this.handleInnerResize);
       this.innerResizeObserver.observe(this.inner);
@@ -74,18 +86,17 @@ class StickyProductBar extends HTMLElement {
     }
     this.updateHeaderOffset();
 
-    // ---- Inline ATC reference ----
-    const atcSelector =
-      this.dataset.atcSelector ||
-      "[ref='addToCartButton'], button[name='add'], .product-form__submit";
-    this.inlineAtc = document.querySelector(atcSelector);
+    // ---- Inline purchase trigger reference ----
+    const triggerSelector =
+      this.dataset.atcSelector || StickyProductBar.DEFAULT_TRIGGER_SELECTOR;
+    this.inlineTrigger = document.querySelector(triggerSelector);
 
     // ---- Observer 1: stuck state ----
     this.attachStuckObserver();
 
-    // ---- Observer 2: ATC visibility ----
-    if (this.inlineAtc) {
-      this.atcObserver = new IntersectionObserver(
+    // ---- Observer 2: trigger visibility ----
+    if (this.inlineTrigger) {
+      this.triggerObserver = new IntersectionObserver(
         ([entry]) => {
           const scrolledPast =
             !entry.isIntersecting && entry.boundingClientRect.top < 0;
@@ -93,17 +104,32 @@ class StickyProductBar extends HTMLElement {
         },
         { threshold: 0 }
       );
-      this.atcObserver.observe(this.inlineAtc);
+      this.triggerObserver.observe(this.inlineTrigger);
     } else {
       this.toggleCta(false);
       console.warn(
-        '[sticky-product-bar] No inline add-to-cart button found. ' +
+        '[sticky-product-bar] No inline purchase trigger found. ' +
+          'Looked for: ' + triggerSelector + '. ' +
           'Update data-atc-selector on the element.'
       );
     }
 
     if (this.shopNowBtn) {
       this.shopNowBtn.addEventListener('click', this.handleShopNowClick);
+    }
+  }
+
+  captureNaturalHeight() {
+    if (!this.inner) return;
+    // Force layout so we get a real measurement even if init runs early.
+    const h = this.inner.offsetHeight || this.inner.getBoundingClientRect().height;
+    if (h > 0) {
+      this.naturalHeight = Math.round(h);
+      this.style.setProperty('--bar-natural-height', `${this.naturalHeight}px`);
+    } else {
+      // Inner not yet laid out (deferred subtree, fonts loading, etc.).
+      // Try again on the next frame.
+      requestAnimationFrame(() => this.captureNaturalHeight());
     }
   }
 
@@ -131,13 +157,16 @@ class StickyProductBar extends HTMLElement {
   }
 
   handleInnerResize() {
-    // Only capture natural height when NOT stuck — otherwise we'd record
-    // the condensed-state height as the spacer size and content below
-    // would shift up when the bar pinned.
-    if (!this.classList.contains(StickyProductBar.STUCK_CLASS) && this.inner) {
+    // Only re-measure when NOT stuck. When stuck, the inner is in its
+    // condensed state and we'd shrink the spacer, breaking the layout.
+    if (
+      !this.classList.contains(StickyProductBar.STUCK_CLASS) &&
+      this.inner
+    ) {
       const h = this.inner.offsetHeight;
       if (h > 0) {
-        this.style.setProperty('--bar-natural-height', `${h}px`);
+        this.naturalHeight = Math.round(h);
+        this.style.setProperty('--bar-natural-height', `${this.naturalHeight}px`);
       }
     }
   }
@@ -158,7 +187,7 @@ class StickyProductBar extends HTMLElement {
 
   teardown() {
     this.stuckObserver?.disconnect();
-    this.atcObserver?.disconnect();
+    this.triggerObserver?.disconnect();
     this.headerResizeObserver?.disconnect();
     this.headerStateObserver?.disconnect();
     this.innerResizeObserver?.disconnect();
