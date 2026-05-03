@@ -2753,8 +2753,8 @@
           "settings": {
             "image": "shopify://shop_images/focus.png",
             "link": "",
-            "image_ratio": "adapt",
-            "width": "fit-content",
+            "image_ratio": "square",
+            "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
