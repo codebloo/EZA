@@ -3752,7 +3752,8 @@
               "settings": {
                 "one_time_title": "One-time Purchase",
                 "subscrition_title": "Subscribe & Save",
-                "subscrition_benefdits": "Free Shipping · Cancel Anytime ·"
+                "subscrition_benefdits": "Free Shipping · Cancel Anytime ·",
+                "redirect_to_checkout": true
               },
               "blocks": {}
             }
