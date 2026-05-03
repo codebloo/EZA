@@ -1714,7 +1714,7 @@
       "custom_css": [
         ".button:not(.button-secondary) {background: linear-gradient( 180deg, var(--Color-System-Hi-Lite, #fff200) 0%, #ccc200 12%, var(--Color-System-Hi-Lite, #fff200) 72.12% ); box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); color: #000; justify-content: center;}",
         ".inner-group {width: 451px;}",
-        ".desktop-home-hero{height:638px;}"
+        ".section-content-wrapper.section-content-wrapper {height: 638px;}"
       ],
       "name": "Desktop hero",
       "settings": {
