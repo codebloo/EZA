@@ -54,7 +54,7 @@
   }
 
   .sticky-product-bar__stars {
-    color: #f5c518; /* swap for your brand's review-star colour */
+    color: #f5c518; 
     letter-spacing: 0.04em;
     font-size: 1em;
   }
@@ -65,7 +65,7 @@
   }
 
   .sticky-product-bar__count {
-    color: #1453e5; /* your link colour from the screenshot */
+    color: #1453e5; 
             white-space: nowrap;
     text-decoration: underline;
   }
