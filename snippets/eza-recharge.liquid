@@ -19,12 +19,13 @@
     {%- assign initial_savings = initial_variant.price | minus: initial_allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
   {%- endif -%}
 
-  <subscription-selector
-    class="vpv-sub-selector"
-    data-section-id="{{ section_id }}"
-    data-product-id="{{ product.id }}"
-    {% if block %}{{ block.shopify_attributes }}{% endif %}
-  >
+ <subscription-selector
+  class="vpv-sub-selector"
+  data-section-id="{{ section_id }}"
+  data-product-id="{{ product.id }}"
+  {% if block.settings.redirect_to_checkout %}data-redirect-to-checkout{% endif %}
+  {% if block %}{{ block.shopify_attributes }}{% endif %}
+>
     <script type="application/json" data-variant-data>
     {
       {%- for variant in product.variants -%}
