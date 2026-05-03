@@ -66,6 +66,7 @@
 
   .sticky-product-bar__count {
     color: #1453e5; /* your link colour from the screenshot */
+            white-space: nowrap;
     text-decoration: underline;
   }
 
