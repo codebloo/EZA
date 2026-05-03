@@ -357,26 +357,33 @@
     console.log('[sub-selector] ATC success', data);
 
     // Wrap dispatch in try/catch so a Horizon component error doesn't break us
-    try {
-      document.dispatchEvent(new CustomEvent('cart:update', {
-        bubbles: true,
-        detail: {
-          source: 'subscription-selector',
-          data: { ...data, sections: data.sections || {} },
-          resource: { ...data, sections: data.sections || {} }
-        }
-      }));
-    } catch (err) {
-      console.warn('[sub-selector] cart:update listener errored', err);
-    }
+    // Redirect to checkout if enabled
+if (this.hasAttribute('data-redirect-to-checkout')) {
+  const root = window.Shopify?.routes?.root || '/';
+  window.location.href = `${root}checkout`;
+  return;
+}
 
-    // Open the cart drawer — Horizon's drawer typically refetches on open
-    const drawer = document.querySelector('cart-drawer-component, cart-drawer, [data-cart-drawer]');
-    if (drawer) {
-      if (typeof drawer.open === 'function') drawer.open();
-      else if (typeof drawer.show === 'function') drawer.show();
-      else drawer.setAttribute('open', '');
+// Otherwise update the cart UI in place
+try {
+  document.dispatchEvent(new CustomEvent('cart:update', {
+    bubbles: true,
+    detail: {
+      source: 'subscription-selector',
+      data: { ...data, sections: data.sections || {} },
+      resource: { ...data, sections: data.sections || {} }
     }
+  }));
+} catch (err) {
+  console.warn('[sub-selector] cart:update listener errored', err);
+}
+
+const drawer = document.querySelector('cart-drawer-component, cart-drawer, [data-cart-drawer]');
+if (drawer) {
+  if (typeof drawer.open === 'function') drawer.open();
+  else if (typeof drawer.show === 'function') drawer.show();
+  else drawer.setAttribute('open', '');
+}
   } catch (err) {
     console.error('[sub-selector] Submit error', err);
     alert('Could not add to cart. Please try again.');
