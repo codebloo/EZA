@@ -159,6 +159,7 @@
 }
 
 .sticky-product-bar.is-stuck .sticky-product-bar__inner {
+  background-color:var(--white);
   position: fixed;
   top: var(--sticky-bar-top, 0px);
   left: 0;
