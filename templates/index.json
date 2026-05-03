@@ -3804,8 +3804,8 @@
         }
       },
       "custom_css": [
-        ".section--page-width {margin: 0 auto; max-width: 100%; width: 1080px;}",
-        ".product-form-buttons{display:none;}"
+        ".section--page-width {margin: 0 auto 32px; max-width: 100%; width: 1080px;}",
+        ".product-form-buttons {display: none;}"
       ],
       "name": "EZ-A Featured Product",
       "settings": {
