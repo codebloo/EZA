@@ -835,7 +835,7 @@
         "color_scheme": "scheme-6",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/IMG_Hero.png",
+        "background_image": "shopify://shop_images/eza-back-pcoket-mobile_750x1434_151f589b-3c37-4e1e-b674-b98191cb4617.jpg",
         "background_image_position": "cover",
         "border": "none",
         "border_width": 1,
@@ -3754,6 +3754,8 @@
               "settings": {
                 "one_time_title": "One-time Purchase",
                 "subscrition_title": "Subscribe & Save",
+                "units_per_pack": 12,
+                "unit_label": "capsule",
                 "subscrition_benefdits": "Free Shipping · Cancel Anytime ·",
                 "redirect_to_checkout": true
               },
