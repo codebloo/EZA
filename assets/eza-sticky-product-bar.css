@@ -149,3 +149,26 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ---------- Stuck state ---------- */
+.sticky-product-bar.is-stuck {
+  /* Reserve the natural-height space so layout below stays put */
+  min-height: var(--bar-natural-height, 0px);
+  height: var(--bar-natural-height, 0px);
+}
+
+.sticky-product-bar.is-stuck .sticky-product-bar__inner {
+  position: fixed;
+  top: var(--sticky-bar-top, 0px);
+  left: 0;
+  right: 0;
+  /* Stay above page content; header is z-index 100ish so 99 keeps us
+     just under the persistent header but above all section content */
+  z-index: 99;
+  padding-block: 0.625rem;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  transition:
+    padding 220ms ease,
+    box-shadow 200ms ease 220ms;
+}
