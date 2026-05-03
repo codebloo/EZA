@@ -847,13 +847,13 @@ line-height: normal;}
 
 
 slideshow-arrows{mix-blend-mode:unset;}
-slideshow-arrows .slideshow-control .slideshow-control--style-arrows_large{
+slideshow-arrows .slideshow-control--style-arrows_large{
   align-items:center;
   background-color:#00000030;
   border-radius:100%;
   display:flex;
   justify-content:center;
   margin:0 16px;
-  padding:0;
+  padding:0!important;
 }
 .slideshow-control--style-arrows_large .svg-wrapper{width:24px;}
