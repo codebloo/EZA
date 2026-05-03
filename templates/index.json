@@ -3616,7 +3616,7 @@
             "large_first_image": false,
             "icons_style": "chevron",
             "slideshow_controls_style": "dots",
-            "slideshow_mobile_controls_style": "dots",
+            "slideshow_mobile_controls_style": "hint",
             "thumbnail_position": "bottom",
             "thumbnail_width": 64,
             "aspect_ratio": "1",
