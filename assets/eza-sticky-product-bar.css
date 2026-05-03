@@ -9,6 +9,8 @@
   display: block;
   position: relative; /* fallback when not in mobile media query */
   background: var(--color-background, #fff);
+  margin-left:-24px;
+  margin-right:-24px;
 }
 
 .sticky-product-bar__sentinel {
@@ -25,6 +27,7 @@
      top: var(--sticky-bar-top, 0px); 
     z-index: 5; /* below header drawer (Horizon header is typically 10+) */
     transition: box-shadow 250ms ease;
+    
 
   }
 
@@ -33,7 +36,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 3px 0;
+    padding: 3px 24px;
     transition: padding 220ms ease;
   }
 
