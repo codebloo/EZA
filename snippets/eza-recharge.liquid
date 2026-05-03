@@ -1,12 +1,16 @@
 {% comment %}
   snippets/subscription-selector.liquid
 
-  Listens to a sibling <variant-picker> element (matched by section_id +
-  product_id) for variant changes. Submits via fetch — no <form> element.
+  Listens to a sibling <variant-picker> element (matched by product_id within
+  the closest shopify-section ancestor) for variant changes. Submits via fetch.
+
+  Per-unit pricing: derives capsule count from the variant title's leading
+  number (e.g. "1-Pack" → 1 × 12 = 12 capsules). Override per variant with
+  the metafield `custom.units_per_pack` (number).
 
   Usage:
     {% render 'subscription-selector',
-       product:    section.settings.product,
+       product:    section.settings.product | default: product,
        section_id: section.id,
        block:      block %}
 {% endcomment %}
@@ -19,26 +23,45 @@
     {%- assign initial_savings = initial_variant.price | minus: initial_allocation.price | times: 100.0 | divided_by: initial_variant.price | round: 0 -%}
   {%- endif -%}
 
- <subscription-selector
-  class="vpv-sub-selector"
-  data-section-id="{{ section_id }}"
-  data-product-id="{{ product.id }}"
-  {% if block.settings.redirect_to_checkout %}data-redirect-to-checkout{% endif %}
-  {% if block %}{{ block.shopify_attributes }}{% endif %}
->
+  {%- assign units_per_pack_default = block.settings.units_per_pack | default: 12 -%}
+  {%- assign unit_label = block.settings.unit_label | default: 'capsule' -%}
+
+  <subscription-selector
+    class="vpv-sub-selector"
+    data-section-id="{{ section_id }}"
+    data-product-id="{{ product.id }}"
+    data-unit-label="{{ unit_label | escape }}"
+    {% if block.settings.redirect_to_checkout %}data-redirect-to-checkout{% endif %}
+    {% if block %}{{ block.shopify_attributes }}{% endif %}
+  >
     <script type="application/json" data-variant-data>
     {
       {%- for variant in product.variants -%}
+        {%- comment -%} Resolve units: metafield → "N-Pack" title × default → default {%- endcomment -%}
+        {%- assign units = variant.metafields.custom.units_per_pack | default: 0 -%}
+        {%- if units == 0 -%}
+          {%- assign title_first = variant.title | split: '-' | first | strip -%}
+          {%- assign parsed_packs = title_first | times: 1 -%}
+          {%- if parsed_packs > 0 -%}
+            {%- assign units = parsed_packs | times: units_per_pack_default -%}
+          {%- else -%}
+            {%- assign units = units_per_pack_default -%}
+          {%- endif -%}
+        {%- endif -%}
+
         "{{ variant.id }}": {
           "id": {{ variant.id }},
           "available": {{ variant.available }},
+          "price": {{ variant.price }},
           "price_formatted": {{ variant.price | money | json }},
+          "units": {{ units }},
           "options": {{ variant.options | json }},
           "plans": [
             {%- for allocation in variant.selling_plan_allocations -%}
               {
                 "id": {{ allocation.selling_plan.id }},
                 "name": {{ allocation.selling_plan.name | json }},
+                "price": {{ allocation.price }},
                 "price_formatted": {{ allocation.price | money | json }},
                 "savings_percent": {%- if variant.price > 0 -%}{{ variant.price | minus: allocation.price | times: 100.0 | divided_by: variant.price | round: 0 }}{%- else -%}0{%- endif -%}
               }{%- unless forloop.last -%},{%- endunless -%}
@@ -56,17 +79,17 @@
       <label class="vpv-sub-selector__row">
         <input type="radio" name="vpv-purchase-{{ section_id }}" value="" checked data-purchase-type>
         <span class="vpv-sub-selector__info">
-          <span class="vpv-sub-selector__title">{{block.settings.one_time_title}}</span>
-          <span class="vpv-sub-selector__price" data-onetime-price>{{ initial_variant.price | money }}</span>
+          <span class="vpv-sub-selector__title">One-time Purchase</span>
+          <span class="vpv-sub-selector__price">
+            <span data-onetime-price>{{ initial_variant.price | money }}</span>
+            <span class="vpv-sub-selector__per-unit" data-per-unit-onetime hidden></span>
+          </span>
         </span>
         <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
       </label>
       <div class="vpv-sub-selector__expanded">
-        <button type="button" class="vpv-sub-selector__atc has-gradient button" data-atc>
-          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.8C0 0.3584 0.36 0 0.8032 0H2.0072C2.672 0 3.2112 0.5376 3.2112 1.2V1.648L13.2704 2.3744C13.972 2.4184 14.4864 3.0488 14.388 3.7424L13.6952 8.5696C13.6537 8.85585 13.5104 9.11756 13.2916 9.30679C13.0729 9.49602 12.7932 9.60011 12.504 9.6H3.2112V11.2H11.2456C11.5614 11.1994 11.8742 11.2609 12.1661 11.3812C12.4581 11.5015 12.7235 11.6781 12.9472 11.901C13.1709 12.1239 13.3484 12.3886 13.4698 12.6801C13.5911 12.9717 13.6539 13.2842 13.6544 13.6C13.6544 14.9256 12.576 16 11.2464 16C10.862 16.0006 10.483 15.909 10.1413 15.7328C9.79963 15.5567 9.50516 15.3012 9.28261 14.9877C9.06006 14.6743 8.91592 14.312 8.8623 13.9314C8.80867 13.5507 8.84711 13.1627 8.9744 12.8H4.68C4.80729 13.1627 4.84573 13.5507 4.7921 13.9314C4.73847 14.312 4.59434 14.6743 4.37179 14.9877C4.14924 15.3012 3.85477 15.5567 3.51307 15.7328C3.17137 15.909 2.79242 16.0006 2.408 16C2.0923 16.0005 1.77959 15.9389 1.48772 15.8185C1.19586 15.6982 0.930546 15.5216 0.706943 15.2987C0.483339 15.0758 0.305821 14.8111 0.184523 14.5197C0.063226 14.2282 0.000524851 13.9157 0 13.6C0 12.5552 0.6704 11.6656 1.6056 11.336V2.408V1.6H0.8032C0.697932 1.60021 0.593654 1.57968 0.496319 1.53959C0.398984 1.4995 0.310498 1.44064 0.235914 1.36635C0.16133 1.29206 0.102108 1.20381 0.06163 1.10664C0.0211518 1.00946 0.000209905 0.905267 0 0.8ZM3.2112 3.2512V8H12.1552L12.7368 3.944L3.2112 3.2512ZM10.4432 13.6C10.4432 13.1584 10.8024 12.8 11.2456 12.8C11.6888 12.8 12.0488 13.1584 12.0488 13.6C12.0488 14.0416 11.6888 14.4 11.2456 14.4C11.0331 14.4002 10.8293 14.3161 10.6788 14.1661C10.5284 14.0161 10.4436 13.8125 10.4432 13.6ZM1.6056 13.6C1.6056 13.1584 1.9656 12.8 2.4088 12.8C2.852 12.8 3.2112 13.1584 3.2112 13.6C3.2112 14.0416 2.852 14.4 2.4088 14.4C2.30353 14.4002 2.19925 14.3797 2.10192 14.3396C2.00458 14.2995 1.9161 14.2406 1.84151 14.1663C1.76693 14.0921 1.70771 14.0038 1.66723 13.9066C1.62675 13.8095 1.60581 13.7053 1.6056 13.6Z" fill="#FFF200"/>
-</svg>
- Add to Cart - <span data-onetime-price>{{ initial_variant.price | money }}</span>
+        <button type="button" class="vpv-sub-selector__atc" data-atc>
+          Add to Cart — <span data-onetime-price>{{ initial_variant.price | money }}</span>
         </button>
       </div>
     </div>
@@ -82,8 +105,8 @@
           data-sub-radio
         >
         <span class="vpv-sub-selector__info">
-          <span class="vpv-sub-selector__title">{{ block.settings.subscrition_title }}
-            
+          <span class="vpv-sub-selector__title">
+            Subscribe &amp; Save
             <span class="vpv-sub-selector__badge" data-savings-badge {% if initial_savings == 0 %}hidden{% endif %}>
               Save {{ initial_savings }}%
             </span>
@@ -91,13 +114,14 @@
           <span class="vpv-sub-selector__price">
             <strong data-sub-price>{{ initial_allocation.price | money }}</strong>
             <s data-strikethrough-price>{{ initial_variant.price | money }}</s>
+            <span class="vpv-sub-selector__per-unit" data-per-unit-sub hidden></span>
           </span>
         </span>
         <span class="vpv-sub-selector__radio-icon" aria-hidden="true"></span>
       </label>
       <div class="vpv-sub-selector__expanded">
         <p class="vpv-sub-selector__benefits">
-         {{block.settings.subscription_benefits}} <span data-savings-text>{{ initial_savings }}% off</span> Every Order
+          Free Shipping · Cancel Anytime · <span data-savings-text>{{ initial_savings }}% off</span> Every Order
         </p>
         <select class="vpv-sub-selector__frequency" data-frequency-select aria-label="Delivery frequency">
           {%- for allocation in initial_variant.selling_plan_allocations -%}
@@ -107,16 +131,14 @@
             {%- endif -%}
             <option value="{{ allocation.selling_plan.id }}"
                     data-price="{{ allocation.price | money }}"
+                    data-price-cents="{{ allocation.price }}"
                     data-savings="{{ plan_savings }}">
               {{ allocation.selling_plan.name }}
             </option>
           {%- endfor -%}
         </select>
-        <button type="button" class="vpv-sub-selector__atc has-gradient button" data-atc>
-          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.8C0 0.3584 0.36 0 0.8032 0H2.0072C2.672 0 3.2112 0.5376 3.2112 1.2V1.648L13.2704 2.3744C13.972 2.4184 14.4864 3.0488 14.388 3.7424L13.6952 8.5696C13.6537 8.85585 13.5104 9.11756 13.2916 9.30679C13.0729 9.49602 12.7932 9.60011 12.504 9.6H3.2112V11.2H11.2456C11.5614 11.1994 11.8742 11.2609 12.1661 11.3812C12.4581 11.5015 12.7235 11.6781 12.9472 11.901C13.1709 12.1239 13.3484 12.3886 13.4698 12.6801C13.5911 12.9717 13.6539 13.2842 13.6544 13.6C13.6544 14.9256 12.576 16 11.2464 16C10.862 16.0006 10.483 15.909 10.1413 15.7328C9.79963 15.5567 9.50516 15.3012 9.28261 14.9877C9.06006 14.6743 8.91592 14.312 8.8623 13.9314C8.80867 13.5507 8.84711 13.1627 8.9744 12.8H4.68C4.80729 13.1627 4.84573 13.5507 4.7921 13.9314C4.73847 14.312 4.59434 14.6743 4.37179 14.9877C4.14924 15.3012 3.85477 15.5567 3.51307 15.7328C3.17137 15.909 2.79242 16.0006 2.408 16C2.0923 16.0005 1.77959 15.9389 1.48772 15.8185C1.19586 15.6982 0.930546 15.5216 0.706943 15.2987C0.483339 15.0758 0.305821 14.8111 0.184523 14.5197C0.063226 14.2282 0.000524851 13.9157 0 13.6C0 12.5552 0.6704 11.6656 1.6056 11.336V2.408V1.6H0.8032C0.697932 1.60021 0.593654 1.57968 0.496319 1.53959C0.398984 1.4995 0.310498 1.44064 0.235914 1.36635C0.16133 1.29206 0.102108 1.20381 0.06163 1.10664C0.0211518 1.00946 0.000209905 0.905267 0 0.8ZM3.2112 3.2512V8H12.1552L12.7368 3.944L3.2112 3.2512ZM10.4432 13.6C10.4432 13.1584 10.8024 12.8 11.2456 12.8C11.6888 12.8 12.0488 13.1584 12.0488 13.6C12.0488 14.0416 11.6888 14.4 11.2456 14.4C11.0331 14.4002 10.8293 14.3161 10.6788 14.1661C10.5284 14.0161 10.4436 13.8125 10.4432 13.6ZM1.6056 13.6C1.6056 13.1584 1.9656 12.8 2.4088 12.8C2.852 12.8 3.2112 13.1584 3.2112 13.6C3.2112 14.0416 2.852 14.4 2.4088 14.4C2.30353 14.4002 2.19925 14.3797 2.10192 14.3396C2.00458 14.2995 1.9161 14.2406 1.84151 14.1663C1.76693 14.0921 1.70771 14.0038 1.66723 13.9066C1.62675 13.8095 1.60581 13.7053 1.6056 13.6Z" fill="#FFF200"/>
-</svg>
- Add to Cart - <span data-sub-price>{{ initial_allocation.price | money }}</span>
+        <button type="button" class="vpv-sub-selector__atc" data-atc>
+          Add to Cart — <span data-sub-price>{{ initial_allocation.price | money }}</span>
         </button>
       </div>
     </div>
@@ -128,9 +150,11 @@
         connectedCallback() {
           this.sectionId = this.dataset.sectionId;
           this.productId = this.dataset.productId;
+          this.unitLabel = this.dataset.unitLabel || 'unit';
           this.variantIdInput = this.querySelector('[data-variant-id]');
           this.frequencySelect = this.querySelector('[data-frequency-select]');
           this.subRadio = this.querySelector('[data-sub-radio]');
+          this.currentVariant = null;
 
           try {
             this.variantData = JSON.parse(this.querySelector('[data-variant-data]').textContent);
@@ -147,6 +171,7 @@
           console.log('[sub-selector] connected', {
             sectionId: this.sectionId,
             productId: this.productId,
+            unitLabel: this.unitLabel,
             variantCount: Object.keys(this.variantData).length
           });
 
@@ -162,124 +187,117 @@
           this.observer?.disconnect();
         }
 
-     bindToVariantPicker() {
-  const tryBind = (attempt = 1) => {
-    // Find the nearest shopify-section ancestor — both variant-picker
-    // and subscription-selector should live inside it
-    const sectionAncestor = this.closest('[id^="shopify-section"]');
-    const scope = sectionAncestor || document;
+        bindToVariantPicker() {
+          const tryBind = (attempt = 1) => {
+            const sectionAncestor = this.closest('[id^="shopify-section"]');
+            const scope = sectionAncestor || document;
 
-    // Match by product ID only, scoped to the same section
-    this.variantPicker = scope.querySelector(
-      `variant-picker[data-product-id="${this.productId}"]`
-    );
+            this.variantPicker = scope.querySelector(
+              `variant-picker[data-product-id="${this.productId}"]`
+            );
 
-    // Fallback: any variant-picker for this product anywhere on the page
-    if (!this.variantPicker) {
-      this.variantPicker = document.querySelector(
-        `variant-picker[data-product-id="${this.productId}"]`
-      );
-    }
+            if (!this.variantPicker) {
+              this.variantPicker = document.querySelector(
+                `variant-picker[data-product-id="${this.productId}"]`
+              );
+            }
 
-    if (!this.variantPicker) {
-      console.warn('[sub-selector] variant-picker not found', {
-        attempt,
-        productId: this.productId,
-        sectionAncestor: sectionAncestor?.id,
-        allPickers: Array.from(document.querySelectorAll('variant-picker')).map(p => ({
-          sectionId: p.dataset.sectionId,
-          productId: p.dataset.productId
-        }))
-      });
-      return false;
-    }
+            if (!this.variantPicker) {
+              console.warn('[sub-selector] variant-picker not found', {
+                attempt,
+                productId: this.productId,
+                sectionAncestor: sectionAncestor?.id
+              });
+              return false;
+            }
 
-    console.log('[sub-selector] variant-picker bound', {
-      pickerSectionId: this.variantPicker.dataset.sectionId,
-      sectionAncestor: sectionAncestor?.id
-    });
+            console.log('[sub-selector] variant-picker bound', {
+              pickerSectionId: this.variantPicker.dataset.sectionId,
+              sectionAncestor: sectionAncestor?.id
+            });
 
-    // 1. Capture-phase change listener
-    this.variantPicker.addEventListener('change', (e) => {
-      if (e.target.matches('input[type="radio"]')) {
-        console.log('[sub-selector] change captured', e.target.value);
-        requestAnimationFrame(() => this.handleVariantChange('change'));
-      }
-    }, true);
+            // 1. Capture-phase change listener
+            this.variantPicker.addEventListener('change', (e) => {
+              if (e.target.matches('input[type="radio"]')) {
+                requestAnimationFrame(() => this.handleVariantChange('change'));
+              }
+            }, true);
 
-    // 2. Click fallback
-    this.variantPicker.addEventListener('click', (e) => {
-      if (e.target.matches('input[type="radio"]')) {
-        requestAnimationFrame(() => this.handleVariantChange('click'));
-      }
-    }, true);
+            // 2. Click fallback
+            this.variantPicker.addEventListener('click', (e) => {
+              if (e.target.matches('input[type="radio"]')) {
+                requestAnimationFrame(() => this.handleVariantChange('click'));
+              }
+            }, true);
 
-    // 3. MutationObserver fallback
-    this.observer = new MutationObserver(() => this.handleVariantChange('mutation'));
-    this.variantPicker.querySelectorAll('input[type="radio"]').forEach(input => {
-      this.observer.observe(input, {
-        attributes: true,
-        attributeFilter: ['data-current-checked', 'checked']
-      });
-    });
+            // 3. MutationObserver fallback
+            this.observer = new MutationObserver(() => this.handleVariantChange('mutation'));
+            this.variantPicker.querySelectorAll('input[type="radio"]').forEach(input => {
+              this.observer.observe(input, {
+                attributes: true,
+                attributeFilter: ['data-current-checked', 'checked']
+              });
+            });
 
-    this.handleVariantChange('initial');
-    return true;
-  };
+            this.handleVariantChange('initial');
+            return true;
+          };
 
-  if (!tryBind(1)) {
-    requestAnimationFrame(() => {
-      if (!tryBind(2)) {
-        setTimeout(() => tryBind(3), 500);
-      }
-    });
-  }
-}
+          if (!tryBind(1)) {
+            requestAnimationFrame(() => {
+              if (!tryBind(2)) {
+                setTimeout(() => tryBind(3), 500);
+              }
+            });
+          }
+        }
 
         handleVariantChange(source = 'unknown') {
           if (!this.variantPicker) return;
 
           const checked = this.variantPicker.querySelectorAll('input[type="radio"]:checked');
-          if (checked.length === 0) {
-            console.log('[sub-selector] no checked radios in variant-picker');
-            return;
-          }
+          if (checked.length === 0) return;
 
           let variant;
-          // Prefer data-variant-id on the most recently changed radio
           const lastChecked = checked[checked.length - 1];
           if (lastChecked.dataset.variantId && this.variantData[lastChecked.dataset.variantId]) {
             variant = this.variantData[lastChecked.dataset.variantId];
           } else {
-            // Fall back to option-value lookup
             const values = Array.from(checked).map(i => i.value);
             variant = this.variantsByOptions[values.join('|')];
           }
 
           if (!variant) {
-            console.warn('[sub-selector] could not resolve variant', {
-              source,
-              checkedValues: Array.from(checked).map(i => ({ value: i.value, dataVariantId: i.dataset.variantId })),
-              availableLookupKeys: Object.keys(this.variantsByOptions)
-            });
+            console.warn('[sub-selector] could not resolve variant', { source });
             return;
           }
 
-          console.log('[sub-selector] variant resolved', { source, variantId: variant.id });
-
+          this.currentVariant = variant;
           this.variantIdInput.value = variant.id;
           this.renderForVariant(variant);
         }
 
         renderForVariant(variant) {
+          // Update one-time prices
           this.querySelectorAll('[data-onetime-price], [data-strikethrough-price]').forEach(el => {
             el.textContent = variant.price_formatted;
           });
 
+          // Update one-time per-unit price
+          const onetimePerUnit = this.formatPerUnit(variant.price, variant.units);
+          this.querySelectorAll('[data-per-unit-onetime]').forEach(el => {
+            el.textContent = onetimePerUnit;
+            el.hidden = !onetimePerUnit;
+          });
+
+          // Rebuild frequency select for this variant's plans
           if (this.frequencySelect && variant.plans.length > 0) {
             const previous = this.frequencySelect.value;
             this.frequencySelect.innerHTML = variant.plans.map(p => `
-              <option value="${p.id}" data-price="${p.price_formatted}" data-savings="${p.savings_percent}">${this.escape(p.name)}</option>
+              <option value="${p.id}"
+                      data-price="${p.price_formatted}"
+                      data-price-cents="${p.price}"
+                      data-savings="${p.savings_percent}">${this.escape(p.name)}</option>
             `).join('');
             if (Array.from(this.frequencySelect.options).some(o => o.value === previous)) {
               this.frequencySelect.value = previous;
@@ -293,15 +311,17 @@
         }
 
         syncFromFrequency() {
-          const opt = this.frequencySelect.selectedOptions[0];
+          const opt = this.frequencySelect?.selectedOptions[0];
           if (!opt || !this.subRadio) return;
 
           this.subRadio.value = opt.value;
 
+          // Update subscribe price labels
           this.querySelectorAll('[data-sub-price]').forEach(el => {
             el.textContent = opt.dataset.price;
           });
 
+          // Update savings badge / text
           const savings = parseInt(opt.dataset.savings, 10) || 0;
           this.querySelectorAll('[data-savings-badge]').forEach(el => {
             el.textContent = `Save ${savings}%`;
@@ -310,87 +330,107 @@
           this.querySelectorAll('[data-savings-text]').forEach(el => {
             el.textContent = `${savings}% off`;
           });
+
+          // Update subscribe per-unit price
+          if (this.currentVariant) {
+            const subPriceCents = parseInt(opt.dataset.priceCents, 10);
+            const subPerUnit = this.formatPerUnit(subPriceCents, this.currentVariant.units);
+            this.querySelectorAll('[data-per-unit-sub]').forEach(el => {
+              el.textContent = subPerUnit;
+              el.hidden = !subPerUnit;
+            });
+          }
         }
 
-      async handleSubmit(e) {
-  e.preventDefault();
+        formatPerUnit(cents, units) {
+          if (!units || units <= 0 || !cents || cents <= 0) return '';
+          const perUnit = cents / 100 / units;
+          const currency = window.Shopify?.currency?.active || 'USD';
+          try {
+            return `(${new Intl.NumberFormat(undefined, {
+              style: 'currency',
+              currency,
+              minimumFractionDigits: 2
+            }).format(perUnit)}/${this.unitLabel})`;
+          } catch {
+            return `($${perUnit.toFixed(2)}/${this.unitLabel})`;
+          }
+        }
 
-  const variantId = this.variantIdInput.value;
-  if (!variantId) {
-    console.warn('[sub-selector] no variant ID on submit');
-    return;
-  }
+        async handleSubmit(e) {
+          e.preventDefault();
 
-  const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
-  const sellingPlan = checkedPurchase?.value;
+          const variantId = this.variantIdInput.value;
+          if (!variantId) {
+            console.warn('[sub-selector] no variant ID on submit');
+            return;
+          }
 
-  const formData = new FormData();
-  formData.append('id', variantId);
-  formData.append('quantity', '1');
-  if (sellingPlan) formData.append('selling_plan', sellingPlan);
+          const checkedPurchase = this.querySelector(`input[name="vpv-purchase-${this.sectionId}"]:checked`);
+          const sellingPlan = checkedPurchase?.value;
 
-  // Ask Shopify to render Horizon's cart sections in the response so
-  // component-cart-items can update the DOM without crashing
-  formData.append('sections', 'cart-drawer,cart-icon,cart-items');
-  formData.append('sections_url', window.location.pathname);
+          const formData = new FormData();
+          formData.append('id', variantId);
+          formData.append('quantity', '1');
+          if (sellingPlan) formData.append('selling_plan', sellingPlan);
+          formData.append('sections', 'cart-drawer,cart-icon,cart-items');
+          formData.append('sections_url', window.location.pathname);
 
-  console.log('[sub-selector] submitting', { variantId, sellingPlan });
+          console.log('[sub-selector] submitting', { variantId, sellingPlan });
 
-  const buttons = this.querySelectorAll('[data-atc]');
-  buttons.forEach(b => b.disabled = true);
+          const buttons = this.querySelectorAll('[data-atc]');
+          buttons.forEach(b => b.disabled = true);
 
-  try {
-    const root = window.Shopify?.routes?.root || '/';
-    const res = await fetch(`${root}cart/add.js`, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/javascript' }
-    });
-    const data = await res.json();
+          try {
+            const root = window.Shopify?.routes?.root || '/';
+            const res = await fetch(`${root}cart/add.js`, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/javascript' }
+            });
+            const data = await res.json();
 
-    if (!res.ok) {
-      console.warn('[sub-selector] ATC failed', data);
-      alert(data.description || data.message || 'Could not add to cart');
-      return;
-    }
+            if (!res.ok) {
+              console.warn('[sub-selector] ATC failed', data);
+              alert(data.description || data.message || 'Could not add to cart');
+              return;
+            }
 
-    console.log('[sub-selector] ATC success', data);
+            console.log('[sub-selector] ATC success', data);
 
-    // Wrap dispatch in try/catch so a Horizon component error doesn't break us
-    // Redirect to checkout if enabled
-if (this.hasAttribute('data-redirect-to-checkout')) {
-  const root = window.Shopify?.routes?.root || '/';
-  window.location.href = `${root}checkout`;
-  return;
-}
+            // Redirect to checkout if enabled
+            if (this.hasAttribute('data-redirect-to-checkout')) {
+              window.location.href = `${root}checkout`;
+              return;
+            }
 
-// Otherwise update the cart UI in place
-try {
-  document.dispatchEvent(new CustomEvent('cart:update', {
-    bubbles: true,
-    detail: {
-      source: 'subscription-selector',
-      data: { ...data, sections: data.sections || {} },
-      resource: { ...data, sections: data.sections || {} }
-    }
-  }));
-} catch (err) {
-  console.warn('[sub-selector] cart:update listener errored', err);
-}
+            // Otherwise update cart UI in place
+            try {
+              document.dispatchEvent(new CustomEvent('cart:update', {
+                bubbles: true,
+                detail: {
+                  source: 'subscription-selector',
+                  data: { ...data, sections: data.sections || {} },
+                  resource: { ...data, sections: data.sections || {} }
+                }
+              }));
+            } catch (err) {
+              console.warn('[sub-selector] cart:update listener errored', err);
+            }
 
-const drawer = document.querySelector('cart-drawer-component, cart-drawer, [data-cart-drawer]');
-if (drawer) {
-  if (typeof drawer.open === 'function') drawer.open();
-  else if (typeof drawer.show === 'function') drawer.show();
-  else drawer.setAttribute('open', '');
-}
-  } catch (err) {
-    console.error('[sub-selector] Submit error', err);
-    alert('Could not add to cart. Please try again.');
-  } finally {
-    buttons.forEach(b => b.disabled = false);
-  }
-}
+            const drawer = document.querySelector('cart-drawer-component, cart-drawer, [data-cart-drawer]');
+            if (drawer) {
+              if (typeof drawer.open === 'function') drawer.open();
+              else if (typeof drawer.show === 'function') drawer.show();
+              else drawer.setAttribute('open', '');
+            }
+          } catch (err) {
+            console.error('[sub-selector] Submit error', err);
+            alert('Could not add to cart. Please try again.');
+          } finally {
+            buttons.forEach(b => b.disabled = false);
+          }
+        }
 
         escape(str) {
           const d = document.createElement('div');
