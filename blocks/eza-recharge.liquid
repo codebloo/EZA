@@ -1,6 +1,12 @@
- {% render 'eza-recharge',
-       product: section.settings.product,
-       block:   block %}
+
+{%- liquid
+  assign target_product = section.settings.product | default: product
+-%}
+{% render 'eza-recharge',
+   product:    target_product,
+   section_id: section.id,
+   block:      block %}
+
 {% schema %}
 {
   "name": "EZA ReCharge Widget",
