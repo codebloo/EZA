@@ -61,6 +61,7 @@
 
   .sticky-product-bar__rating {
     font-weight: 600;
+            white-space: nowrap;
   }
 
   .sticky-product-bar__count {
