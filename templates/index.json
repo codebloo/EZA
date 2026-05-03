@@ -835,7 +835,7 @@
         "color_scheme": "scheme-6",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/eza-back-pcoket-mobile_750x1434_151f589b-3c37-4e1e-b674-b98191cb4617.jpg",
+        "background_image": "shopify://shop_images/IMG_Hero.png",
         "background_image_position": "cover",
         "border": "none",
         "border_width": 1,
@@ -1682,7 +1682,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/home-hero.png",
+                "image": "shopify://shop_images/eza-back-pocket-desktop_858x1276_460cd40d-895a-4ca7-9f5f-7feac809d9df.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fit-content",
