@@ -857,3 +857,5 @@ slideshow-arrows .slideshow-control--style-arrows_large{
   padding:0!important;
 }
 .slideshow-control--style-arrows_large .svg-wrapper{width:24px;}
+
+.product-media-container.constrain-height:has(.product-media-constraint-wrapper){border-radius:16px;}
