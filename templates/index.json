@@ -8305,6 +8305,7 @@
                 "eza_button_X3mghK": {
                   "type": "eza-button",
                   "name": "EZ-A Button",
+                  "disabled": true,
                   "settings": {
                     "arrow": false,
                     "arrow_color": "white",
