@@ -279,10 +279,10 @@
   ></script>
 {% endif %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section-background color-{{ block.settings.color_scheme }}"></div>
 <aside
-  class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
-  style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;"
+  class="announcement-bar spacing-style section section--{{ block.settings.section_width }} color-{{ block.settings.color_scheme }}"
+  style="{% render 'spacing-padding', settings: block.settings %}; --border-bottom-width: {{ block.settings.divider_width }}px;"
 >
   {% liquid
     assign autoplay = false
@@ -296,7 +296,7 @@
   <announcement-bar-component
     class="announcement-bar__slider"
     {% if autoplay == true %}
-      autoplay="{{ section.settings.speed }}" aria-live="polite"
+      autoplay="{{ block.settings.speed }}" aria-live="polite"
     {% endif %}
   >
     {% if show_arrows %}
