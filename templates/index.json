@@ -3624,7 +3624,7 @@
             "aspect_ratio": "1",
             "constrain_to_viewport": false,
             "media_fit": "cover",
-            "media_radius": 4,
+            "media_radius": 16,
             "extend_media": false,
             "zoom": false,
             "video_loop": false,
