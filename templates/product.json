@@ -150,7 +150,7 @@
             "aspect_ratio": "1",
             "constrain_to_viewport": true,
             "media_fit": "cover",
-            "media_radius": 8,
+            "media_radius": 16,
             "extend_media": false,
             "zoom": true,
             "video_loop": false,
