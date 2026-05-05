@@ -14,6 +14,36 @@
     "header_section": {
       "type": "header",
       "blocks": {
+        "eza_announcement_V6eUUp": {
+          "type": "eza-announcement",
+          "name": "EZA Announcement",
+          "settings": {
+            "speed": 5,
+            "section_width": "page-width",
+            "color_scheme": "scheme-3a5c9ecd-3b1d-49ed-bace-43d50abdc278",
+            "divider_width": 0,
+            "padding-block-start": 15,
+            "padding-block-end": 15
+          },
+          "blocks": {
+            "announcement_t3Ttkc": {
+              "type": "_announcement",
+              "settings": {
+                "text": "<strong>FREE Shipping $50+ · Subscribe & Save 15%</strong>",
+                "link": "",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "weight": "",
+                "letter_spacing": "normal",
+                "case": "none"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "announcement_t3Ttkc"
+          ]
+        },
         "header-logo": {
           "type": "_header-logo",
           "static": true,
@@ -49,6 +79,9 @@
           "blocks": {}
         }
       },
+      "block_order": [
+        "eza_announcement_V6eUUp"
+      ],
       "settings": {
         "mini_nav": "mobile-mini-menu",
         "logo_position": "left",
@@ -93,13 +126,7 @@
             "font_size": "1rem",
             "weight": "",
             "letter_spacing": "normal",
-            "case": "none",
-            "speed": 5,
-            "section_width": "page-width",
-            "color_scheme": "",
-            "divider_width": 0,
-            "padding-block-start": 15,
-            "padding-block-end": 15
+            "case": "none"
           },
           "blocks": {}
         }
