@@ -270,130 +270,8 @@
   {% endif %}
 
 
-
-{% if block.blocks.size > 1 %}
-  <script
-    src="{{ 'announcement-bar.js' | asset_url }}"
-    type="module"
-    fetchpriority="low"
-  ></script>
-{% endif %}
-
-<div class="section-background color-{{ block.settings.color_scheme }}"></div>
-<aside
-  class="announcement-bar spacing-style section section--{{ block.settings.section_width }} color-{{ block.settings.color_scheme }}"
-  style="{% render 'spacing-padding', settings: block.settings %}; --border-bottom-width: {{ block.settings.divider_width }}px;"
->
-  {% liquid
-    assign autoplay = false
-    assign show_arrows = false
-    if section.blocks.size > 1
-      assign autoplay = true
-      assign show_arrows = true
-    endif
-  %}
-
-  <announcement-bar-component
-    class="announcement-bar__slider"
-    {% if autoplay == true %}
-      autoplay="{{ block.settings.speed }}" aria-live="polite"
-    {% endif %}
-  >
-    {% if show_arrows %}
-      {% render 'slideshow-arrows', icon_style: 'chevron' %}
-    {% endif %}
-
-    <div class="announcement-bar__slides">
-      {% content_for 'blocks' %}
-    </div>
-  </announcement-bar-component>
-</aside>
-
-<style>
-  .announcement-bar {
-    border-block-end: var(--border-bottom-width) solid var(--color-border);
-  }
-
-  .announcement-bar__slider {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-
-    @media screen and (max-width: 749px) {
-      grid-column: 1 / -1;
-    }
-  }
-
-  .announcement-bar__slides {
-    display: grid;
-    grid: [stack] auto / [stack] auto;
-    width: calc(100% - var(--button-size) * 2);
-    max-width: 680px;
-    margin-inline: auto;
-  }
-
-  .announcement-bar__slides > * {
-    grid-area: stack;
-  }
-
-  .announcement-bar__slide {
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-
-    &[aria-hidden='true'] {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .announcement-bar__slider slideshow-arrows {
-    padding: 0;
-    mix-blend-mode: normal;
-  }
-
-  .announcement-bar__slider slideshow-arrows .slideshow-control {
-    color: var(--color-foreground);
-  }
-
-  .announcement-bar__slider .slideshow-control {
-    display: flex;
-    padding: 0;
-    width: var(--button-size);
-    height: var(--button-size);
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    animation: none;
-
-    @media screen and (min-width: 750px) {
-      --slideshow-control-offset: calc((var(--button-size) - var(--icon-size-xs)) / 2);
-
-      .section--page-width &.slideshow-control--previous {
-        transform: translateX(var(--slideshow-control-offset));
-      }
-    }
-  }
-
-  .announcement-bar__slider .slideshow-control .svg-wrapper {
-    width: var(--icon-size-xs);
-    height: var(--icon-size-xs);
-  }
-
-  .announcement-bar__slide {
-    place-content: center;
-  }
-
-  .announcement-bar__text:first-child {
-    margin: 0;
-  }
-
-  .announcement-bar__link {
-    position: absolute;
-    inset: 0;
-  }
-</style>
   
-
+{% content_for 'blocks' %}
 
   
 </header-component>
@@ -1221,7 +1099,7 @@
   "presets": [],
   "blocks": [
     {
-    "type":"_announcement"
+    "type":"eza-announcement"
   }
   ]
 }
