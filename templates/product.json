@@ -706,7 +706,7 @@
                 "units_per_pack": 12,
                 "unit_label": "capsule",
                 "subscrition_benefdits": "Free Shipping · Cancel Anytime ·",
-                "redirect_to_checkout": false
+                "redirect_to_checkout": true
               },
               "blocks": {}
             },
