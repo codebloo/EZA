@@ -6,13 +6,6 @@
 // the wrapper to preserve layout. The spacer is measured eagerly on
 // init so the bar stays pinned for the entire scroll, not just until
 // the section bottoms out.
-//
-// Header offset is read from a CSS variable (default
-// `--header-group-height`, set on :root by Horizon) so we stay in sync
-// with the theme's own header sizing — including announcement bar
-// state, sticky header collapse, etc. The header element is still
-// observed as a *trigger* for re-reading the variable; it is no longer
-// the measurement source.
 
 class StickyProductBar extends HTMLElement {
   static MOBILE_QUERY = '(max-width: 749px)';
@@ -22,8 +15,6 @@ class StickyProductBar extends HTMLElement {
   static DEFAULT_TRIGGER_SELECTOR =
     "subscription-selector, .vpv-sub-selector, " +
     "[ref='addToCartButton'], button[name='add'], .product-form__submit";
-
-  static DEFAULT_HEADER_OFFSET_VAR = '--header-group-height';
 
   constructor() {
     super();
@@ -79,12 +70,6 @@ class StickyProductBar extends HTMLElement {
     }
 
     // ---- Header offset ----
-    // The actual offset value comes from the CSS variable
-    // (--header-group-height by default). The header element is only
-    // observed so we know WHEN to re-read it.
-    this.headerOffsetVar =
-      this.dataset.headerOffsetVar || StickyProductBar.DEFAULT_HEADER_OFFSET_VAR;
-
     const headerSelector = this.dataset.headerSelector || '#header-component';
     this.headerEl = document.querySelector(headerSelector);
 
@@ -96,7 +81,7 @@ class StickyProductBar extends HTMLElement {
       this.headerStateObserver = new MutationObserver(this.handleHeaderResize);
       this.headerStateObserver.observe(this.headerEl, {
         attributes: true,
-        attributeFilter: ['data-sticky-state', 'data-scroll-direction', 'class', 'style'],
+        attributeFilter: ['data-sticky-state', 'data-scroll-direction', 'class'],
       });
     }
     this.updateHeaderOffset();
@@ -186,39 +171,13 @@ class StickyProductBar extends HTMLElement {
     }
   }
 
-  /**
-   * Resolve header offset, in priority order:
-   *   1. data-header-offset attribute (manual override, e.g. "70")
-   *   2. CSS variable named by data-header-offset-var
-   *      (default: --header-group-height, set on :root by Horizon)
-   *   3. Header element's bounding rect (last-resort fallback)
-   *   4. 0
-   */
-  resolveHeaderOffset() {
-    // 1. Manual override
-    const manual = parseFloat(this.dataset.headerOffset);
-    if (!Number.isNaN(manual)) return manual;
-
-    // 2. CSS variable
-    const varValue = getComputedStyle(document.documentElement)
-      .getPropertyValue(this.headerOffsetVar)
-      .trim();
-    if (varValue) {
-      const parsed = parseFloat(varValue);
-      if (!Number.isNaN(parsed)) return parsed;
-    }
-
-    // 3. Header element fallback
-    if (this.headerEl) {
-      return this.headerEl.getBoundingClientRect().height;
-    }
-
-    // 4. Nothing to go on
-    return 0;
-  }
-
   updateHeaderOffset() {
-    const offset = Math.round(this.resolveHeaderOffset());
+    let offset = parseInt(this.dataset.headerOffset, 10);
+    if (Number.isNaN(offset)) {
+      offset = this.headerEl
+        ? Math.round(this.headerEl.getBoundingClientRect().height)
+        : 0;
+    }
     if (offset === this.headerOffset) return;
 
     this.headerOffset = offset;
