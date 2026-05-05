@@ -701,6 +701,7 @@
               "type": "eza-recharge",
               "name": "EZAReCharge Widget",
               "settings": {
+                "default_purchase_type": "subscription",
                 "one_time_title": "One-time Purchase",
                 "subscrition_title": "Subscribe & Save",
                 "units_per_pack": 12,
@@ -4075,7 +4076,7 @@
       ],
       "name": "PDP Gallery",
       "settings": {
-        "title": "EZ-A works every day that matters."
+        "title": "EZ-A is there for you every day that matters."
       }
     },
     "eza_section_PkypqV": {
