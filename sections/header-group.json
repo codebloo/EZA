@@ -84,10 +84,38 @@
     "header_announcements_B4HejG": {
       "type": "header-announcements",
       "blocks": {
+        "announcement_PaRF4J": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "30 Day Money Back Guarantee",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_xVjMVc": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "<strong>FREE Shipping $50+</strong>",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
         "announcement_d7kp7W": {
           "type": "_announcement",
           "settings": {
-            "text": "<strong>FREE Shipping $50+ · Subscribe & Save 15%</strong>",
+            "text": "<strong>Subscribe & Save 15%</strong>",
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
@@ -99,6 +127,8 @@
         }
       },
       "block_order": [
+        "announcement_PaRF4J",
+        "announcement_xVjMVc",
         "announcement_d7kp7W"
       ],
       "name": "t:names.announcement_bar",
