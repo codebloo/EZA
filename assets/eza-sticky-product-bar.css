@@ -24,7 +24,7 @@
 
   .sticky-product-bar {
     position: sticky;
-    top: var(--header-group-height, 107px);
+     top: var(--sticky-bar-top, 0px); 
     z-index: 5; /* below header drawer (Horizon header is typically 10+) */
     transition: box-shadow 250ms ease;
     
