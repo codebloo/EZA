@@ -199,10 +199,10 @@ class StickyProductBar extends HTMLElement {
     const manual = parseFloat(this.dataset.headerOffset);
     if (!Number.isNaN(manual)) return manual;
 
-    // 2. CSS variable
-    const varValue = getComputedStyle(document.documentElement)
-      .getPropertyValue(this.headerOffsetVar)
-      .trim();
+  // 2. CSS variable
+const varValue = getComputedStyle(this)
+  .getPropertyValue(this.headerOffsetVar)
+  .trim();
     if (varValue) {
       const parsed = parseFloat(varValue);
       if (!Number.isNaN(parsed)) return parsed;
