@@ -25,7 +25,7 @@
 
   {%- assign units_per_pack_default = block.settings.units_per_pack | default: 12 -%}
   {%- assign unit_label = block.settings.unit_label | default: 'capsule' -%}
-
+{%- assign default_purchase_type = block.settings.default_purchase_type | default: 'onetime' -%}
   <subscription-selector
     class="vpv-sub-selector"
     data-section-id="{{ section_id }}"
