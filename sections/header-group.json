@@ -24,7 +24,13 @@
             "font_size": "1rem",
             "weight": "",
             "letter_spacing": "normal",
-            "case": "none"
+            "case": "none",
+            "speed": 5,
+            "section_width": "page-width",
+            "color_scheme": "scheme-5",
+            "divider_width": 0,
+            "padding-block-start": 8,
+            "padding-block-end": 10
           },
           "blocks": {}
         },
@@ -110,7 +116,13 @@
             "font_size": "1rem",
             "weight": "",
             "letter_spacing": "normal",
-            "case": "none"
+            "case": "none",
+            "speed": 5,
+            "section_width": "page-width",
+            "color_scheme": "",
+            "divider_width": 0,
+            "padding-block-start": 15,
+            "padding-block-end": 15
           },
           "blocks": {}
         }
