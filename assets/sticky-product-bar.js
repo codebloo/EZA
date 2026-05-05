@@ -195,27 +195,32 @@ class StickyProductBar extends HTMLElement {
    *   4. 0
    */
   resolveHeaderOffset() {
-    // 1. Manual override
-    const manual = parseFloat(this.dataset.headerOffset);
-    if (!Number.isNaN(manual)) return manual;
+  // 1. Manual override
+  const manual = parseFloat(this.dataset.headerOffset);
+  if (!Number.isNaN(manual)) return manual + this.getOffsetAdjustment();
 
   // 2. CSS variable
-const varValue = getComputedStyle(this)
-  .getPropertyValue(this.headerOffsetVar)
-  .trim();
-    if (varValue) {
-      const parsed = parseFloat(varValue);
-      if (!Number.isNaN(parsed)) return parsed;
-    }
-
-    // 3. Header element fallback
-    if (this.headerEl) {
-      return this.headerEl.getBoundingClientRect().height;
-    }
-
-    // 4. Nothing to go on
-    return 0;
+  const varValue = getComputedStyle(this)
+    .getPropertyValue(this.headerOffsetVar)
+    .trim();
+  if (varValue) {
+    const parsed = parseFloat(varValue);
+    if (!Number.isNaN(parsed)) return parsed + this.getOffsetAdjustment();
   }
+
+  // 3. Header element fallback
+  if (this.headerEl) {
+    return this.headerEl.getBoundingClientRect().height + this.getOffsetAdjustment();
+  }
+
+  // 4. Nothing to go on
+  return 0;
+}
+
+getOffsetAdjustment() {
+  const adj = parseFloat(this.dataset.headerOffsetAdjust);
+  return Number.isNaN(adj) ? 0 : adj;
+}
 
   updateHeaderOffset() {
     const offset = Math.round(this.resolveHeaderOffset());
