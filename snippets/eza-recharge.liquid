@@ -77,7 +77,8 @@
     {%- comment -%} One-time {%- endcomment -%}
     <div class="vpv-sub-selector__option">
       <label class="vpv-sub-selector__row">
-        <input type="radio" name="vpv-purchase-{{ section_id }}" value="" checked data-purchase-type>
+        
+        <input type="radio" name="vpv-purchase-{{ section_id }}" value="" data-purchase-type {% if default_purchase_type == 'onetime' %}checked{% endif %}>
         <span class="vpv-sub-selector__info">
           <span class="vpv-sub-selector__title">One-time Purchase</span>
           <span class="vpv-sub-selector__price">
@@ -97,13 +98,14 @@
     {%- comment -%} Subscribe & Save {%- endcomment -%}
     <div class="vpv-sub-selector__option">
       <label class="vpv-sub-selector__row">
-        <input
-          type="radio"
-          name="vpv-purchase-{{ section_id }}"
-          value="{{ initial_allocation.selling_plan.id }}"
-          data-purchase-type
-          data-sub-radio
-        >
+       <input
+  type="radio"
+  name="vpv-purchase-{{ section_id }}"
+  value="{{ initial_allocation.selling_plan.id }}"
+  data-purchase-type
+  data-sub-radio
+  {% if default_purchase_type == 'subscription' %}checked{% endif %}
+>
         <span class="vpv-sub-selector__info">
           <span class="vpv-sub-selector__title">
             Subscribe &amp; Save
