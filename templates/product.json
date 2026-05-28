@@ -5083,6 +5083,47 @@
                     "text_QRtYb7"
                   ]
                 },
+                "accordion_row_y6JbNb": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Is it actually safe?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_9TNXzr": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Yes. Every ingredient in the Hyper Strength Stack is clinically studied. The formula is GMP certified and third-party tested. That said, if you're pregnant, nursing, have a heart condition, or are sensitive to stimulants, check with your doctor first. Yohimbe in particular warrants a conversation if you have concerns around insulin sensitivity or blood pressure.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_9TNXzr"
+                  ]
+                },
                 "accordion_row_q3E6Ue": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
@@ -5169,7 +5210,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Can I take it every day?",
+                    "heading": "How many should I take?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -5179,7 +5220,7 @@
                     "text_kPMGwN": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Start with one. Most people find that's all they need. If you're facing something that demands more, two is the ceiling. Taking more than two doesn't amplify the effect, it just increases the likelihood of side effects.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -5329,88 +5370,6 @@
                     "text_CNUXaJ"
                   ]
                 },
-                "accordion_row_y6JbNb": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Is it actually safe?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_9TNXzr": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Yes. Every ingredient in the Hyper Strength Stack is clinically studied. The formula is GMP certified and third-party tested. That said, if you're pregnant, nursing, have a heart condition, or are sensitive to stimulants, check with your doctor first. Yohimbe in particular warrants a conversation if you have concerns around insulin sensitivity or blood pressure.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_9TNXzr"
-                  ]
-                },
-                "accordion_row_NcxRWa": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "What is your shipping and returns policy?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_xRcfwD": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_xRcfwD"
-                  ]
-                },
                 "accordion_row_8nP6f7": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
@@ -5457,14 +5416,13 @@
                 "accordion_row_GWQNQi",
                 "accordion_row_MHJ8eC",
                 "accordion_row_FPjGQq",
+                "accordion_row_y6JbNb",
                 "accordion_row_q3E6Ue",
                 "accordion_row_YcR93n",
                 "accordion_row_GnV3xX",
                 "accordion_row_tjYKNB",
                 "accordion_row_fWXpPx",
                 "accordion_row_tYdag8",
-                "accordion_row_y6JbNb",
-                "accordion_row_NcxRWa",
                 "accordion_row_8nP6f7"
               ]
             }
