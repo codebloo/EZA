@@ -5124,6 +5124,47 @@
                     "text_9TNXzr"
                   ]
                 },
+                "accordion_row_GnV3xX": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "How many should I take?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Q.svg",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_kPMGwN": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Start with one. Most people find that's all they need. If you're facing something that demands more, two is the ceiling. Taking more than two doesn't amplify the effect, it just increases the likelihood of side effects.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_kPMGwN"
+                  ]
+                },
                 "accordion_row_q3E6Ue": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
@@ -5206,52 +5247,11 @@
                     "text_FtYzTz"
                   ]
                 },
-                "accordion_row_GnV3xX": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "How many should I take?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/Q.svg",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_kPMGwN": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Start with one. Most people find that's all they need. If you're facing something that demands more, two is the ceiling. Taking more than two doesn't amplify the effect, it just increases the likelihood of side effects.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_kPMGwN"
-                  ]
-                },
                 "accordion_row_tjYKNB": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Why does it come in a baggie?",
+                    "heading": "When is the best time to take it?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -5261,7 +5261,7 @@
                     "text_tmtw7n": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Morning or early afternoon. The formula is designed to carry you through your longest, hardest hours, and taking it too late in the day can interfere with sleep for caffeine-sensitive users. If you’re using it for a workout, take it 20-30 minutes before you train.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -5417,9 +5417,9 @@
                 "accordion_row_MHJ8eC",
                 "accordion_row_FPjGQq",
                 "accordion_row_y6JbNb",
+                "accordion_row_GnV3xX",
                 "accordion_row_q3E6Ue",
                 "accordion_row_YcR93n",
-                "accordion_row_GnV3xX",
                 "accordion_row_tjYKNB",
                 "accordion_row_fWXpPx",
                 "accordion_row_tYdag8",
