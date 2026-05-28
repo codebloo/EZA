@@ -5005,7 +5005,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "When is the best time to take it?",
+                    "heading": "How is this different from ADHD medication?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -5015,7 +5015,7 @@
                     "text_9TEMbq": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Prescription stimulants work by flooding your brain with dopamine and norepinephrine at levels your brain can’t naturally sustain. That’s what drives the comedown, the mood swings, and the dependency risk. EZ-A supports healthy brain function systems through ingredients your brain already knows how to use. EZ-A is not a prescription stimulant and it’s not trying to be one. </p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -5046,7 +5046,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Can I take it on an empty stomach?",
+                    "heading": "Is EZ-A habit-forming?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -5056,7 +5056,7 @@
                     "text_QRtYb7": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>No. Nothing in the formula creates physical dependency. The caffeine is real and your body will notice if you stop it abruptly the same way it would with coffee, but that's tolerance, not addiction. The rest of the stack doesn't work that way.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
