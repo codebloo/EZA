@@ -5292,7 +5292,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "How long does one baggie last?",
+                    "heading": "Will it keep me up at night?",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/Q.svg",
@@ -5302,7 +5302,7 @@
                     "text_eiVX6B": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>It can, and sometimes that’s exactly the point. If you need to push through a late night before something big, the timing is up to you. Know that caffeine has a half-life of around five to six hours, so plan accordingly.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
