@@ -1,5 +1,5 @@
 
-{% render 'eza-ingredients': layout:block.settings.layout, mobile_accordion:block.settings.mobile_accordion %}
+{% render 'eza-ingredients', layout: block.settings.layout, mobile_accordion: block.settings.mobile_accordion %}
 
 {% schema %}
 {
@@ -38,3 +38,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'eza-ingredients': layout:block.settings.layout, mobile_accordion:block.settings.mobile_accordion
+    %}"
+  to: "{% render 'eza-ingredients', layout: block.settings.layout, mobile_accordion:
+    block.settings.mobile_accordion %}"
+  position: 1..113
+{% endcomment %}
