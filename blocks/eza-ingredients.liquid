@@ -1,5 +1,5 @@
 
-{% render 'eza-ingredients': layout:block.settings.desktop_layout %}
+{% render 'eza-ingredients', layout: block.settings.desktop_layout %}
 
 {% schema %}
 {
@@ -23,3 +23,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'eza-ingredients': layout:block.settings.desktop_layout %}"
+  to: "{% render 'eza-ingredients', layout: block.settings.desktop_layout %}"
+  position: 1..70
+{% endcomment %}
